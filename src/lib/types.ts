@@ -32,6 +32,9 @@ export interface Programme {
     source_url: string;
   } | null;
   mandatory_fees_per_year: number | null;
+  // When no separate fee figure exists because the source's total already includes mandatory fees, say so here.
+  // A null fee with no note means the fees were not found, so the cost estimate is incomplete.
+  mandatory_fees_note?: string;
   living_cost_per_year: { amount: number; source_url: string } | null;
   requirements: {
     gpa: string | null;

@@ -1,5 +1,5 @@
 // Recommendation engine: transparent, rule-based, weights editable by the student.
-import { costBreakdown, fxRate, missingInputs, runAll, visaRiskScore, type Assumptions, type Profile, type ScenarioResult, type Weights } from "./model";
+import { costBreakdown, costIncomplete, fxRate, missingInputs, runAll, visaRiskScore, type Assumptions, type Profile, type ScenarioResult, type Weights } from "./model";
 import type { CountryData, Course, FxRates, LenderData, Programme } from "./types";
 
 export interface Eligibility {
@@ -45,6 +45,7 @@ export interface Candidate {
   eligibility: Eligibility[];
   hardFail: boolean;
   missing: string[];
+  costIncomplete: boolean; // mandatory fees not found, counted as 0
   components: Record<keyof Weights, number> | null; // 0-100 each
   score: number | null;
 }
@@ -82,6 +83,7 @@ export function buildCandidates(countries: CountryData[], prof: Profile, a: Assu
         eligibility: elig,
         hardFail: elig.some((e) => e.status === "fail"),
         missing: missingInputs(c, p, p.course, ind),
+        costIncomplete: costIncomplete(p),
         components: null,
         score: null,
       });

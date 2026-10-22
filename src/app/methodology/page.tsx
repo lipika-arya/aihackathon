@@ -1,11 +1,14 @@
 import { DEFAULT_ASSUMPTIONS, DEFAULT_WEIGHTS, RISK_WEIGHTS, SCENARIOS } from "@/lib/model";
 import { PICKS } from "@/lib/recommend";
+import { loadLenders } from "@/lib/data";
+import { defaultLoanRate } from "@/lib/rate";
 
 const H = ({ children }: { children: React.ReactNode }) => <h2 className="mt-10 text-xl font-extrabold">{children}</h2>;
 const F = ({ children }: { children: React.ReactNode }) => <pre className="card mt-2 overflow-x-auto p-3 text-xs leading-relaxed">{children}</pre>;
 
 export default function Methodology() {
   const a = DEFAULT_ASSUMPTIONS;
+  const rate = defaultLoanRate(loadLenders());
   return (
     <article className="max-w-3xl text-sm leading-relaxed">
       <p className="text-xs font-semibold uppercase tracking-wider text-forest">Methodology</p>
@@ -40,6 +43,7 @@ Anything left uncovered = funding gap (flagged, never silently borrowed).
 During study + grace (${a.graceMonths} months): simple interest = balance × r/12 each month
   either paid monthly, or added to the principal when EMIs start (your choice; banks differ)
 EMI = P × r × (1+r)^n / ((1+r)^n − 1), r = annual rate / 12, n = repayment months (r = 0 → P/n)`}</F>
+      <p className="mt-2"><strong>Default interest rate: {(rate?.rate ?? a.loanRatePct).toFixed(2)}%.</strong> {rate ? `It is the average mid-point of the published rate ranges of ${rate.lenders.length} public-sector banks whose rates were verified on their own pages (${rate.lenders.join(", ")}), as of ${rate.asOf}.` : "Lender data was unavailable, so a stored fallback is used."} Private banks and NBFCs are left out because they publish only &ldquo;starting from&rdquo; rates or rates that could not be confirmed. Every calculator on the site starts from this rate, and you can change it with the interest-rate slider in the ROI calculator. Check your own sanction letter.</p>
 
       <H>5. Income</H>
       <F>{`Abroad take-home per month = gross entry salary × (1 + growth)^years × (1 − effective tax rate) / 12
