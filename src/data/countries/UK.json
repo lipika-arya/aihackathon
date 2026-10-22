@@ -149,6 +149,149 @@
       "programme_url": "https://study.ed.ac.uk/programmes/postgraduate-taught/902-data-science",
       "status": "verified",
       "notes": "International/EU fee GBP 47,680 per year for 2027/8 (full-time, 1 year, start September 2027), so whole-programme tuition 47,680. Fee page says the annual figure 'does not include any additional costs related to your degree' and points to the programme page; the programme page's Costs section lists only accommodation and living costs, there is no application fee, and the GBP 1,500 deposit counts towards tuition. No compulsory extra fee is listed, but there is no explicit 'no other fees' sentence. Living cost = Edinburgh's own average estimate of GBP 18,504 a year (GBP 1,542 a month) for 2026-2027. 10% discount for Edinburgh graduates. Round 1 deadline 31 March, round 2 31 May. Entry needs a UK 2:1 or international equivalent in a quantitative subject, introductory programming experience and 60 SCQF / 30 ECTS credits of maths. 22 Oct 2026 re-check: the fee-coverage statement above was confirmed on Edinburgh's central fee-rates page (https://registryservices.ed.ac.uk/tuition-fees/policy/postgraduate-taught/rates). The programme page says the fee 'does not include any additional costs related to your degree' (set by each school and listed on the programme page)."
+    },
+    {
+      "id": "birmingham-msc-data-science",
+      "university": "University of Birmingham",
+      "city": "Birmingham",
+      "course": "DS",
+      "programme_name": "Data Science (MSc), 1 year full-time, September 2027",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 36000,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027 entry (September 2027)",
+        "source_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/data-science-msc"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Page states 'The University tuition fee covers the cost of your tuition, supervision, assessment and includes membership to the Guild of Students'; no other compulsory fee is listed on the course page.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "2:1 Honours degree in any subject other than computing (conversion-style course)",
+        "english": "IELTS 6.5 overall with no less than 6.0 in any band",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/data-science-msc",
+      "status": "verified",
+      "notes": "International fee GBP 36,000 full-time, 2027 entry, 1 year, September start; UK/Ireland fee GBP 12,780. The page shows the UK/Ireland fee by default and a country selector; the international full-time figure is in the page's embedded international-fees data (same text: 'We charge an annual tuition fee. Fees for 2027 entry are above'; fees quoted are for one year only, and the course lasts 1 year). Living cost null: Birmingham gives no annual international-student estimate suitable for this field (its only figures are on a US-loan cost-of-attendance page that bundles flights and visa)."
+    },
+    {
+      "id": "birmingham-msc-advanced-computer-science",
+      "university": "University of Birmingham",
+      "city": "Birmingham",
+      "course": "CS",
+      "programme_name": "Advanced Computer Science (MSc), 1 year full-time, September 2027",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 36000,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "September 2027 (Full-time September 2027 column; January 2027 intake is GBP 34,740)",
+        "source_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/advanced-computer-science-msc"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Page states 'The University tuition fee covers the cost of your tuition, supervision, assessment and includes membership to the Guild of Students'; no other compulsory fee is listed on the course page.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "2:1 Honours degree in Computing or a closely related discipline",
+        "english": "IELTS 6.5 overall with no less than 6.0 in any band",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/advanced-computer-science-msc",
+      "status": "verified",
+      "notes": "International fee GBP 36,000 for Full-time September 2027 (GBP 34,740 for January 2027); UK/Ireland GBP 12,780. The page shows the UK/Ireland fee by default and a country selector; the international full-time figure is in the page's embedded international-fees data (same text: 'We charge an annual tuition fee. Fees for 2027 entry are above'; fees quoted are for one year only, and the course lasts 1 year). Living cost null: Birmingham gives no annual international-student estimate suitable for this field (its only figures are on a US-loan cost-of-attendance page that bundles flights and visa)."
+    },
+    {
+      "id": "birmingham-msc-ai-machine-learning",
+      "university": "University of Birmingham",
+      "city": "Birmingham",
+      "course": "DS",
+      "programme_name": "Artificial Intelligence (AI) and Machine Learning (MSc), 1 year full-time, September 2027",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 36000,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027 entry (September 2027)",
+        "source_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/artificial-intelligence-machine-learning-msc"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Page states 'The University tuition fee covers the cost of your tuition, supervision, assessment and includes membership to the Guild of Students'; no other compulsory fee is listed on the course page.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "2:1 Honours degree in a numerate discipline (e.g. Computer Science, Mathematics, Physics, Engineering, Economics) with substantial mathematical content; at least 2:1 in all maths-related modules and three of calculus, linear algebra, statistics, probability",
+        "english": "IELTS 6.5 overall with no less than 6.0 in any band",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/computer-science-and-data-science-courses/artificial-intelligence-machine-learning-msc",
+      "status": "verified",
+      "notes": "International fee GBP 36,000 full-time, 2027 entry; UK/Ireland GBP 12,780. Course is AI/ML, classed here as the nearest data-science track. The page shows the UK/Ireland fee by default and a country selector; the international full-time figure is in the page's embedded international-fees data (same text: 'We charge an annual tuition fee. Fees for 2027 entry are above'; fees quoted are for one year only, and the course lasts 1 year). Living cost null: Birmingham gives no annual international-student estimate suitable for this field (its only figures are on a US-loan cost-of-attendance page that bundles flights and visa)."
+    },
+    {
+      "id": "birmingham-business-school-full-time-mba",
+      "university": "University of Birmingham",
+      "city": "Birmingham",
+      "course": "MBA",
+      "programme_name": "Full-time MBA (1 year), September 2027",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 40410,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027 entry (September 2027)",
+        "source_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/business-and-management-courses/mba"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Page states 'The University tuition fee covers the cost of your tuition, supervision, assessment and includes membership to the Guild of Students'; no other compulsory fee is listed on the course page.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "2:1 Honours degree or equivalent (or degree-level professional qualification)",
+        "english": null,
+        "gre_gmat": "GMAT not required; accepted and considered alongside other qualifications",
+        "work_experience": "Minimum three years' professional experience (five usually expected), with career progression and managerial responsibility"
+      },
+      "scholarships": null,
+      "programme_url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/business-and-management-courses/mba",
+      "status": "verified",
+      "notes": "Full-time fee GBP 40,410 for 2027 entry, 1 year, September 2027 start; the international fee box shows the same figure as the UK/Ireland box. English requirement not on the course page text read. The page shows the UK/Ireland fee by default and a country selector; the international full-time figure is in the page's embedded international-fees data (same text: 'We charge an annual tuition fee. Fees for 2027 entry are above'; fees quoted are for one year only, and the course lasts 1 year). Living cost null: Birmingham gives no annual international-student estimate suitable for this field (its only figures are on a US-loan cost-of-attendance page that bundles flights and visa)."
+    },
+    {
+      "id": "imperial-full-time-mba",
+      "university": "Imperial College London (Imperial College Business School)",
+      "city": "London",
+      "course": "MBA",
+      "programme_name": "Full-Time MBA (12-month format)",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 81000,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "Full-Time MBA 2027 fees (September 2027 start, 12 months)",
+        "source_url": "https://www.imperial.ac.uk/business-school/mba/full-time-mba/fees-and-funding/"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Fees page states 'Tuition fees cover the length of the programme, flights and accommodation for your Global Experience Week, and core reading and study materials'; fees do not cover accommodation and expenses, optional internship or exchange costs, supplementary texts and study materials, and Careers Club membership (GBP 10 per club per year). 'The fees for both UK and international students are the same.'",
+      "living_cost_per_year": {
+        "amount": 22722,
+        "source_url": "https://www.imperial.ac.uk/study/fees-and-funding/living-costs/"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "IELTS (academic) 7.0 overall with at least 6.5 in all elements",
+        "gre_gmat": "Valid GMAT, Executive Assessment or GRE required (GMAT Exam minimum 600 on the 10th Edition per the programme page; GRE at least 156 verbal and 158 quantitative per admissions page); waiver possible",
+        "work_experience": "Minimum three years' continuous relevant full-time work experience after graduation"
+      },
+      "scholarships": "Imperial Business School MBA scholarships including awards of up to GBP 20,000 and ESBF GBP 50,000 awards (eligibility varies)",
+      "programme_url": "https://www.imperial.ac.uk/business-school/programmes/full-time-mba/",
+      "status": "verified",
+      "notes": "GBP 81,000 tuition, deposit GBP 8,100 (10%, part of the fee), 12 months, September 2027. An optional 16-month extended term, global exchange and extended placement carry additional fees (not included). Living cost is Imperial's 'Likely costs for living in London - 2026' 12-month total (private-sector accommodation GBP 13,871, food 3,436, travel zone 1-2 1,439, personal and leisure 3,976); the page does not label it international-specific, and college-run accommodation has no 12-month figure. Admissions details from https://www.imperial.ac.uk/business-school/mba/full-time-mba/admissions/ and the programme page."
     }
   ],
   "living_cost": {

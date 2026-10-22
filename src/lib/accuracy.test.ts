@@ -192,8 +192,11 @@ describe("expanded programme set and the UK", () => {
     expect(cb.visa * cb.rate).toBeCloseTo(558 * fx.inrPer.GBP + 388 * fx.inrPer.GBP, 0);
   });
   it("every newly added programme is verified", () => {
-    const added = ["northeastern-ms-cs", "uva-msds-residential", "duke-fuqua-daytime-mba", "kit-msc-computer-science", "tuebingen-msc-machine-learning", "frankfurt-school-full-time-mba", "sfu-msc-bigdata-ds", "schulich-mba", "osaka-itsce-information-science-cs", "kyoto-informatics-ist-international-ds", "kyoto-gsm-imba", "uts-mit-cs", "uts-mdsi-ds", "uts-mba", "warwick-msc-computer-science", "southampton-msc-computer-science", "warwick-wbs-full-time-mba"];
+    const added = ["northeastern-ms-cs", "uva-msds-residential", "duke-fuqua-daytime-mba", "kit-msc-computer-science", "tuebingen-msc-machine-learning", "frankfurt-school-full-time-mba", "sfu-msc-bigdata-ds", "schulich-mba", "osaka-itsce-information-science-cs", "kyoto-informatics-ist-international-ds", "kyoto-gsm-imba", "uts-mit-cs", "uts-mdsi-ds", "uts-mba", "warwick-msc-computer-science", "southampton-msc-computer-science", "warwick-wbs-full-time-mba", "edinburgh-msc-computer-science", "edinburgh-msc-data-science", "birmingham-msc-data-science", "birmingham-msc-advanced-computer-science", "birmingham-msc-ai-machine-learning", "birmingham-business-school-full-time-mba", "imperial-full-time-mba"];
     for (const id of added) expect(progs.find((p) => p.id === id)?.status).toBe("verified");
+  });
+  it("every UK programme states what its fee covers (no note, no entry)", () => {
+    for (const p of country("UK").programmes) expect(p.mandatory_fees_note ?? p.mandatory_fees_per_year, p.id).not.toBeUndefined();
   });
   it("a partial candidate that could not be fully confirmed was left out", () => {
     expect(progs.find((p) => p.id === "carleton-mcs-cs")).toBeUndefined();
