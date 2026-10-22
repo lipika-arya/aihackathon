@@ -26,10 +26,13 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
   const keys = Object.keys(results) as ScenarioKey[];
   if (!keys.length && ind == null)
     return (
-      <Empty title="Enter your India salary to see this option">
-        The comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
-        <Link href="/assess" className="link">Start my assessment</Link> or set it with the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
-      </Empty>
+      <div className="space-y-5">
+        <Empty title="Enter your India salary to see paybacks and EMI burden">
+          The comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data. What the degree costs does not depend on it and is shown below.{" "}
+          <Link href="/assess" className="link">Start my assessment</Link> or set it with the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
+        </Empty>
+        {!compact && <CostTable country={c} programme={p} />}
+      </div>
     );
   if (!keys.length)
     return (

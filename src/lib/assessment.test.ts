@@ -76,6 +76,8 @@ describe("no India salary entered", () => {
     for (const c of list) {
       expect(c.expected).toBeNull();
       expect(c.missing.join(" ")).toMatch(/India salary/);
+      // what a degree costs does not depend on the India salary, so it is still worked out
+      expect(Number.isFinite(c.totalInr) && c.totalInr! > 0, c.programme.id).toBe(true);
     }
   });
 });

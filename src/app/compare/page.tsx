@@ -18,7 +18,7 @@ export default function Compare() {
     const progs = c.programmes.filter((p) => p.course === course);
     const ind = indiaSalaryFor(profile, course, lenders);
     const runs = progs.map((p) => ({ p, cb: costBreakdown(c, p, profile, assumptions, fx), r: runAll({ country: c, programme: p, course, profile, assumptions, fx, indiaSalary: ind }) }))
-      .filter((x) => x.cb && x.r.expected);
+      .filter((x) => x.cb); // cost rows need only cost data; the payback and EMI rows need the India salary and say so
     const costs = runs.map((x) => x.cb!.totalInr);
     const typical = mid(runs, (x) => x.cb!.totalInr);
     return { c, progs, runs, typical, costLo: costs.length ? Math.min(...costs) : null, costHi: costs.length ? Math.max(...costs) : null, rate: fxRate(fx, c.currency, assumptions) };
@@ -26,7 +26,7 @@ export default function Compare() {
 
   if (!countries.length) return <Empty title="Research data not loaded" />;
 
-  const R = (f: (r: ScenarioResult) => React.ReactNode, x: (typeof rows)[number], k: "expected" | "returnHome" = "expected") => (x.typical?.r[k] ? f(x.typical.r[k]!) : <Badge kind="missing" />);
+  const R = (f: (r: ScenarioResult) => React.ReactNode, x: (typeof rows)[number], k: "expected" | "returnHome" = "expected") => (x.typical?.r[k] ? f(x.typical.r[k]!) : profile.indiaSalary == null ? <span className="text-xs text-slate">Needs your India salary</span> : <Badge kind="missing" />);
 
   const metrics: [string, (x: (typeof rows)[number]) => React.ReactNode][] = [
     ["Total cost range (our sample)", (x) => (x.costLo == null ? <Badge kind="missing" /> : <span className="num font-semibold">{lakh(x.costLo)} – {lakh(x.costHi)}</span>)],
