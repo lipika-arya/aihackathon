@@ -94,6 +94,7 @@ export default function Results() {
           </table>
         </div>
         {!ranked.length && <Empty title="No programmes match your course and country choices" />}
+        <p className="text-xs text-slate">Total cost is at today&apos;s prices and exchange rates. The funding gap comes from the Expected scenario, which also assumes tuition rises and INR drift and adds the loan processing fee, so it will not equal total cost minus your funds. Open an option to see the working.</p>
       </section>
 
       <section className="card space-y-4 p-6">

@@ -17,6 +17,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
     [c, p, profile, assumptions, fx, ind],
   );
   const missing = missingInputs(c, p, p.course, ind);
+  const todayCost = useMemo(() => costBreakdown(c, p, profile, assumptions, fx), [c, p, profile, assumptions, fx]);
   const keys = Object.keys(results) as ScenarioKey[];
   if (!keys.length)
     return (
@@ -52,6 +53,8 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
       </div>
       <p className="text-xs text-slate"><Badge kind="assumption" /> {SCENARIOS[r.key].explain} Scenarios are what-if calculations, not forecasts or probabilities. &quot;Debt-free&quot; assumes you prepay with everything left after living costs (check your lender&apos;s prepayment terms); on the bank&apos;s schedule the loan ends {r.scheduledYears.toFixed(1)} years after graduating.</p>
 
+      {todayCost && <FundingBridge r={r} todayTotal={todayCost.totalInr} ownFunds={profile.familyFunds + profile.savings + profile.scholarship} maxLoan={profile.maxLoan} />}
+
       {r.sim.fundingGap > 0 && (
         <div className="rounded-xl border border-brick bg-brick-soft p-4 text-sm text-brick">
           <strong>Funding gap: {inr(r.sim.fundingGap)}.</strong> Your funds plus maximum loan don&apos;t cover the estimated cost. This option stays flagged even if its return looks good.
@@ -59,7 +62,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
       )}
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat label="Total cost (before loan interest)" value={lakh(r.totalCostInr)} kind="calculated" sub="Tuition + fees + living + visa + flights + deposits" />
+        <Stat label={`Total cost, ${SCENARIOS[r.key].label} scenario (before loan interest)`} value={lakh(r.totalCostInr)} kind="calculated" sub="Tuition + fees + living + visa + flights + deposits, including the tuition rise and INR drift this scenario assumes" />
         <Stat label="Loan used" value={lakh(r.sim.drawn)} sub={`Interest added during study + grace: ${lakh(r.sim.capitalisedInterest)}`} kind="calculated" />
         <Stat label="Monthly EMI" value={inr(r.sim.emi)} sub={`${assumptions.loanRatePct}% for ${profile.repaymentYears} yrs, total interest ${lakh(r.sim.totalInterest)}`} kind="calculated" />
         <Stat label="10-yr NPV vs staying in India" value={lakh(r.npv)} sub={`ROI ${pct(r.roiPct)} · IRR ${r.irrPct == null ? "not meaningfully calculable" : pct(r.irrPct, 1)}`} kind="calculated" />
@@ -91,6 +94,33 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
         India comparison uses {usingDefaultIndia ? <><Badge kind="estimate" /> a typical India salary of {lakh(ind)} / yr from our India baseline data <Badge kind="unverified">Source not re-checked</Badge> (the NIRF figures are from top-ranked institutes and could not be re-verified, so they may be high. Enter your own salary for a reliable comparison)</> : <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</>}.
         {missing.length > 0 && <> Missing: {missing.join("; ")}.</>}
       </p>
+    </div>
+  );
+}
+
+/** Ties the cost table (today's prices) to the funding gap (this scenario), so the page shows one consistent set of numbers. */
+function FundingBridge({ r, todayTotal, ownFunds, maxLoan }: { r: NonNullable<ReturnType<typeof runAll>[ScenarioKey]>; todayTotal: number; ownFunds: number; maxLoan: number }) {
+  const drift = r.totalCostInr - todayTotal;
+  const need = r.totalCostInr + r.sim.processingFee;
+  const ownUsed = need - r.sim.drawn - r.sim.fundingGap;
+  const Row = ({ label, value, strong, minus }: { label: string; value: number; strong?: boolean; minus?: boolean }) => (
+    <tr className={strong ? "font-bold" : ""}><td>{label}</td><td className="num text-right">{minus ? "−" : ""}{inr(value)}</td></tr>
+  );
+  return (
+    <div className="card p-4">
+      <h3 className="font-bold">How the funding gap is worked out ({SCENARIOS[r.key].label} scenario)</h3>
+      <table className="data mt-2">
+        <tbody>
+          <Row label="Estimated cost at today's prices and exchange rate (the cost table below)" value={todayTotal} />
+          <tr><td>+ Tuition rise and INR drift this scenario assumes</td><td className="num text-right">{drift < 0 ? "−" : ""}{inr(Math.abs(drift))}</td></tr>
+          <Row label="+ Loan processing fee (charged on the loan)" value={r.sim.processingFee} />
+          <Row label="= Total you need to fund" value={need} strong />
+          <Row label="− Your own funds used" value={ownUsed} minus />
+          <Row label={`− Loan (your maximum is ${inr(maxLoan)})`} value={r.sim.drawn} minus />
+          <Row label="= Funding gap" value={r.sim.fundingGap} strong />
+        </tbody>
+      </table>
+      <p className="hint">The gap changes with the scenario because each one assumes different tuition rises and INR drift. You have {inr(ownFunds)} of your own funds in total. Loan interest is a financing cost and is not part of the gap.</p>
     </div>
   );
 }

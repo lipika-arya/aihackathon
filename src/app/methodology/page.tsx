@@ -31,7 +31,7 @@ export default function Methodology() {
 Total cost = tuition + mandatory fees + living × months + visa fees
            + flights (₹${a.flightsInr.toLocaleString("en-IN")}) + tests & applications (₹${a.testsAndApplicationsInr.toLocaleString("en-IN")}) + 2 months' living as deposit
 Living: budget = official proof-of-funds or minimum figure; moderate = university's own estimate where published, else country estimate; comfortable = country estimate`}</F>
-      <p className="mt-2">Loan principal is not added to cost (it pays for the cost). Interest and processing fees are financing costs, shown separately.</p>
+      <p className="mt-2">Loan principal is not added to cost (it pays for the cost). Loan interest is a financing cost, shown separately. The loan processing fee is funded by the loan itself and counts toward the funding gap: loan = (costs − own funds) ÷ (1 − fee%), up to your maximum.</p>
 
       <H>4. Loan</H>
       <F>{`Own funds (family + savings + scholarship) are spent first; the loan draws only when fees fall due

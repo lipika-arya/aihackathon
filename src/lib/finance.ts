@@ -66,6 +66,7 @@ export interface SimInput {
 
 export interface SimResult {
   plannedLoan: number;
+  processingFee: number; // charged on the loan at the start and funded like any other cost
   drawn: number;
   fundingGap: number; // costs neither own funds nor loan could cover; family must find this
   capitalisedInterest: number;
@@ -88,7 +89,11 @@ export function simulate(inp: SimInput): SimResult {
   const H = inp.horizonMonths;
   const r = inp.loan.ratePct / 1200;
   const totalCost = inp.studyCosts.reduce((a, b) => a + b, 0);
-  const plannedLoan = Math.min(inp.loanCap, Math.max(0, totalCost - inp.ownFunds));
+  // The processing fee is a percentage of the loan and is itself funded by that loan, so the loan solves
+  // loan = (costs - own funds) / (1 - fee%), up to the cap. The fee then counts toward what must be funded.
+  const feeRate = Math.min(Math.max(inp.loan.processingFeePct, 0), 99) / 100;
+  const plannedLoan = Math.min(inp.loanCap, Math.max(0, (totalCost - inp.ownFunds) / (1 - feeRate)));
+  const processingFee = plannedLoan * feeRate;
   const repayStart = inp.studyMonths + inp.loan.graceMonths;
 
   let own = inp.ownFunds, bal = 0, drawn = 0, accrued = 0, gap = 0;
@@ -100,17 +105,17 @@ export function simulate(inp: SimInput): SimResult {
     const cost = inp.studyCosts[m] ?? 0;
     let out = 0;
 
-    // fund this month's costs: own money first, then loan, then gap
-    const fromOwn = Math.min(own, cost);
+    // fund this month's costs (and the loan fee in month 0): own money first, then loan, then gap
+    const due = cost + (m === 0 ? processingFee : 0);
+    const fromOwn = Math.min(own, due);
     own -= fromOwn;
     out += fromOwn;
-    let need = cost - fromOwn;
+    let need = due - fromOwn;
     const draw = Math.min(need, Math.max(0, plannedLoan - drawn));
     drawn += draw;
     bal += draw;
     need -= draw;
     if (need > 1) { gap += need; out += need; } // ignore sub-rupee float noise
-    if (m === 0 && plannedLoan > 0) out += (plannedLoan * inp.loan.processingFeePct) / 100;
 
     if (m < repayStart) {
       const i = bal * r; // simple interest on outstanding principal
@@ -147,7 +152,7 @@ export function simulate(inp: SimInput): SimResult {
   }
 
   return {
-    plannedLoan, drawn, fundingGap: gap, capitalisedInterest: capitalised,
+    plannedLoan, processingFee, drawn, fundingGap: gap, capitalisedInterest: capitalised,
     interestPaidDuringMoratorium: interestPaidMor, principalAtRepayment: principalAtRepay,
     emi: emiAmt, totalInterest, totalRepaid: totalRepaid + interestPaidMor,
     repayStartMonth: repayStart, loanClosedMonth: drawn > 0 ? closed : null,
