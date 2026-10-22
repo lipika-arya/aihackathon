@@ -11,10 +11,24 @@
       "course": "CS",
       "programme_name": "Informatics (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc" },
+      "tuition": {
+        "amount": 6000,
+        "period": "semester",
+        "credits_total": 120,
+        "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)",
+        "source_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc"
+      },
       "mandatory_fees_per_year": 194,
-      "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
-      "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment (grades/documents, possibly interview); no minimum GPA published", "english": "Proof of English required by the application deadline (accepted certificates listed on TUM language-certificates page)", "gre_gmat": null, "work_experience": null },
+      "living_cost_per_year": {
+        "amount": 15600,
+        "source_url": "https://www.tum.de/en/studies/fees"
+      },
+      "requirements": {
+        "gpa": "Recognised undergraduate degree plus TUM aptitude assessment (grades/documents, possibly interview); no minimum GPA published",
+        "english": "Proof of English required by the application deadline (accepted certificates listed on TUM language-certificates page)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
       "scholarships": "TUM tuition waiver scholarships for outstanding performance or financial need; TUM one-time grant of 500-1,800 EUR per semester for international students (not automatic)",
       "programme_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc",
       "status": "verified",
@@ -27,10 +41,24 @@
       "course": "CS",
       "programme_name": "Computer Science (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 0, "period": "total", "credits_total": null, "fee_year": "2026-27", "source_url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html" },
+      "tuition": {
+        "amount": 0,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "2026-27",
+        "source_url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html"
+      },
       "mandatory_fees_per_year": 824.6,
-      "living_cost_per_year": { "amount": 9600, "source_url": "https://www.uni-saarland.de/en/global/guidance/information/costs.html" },
-      "requirements": { "gpa": "Bachelor's in informatics/CS or related field and proof of sufficient academic merit; no minimum GPA published", "english": "C1 level; Medium of Instruction certificates not accepted", "gre_gmat": null, "work_experience": null },
+      "living_cost_per_year": {
+        "amount": 9600,
+        "source_url": "https://www.uni-saarland.de/en/global/guidance/information/costs.html"
+      },
+      "requirements": {
+        "gpa": "Bachelor's in informatics/CS or related field and proof of sufficient academic merit; no minimum GPA published",
+        "english": "C1 level; Medium of Instruction certificates not accepted",
+        "gre_gmat": null,
+        "work_experience": null
+      },
       "scholarships": null,
       "programme_url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html",
       "status": "verified",
@@ -43,14 +71,25 @@
       "course": "DS",
       "programme_name": "Statistics and Data Science (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 0, "period": "total", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.lmu.de/en/workspace-for-students/abc-study-guide/fees-and-tuition-fees/index.html" },
-      "mandatory_fees_per_year": 194,
+      "tuition": {
+        "amount": 0,
+        "period": "total",
+        "credits_total": 120,
+        "fee_year": "2026-27",
+        "source_url": "https://www.lmu.de/en/workspace-for-students/abc-study-guide/fees-and-tuition-fees/index.html"
+      },
+      "mandatory_fees_per_year": null,
       "living_cost_per_year": null,
-      "requirements": { "gpa": "Degree with at least 180 ECTS in statistics or data science (or as major/minor) plus aptitude test (Eignungsverfahren); no minimum GPA published", "english": null, "gre_gmat": null, "work_experience": null },
+      "requirements": {
+        "gpa": "Degree with at least 180 ECTS in statistics or data science (or as major/minor) plus aptitude test (Eignungsverfahren); no minimum GPA published",
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
       "scholarships": null,
       "programme_url": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/statistics-and-data-science-master-hauptfach-18752.html",
       "status": "partial",
-      "notes": "English-taught, 4 semesters, 120 ECTS, intake winter and summer. LMU states no tuition fees charged since winter 2013/14 (separate fees only for some graduate programmes; none listed for this one). Semester contribution: Studierendenwerk basic fee 97 EUR (summer semester 2026), no compulsory semester-ticket fee since WS 2023/24 (https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/studierendenwerksbeitraege/). Aptitude-test deadlines 15 May (winter) / 15 Nov (summer). Note: LMU's older 'Data Science' M.Sc. had its last intake in WS 2024/25, so it was not used. Living cost null: no LMU-published figure found (page moved); TUM's Munich estimate of 1,300-2,000 EUR/month applies to the same city. English level not stated on programme page. 22 Oct 2026 re-check: zero tuition is confirmed, but the 194 EUR a year of mandatory fees is not stated on LMU's pages; it is assumed by analogy with TUM's 97 EUR semester fee."
+      "notes": "English-taught, 4 semesters, 120 ECTS, intake winter and summer. LMU states no tuition fees charged since winter 2013/14 (separate fees only for some graduate programmes; none listed for this one). Semester contribution: Studierendenwerk basic fee 97 EUR (summer semester 2026), no compulsory semester-ticket fee since WS 2023/24 (https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/studierendenwerksbeitraege/). Aptitude-test deadlines 15 May (winter) / 15 Nov (summer). Note: LMU's older 'Data Science' M.Sc. had its last intake in WS 2024/25, so it was not used. Living cost null: no LMU-published figure found (page moved); TUM's Munich estimate of 1,300-2,000 EUR/month applies to the same city. English level not stated on programme page. Mandatory fees (semester contribution) were not found on LMU's pages and are not estimated: they are counted as 0 and the estimate is flagged incomplete."
     },
     {
       "id": "tum-msc-data-engineering-analytics",
@@ -59,10 +98,24 @@
       "course": "DS",
       "programme_name": "Data Engineering and Analytics (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc" },
+      "tuition": {
+        "amount": 6000,
+        "period": "semester",
+        "credits_total": 120,
+        "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)",
+        "source_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc"
+      },
       "mandatory_fees_per_year": 194,
-      "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
-      "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment; no minimum GPA published", "english": "Proof of English required", "gre_gmat": null, "work_experience": null },
+      "living_cost_per_year": {
+        "amount": 15600,
+        "source_url": "https://www.tum.de/en/studies/fees"
+      },
+      "requirements": {
+        "gpa": "Recognised undergraduate degree plus TUM aptitude assessment; no minimum GPA published",
+        "english": "Proof of English required",
+        "gre_gmat": null,
+        "work_experience": null
+      },
       "scholarships": "TUM tuition waiver scholarships; TUM one-time grant of 500-1,800 EUR per semester for international students",
       "programme_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc",
       "status": "verified",
@@ -75,10 +128,24 @@
       "course": "MBA",
       "programme_name": "Full-time MBA",
       "duration_months": 15,
-      "tuition": { "amount": 50000, "period": "total", "credits_total": null, "fee_year": "January 2027 intake", "source_url": "https://esmt.berlin/mba-programs/full-time-mba" },
+      "tuition": {
+        "amount": 50000,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "January 2027 intake",
+        "source_url": "https://esmt.berlin/mba-programs/full-time-mba"
+      },
       "mandatory_fees_per_year": null,
-      "living_cost_per_year": { "amount": 10968, "source_url": "https://esmt.berlin/mba-programs/full-time-mba/faq" },
-      "requirements": { "gpa": "Bachelor's of at least 3 years (180 ECTS); no minimum GPA published", "english": "TOEFL 5.0 (2026 scoring, 5.0 each section), IELTS 7, or PTE 64; waivers for English-taught degree or 12+ months work in English", "gre_gmat": "One of GMAT, GRE, GMAC Executive Assessment or ESMT BAT required; 'strong score', no published minimum", "work_experience": "At least 3 years post-graduate professional experience by programme start" },
+      "living_cost_per_year": {
+        "amount": 10968,
+        "source_url": "https://esmt.berlin/mba-programs/full-time-mba/faq"
+      },
+      "requirements": {
+        "gpa": "Bachelor's of at least 3 years (180 ECTS); no minimum GPA published",
+        "english": "TOEFL 5.0 (2026 scoring, 5.0 each section), IELTS 7, or PTE 64; waivers for English-taught degree or 12+ months work in English",
+        "gre_gmat": "One of GMAT, GRE, GMAC Executive Assessment or ESMT BAT required; 'strong score', no published minimum",
+        "work_experience": "At least 3 years post-graduate professional experience by programme start"
+      },
       "scholarships": "Academic excellence awards, gender pay gap scholarship for women, Rainbow scholarship, regional scholarships (details on ESMT scholarships page)",
       "programme_url": "https://esmt.berlin/mba-programs/full-time-mba",
       "status": "verified",
@@ -91,10 +158,21 @@
       "course": "MBA",
       "programme_name": "Mannheim Full-Time MBA",
       "duration_months": 12,
-      "tuition": { "amount": 49500, "period": "total", "credits_total": null, "fee_year": "September 2027 intake", "source_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/" },
+      "tuition": {
+        "amount": 49500,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "September 2027 intake",
+        "source_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/"
+      },
       "mandatory_fees_per_year": null,
       "living_cost_per_year": null,
-      "requirements": { "gpa": "Recognised bachelor's in any discipline; successful candidates typically have a minimum B+ average", "english": "IELTS Academic 7 or TOEFL (page lists minimum 4.5, presumably new 1-6 scale) or equivalent", "gre_gmat": "GMAT or GRE; recommended minimum GMAT Focus 565 or GRE equivalent", "work_experience": "At least 3 years post-graduate work experience" },
+      "requirements": {
+        "gpa": "Recognised bachelor's in any discipline; successful candidates typically have a minimum B+ average",
+        "english": "IELTS Academic 7 or TOEFL (page lists minimum 4.5, presumably new 1-6 scale) or equivalent",
+        "gre_gmat": "GMAT or GRE; recommended minimum GMAT Focus 565 or GRE equivalent",
+        "work_experience": "At least 3 years post-graduate work experience"
+      },
       "scholarships": "Seven merit categories up to 6,000 EUR each; need-based Distinguished Talent Scholarship up to 9,500 EUR; limited, rolling",
       "programme_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/",
       "status": "verified",
@@ -201,7 +279,11 @@
     "student_visa": {
       "name": "National visa (D visa) for study, section 16b Residence Act",
       "fees": [
-        { "label": "National visa fee, adult (charged in INR: INR 8,300 from 1 Oct 2026, from 30 Sep 2026 at VFS; the mission warns it can change at short notice with exchange rates)", "amount": 8300, "currency": "INR" }
+        {
+          "label": "National visa fee, adult (charged in INR: INR 8,300 from 1 Oct 2026, from 30 Sep 2026 at VFS; the mission warns it can change at short notice with exchange rates)",
+          "amount": 8300,
+          "currency": "INR"
+        }
       ],
       "source_url": "https://india.diplo.de/in-en/ueber-uns/kolkata"
     },
@@ -232,7 +314,10 @@
         "who_affected": "Graduates and skilled workers applying for an EU Blue Card in 2026",
         "impact": "The reduced 45,934.20 EUR threshold applies to recent graduates (degree within 3 years) and shortage occupations such as IT, so a typical entry CS/DS salary in Germany clears it. Thresholds are indexed to the pension ceiling and rise every year.",
         "source_url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf",
-        "check": { "level": "partial", "note": "The salary thresholds were confirmed only through secondary sources; the official Bundesanzeiger PDF could not be read." }
+        "check": {
+          "level": "partial",
+          "note": "The salary thresholds were confirmed only through secondary sources; the official Bundesanzeiger PDF could not be read."
+        }
       },
       {
         "title": "TUM raises non-EU tuition from winter semester 2027/28",
@@ -242,7 +327,10 @@
         "who_affected": "Non-EU students starting at TUM in winter semester 2027/28 or later",
         "impact": "Master's tuition rises from 4,000/6,000 EUR to 4,600/6,800 EUR per semester. An Indian student starting a 6,000-EUR programme in 2027 could pay about 3,200 EUR more over 4 semesters. Students already enrolled keep their starting rate.",
         "source_url": "https://www.tum.de/en/studies/fees/tuition",
-        "check": { "level": "partial", "note": "The page does not say which tier (4,600 or 6,800 EUR) a given programme moves to, so the 3,200 EUR estimate is an assumption." }
+        "check": {
+          "level": "partial",
+          "note": "The page does not say which tier (4,600 or 6,800 EUR) a given programme moves to, so the 3,200 EUR estimate is an assumption."
+        }
       },
       {
         "title": "German missions in India set national visa fee at INR 8,300",
@@ -252,16 +340,6 @@
         "who_affected": "All adult national (D) visa applicants in India",
         "impact": "Fee fixed in rupees (about 75 EUR); VFS applies it from 30 Sep 2026. Negligible ROI effect; VFS adds its own service fee.",
         "source_url": "https://india.diplo.de/in-en/ueber-uns/kolkata"
-      },
-      {
-        "title": "Abolition of 3-year fast-track ('turbo') naturalisation",
-        "status": "in_effect",
-        "announced": "2025-10-08",
-        "effective": null,
-        "who_affected": "Skilled migrants hoping for German citizenship after 3 years",
-        "impact": "Citizenship now generally needs at least 5 years' residence. Does not affect study, job-search permit or PR timelines, but lengthens the path to an EU passport.",
-        "source_url": "https://www.bundesregierung.de/resource/blob/975954/2388128/f26afadd67ac33455496c4e532b4afcc/89-5-bmi-aenderung-staatsangehoerigeitsrecht-bt-data.pdf?download=1",
-        "check": { "level": "unverified", "note": "The cited source is a parliamentary speech, not the law; the effective date is not stated and the claim could not be confirmed." }
       },
       {
         "title": "Work-and-Stay-Agentur: single digital platform for skilled-worker immigration",
@@ -280,29 +358,39 @@
         "who_affected": "Non-EU students and graduates",
         "impact": "Students may hold side jobs under more flexible rules; current law allows 140 working days per year. Helps cover part of living costs during study.",
         "source_url": "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2024/zweite-stufe-fachkraefteeinwanderungsgesetz-tritt-in-kraft.html"
-      },
-      {
-        "title": "Opportunity Card (Chancenkarte) introduced (Skilled Immigration Act stage 3)",
-        "status": "in_effect",
-        "announced": null,
-        "effective": "2024-06-01",
-        "who_affected": "Job seekers from abroad (not graduates of German universities, who use the 18-month permit)",
-        "impact": "Points-based 1-year job-search card. A fallback route; German graduates have the stronger 18-month permit.",
-        "source_url": "https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2024/05/chancenkarte.html",
-        "check": { "level": "unverified", "note": "The cited government page returned an error on 22 Oct 2026 and could not be re-checked." }
       }
     ]
   },
   "risk_factors": {
-    "policy_volatility": { "score": 30, "evidence": "Core student-visa rules (blocked account 11,904 EUR, 140-day work rule, 18-month job-search permit) have been stable since 2024; changes in the last 24 months were mostly liberalising (Skilled Immigration Act 2024) plus the 2025 abolition of 3-year naturalisation and routine annual Blue Card indexation." },
-    "psw_uncertainty": { "score": 20, "evidence": "Statutory 18-month job-search permit after graduation with no sponsor and any work allowed; a reduced Blue Card threshold (45,934.20 EUR in 2026) for recent graduates makes conversion to work status predictable." },
-    "work_restrictions": { "score": 30, "evidence": "140 full days per year during study (student assistant jobs exempt), unrestricted work during the 18-month job search. Many non-tech and business jobs still expect German, which limits practical options." },
-    "funds_burden": { "score": 45, "evidence": "11,904 EUR (about one year of living costs) must be locked up front in a blocked account before the visa; at public universities this is the largest upfront cost, though it is released monthly for living expenses." },
-    "recent_adverse": { "score": 20, "evidence": "In the last 12 months: no adverse change to student visa or post-study rules; negatives are institutional (TUM tuition rise from WS 2027/28) and citizenship (5-year minimum after turbo naturalisation was abolished)." }
+    "policy_volatility": {
+      "score": 30,
+      "evidence": "Core student-visa rules (blocked account 11,904 EUR, 140-day work rule, 18-month job-search permit) have been stable since 2024; changes in the last 24 months were mostly liberalising (Skilled Immigration Act 2024) plus the 2025 abolition of 3-year naturalisation and routine annual Blue Card indexation."
+    },
+    "psw_uncertainty": {
+      "score": 20,
+      "evidence": "Statutory 18-month job-search permit after graduation with no sponsor and any work allowed; a reduced Blue Card threshold (45,934.20 EUR in 2026) for recent graduates makes conversion to work status predictable."
+    },
+    "work_restrictions": {
+      "score": 30,
+      "evidence": "140 full days per year during study (student assistant jobs exempt), unrestricted work during the 18-month job search. Many non-tech and business jobs still expect German, which limits practical options."
+    },
+    "funds_burden": {
+      "score": 45,
+      "evidence": "11,904 EUR (about one year of living costs) must be locked up front in a blocked account before the visa; at public universities this is the largest upfront cost, though it is released monthly for living expenses."
+    },
+    "recent_adverse": {
+      "score": 20,
+      "evidence": "In the last 12 months: no adverse change to student visa or post-study rules; negatives are institutional (TUM tuition rise from WS 2027/28)."
+    }
   },
   "salary": {
     "CS": {
-      "roles": ["Software Developer", "Backend/Full-stack Engineer", "IT Systems Analyst", "Cloud/DevOps Engineer"],
+      "roles": [
+        "Software Developer",
+        "Backend/Full-stack Engineer",
+        "IT Systems Analyst",
+        "Cloud/DevOps Engineer"
+      ],
       "entry_low": 49884,
       "entry_mid": 60408,
       "entry_high": 75612,
@@ -312,7 +400,12 @@
       "period": "Reference year 2025"
     },
     "DS": {
-      "roles": ["Data Scientist", "Data Engineer", "Machine Learning Engineer", "Data/BI Analyst"],
+      "roles": [
+        "Data Scientist",
+        "Data Engineer",
+        "Machine Learning Engineer",
+        "Data/BI Analyst"
+      ],
       "entry_low": 49884,
       "entry_mid": 64956,
       "entry_high": 80424,
@@ -322,7 +415,12 @@
       "period": "Reference year 2025"
     },
     "MBA": {
-      "roles": ["Management Consultant", "Product Manager", "Business Development Manager", "Strategy/Finance Manager"],
+      "roles": [
+        "Management Consultant",
+        "Product Manager",
+        "Business Development Manager",
+        "Strategy/Finance Manager"
+      ],
       "entry_low": 50520,
       "entry_mid": 63636,
       "entry_high": 83604,

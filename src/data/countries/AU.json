@@ -59,33 +59,6 @@
       "notes": "Lower-cost, non-Go8 option. The CRICOS (international) listing shows annual fees 2026: AUD 42,900, duration 2 years, City campus, March/July starts. (The AUD 34,700 figure on the same page is the domestic full-fee rate.) Total course fee not published; 2 x 42,900 = about AUD 85,800 before annual increases. English requirement not shown on this page."
     },
     {
-      "id": "monash-mds-ds",
-      "university": "Monash University",
-      "city": "Melbourne (Clayton)",
-      "course": "DS",
-      "programme_name": "Master of Data Science (C6004)",
-      "duration_months": 24,
-      "tuition": {
-        "amount": 57540,
-        "period": "year",
-        "credits_total": 96,
-        "fee_year": "2027",
-        "source_url": "https://www.monash.edu/study/courses/find-a-course/data-science-c6004?international=true"
-      },
-      "mandatory_fees_per_year": null,
-      "living_cost_per_year": null,
-      "requirements": {
-        "gpa": "Entry level 1 (2 years, 96 points): bachelor degree in any discipline with at least a credit (60%) average. Entry level 2 (1.5 years, 72 points): cognate IT/business/engineering/science degree with IT major (Python, databases, algorithms, maths) and at least 60% average",
-        "english": "Level A: IELTS Academic 6.5 overall (L/R/W/S 6.0), or PTE Academic 58 overall (communicative skills 50)",
-        "gre_gmat": null,
-        "work_experience": null
-      },
-      "scholarships": "Monash advertises over 360 scholarship types; specific awards not checked",
-      "programme_url": "https://www.monash.edu/study/courses/find-a-course/data-science-c6004",
-      "status": "partial",
-      "notes": "Go8. International fee for 2027 is AUD 57,540 per 48 credit points (one standard full-time year). 96-point (2-year) track would be about AUD 115,080 at 2027 rates, more if fees rise in year 2. Cognate graduates may finish in 1.5 years (72 points). Could not be re-checked on 22 Oct 2026: the Monash site blocks automated access. Figures are as originally recorded, not re-confirmed."
-    },
-    {
       "id": "rmit-mds-ds",
       "university": "RMIT University",
       "city": "Melbourne",
@@ -265,8 +238,16 @@
     "student_visa": {
       "name": "Student visa (subclass 500)",
       "fees": [
-        { "label": "Main applicant visa application charge (from 1 July 2026; was AUD 2,000)", "amount": 2500, "currency": "AUD" },
-        { "label": "Temporary Graduate visa (subclass 485) application charge, from 1 July 2026 (was AUD 4,600)", "amount": 5750, "currency": "AUD" }
+        {
+          "label": "Main applicant visa application charge (from 1 July 2026; was AUD 2,000)",
+          "amount": 2500,
+          "currency": "AUD"
+        },
+        {
+          "label": "Temporary Graduate visa (subclass 485) application charge, from 1 July 2026 (was AUD 4,600)",
+          "amount": 5750,
+          "currency": "AUD"
+        }
       ],
       "source_url": "https://www.studyaustralia.gov.au/en/Agent-Hub/agent-news-index/student-visa-application-charge-increase"
     },
@@ -344,16 +325,6 @@
         "source_url": "https://thepienews.com/australia-maintains-2027-international-student-planning-level-at-295000/"
       },
       {
-        "title": "Legislated international student enrolment caps (ESOS Amendment (Quality and Integrity) Bill 2024)",
-        "status": "blocked",
-        "announced": null,
-        "effective": null,
-        "who_affected": "Would have capped enrolments by provider",
-        "impact": "The Senate did not pass the caps; the bill lapsed on 28 March 2025 and the caps part was left out of the later ELA Bill. The government uses Ministerial Directions and planning levels instead, so caps still exist in practice.",
-        "source_url": "https://www.education.gov.au/download/20377/australian-government-response-senate-education-and-employment-legislation-committee-report/44792/document/docx",
-        "check": { "level": "unverified", "note": "The cited government document did not respond on 22 Oct 2026, so the claim could not be re-checked." }
-      },
-      {
         "title": "Temporary Graduate visa realigned: age limit cut to 35, Post-Study Work stream renamed Post-Higher Education Work",
         "status": "in_effect",
         "announced": null,
@@ -397,7 +368,14 @@
   },
   "salary": {
     "CS": {
-      "roles": ["Software engineer", "Cybersecurity engineer", "Network engineer", "IT project manager", "Information systems analyst", "IT security consultant"],
+      "roles": [
+        "Software engineer",
+        "Cybersecurity engineer",
+        "Network engineer",
+        "IT project manager",
+        "Information systems analyst",
+        "IT security consultant"
+      ],
       "entry_low": 65000,
       "entry_mid": 65200,
       "entry_high": 120000,
@@ -407,7 +385,13 @@
       "period": "annual gross, AUD, GOS 2025 short-term graduate outcomes"
     },
     "DS": {
-      "roles": ["Data analyst", "Data scientist", "Data engineer", "Machine learning engineer", "Business intelligence analyst"],
+      "roles": [
+        "Data analyst",
+        "Data scientist",
+        "Data engineer",
+        "Machine learning engineer",
+        "Business intelligence analyst"
+      ],
       "entry_low": 65000,
       "entry_mid": 65200,
       "entry_high": 120000,
@@ -417,7 +401,14 @@
       "period": "annual gross, AUD, GOS 2025 short-term graduate outcomes"
     },
     "MBA": {
-      "roles": ["Business analyst", "Management consultant", "Project/program manager", "Operations manager", "Product manager", "Marketing manager"],
+      "roles": [
+        "Business analyst",
+        "Management consultant",
+        "Project/program manager",
+        "Operations manager",
+        "Product manager",
+        "Marketing manager"
+      ],
       "entry_low": 65400,
       "entry_mid": 66000,
       "entry_high": 140000,

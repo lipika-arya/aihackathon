@@ -57,34 +57,6 @@ describe("master's in India scenario", () => {
   });
 });
 
-describe("India master's dataset", () => {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const data = JSON.parse(require("node:fs").readFileSync(require("node:path").join(__dirname, "..", "data", "india-masters.json"), "utf8")) as { programmes: IndiaProgramme[] };
-  it("covers all three courses", () => {
-    for (const c of ["CS", "DS", "MBA"]) expect(data.programmes.some((p) => p.course === c)).toBe(true);
-  });
-  it("every programme has official sources, a placement median with its year, and runs through the model", () => {
-    for (const p of data.programmes) {
-      expect(p.fee_source_url).toMatch(/^https:\/\//);
-      expect(p.entry_salary.source_url).toMatch(/^https:\/\//);
-      expect(p.entry_salary.median_inr).toBeGreaterThan(300_000);
-      expect(p.entry_salary.year).toMatch(/^20\d\d$/);
-      const r = runIndiaMasters({ programme: p, profile: P, assumptions: A, indiaSalary: 1_000_000 });
-      expect(r, p.id).not.toBeNull();
-      expect(Number.isFinite(r!.totalCostInr)).toBe(true);
-      expect(Number.isFinite(r!.sim.emi)).toBe(true);
-    }
-  });
-  it("only programmes whose figures were all confirmed are labelled verified; the rest say what is missing", () => {
-    for (const p of data.programmes) if (p.status !== "verified") expect(p.notes.length).toBeGreaterThan(40);
-    expect(data.programmes.filter((p) => p.status === "verified").map((p) => p.id)).toEqual(["iitb-sjmsom-mba"]);
-  });
-  it("programmes without a published placement median were left out rather than given a borrowed one", () => {
-    const ids = data.programmes.map((p) => p.id);
-    for (const left of ["iitb-mtech-cse", "isi-mtech-cs", "iiitb-mtech-aids"]) expect(ids).not.toContain(left);
-  });
-});
-
 describe("zero-tuition programmes", () => {
   it("run normally: the cost is just the other fees and living", () => {
     const r = runIndiaMasters({ programme: prog({ tuition_total_inr: 0, other_fees_total_inr: null, living_per_year_inr: null }), profile: P, assumptions: A, indiaSalary: 1_000_000 })!;

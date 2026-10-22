@@ -334,7 +334,10 @@
         "who_affected": "Employers filing new H-1B petitions; USCIS later guidance (Oct 2025, per university/law-firm reports) exempted in-US change of status such as F-1 to H-1B",
         "impact": "Would have made hiring from abroad very costly; F-1/OPT holders changing status inside the US were reported exempt. On 8 June 2026 a federal court (D. Mass.) vacated USCIS implementing guidance and on 24 July 2026 the First Circuit denied a stay; DHS says it will collect if the order is lifted. Uncertainty for employers sponsoring Indian graduates remains.",
         "source_url": "https://www.uscis.gov/newsroom/alerts/h-1b-faq",
-        "check": { "level": "partial", "note": "The exemption for changes of status inside the US is attributed to university reports; the USCIS page does not state it." }
+        "check": {
+          "level": "partial",
+          "note": "The exemption for changes of status inside the US is attributed to university reports; the USCIS page does not state it."
+        }
       },
       {
         "title": "H-1B wage-weighted selection replaces random lottery",
@@ -362,7 +365,10 @@
         "who_affected": "F-1 and J-1 students",
         "impact": "Would require extension-of-stay applications to USCIS for delays, programme changes and some OPT cases, and halve the post-study grace period. A nationwide preliminary injunction (D. Mass., 14 Sep 2026) blocks it; DHS appealed on 30 Sep 2026, so it could return.",
         "source_url": "https://www.vanderbilt.edu/isss/2026/10/02/dhs-appeals-courts-preliminary-injunction-of-d-s-rule/",
-        "check": { "level": "partial", "note": "The injunction and appeal dates were confirmed; the 60-to-30-day grace period and the announcement date were not found on the pages read." }
+        "check": {
+          "level": "partial",
+          "note": "The injunction and appeal dates were confirmed; the 60-to-30-day grace period and the announcement date were not found on the pages read."
+        }
       },
       {
         "title": "SEVP guidance narrowing Curricular Practical Training (incl. Day-1 CPT)",
@@ -372,17 +378,10 @@
         "who_affected": "F-1 students relying on CPT internships, especially Day-1 CPT programmes",
         "impact": "CPT must be a required part of the curriculum; optional internships often no longer qualify. Fewer paid internships during study, lower earnings while studying and weaker job pipelines. Not affected by the D/S injunction.",
         "source_url": "https://www.globalimmigrationblog.com/2026/09/federal-court-blocks-dhs-f-1-j-1-fixed-period-admission-rule-curricular-practical-training-restrictions-remain/",
-        "check": { "level": "partial", "note": "Two SEVP broadcasts (12 and 24 Aug 2026) were found, but the source does not state an effective date; 24 Aug may be a second broadcast date." }
-      },
-      {
-        "title": "Expanded online presence (social media) vetting for F, M, J applicants",
-        "status": "in_effect",
-        "announced": "2025-06-18",
-        "effective": "2025-06-26",
-        "who_affected": "All F-1 visa applicants (asked to set social media profiles to public)",
-        "impact": "Longer processing and 221(g) administrative holds are possible; private profiles can be treated as failing to provide information. Plan visa interviews early to avoid missing intake.",
-        "source_url": "https://oiss.yale.edu/news/department-of-state-announces-enhanced-social-media-vetting-and-resumption-of-visa-interview-scheduling",
-        "check": { "level": "unverified", "note": "The cited page returned an access error on 22 Oct 2026 and could not be re-checked." }
+        "check": {
+          "level": "partial",
+          "note": "Two SEVP broadcasts (12 and 24 Aug 2026) were found, but the source does not state an effective date; 24 Aug may be a second broadcast date."
+        }
       },
       {
         "title": "Visa interviews must be in country of nationality or residence",
@@ -407,7 +406,7 @@
   "risk_factors": {
     "policy_volatility": {
       "score": 85,
-      "evidence": "In under 24 months: social media vetting (Jun 2025), interview-location rule (Sep 2025), $100k H-1B fee (Sep 2025, later court-blocked), weighted H-1B lottery (Feb 2026), D/S final rule (Jul 2026, enjoined), CPT tightening (Aug 2026) and OPT fee NPRM (Oct 2026)."
+      "evidence": "In under 24 months: interview-location rule (Sep 2025), $100k H-1B fee (Sep 2025, later court-blocked), weighted H-1B lottery (Feb 2026), D/S final rule (Jul 2026, enjoined), CPT tightening (Aug 2026) and OPT fee NPRM (Oct 2026)."
     },
     "psw_uncertainty": {
       "score": 75,
@@ -487,7 +486,6 @@
     "Arrange proof of funds covering the school's first-year cost estimate (bank statements, education loan sanction, sponsor letters).",
     "Accept an offer and submit financial documents so the school issues your Form I-20.",
     "Pay the $350 SEVIS I-901 fee online using the SEVIS ID on your I-20 and keep the receipt.",
-    "Set your social media profiles to public, then complete the DS-160 online and keep the confirmation page.",
     "Pay the $185 MRV fee and book biometrics and interview at a US Embassy/Consulate in India (interviews must be in your country of nationality or residence).",
     "Attend the interview with passport, I-20, SEVIS receipt, DS-160, admission letter, funding proof and academic records; expect possible 221(g) processing.",
     "Pay the Visa Integrity Fee if charged at issuance; book travel to arrive within the entry window your I-20 and school allow before the programme start date.",

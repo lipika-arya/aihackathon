@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useData } from "@/components/DataProvider";
 import { Badge, FLAG, FxNotice } from "@/components/ui";
-import { lakh } from "@/lib/format";
 import { riskBand, visaRiskScore } from "@/lib/model";
 import { COURSES } from "@/lib/types";
 
@@ -101,7 +100,6 @@ export default function Home() {
           <Link href="/methodology" className="link">How the numbers work</Link>
         </p>
         <div className="mt-3"><FxNotice /></div>
-        {lenders?.india_baseline?.CS && <p className="mt-2 text-xs text-slate">Default India salary baseline (CS): {lakh(lenders.india_baseline.CS.mid)} / yr. <Badge kind="unverified">Source not re-checked</Badge> It comes from top-ranked institutes only and could not be re-verified, so treat it as an upper-range estimate and enter your own in the assessment.</p>}
       </section>
     </div>
   );

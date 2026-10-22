@@ -5,68 +5,31 @@
   "verified_at": "2026-10-22",
   "programmes": [
     {
-      "id": "utokyo-ist-english-program-cs",
-      "university": "The University of Tokyo",
-      "city": "Tokyo",
-      "course": "CS",
-      "programme_name": "Master's, Department of Computer Science, Graduate School of Information Science and Technology (English Program in Information Science and Technology)",
-      "duration_months": 24,
-      "tuition": { "amount": 535800, "period": "year", "credits_total": null, "fee_year": "Year not stated on the source page (university-wide rate from a different graduate school)", "source_url": "https://www.k.u-tokyo.ac.jp/en/gsfs/tuition_fee/" },
-      "mandatory_fees_per_year": 141000,
-      "living_cost_per_year": null,
-      "requirements": { "gpa": null, "english": "Taught in English for applicants with sufficient English ability; no minimum score stated on the IST pages we fetched", "gre_gmat": null, "work_experience": null },
-      "scholarships": null,
-      "programme_url": "https://www.i.u-tokyo.ac.jp/ist_en/en-course/prg.shtml",
-      "status": "partial",
-      "notes": "Tuition: master's course 535,800 JPY per year (267,900 per semester). This comes from the UTokyo Graduate School of Frontier Sciences fee page, which applies university-wide rates, not from an IST-specific page, and the page shows no year. Admission fee: 282,000 JPY one-time, per the UTokyo GraSPP fee page (https://www.pp.u-tokyo.ac.jp/en/?p=45763). mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. UTokyo raised undergraduate tuition to 642,960 from AY2025 (UTokyo proposal PDF https://www.u-tokyo.ac.jp/content/400247074.pdf). We found no official statement that master's tuition was raised; check before enrolling. Students enter the English Program by passing the regular master's entrance exam (summer exam; the winter exam covers the Computer Science master's), then registering for English-taught classes (https://www.i.u-tokyo.ac.jp/ist_en/en-course/register.shtml). The standard 2-year master's length is assumed, not confirmed on the IST page."
-    },
-    {
-      "id": "jaist-masters-information-science",
-      "university": "Japan Advanced Institute of Science and Technology (JAIST)",
-      "city": "Nomi, Ishikawa",
-      "course": "CS",
-      "programme_name": "Master's (First Stage of Doctoral Program), Graduate School of Advanced Science and Technology, Information Science field",
-      "duration_months": 24,
-      "tuition": { "amount": 535800, "period": "year", "credits_total": null, "fee_year": "2025-26 (latest figure found; 2026-27 not published on the source)", "source_url": "https://jpcup.niad.ac.jp/institute/0488/2Y63.html" },
-      "mandatory_fees_per_year": 141000,
-      "living_cost_per_year": null,
-      "requirements": { "gpa": null, "english": null, "gre_gmat": null, "work_experience": null },
-      "scholarships": null,
-      "programme_url": "https://www.jaist.ac.jp/english/areas/",
-      "status": "partial",
-      "notes": "Tuition (535,800 JPY/yr max), admission fee (282,000 JPY one-time) and 2-year duration come from the official NIAD Japanese College and University Portraits listing, data as at 1 May 2025. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. Not confirmed on an official JAIST page: whether the master's can be completed entirely in English (third-party guides say it can), the English requirements, and the 2026-27 fee. JAIST admits in April and October (https://www.jaist.ac.jp/english/admissions/)."
-    },
-    {
       "id": "saga-iepad-ai-data-science",
       "university": "Saga University",
       "city": "Saga",
       "course": "DS",
       "programme_name": "Interdisciplinary Education Program for AI and Data Science Specialists (IEPAD), Master's Course",
       "duration_months": 24,
-      "tuition": { "amount": 535800, "period": "year", "credits_total": null, "fee_year": "2026-27", "source_url": "https://www.sao.saga-u.ac.jp/PDF/R9/202704AEPAT_IEPAD_Mzainiti.pdf" },
+      "tuition": {
+        "amount": 535800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2026-27",
+        "source_url": "https://www.sao.saga-u.ac.jp/PDF/R9/202704AEPAT_IEPAD_Mzainiti.pdf"
+      },
       "mandatory_fees_per_year": 141000,
       "living_cost_per_year": null,
-      "requirements": { "gpa": null, "english": "A good working level of English; TOEFL or equivalent score to be enclosed if available (no minimum stated)", "gre_gmat": null, "work_experience": null },
+      "requirements": {
+        "gpa": null,
+        "english": "A good working level of English; TOEFL or equivalent score to be enclosed if available (no minimum stated)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
       "scholarships": "Tuition exemption of 50% to 100% may be granted depending on circumstances; scholarships for private-expense international students; a separate MEXT-sponsored track exists for applicants from listed Asian countries, including India",
       "programme_url": "https://www.sao.saga-u.ac.jp/PDF/R9/202704AEPAT_IEPAD_Mzainiti.pdf",
       "status": "verified",
       "notes": "Official application guide for October 2026 / April 2027 entry. It says all lectures are in English, the programme is two years, tuition is 267,900 JPY per semester (535,800 per year, 'scheduled', may be revised), the entrance fee is 282,000 JPY and the exam fee is 30,000 JPY. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. The guide we read is for privately financed applicants already living in Japan; Saga publishes separate guides for overseas applicants. Tracks include Data Science and Computer Science."
-    },
-    {
-      "id": "hiroshima-informatics-data-science",
-      "university": "Hiroshima University",
-      "city": "Higashi-Hiroshima",
-      "course": "DS",
-      "programme_name": "Informatics and Data Science Program, Division of Advanced Science and Engineering, Graduate School of Advanced Science and Engineering (Master's)",
-      "duration_months": 24,
-      "tuition": { "amount": 535800, "period": "year", "credits_total": null, "fee_year": "2025-26 (latest figure found; 2026-27 not published on the source)", "source_url": "https://jpcup.niad.ac.jp/institute/0336/1Z72.html" },
-      "mandatory_fees_per_year": 141000,
-      "living_cost_per_year": null,
-      "requirements": { "gpa": null, "english": "TOEFL iBT >63 / PBT >505, TOEIC >600, IELTS >5.5 or Cambridge >160 (October 2024 special master course guidebook)", "gre_gmat": null, "work_experience": null },
-      "scholarships": "The October 2024 special master course listed a 100,000 JPY/month scholarship for 24 months for grantees",
-      "programme_url": "https://jpcup.niad.ac.jp/institute/0336/1Z72.html",
-      "status": "partial",
-      "notes": "The official NIAD listing (as at 1 May 2025) gives tuition of 535,800 JPY/yr, an admission fee of 282,000 JPY and a 2-year duration, with the degree Master of Informatics and Data Science. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. The English requirements and scholarship come from Hiroshima's October 2024 'Special Master Course for Students to Study Japanese-style Manufacturing' guidebook. We read that guidebook on a partner-university mirror (https://www.annauniv.edu/pdf/hiro2024.pdf), not on Hiroshima's own site, and it covers a special intake, so the standard English route is unconfirmed. The Hiroshima University programme page (hiroshima-u.ac.jp) returned 503. Reports say Hiroshima plans higher fees for incoming international undergraduates; we found no figure for master's students. 22 Oct 2026 re-check: the NIAD page returned a different Hiroshima programme, so it is not confirmed that this page covers Informatics and Data Science. Check by hand."
     },
     {
       "id": "hitotsubashi-ics-mba",
@@ -75,30 +38,28 @@
       "course": "MBA",
       "programme_name": "MBA Program, School of International Corporate Strategy (Hitotsubashi University Business School)",
       "duration_months": 24,
-      "tuition": { "amount": 642960, "period": "year", "credits_total": null, "fee_year": "Year not stated on the source page (page figures dated June 2026)", "source_url": "https://www.ics.hub.hit-u.ac.jp/mba/tuition-and-fees" },
+      "tuition": {
+        "amount": 642960,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "Year not stated on the source page (page figures dated June 2026)",
+        "source_url": "https://www.ics.hub.hit-u.ac.jp/mba/tuition-and-fees"
+      },
       "mandatory_fees_per_year": 406000,
-      "living_cost_per_year": { "amount": 2000000, "source_url": "https://www.ics.hub.hit-u.ac.jp/mba/tuition-and-fees" },
-      "requirements": { "gpa": "Bachelor's degree showing a sound academic record; at least 16 years of education", "english": "Score submission optional for the standard MBA (no minimum); the YLP track expects TOEFL iBT 100 / IELTS 7.0", "gre_gmat": "GMAT or GRE assessed, no minimum stated (YLP expects GMAT 600+ / GMAT Focus 555+)", "work_experience": "2+ years of full-time post-graduate work experience" },
+      "living_cost_per_year": {
+        "amount": 2000000,
+        "source_url": "https://www.ics.hub.hit-u.ac.jp/mba/tuition-and-fees"
+      },
+      "requirements": {
+        "gpa": "Bachelor's degree showing a sound academic record; at least 16 years of education",
+        "english": "Score submission optional for the standard MBA (no minimum); the YLP track expects TOEFL iBT 100 / IELTS 7.0",
+        "gre_gmat": "GMAT or GRE assessed, no minimum stated (YLP expects GMAT 600+ / GMAT Focus 555+)",
+        "work_experience": "2+ years of full-time post-graduate work experience"
+      },
       "scholarships": "MEXT 147,000 JPY/month plus tuition and travel (Round 1 candidates only); YLP 242,000 JPY/month plus matriculation fee and tuition; Bai Xian scholarship up to US$25,000; other limited aid",
       "programme_url": "https://www.ics.hub.hit-u.ac.jp/mba/",
       "status": "verified",
       "notes": "Taught 100% in English; students choose a 1-year or 2-year option (modelled here as 2 years). The page lists tuition of 642,960 JPY/yr (a 'preliminary estimate' that may be revised) and a matriculation fee of 282,000 JPY one-time. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the matriculation fee annualised. Housing and living costs are the school's own estimate: 2,000,000 JPY per year (two-year total 6,097,920 JPY including fees). The application fee is 30,000 JPY (https://www.ics.hub.hit-u.ac.jp/mba/apply/). The fee page states no academic year; its exchange rate is dated June 24, 2026. 22 Oct 2026 re-check: mandatory_fees_per_year is now 406,000 JPY = the matriculation fee annualised (141,000) plus books and supplies of 230,000 JPY one-time (115,000 a year over 2 years) plus transport 100,000 and health insurance 50,000 a year, all from the same page; together with housing and tuition this reproduces the page's own 2-year total of 6,097,920 JPY."
-    },
-    {
-      "id": "iuj-mba",
-      "university": "International University of Japan (IUJ)",
-      "city": "Minamiuonuma, Niigata",
-      "course": "MBA",
-      "programme_name": "MBA Program (2-year), Graduate School of International Management",
-      "duration_months": 21,
-      "tuition": { "amount": 3200000, "period": "year", "credits_total": null, "fee_year": "Year not stated on the source page", "source_url": "https://www.iuj.ac.jp/admissions/cost/" },
-      "mandatory_fees_per_year": 150000,
-      "living_cost_per_year": { "amount": 828000, "source_url": "https://www.iuj.ac.jp/admissions/cost/" },
-      "requirements": { "gpa": "Bachelor's degree and at least 16 years of formal education", "english": "Official TOEFL, IELTS or TOEIC score required unless exempt; minimum not confirmed", "gre_gmat": "GMAT or GRE required for 1st/2nd intake applicants; IUJ Math Test an alternative only in the 3rd intake", "work_experience": null },
-      "scholarships": "IUJ says it has many scholarships; a third-party listing (JPSS) says tuition and admission fees can be reduced 50-100% based on entrance exam results",
-      "programme_url": "https://www.iuj.ac.jp/gsim/mba/",
-      "status": "partial",
-      "notes": "Private university. The IUJ cost page lists an admission fee of 300,000 JPY one-time, tuition of 3,200,000 JPY per academic year for two-year programmes and 3,900,000 JPY for one-year programmes. The page does not say 'MBA', but IUJ's April 2022 tuition notice and the JPSS listing tie the 3.2M figure to the 2-year MBA. mandatory_fees_per_year = 300,000 / 2 = 150,000, i.e. the admission fee annualised. Living cost = dormitory upper bound 468,000 + meals 360,000 per year from the cost page; this excludes utilities, insurance, phone and travel, so treat it as a floor. Duration: IUJ's FAQ describes the main MBA as two years (21 months, 6 terms); all coursework is in English. The fee page shows no academic year. 22 Oct 2026 re-check: the 21-month duration and the MBA label are not stated on the cost page; duration is unconfirmed."
     },
     {
       "id": "osaka-itsce-information-science-cs",
@@ -199,9 +160,21 @@
     "student_visa": {
       "name": "Status of residence 'Student' (Ryugaku); Long Term Stay visa issued on a Certificate of Eligibility (COE)",
       "fees": [
-        { "label": "Visa fee, Indian nationals (single or multiple entry), via VFS India", "amount": 500, "currency": "INR" },
-        { "label": "VFS service charge per application", "amount": 800, "currency": "INR" },
-        { "label": "Extension of period of stay in Japan, 1-year period, at counter (from 1 Oct 2026; 27,000 online)", "amount": 33000, "currency": "JPY" }
+        {
+          "label": "Visa fee, Indian nationals (single or multiple entry), via VFS India",
+          "amount": 500,
+          "currency": "INR"
+        },
+        {
+          "label": "VFS service charge per application",
+          "amount": 800,
+          "currency": "INR"
+        },
+        {
+          "label": "Extension of period of stay in Japan, 1-year period, at counter (from 1 Oct 2026; 27,000 online)",
+          "amount": 33000,
+          "currency": "JPY"
+        }
       ],
       "source_url": "https://www.vfsglobal.com/one-pager/japan/india/delhi/"
     },
@@ -243,16 +216,6 @@
         "source_url": "https://www.moj.go.jp/isa/10_00279.html"
       },
       {
-        "title": "Visa issuance fees raised about fivefold (single entry ~15,000 JPY, multiple ~30,000 JPY)",
-        "status": "in_effect",
-        "announced": null,
-        "effective": "2026-07-01",
-        "who_affected": "Visa applicants of most nationalities; VFS India still lists INR 500 for Indian nationals",
-        "impact": "Little or no impact on Indian students: VFS India still lists a 500 INR visa fee (single or multiple), and news reports say the Embassy kept the Indian rate. The MOFA notice (https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html) returned 403 to us; the 15,000/30,000 figures come from that notice as quoted in search results.",
-        "source_url": "https://www.vfsglobal.com/one-pager/japan/india/delhi/",
-        "check": { "level": "unverified", "note": "The stored source does not contain this figure and the official notice could not be read, so it is not confirmed." }
-      },
-      {
         "title": "Extra documents for Engineer/Specialist in Humanities/International Services applications with Category 3/4 employers (e.g. CEFR B2 proof for language roles)",
         "status": "in_effect",
         "announced": null,
@@ -269,7 +232,10 @@
         "who_affected": "International students entering Tohoku undergraduate, master's or professional programmes from AY2027",
         "impact": "This signals that national universities may charge international master's students far above the 535,800 standard; reports say the cap on international tuition was removed. Tohoku's page confirms the new merit scholarship (full or half tuition for about the top third of admits) and the end of the need-based exemption. The 900,000 figure comes from news reports, not that page. Reported effect: about 70% more tuition for students who do not get the scholarship.",
         "source_url": "https://www.tohoku.ac.jp/en/news/university_news/new_scholarship_program_for_international_students_2027.html",
-        "check": { "level": "partial", "note": "The announcement date and the end of the exemption are on the official page; the amounts appear only in news reports." }
+        "check": {
+          "level": "partial",
+          "note": "The announcement date and the end of the exemption are on the official page; the amounts appear only in news reports."
+        }
       },
       {
         "title": "University of Tsukuba: revised tuition for international students enrolling from AY2027",
@@ -279,7 +245,10 @@
         "who_affected": "International students enrolling at Tsukuba from AY2027",
         "impact": "Tsukuba's notice confirms a revision but its page gives no amount; news reports cite 608,800 JPY/yr (+73,000). This adds to the trend of separate, higher international fees at national universities.",
         "source_url": "https://www.tsukuba.ac.jp/en/news/20260324175132.html",
-        "check": { "level": "partial", "note": "The announcement date is on the official page; the amounts appear only in news reports." }
+        "check": {
+          "level": "partial",
+          "note": "The announcement date is on the official page; the amounts appear only in news reports."
+        }
       },
       {
         "title": "JESTA electronic travel authorisation law passed (target FY2028)",
@@ -289,20 +258,44 @@
         "who_affected": "Visa-exempt short-stay visitors only",
         "impact": "No impact on Indian students, who need a visa and COE anyway. Source is secondary news; we found no official page.",
         "source_url": "https://visasnews.com/en/japans-parliament-passes-law-paving-the-way-for-jesta/",
-        "check": { "level": "partial", "note": "Based on a secondary news site; the passage date matches the official source but the exact target date was not confirmed." }
+        "check": {
+          "level": "partial",
+          "note": "Based on a secondary news site; the passage date matches the official source but the exact target date was not confirmed."
+        }
       }
     ]
   },
   "risk_factors": {
-    "policy_volatility": { "score": 50, "evidence": "Changes in the last 24 months: residence fees restructured (Oct 2026), visa fees raised fivefold for most nationalities (Jul 2026), PR guidelines revised twice in 2026, extra work-visa documents (Apr 2026), and separate higher international tuition announced at Tohoku and Tsukuba for 2027. The core Student/COE framework and the 28-hour work rule did not change." },
-    "psw_uncertainty": { "score": 60, "evidence": "There is no guaranteed open post-study permit. Job hunting is limited to Designated Activities (6 months, renewable once, max about 1 year) and needs a university recommendation. Staying requires an employer offer and a change of work status. Japanese language often decides employability." },
-    "work_restrictions": { "score": 55, "evidence": "Study-time work is capped at 28 h/week (8 h/day in vacations) and needs permission, and most part-time jobs need Japanese. After study, work is employer-sponsored, and Category 3/4 employers now face extra documents, including B2 language proof for language roles." },
-    "funds_burden": { "score": 25, "evidence": "No fixed statutory amount. Universities typically ask for a bank balance covering one year of tuition and living (e.g. TMU: 1M JPY minimum, 1.5M recommended). National-university tuition of 535,800 JPY keeps the proof amount low relative to the UK, US or Australia." },
-    "recent_adverse": { "score": 45, "evidence": "In the last 12 months: visa extension and student-to-work fees rose from 6,000 to 33,000-75,000 JPY (Oct 2026), PR rules were tightened (income above the Japanese average, B1 Japanese, from 2027), and some national universities announced higher international tuition from 2027. Visa fees for Indians were left unchanged." }
+    "policy_volatility": {
+      "score": 50,
+      "evidence": "Changes in the last 24 months: residence fees restructured (Oct 2026), PR guidelines revised twice in 2026, extra work-visa documents (Apr 2026), and separate higher international tuition announced at Tohoku and Tsukuba for 2027. The core Student/COE framework and the 28-hour work rule did not change."
+    },
+    "psw_uncertainty": {
+      "score": 60,
+      "evidence": "There is no guaranteed open post-study permit. Job hunting is limited to Designated Activities (6 months, renewable once, max about 1 year) and needs a university recommendation. Staying requires an employer offer and a change of work status. Japanese language often decides employability."
+    },
+    "work_restrictions": {
+      "score": 55,
+      "evidence": "Study-time work is capped at 28 h/week (8 h/day in vacations) and needs permission, and most part-time jobs need Japanese. After study, work is employer-sponsored, and Category 3/4 employers now face extra documents, including B2 language proof for language roles."
+    },
+    "funds_burden": {
+      "score": 25,
+      "evidence": "No fixed statutory amount. Universities typically ask for a bank balance covering one year of tuition and living (e.g. TMU: 1M JPY minimum, 1.5M recommended). National-university tuition of 535,800 JPY keeps the proof amount low relative to the UK, US or Australia."
+    },
+    "recent_adverse": {
+      "score": 45,
+      "evidence": "In the last 12 months: visa extension and student-to-work fees rose from 6,000 to 33,000-75,000 JPY (Oct 2026), PR rules were tightened (income above the Japanese average, B1 Japanese, from 2027), and some national universities announced higher international tuition from 2027. Visa fees for Indians were left unchanged."
+    }
   },
   "salary": {
     "CS": {
-      "roles": ["Software engineer", "Systems engineer (SE)", "Machine learning engineer", "Web/application developer", "Infrastructure/cloud engineer"],
+      "roles": [
+        "Software engineer",
+        "Systems engineer (SE)",
+        "Machine learning engineer",
+        "Web/application developer",
+        "Infrastructure/cloud engineer"
+      ],
       "entry_low": 3588000,
       "entry_mid": 4020000,
       "entry_high": 4873200,
@@ -312,7 +305,13 @@
       "period": "June 2025 monthly scheduled earnings, annualised x12"
     },
     "DS": {
-      "roles": ["Data scientist", "Data analyst", "Machine learning engineer", "Analytics consultant", "Data engineer"],
+      "roles": [
+        "Data scientist",
+        "Data analyst",
+        "Machine learning engineer",
+        "Analytics consultant",
+        "Data engineer"
+      ],
       "entry_low": 3588000,
       "entry_mid": 4020000,
       "entry_high": 4873200,
@@ -322,7 +321,13 @@
       "period": "June 2025 monthly scheduled earnings, annualised x12"
     },
     "MBA": {
-      "roles": ["Management consultant", "Business development manager", "Product/marketing manager", "Strategy/corporate planning analyst", "Finance/investment analyst"],
+      "roles": [
+        "Management consultant",
+        "Business development manager",
+        "Product/marketing manager",
+        "Strategy/corporate planning analyst",
+        "Finance/investment analyst"
+      ],
       "entry_low": 4020000,
       "entry_mid": 4873200,
       "entry_high": 5599200,

@@ -30,7 +30,6 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
       </Empty>
     );
   const r = results[focus] ?? results[keys[0]]!;
-  const usingDefaultIndia = profile.indiaSalary == null;
 
   return (
     <div className="space-y-5">
@@ -109,7 +108,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
         </>
       )}
       <p className="text-xs text-slate">
-        India comparison uses {usingDefaultIndia ? <><Badge kind="estimate" /> a typical India salary of {lakh(ind)} / yr from our India baseline data <Badge kind="unverified">Source not re-checked</Badge> (the NIRF figures are from top-ranked institutes and could not be re-verified, so they may be high. Enter your own salary for a reliable comparison)</> : <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</>}.
+        India comparison uses {profile.indiaSalary != null ? <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</> : <><Badge kind="assumption">Example</Badge> an example India salary of {lakh(ind)} / yr. Enter your own in the assessment for a real comparison</>}.
         {missing.length > 0 && <> Missing: {missing.join("; ")}.</>}
       </p>
     </div>
