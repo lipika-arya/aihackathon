@@ -1,4 +1,4 @@
-# AbroadROI: Product & MVP Documentation
+# WorthWise: Product & MVP Documentation
 
 **User journeys · Research approach · AI-assisted development · Technology stack**  
 **Version:** 22 October 2026  
@@ -7,7 +7,7 @@
 
 ## 1. Executive summary
 
-AbroadROI is a decision-support web app for Indian students and families weighing a master's degree abroad against the financial alternative of staying in India. It brings programme costs, education-loan repayment, salary assumptions, visa/work-permit risk and downside scenarios into one place.
+WorthWise is a decision-support web app for Indian students and families weighing a master's degree abroad against the financial alternative of staying in India. It brings programme costs, education-loan repayment, salary assumptions, visa/work-permit risk and downside scenarios into one place.
 
 The product treats overseas education as a major financial decision, not only a university-ranking choice. Students can examine potential upside and consider what happens if a job search takes longer, work authorization ends, or they return to India.
 
@@ -25,7 +25,7 @@ The product treats overseas education as a major financial decision, not only a 
 
 Students can find rankings, tuition pages, salary estimates and loan calculators in different places, but it is difficult to combine them into one personal decision. A headline salary does not show the effect of unemployment, borrowing costs, or a return to India.
 
-AbroadROI is guided by these principles:
+WorthWise is guided by these principles:
 
 - Compare the full cost, not tuition alone.
 - Show funding gaps and loan repayments separately from educational return.
@@ -62,7 +62,7 @@ The original brief began with five destinations and three course tracks. During 
 2. They open the assessment and enter academic details, course interests, target countries and career goals.
 3. They enter available funds, savings, scholarship, maximum loan and repayment preferences. To compare ROI against India, they can provide their own India salary assumption.
 4. They review assumptions such as lifestyle, risk tolerance, repayment period and financial priorities.
-5. AbroadROI calculates programme costs, financing needs and scenario results.
+5. WorthWise calculates programme costs, financing needs and scenario results.
 6. The student reviews comparisons and changes inputs to see how the outcome changes.
 
 ### Journey B: Explore and compare programmes
@@ -124,7 +124,7 @@ The repository's data audit is dated **22 October 2026**. It records a review of
 - The programme catalogue is curated, not exhaustive.
 - Salary sources may cover broader experience bands or use proxies; limitations are noted where applicable.
 - Tax is modelled using a simplified effective rate, not a full personal tax calculation.
-- Visa policy risk is AbroadROI's comparative index, not an official statistic or an individual's visa-approval probability.
+- Visa policy risk is WorthWise's comparative index, not an official statistic or an individual's visa-approval probability.
 - Policy and lender information can change; high-impact details should be rechecked before a real decision.
 
 ## 6. How the calculations work

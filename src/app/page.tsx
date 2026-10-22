@@ -44,7 +44,7 @@ export default function Home() {
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: col }} />{l}
             </div>
           ))}
-          <p className="text-xs text-slate">For each, AbroadROI shows years to become debt-free, EMI as a share of take-home pay, and when (or whether) the degree beats staying in India.</p>
+          <p className="text-xs text-slate">For each, WorthWise shows years to become debt-free, EMI as a share of take-home pay, and when (or whether) the degree beats staying in India.</p>
         </div>
       </section>
 

@@ -16,6 +16,7 @@ interface Ctx extends Data {
 
 const C = createContext<Ctx | null>(null);
 
+// Storage keys keep the product's original name ("abroadroi.*") on purpose: renaming them would silently drop every saved profile.
 // The profile stays in this browser only (localStorage). Nothing is sent to a server.
 const read = <T,>(k: string): T | null => {
   try { const v = localStorage.getItem(k); return v ? (JSON.parse(v) as T) : null; } catch { return null; }
