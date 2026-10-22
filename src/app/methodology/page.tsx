@@ -13,7 +13,7 @@ export default function Methodology() {
   return (
     <article className="max-w-3xl text-sm leading-relaxed">
       <p className="text-xs font-semibold uppercase tracking-wider text-forest">Methodology</p>
-      <h1 className="mt-1 text-3xl font-extrabold">How AbroadROI calculates everything</h1>
+      <h1 className="mt-1 text-3xl font-extrabold">How WorthWise calculates everything</h1>
       <p className="mt-2 text-slate">Every number comes from deterministic code you can read on GitHub (src/lib/finance.ts, model.ts, recommend.ts), with unit tests. No AI model calculates or decides anything.</p>
 
       <H>1. Data standard and labels</H>

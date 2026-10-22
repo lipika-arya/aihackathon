@@ -138,7 +138,7 @@ export const PICKS: Record<PickKey, { title: string; why: string }> = {
   roi: { title: "Highest estimated ROI", why: "Highest net present value against staying in India, in the expected scenario." },
   career: { title: "Best career opportunity", why: "Strongest combination of entry salary and length of post-study work rights." },
   lowRisk: { title: "Lowest financial risk", why: "Best financial position after 5 years if you return home after graduating (your worst case)." },
-  immigration: { title: "Immigration-sensitive option", why: "Lowest AbroadROI Visa Policy Risk Score, ties broken by longer post-study work rights." },
+  immigration: { title: "Immigration-sensitive option", why: "Lowest WorthWise Visa Policy Risk Score, ties broken by longer post-study work rights." },
 };
 
 export function picks(list: Candidate[]): Partial<Record<PickKey, Candidate>> {

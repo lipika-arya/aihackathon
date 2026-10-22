@@ -25,7 +25,7 @@ export default function Visa() {
       </PageHead>
 
       <section className="card overflow-x-auto p-4">
-        <h2 className="font-bold">AbroadROI Visa Policy Risk Score</h2>
+        <h2 className="font-bold">WorthWise Visa Policy Risk Score</h2>
         <p className="mb-3 text-xs text-slate">Our own comparative index of policy uncertainty for international students, 0-100, higher = more risk. Not an official statistic, not a visa refusal rate, and it can&apos;t predict whether you personally get a visa.</p>
         <table className="data num">
           <thead><tr><th>Country</th><th>Score</th>{(Object.keys(RISK_WEIGHTS) as RiskKey[]).map((k) => <th key={k}>{RISK_WEIGHTS[k].label} ({RISK_WEIGHTS[k].weight}%)</th>)}</tr></thead>

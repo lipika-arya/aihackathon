@@ -126,7 +126,7 @@ export const RISK_WEIGHTS: Record<RiskKey, { weight: number; label: string }> = 
   recent_adverse: { weight: 15, label: "Recent adverse changes" },
 };
 
-/** AbroadROI Visa Policy Risk Score, 0-100, higher = more risk. Our own comparative index, not an official statistic. */
+/** WorthWise Visa Policy Risk Score, 0-100, higher = more risk. Our own comparative index, not an official statistic. */
 export function visaRiskScore(c: CountryData): number {
   let s = 0;
   for (const k of Object.keys(RISK_WEIGHTS) as RiskKey[]) s += (RISK_WEIGHTS[k].weight * (c.risk_factors?.[k]?.score ?? 50)) / 100;

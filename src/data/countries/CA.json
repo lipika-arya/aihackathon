@@ -396,7 +396,7 @@
       "entry_low": 63003,
       "entry_mid": 81505,
       "entry_high": 100006,
-      "basis": "Job Bank NOC 21232 (Software developers and programmers), Ontario hourly wages low 30.29 / median 48.08 / high 77.40 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. Job Bank 'low' approximates entry level; the median and high cover all experience levels, so entry_mid/high overstate a new grad's pay. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "basis": "Job Bank NOC 21232 (Software developers and programmers), Ontario hourly wages low 30.29 / median 48.08 / high 77.40 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. Job Bank 'low' approximates entry level; the median and high cover all experience levels, so entry_mid/high overstate a new grad's pay. [WorthWise review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
       "source_name": "Job Bank (Government of Canada)",
       "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/22531/ON",
       "period": "annual gross, CAD"
@@ -411,7 +411,7 @@
       "entry_low": 65000,
       "entry_mid": 82098,
       "entry_high": 99195,
-      "basis": "Job Bank NOC 21211 (Data scientists), Ontario hourly wages low 31.25 / median 47.69 / high 71.79 (updated 19 Nov 2025) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "basis": "Job Bank NOC 21211 (Data scientists), Ontario hourly wages low 31.25 / median 47.69 / high 71.79 (updated 19 Nov 2025) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [WorthWise review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
       "source_name": "Job Bank (Government of Canada)",
       "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/227147/ON",
       "period": "annual gross, CAD"
@@ -426,7 +426,7 @@
       "entry_low": 58178,
       "entry_mid": 75827,
       "entry_high": 93475,
-      "basis": "Job Bank NOC 11201 (Professional occupations in business management consulting), used as the MBA proxy; Ontario hourly wages low 27.97 / median 44.94 / high 74.36 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "basis": "Job Bank NOC 11201 (Professional occupations in business management consulting), used as the MBA proxy; Ontario hourly wages low 27.97 / median 44.94 / high 74.36 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [WorthWise review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
       "source_name": "Job Bank (Government of Canada)",
       "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/296/ON",
       "period": "annual gross, CAD"

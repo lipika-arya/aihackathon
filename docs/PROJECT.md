@@ -1,4 +1,4 @@
-# AbroadROI: Project document
+# WorthWise: Project document
 
 Covers the deliverables requested in the project brief: product requirements, architecture, data model, research plan, financial specification, recommendation method, wireframes (as built), roadmap and deployment. The formulas behind every number are also on the in-app page `/methodology`.
 
@@ -33,7 +33,7 @@ Agents and platforms may earn commissions. Loan calculators only show EMI.
 
 **Validation plan (problem statement).**
 - Run 10 student/parent sessions.
-- Record each person's shortlist before and after using AbroadROI.
+- Record each person's shortlist before and after using WorthWise.
 - North-star metric: % who change their shortlist.
 - Also measure trust in sources, clarity of assumptions, and willingness to pay ₹499 for a full report (measured by behaviour, not stated intent).
 

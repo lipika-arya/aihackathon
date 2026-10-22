@@ -42,7 +42,7 @@ export default function Research() {
     const blob = new Blob([rows.map((r) => r.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")).join("\n")], { type: "text/csv" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "abroadroi-research-sessions.csv";
+    a.download = "worthwise-research-sessions.csv";
     a.click();
   };
 
@@ -59,7 +59,7 @@ export default function Research() {
     <div className="space-y-6">
       <PageHead eyebrow="Validation" title="Research sessions">
         North-star metric: the share of students or parents who change their shortlist after seeing the analysis.
-        Record the shortlist <strong>before</strong> they use AbroadROI, let them go through <Link href="/assess" className="link">the assessment</Link>, then record the shortlist <strong>after</strong>.
+        Record the shortlist <strong>before</strong> they use WorthWise, let them go through <Link href="/assess" className="link">the assessment</Link>, then record the shortlist <strong>after</strong>.
         Use pseudonymous codes (P01, P02). Get consent before recording notes. Data stays in this browser; export it as CSV after each session.
       </PageHead>
 
@@ -84,7 +84,7 @@ export default function Research() {
             <label><span className="label">Participant</span><select className="input" value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value as Session["type"] })}><option value="student">Student</option><option value="parent">Parent</option></select></label>
             <label><span className="label">Confidence before (1-5)</span><input className="input num" type="number" min={1} max={5} value={draft.confBefore} onChange={(e) => setDraft({ ...draft, confBefore: Math.min(5, Math.max(1, Number(e.target.value))) })} /></label>
           </div>
-          <div><span className="label">Shortlist BEFORE seeing AbroadROI</span><Pick value={draft.before} onChange={(v) => setDraft({ ...draft, before: v })} /></div>
+          <div><span className="label">Shortlist BEFORE seeing WorthWise</span><Pick value={draft.before} onChange={(v) => setDraft({ ...draft, before: v })} /></div>
           <button className="btn btn-primary" disabled={!draft.before.length} onClick={() => { commit([...list.filter((s) => s.code !== draft.code), draft]); setDraft(null); }}>Save &quot;before&quot; and start the session</button>
         </div>
       )}
