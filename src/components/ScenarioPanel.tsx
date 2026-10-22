@@ -111,12 +111,12 @@ function FundingBridge({ r, todayTotal, ownFunds, maxLoan }: { r: NonNullable<Re
       <h3 className="font-bold">How the funding gap is worked out ({SCENARIOS[r.key].label} scenario)</h3>
       <table className="data mt-2">
         <tbody>
-          <Row label="Estimated cost at today's prices and exchange rate (the cost table below)" value={todayTotal} />
-          <tr><td>+ Tuition rise and INR drift this scenario assumes</td><td className="num text-right">{drift < 0 ? "−" : ""}{inr(Math.abs(drift))}</td></tr>
-          <Row label="+ Loan processing fee (charged on the loan)" value={r.sim.processingFee} />
-          <Row label="= Total you need to fund" value={need} strong />
-          <Row label="− Your own funds used" value={ownUsed} minus />
-          <Row label={`− Loan (your maximum is ${inr(maxLoan)})`} value={r.sim.drawn} minus />
+          <Row label="Base programme cost (today's prices and exchange rate, as in the cost table below)" value={todayTotal} />
+          <tr><td>+ Adjustment: tuition rise and INR drift this scenario assumes</td><td className="num text-right">{drift < 0 ? "−" : ""}{inr(Math.abs(drift))}</td></tr>
+          <Row label="+ Adjustment: loan processing fee (charged on the loan)" value={r.sim.processingFee} />
+          <Row label="= Total funding requirement" value={need} strong />
+          <Row label="Less: your own funds used" value={ownUsed} minus />
+          <Row label={`Less: education loan (your maximum is ${inr(maxLoan)})`} value={r.sim.drawn} minus />
           <Row label="= Funding gap" value={r.sim.fundingGap} strong />
         </tbody>
       </table>

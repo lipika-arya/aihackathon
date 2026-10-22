@@ -4,11 +4,13 @@ import { useData } from "@/components/DataProvider";
 import { Badge, Empty, PageHead, Source, Stat } from "@/components/ui";
 import { inr, lakh, pct } from "@/lib/format";
 import { simulate } from "@/lib/finance";
+import { DEFAULT_ASSUMPTIONS } from "@/lib/model";
 import type { Lender } from "@/lib/types";
 
 interface Calc {
   loan: number; rate: number; studyMonths: number; disbursements: number; grace: number; payInterest: boolean;
   tenure: number; salary: number; growth: number; tax: number; living: number;
+  fee: number; // processing fee, % of the loan, paid upfront by the borrower
 }
 
 function runLoan(c: Calc) {
@@ -19,8 +21,8 @@ function runLoan(c: Calc) {
   const jobStart = c.studyMonths + c.grace;
   const income = Array.from({ length: H }, (_, m) => (m >= jobStart ? ((c.salary * (1 + c.growth / 100) ** Math.floor((m - jobStart) / 12)) * (1 - c.tax / 100)) / 12 : 0));
   const inp = {
-    horizonMonths: H, studyMonths: c.studyMonths, studyCosts: costs, ownFunds: 0, loanCap: c.loan,
-    loan: { ratePct: c.rate, tenureMonths: c.tenure * 12, graceMonths: c.grace, payInterestDuringMoratorium: c.payInterest, processingFeePct: 0 },
+    horizonMonths: H, studyMonths: c.studyMonths, studyCosts: costs, ownFunds: (c.loan * c.fee) / 100, loanCap: c.loan, // the borrower pays the fee from their own pocket, so the loan stays exactly as entered
+    loan: { ratePct: c.rate, tenureMonths: c.tenure * 12, graceMonths: c.grace, payInterestDuringMoratorium: c.payInterest, processingFeePct: c.fee },
     income, living: Array(H).fill(c.living), baselineIncome: [], baselineLiving: [],
   };
   const sim = simulate(inp);
@@ -35,7 +37,7 @@ function runLoan(c: Calc) {
 
 export default function Loans() {
   const { lenders, profile } = useData();
-  const [c, setC] = useState<Calc>({ loan: profile.maxLoan || 3_000_000, rate: 10.5, studyMonths: 24, disbursements: 4, grace: 6, payInterest: false, tenure: profile.repaymentYears, salary: 1_200_000, growth: 6, tax: 10, living: 30_000 });
+  const [c, setC] = useState<Calc>({ loan: profile.maxLoan || 3_000_000, rate: 10.5, studyMonths: 24, disbursements: 4, grace: 6, payInterest: false, tenure: profile.repaymentYears, salary: 1_200_000, growth: 6, tax: 10, living: 30_000, fee: DEFAULT_ASSUMPTIONS.processingFeePct });
   const set = (p: Partial<Calc>) => setC({ ...c, ...p });
   const r = useMemo(() => runLoan(c), [c]);
   const variants = useMemo(() => [
@@ -63,6 +65,7 @@ export default function Loans() {
         <div className="card grid gap-3 p-4 sm:grid-cols-3 lg:grid-cols-6">
           {N("Loan amount (₹)", c.loan, "loan", 50000)}
           {N("Interest rate", c.rate, "rate", 0.05, "%")}
+          {N("Processing fee", c.fee, "fee", 0.25, "%")}
           {N("Course length", c.studyMonths, "studyMonths", 1, "months")}
           {N("Disbursements", c.disbursements, "disbursements", 1, "draws")}
           {N("Grace after course", c.grace, "grace", 1, "months")}
@@ -81,7 +84,7 @@ export default function Loans() {
           <Stat label="5. Monthly EMI" value={inr(s.emi)} kind="calculated" />
           <Stat label="6. Total interest" value={inr(s.totalInterest)} kind="calculated" />
           <Stat label="7. Total repaid" value={inr(s.totalRepaid)} kind="calculated" />
-          <Stat label="8. Cost of borrowing on top of the loan" value={lakh(s.totalRepaid - s.drawn)} kind="calculated" />
+          <Stat label="8. Cost of borrowing on top of the loan" value={lakh(s.totalRepaid - s.drawn + s.processingFee)} sub={`Interest plus ${inr(s.processingFee)} processing fee, paid upfront`} kind="calculated" />
           <Stat label="9. Repayment period" value={`${c.tenure} yrs`} sub={`EMIs start ${c.studyMonths + c.grace} months after the first draw`} kind="input" />
           <Stat label="10. EMI as % of take-home" value={r.takeHome ? pct((s.emi / r.takeHome) * 100) : "n/a"} sub={`Take-home ${inr(r.takeHome)}/month`} kind="calculated" />
           <Stat label="11. Debt-free" value={s.loanClosedMonth != null ? `${((s.loanClosedMonth + 1) / 12).toFixed(1)} yrs from first draw` : "Not within horizon"} kind="calculated" />

@@ -78,6 +78,14 @@ describe("simulate", () => {
     expect(r.processingFee).toBe(0);
     expect(r.drawn).toBe(0);
   });
+  it("Loans-calculator pattern: the borrower pays the fee, so the loan stays exactly as entered and there is no gap", () => {
+    const loan = 1_200_000, pct = 1;
+    const r = simulate(base({ ownFunds: (loan * pct) / 100, loanCap: loan, loan: { ...base().loan, processingFeePct: pct } }));
+    expect(r.drawn).toBeCloseTo(loan, 4);
+    expect(r.processingFee).toBeCloseTo(loan * 0.01, 4);
+    expect(r.fundingGap).toBe(0);
+    expect(r.principalAtRepayment).toBeCloseTo(loan * (1 + 0.12 * 2), 4); // same as with no fee at all
+  });
   it("loan closes at the end of its tenure", () => {
     const r = simulate(base());
     expect(r.loanClosedMonth).toBe(24 + 60 - 1);
