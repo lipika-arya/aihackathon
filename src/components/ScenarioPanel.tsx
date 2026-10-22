@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useData } from "./DataProvider";
 import { Badge, Empty, Money, Source, Stat } from "./ui";
@@ -23,6 +24,13 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
   const missing = missingInputs(c, p, p.course, ind);
   const todayCost = useMemo(() => costBreakdown(c, p, profile, assumptions, fx), [c, p, profile, assumptions, fx]);
   const keys = Object.keys(results) as ScenarioKey[];
+  if (!keys.length && ind == null)
+    return (
+      <Empty title="Enter your India salary to see this option">
+        The comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
+        <Link href="/assess" className="link">Start my assessment</Link> or set it with the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
+      </Empty>
+    );
   if (!keys.length)
     return (
       <Empty title="Can't calculate this option yet">
@@ -108,7 +116,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
         </>
       )}
       <p className="text-xs text-slate">
-        India comparison uses {profile.indiaSalary != null ? <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</> : <><Badge kind="assumption">Example</Badge> an example India salary of {lakh(ind)} / yr. Enter your own in the assessment for a real comparison</>}.
+        India comparison uses <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</>.
         {missing.length > 0 && <> Missing: {missing.join("; ")}.</>}
       </p>
     </div>

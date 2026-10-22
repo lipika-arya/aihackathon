@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useData } from "@/components/DataProvider";
-import { Badge, Empty, FLAG, FxNotice, PageHead } from "@/components/ui";
+import { Badge, Empty, FLAG, FxNotice, IndiaSalaryNotice, PageHead } from "@/components/ui";
 import { lakh, yrs } from "@/lib/format";
 import { buildCandidates, costTier, type Candidate } from "@/lib/recommend";
 import { COURSES, type CountryCode, type Course } from "@/lib/types";
@@ -51,6 +51,7 @@ export default function Universities() {
       <PageHead eyebrow="University explorer" title={`${all.length} programmes across ${countries.length} countries`}>
         A curated, sourced sample, not every university. Each card is priced for your profile. Unverified figures are labelled.
       </PageHead>
+      <IndiaSalaryNotice />
       <div className="card grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-4">
         <input className="input lg:col-span-2" placeholder="Search university, programme or city" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search" />
         <select className="input" value={country} onChange={(e) => setCountry(e.target.value as CountryCode | "all")} aria-label="Country">

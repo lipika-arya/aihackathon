@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useData } from "@/components/DataProvider";
 import { ScenarioPanel } from "@/components/ScenarioPanel";
 import { Badge, Empty, FxNotice, PageHead } from "@/components/ui";
-import { EXAMPLE_INDIA_SALARY, DEFAULT_ASSUMPTIONS, type Assumptions } from "@/lib/model";
+import { DEFAULT_ASSUMPTIONS, type Assumptions } from "@/lib/model";
 import { COURSES } from "@/lib/types";
 
 function Slider({ label, value, min, max, step, unit, onChange, kind = "assumption" }: { label: string; value: number; min: number; max: number; step: number; unit: string; onChange: (v: number) => void; kind?: "assumption" | "input" }) {
@@ -50,7 +50,7 @@ export default function Roi() {
           <Slider kind="input" label="Max loan" value={Math.round(profile.maxLoan / 1e5)} min={0} max={150} step={1} unit=" L" onChange={(v) => setProfile({ ...profile, maxLoan: v * 1e5 })} />
           <Slider kind="input" label="Scholarship" value={Math.round(profile.scholarship / 1e5)} min={0} max={50} step={1} unit=" L" onChange={(v) => setProfile({ ...profile, scholarship: v * 1e5 })} />
           <Slider kind="input" label="Repayment period" value={profile.repaymentYears} min={1} max={15} step={1} unit=" yrs" onChange={(v) => setProfile({ ...profile, repaymentYears: v })} />
-          <Slider kind={profile.indiaSalary == null ? "assumption" : "input"} label={profile.indiaSalary == null ? "India salary (if you stay): example until you enter yours" : "India salary (if you stay)"} value={Math.round((profile.indiaSalary ?? EXAMPLE_INDIA_SALARY) / 1e5)} min={0} max={40} step={0.5} unit=" L/yr" onChange={(v) => setProfile({ ...profile, indiaSalary: v ? v * 1e5 : null })} />
+          <Slider kind="input" label={profile.indiaSalary == null ? "India salary (if you stay): enter yours" : "India salary (if you stay)"} value={Math.round((profile.indiaSalary ?? 0) / 1e5)} min={0} max={40} step={0.5} unit=" L/yr" onChange={(v) => setProfile({ ...profile, indiaSalary: v ? v * 1e5 : null })} />
           <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={profile.partTime} onChange={(e) => setProfile({ ...profile, partTime: e.target.checked })} /> Count part-time income while studying</label>
           {profile.partTime && <Slider label={`Part-time income (${cur}/month)`} value={a.partTimeMonthlyLocal} min={0} max={cur === "JPY" ? 150000 : 1500} step={cur === "JPY" ? 5000 : 50} unit="" onChange={(v) => set({ partTimeMonthlyLocal: v })} />}
 

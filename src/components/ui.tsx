@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { useData } from "./DataProvider";
 import { inr, local } from "@/lib/format";
@@ -48,6 +49,18 @@ export function Money({ amount, currency, rate, small }: { amount: number | null
         {local(amount, currency)} @ ₹{rateStr(rate, currency)}
       </span>
     </span>
+  );
+}
+
+/** Shown wherever results depend on the student's India salary and they have not entered it yet. */
+export function IndiaSalaryNotice() {
+  const { profile } = useData();
+  if (profile.indiaSalary != null && profile.indiaSalary > 0) return null;
+  return (
+    <div className="rounded-xl border border-amber bg-amber-soft p-4 text-sm text-amber" role="status">
+      <strong>Enter your India salary to see paybacks, EMI burden and rankings.</strong> Every comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
+      <Link href="/assess" className="link">Start my assessment</Link> or set it with the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
+    </div>
   );
 }
 

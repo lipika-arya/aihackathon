@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useData } from "@/components/DataProvider";
-import { Badge, Empty, FLAG, FxNotice, Money, PageHead, Source } from "@/components/ui";
+import { Badge, Empty, FLAG, FxNotice, IndiaSalaryNotice, Money, PageHead, Source } from "@/components/ui";
 import { inr, lakh, pct, yrs } from "@/lib/format";
 import { fxRate, riskBand, runAll, visaRiskScore, costBreakdown, type ScenarioResult } from "@/lib/model";
 import { indiaSalaryFor } from "@/lib/recommend";
@@ -52,6 +52,7 @@ export default function Compare() {
         Each column uses the middle-cost programme in our sample for that country, your profile, and today&apos;s exchange rate.
         {" "}Tap a country&apos;s programmes in the <Link href="/universities" className="link">University explorer</Link> for the full spread.
       </PageHead>
+      <IndiaSalaryNotice />
       <div className="flex flex-wrap gap-2">
         {(Object.keys(COURSES) as Course[]).map((k) => (
           <button key={k} onClick={() => setCourse(k)} className={`btn ${course === k ? "btn-primary" : "btn-ghost"}`} aria-pressed={course === k}>{COURSES[k]}</button>

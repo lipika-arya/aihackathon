@@ -44,9 +44,6 @@ export interface Weights {
 // Starting assumptions, not facts. Shown and editable in the app.
 export const DEFAULT_WEIGHTS: Weights = { roi: 25, employment: 20, affordability: 20, visa: 15, fit: 10 };
 
-/** Shown, labelled as an example, only until the student enters their own India salary. Not data. */
-export const EXAMPLE_INDIA_SALARY = 800_000;
-
 export const DEFAULT_PROFILE: Profile = {
   qualification: "B.Tech / B.E.",
   specialization: "Computer Science",
@@ -64,7 +61,7 @@ export const DEFAULT_PROFILE: Profile = {
   maxEmi: null,
   repaymentYears: 10,
   partTime: false,
-  indiaSalary: null, // the assessment makes the student enter their own; EXAMPLE_INDIA_SALARY is shown only until they do
+  indiaSalary: null, // always the student's own figure: the assessment requires it and nothing is guessed
   indiaLiving: 25_000,
   lifestyle: "moderate",
   wantsPR: false,

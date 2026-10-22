@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { costBreakdown, costIncomplete, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, EXAMPLE_INDIA_SALARY, feesStatus, runScenario, visaFeesInr } from "./model";
+import { costBreakdown, costIncomplete, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, feesStatus, runScenario, visaFeesInr } from "./model";
 import { defaultLoanRate } from "./rate";
 import { indiaSalaryFor } from "./recommend";
 import type { CountryData, FxRates, LenderData } from "./types";
@@ -219,7 +219,8 @@ describe("only verified and current data is shown", () => {
   });
   it("there is no India salary baseline: the student's own figure is the only one used", () => {
     expect(Object.keys(lenders.india_baseline)).toEqual([]);
-    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: null }, "CS", lenders)).toBe(EXAMPLE_INDIA_SALARY); // a labelled example, only until the student enters theirs
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: null }, "CS", lenders)).toBeNull(); // no baseline and no example: the page asks for it
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 0 }, "CS", lenders)).toBeNull();
     expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 1_500_000 }, "CS", lenders)).toBe(1_500_000);
   });
   it("the UK work rule is confirmed, not flagged", () => {

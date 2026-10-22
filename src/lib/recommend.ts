@@ -1,5 +1,5 @@
 // Recommendation engine: transparent, rule-based, weights editable by the student.
-import { costBreakdown, costIncomplete, EXAMPLE_INDIA_SALARY, fxRate, missingInputs, runAll, visaRiskScore, type Assumptions, type Profile, type ScenarioResult, type Weights } from "./model";
+import { costBreakdown, costIncomplete, fxRate, missingInputs, runAll, visaRiskScore, type Assumptions, type Profile, type ScenarioResult, type Weights } from "./model";
 import type { CountryData, Course, FxRates, LenderData, Programme } from "./types";
 
 export interface Eligibility {
@@ -50,12 +50,12 @@ export interface Candidate {
   score: number | null;
 }
 
-// The India salary is the student's own input. No India salary source could be verified, so no baseline is used:
-// until they enter one, an example figure keeps the pages usable and is labelled as an example wherever it appears.
+// The India salary is always the student's own input. No India salary source could be verified, so there is no baseline
+// and no example: until they enter one this is null and the pages ask for it.
 // (Unused parameters kept so callers did not need to change.)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function indiaSalaryFor(prof: Profile, _course?: Course, _lenders?: LenderData | null): number {
-  return prof.indiaSalary ?? EXAMPLE_INDIA_SALARY;
+export function indiaSalaryFor(prof: Profile, _course?: Course, _lenders?: LenderData | null): number | null {
+  return prof.indiaSalary != null && prof.indiaSalary > 0 ? prof.indiaSalary : null;
 }
 
 const norm = (xs: number[], x: number) => {

@@ -13,7 +13,7 @@ import { COURSES } from "@/lib/types";
 const median = (xs: number[]) => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b); return s[Math.floor(s.length / 2)]; };
 
 export default function Results() {
-  const { countries, profile, setProfile, assumptions, fx, lenders, hasProfile } = useData();
+  const { countries, profile, setProfile, assumptions, fx, lenders } = useData();
   const list = useMemo(() => buildCandidates(countries, profile, assumptions, fx, lenders), [countries, profile, assumptions, fx, lenders]);
   const best = useMemo(() => picks(list), [list]);
   const ranked = useMemo(() => [...list].sort((a, b) => (b.score ?? -1) - (a.score ?? -1)), [list]);
@@ -22,12 +22,19 @@ export default function Results() {
   const labels = profileLabels(profile, median(list.map((c) => c.totalInr).filter((x): x is number => x != null)));
 
   if (!countries.length) return <Empty title="Research data not loaded">No country data files were found.</Empty>;
+  if (profile.indiaSalary == null) {
+    return (
+      <Empty title="Enter your India salary to see your results">
+        Every comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
+        <Link href="/assess" className="link">Start my assessment</Link>
+      </Empty>
+    );
+  }
 
   return (
     <div className="space-y-10">
       <PageHead eyebrow="Your personalised results" title={best.overall ? `Best overall fit: ${best.overall.programme.university}, ${best.overall.country.name}` : "Your results"}>
-        {!hasProfile && <span>You haven&apos;t done the assessment yet, so this uses example inputs. <Link href="/assess" className="link">Start my assessment</Link>.</span>}
-        {hasProfile && <span>Based on your inputs, today&apos;s exchange rates and our sourced data. Change anything and the results update. <Link href="/assess" className="link">Edit my answers</Link></span>}
+        <span>Based on your inputs, today&apos;s exchange rates and our sourced data. Change anything and the results update. <Link href="/assess" className="link">Edit my answers</Link></span>
       </PageHead>
 
       {labels.length > 0 && (

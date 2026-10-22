@@ -50,7 +50,7 @@ EMI = P × r × (1+r)^n / ((1+r)^n − 1), r = annual rate / 12, n = repayment m
       <H>5. Income</H>
       <F>{`Abroad take-home per month = gross entry salary × (1 + growth)^years × (1 − effective tax rate) / 12
 Entry salary: low / mid / high from the official source shown on each country (e.g. BLS percentiles, Job Bank, QILT)
-India path: the India salary you enter (we have no verified India salary data; until you enter one, pages show a labelled example of ₹8 L) × (1 − India tax ${a.indiaTaxPct}%) growing ${a.salaryGrowthIndiaPct}%/yr,
+India path: the India salary you enter (we have no verified India salary data, so it is required and pages ask for it until you enter it) × (1 − India tax ${a.indiaTaxPct}%) growing ${a.salaryGrowthIndiaPct}%/yr,
             minus India living cost growing ${a.livingInflationPct}%/yr`}</F>
 
       <H>6. Scenarios</H>
