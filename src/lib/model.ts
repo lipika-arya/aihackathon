@@ -203,6 +203,8 @@ export function costBreakdown(c: CountryData, p: Programme, prof: Profile, a: As
 
 export interface ScenarioResult {
   key: ScenarioKey;
+  // false when no India salary was entered: payback, NPV, IRR and ROI compare with staying in India, so they are not computed
+  hasIndiaBaseline: boolean;
   sim: SimResult;
   totalCostInr: number;
   monthlyTakeHomeAtRepay: number;
@@ -235,7 +237,10 @@ export function runScenario(inp: ModelInput, key: AbroadKey): ScenarioResult | n
   const livM = livingMonthLocal(c, p, prof.lifestyle);
   const tuitionTotal = tuitionTotalLocal(p);
   const postLivM = livingMonthLocal(c, null, "moderate");
-  if (!band || band.entry_mid == null || livM == null || tuitionTotal == null || inp.indiaSalary == null || postLivM == null) return null;
+  if (!band || band.entry_mid == null || livM == null || tuitionTotal == null || postLivM == null) return null;
+  // These two assume you earn your India salary after returning, so they need one above 0. A salary of 0 is still a valid
+  // baseline for staying in India (nothing to give up), so everything else runs.
+  if ((inp.indiaSalary == null || inp.indiaSalary <= 0) && (key === "returnHome" || key === "visaEnds")) return null;
 
   const H = a.horizonYears * 12;
   const D = p.duration_months;
@@ -263,7 +268,8 @@ export function runScenario(inp: ModelInput, key: AbroadKey): ScenarioResult | n
   const jobStart = D + search;
   const homeFrom = key === "returnHome" ? D : key === "visaEnds" ? D + pswMonths : Infinity;
 
-  const indiaNet = (m: number) => ((inp.indiaSalary! * (1 + a.salaryGrowthIndiaPct / 100) ** Math.floor(m / 12)) * (1 - a.indiaTaxPct / 100)) / 12;
+  const hasBaseline = inp.indiaSalary != null;
+  const indiaNet = (m: number) => (((inp.indiaSalary ?? 0) * (1 + a.salaryGrowthIndiaPct / 100) ** Math.floor(m / 12)) * (1 - a.indiaTaxPct / 100)) / 12;
   const indiaLiv = (m: number) => prof.indiaLiving * (1 + a.livingInflationPct / 100) ** Math.floor(m / 12);
 
   const incAt = (m: number) => {
@@ -273,7 +279,7 @@ export function runScenario(inp: ModelInput, key: AbroadKey): ScenarioResult | n
     return ((gross * (1 - tax)) / 12) * rateAt(m);
   };
   const livAt = (m: number) => (m < D ? 0 : m >= homeFrom ? indiaLiv(m) : postLivM * (1 + a.livingInflationPct / 100) ** Math.floor((m - D) / 12) * rateAt(m));
-  return finishScenario({ key, a, prof, D, H, costs, incAt, livAt, baseIncAt: indiaNet, baseLivAt: indiaLiv });
+  return finishScenario({ key, a, prof, D, H, costs, incAt, livAt, hasBaseline, baseIncAt: indiaNet, baseLivAt: indiaLiv });
 }
 
 interface Plan {
@@ -285,6 +291,7 @@ interface Plan {
   costs: number[]; // study-period costs per month, INR (own funds / loan / gap are decided in simulate)
   incAt: (m: number) => number; // net income on this path, INR per month
   livAt: (m: number) => number; // living cost after study on this path
+  hasBaseline: boolean; // false = no India salary entered, so nothing is compared with staying in India
   baseIncAt: (m: number) => number; // stay-in-India path
   baseLivAt: (m: number) => number;
 }
@@ -294,8 +301,8 @@ function finishScenario(plan: Plan): ScenarioResult {
   const { key, a, prof, D, H, costs, incAt, livAt } = plan;
   const income: number[] = [], living: number[] = [], bInc: number[] = [], bLiv: number[] = [];
   for (let m = 0; m < H; m++) {
-    bInc.push(plan.baseIncAt(m));
-    bLiv.push(plan.baseLivAt(m));
+    bInc.push(plan.hasBaseline ? plan.baseIncAt(m) : 0);
+    bLiv.push(plan.hasBaseline ? plan.baseLivAt(m) : 0);
     income.push(incAt(m));
     living.push(livAt(m));
   }
@@ -337,10 +344,11 @@ function finishScenario(plan: Plan): ScenarioResult {
     key, sim, totalCostInr,
     monthlyTakeHomeAtRepay: takeHome,
     emiShareOfTakeHome: sim.emi > 0 ? (takeHome > 0 ? sim.emi / takeHome : Infinity) : null,
-    paybackYears: pb == null ? null : (pb + 1) / 12,
-    npv: npv(incY, a.discountRatePct),
-    irrPct: irr(incY),
-    roiPct, investment,
+    hasIndiaBaseline: plan.hasBaseline,
+    paybackYears: !plan.hasBaseline || pb == null ? null : (pb + 1) / 12,
+    npv: plan.hasBaseline ? npv(incY, a.discountRatePct) : 0,
+    irrPct: plan.hasBaseline ? irr(incY) : null,
+    roiPct: plan.hasBaseline ? roiPct : null, investment,
     netPosition: { y5: pos(60), y10: pos(120) },
     years: yearsArr,
     loanFreeYears: sim.drawn > 0 && payoffMonth != null ? (payoffMonth + 1 - D) / 12 : null,
@@ -388,7 +396,7 @@ export function runIndiaMasters(inp: IndiaMastersInput): ScenarioResult | null {
   const indiaLiv = (m: number) => prof.indiaLiving * (1 + a.livingInflationPct / 100) ** Math.floor(m / 12);
   const jobStart = D + INDIA_JOB_SEARCH_MONTHS;
   return finishScenario({
-    key: "mastersIndia", a, prof, D, H, costs,
+    key: "mastersIndia", a, prof, D, H, costs, hasBaseline: true,
     incAt: (m) => (m < jobStart ? 0 : net(p.entry_salary.median_inr, Math.floor((m - jobStart) / 12))),
     livAt: (m) => (m < D ? 0 : indiaLiv(m)),
     baseIncAt: (m) => net(inp.indiaSalary!, Math.floor(m / 12)),
@@ -408,11 +416,12 @@ export function feesStatus(p: Programme): FeesStatus {
 export const costIncomplete = (p: Programme) => feesStatus(p) === "not_found";
 
 /** What's missing for a full calculation, in plain words. */
-export function missingInputs(c: CountryData, p: Programme, course: Course, indiaSalary: number | null): string[] {
+// (indiaSalary is accepted for compatibility but no longer needed: it is optional and only the vs-India numbers use it)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function missingInputs(c: CountryData, p: Programme, course: Course, indiaSalary?: number | null): string[] {
   const m: string[] = [];
   if (tuitionTotalLocal(p) == null) m.push("Verified tuition for this programme");
   if (livingMonthLocal(c, p, "moderate") == null) m.push(`Living-cost estimate for ${c.name}`);
   if (!c.salary[course] || c.salary[course]?.entry_mid == null) m.push(`Entry salary data for this course in ${c.name}`);
-  if (indiaSalary == null) m.push("Your expected India salary (for the stay-in-India comparison)");
   return m;
 }

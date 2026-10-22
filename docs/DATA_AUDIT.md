@@ -36,7 +36,7 @@ About 470 fields across five countries and the lender file were re-opened agains
 | IUJ MBA | Duration (21 months) and programme label not confirmed |
 | UTokyo IST | Duration assumed; the fee page was for a different graduate school |
 | Credila (lender) | Rate and fee page blocked; could not be read |
-| India salary baseline | Source (NIRF) blocked; no verified India salary data exists in the app, so the student's own figure is required |
+| India salary baseline | Source (NIRF) blocked; no verified India salary data exists in the app. The India salary is optional and is only the student's own figure: without it costs, funding gap, EMI, years to repay and the three job-abroad scenarios all work; payback, NPV and ROI against staying in India and the two return-to-India scenarios appear once a salary is entered, and the ROI part is left out of the score until then |
 | Indian master's programmes | Only one of six was fully verified; removed for now. The "Master's in India" scenario is built and switched off until verified data is added |
 | 5 policy items marked "not confirmed" | US social-media vetting, Germany naturalisation change and Chancenkarte, Japan visa-fee rise, Australia enrolment caps; text that cited them was edited |
 | LMU fee guess (EUR 194) | Not on LMU's pages; the programme now shows mandatory fees as not found (Incomplete) |
@@ -59,7 +59,9 @@ Also left out because they could not be fully verified: Carleton MCS, UCL, Glasg
 ## Pre-merge verification (22 Oct 2026)
 
 - Unit and regression tests, including a sample assessment (B.Tech CS, CGPA 8.5, IELTS 7, 1 year of work, Rs 10 L funds, Rs 40 L loan, Rs 10 L India salary) run through every programme: costs finite, cost table equals the optimistic scenario, funding gap = total + loan fee - own funds - loan, EMI equals the standard formula on the principal, and the loan fee equals the stated percentage.
-- The same assessment through the real wizard in a browser: the India salary is required, pages ask for it until it is entered, the ranking covers all six countries, and no console errors appear across the main pages.
+- The same assessment through the real wizard in a browser: the India salary is optional (the wizard completes without it and the results page ranks with the ROI part left out; adding it brings back the India comparison and the two return-to-India scenarios), the ranking covers all six countries, and no console errors appear across the main pages.
 - A crawl of every route on a clean production build (10 pages plus every programme page): no errors, no NaN, no placeholder text.
 - Eight programme totals recomputed independently in Python from the raw data: all matched the app to the displayed precision.
 - Eligibility check fixed so optional or alternative routes ("not required", "unless", "alternative route") are shown as information, not as a failure; genuine mandatory requirements still fail.
+- With no India salary entered, the loan, EMI, funding gap, total cost and net position are identical to the run with a salary for the three job-abroad scenarios (tested); only the India-relative numbers differ.
+- An India salary of 0 is accepted (a fresher, or unpaid family work): payback and ROI are then measured against earning nothing if the student stays. The two return-to-India scenarios assume an India income after returning, so they need a salary above 0 and are not shown at 0 (tested).

@@ -40,7 +40,7 @@ function Lakhs({ value, onChange, placeholder }: { value: number | null; onChang
 export default function Assess() {
   const { profile, setProfile, hasProfile } = useData();
   const router = useRouter();
-  const [p, setP] = useState<Profile>({ ...profile, indiaSalary: null }); // never pre-fill the example India salary
+  const [p, setP] = useState<Profile>(profile);
   const [step, setStep] = useState(0);
   const [err, setErr] = useState<string | null>(null);
   useEffect(() => { if (hasProfile) setP(profile); }, [hasProfile]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -51,7 +51,6 @@ export default function Assess() {
   const validate = (): string | null => {
     if (step === 1 && !p.courses.length) return "Choose at least one course.";
     if (step === 1 && !p.countries.length) return "Choose at least one country.";
-    if (step === 2 && !(p.indiaSalary != null && p.indiaSalary > 0)) return "Enter the salary you expect if you stay in India. It is needed for the stay-in-India comparison, and we do not guess one.";
     if (step === 0 && p.cgpa != null && (p.cgpa < 0 || p.cgpa > 10)) return "CGPA should be between 0 and 10.";
     if (step === 0 && p.ielts != null && (p.ielts < 0 || p.ielts > 9)) return "IELTS bands run from 0 to 9.";
     return null;
@@ -68,6 +67,7 @@ export default function Assess() {
   const funds = p.familyFunds + p.savings + p.scholarship;
   const missing = [
     p.cgpa == null && "CGPA (needed to judge academic fit)",
+    p.indiaSalary == null && "Expected India salary (optional: needed only for payback vs staying in India and the return-home scenarios)",
     p.ielts == null && p.toefl == null && "English test score (needed for eligibility checks)",
   ].filter(Boolean) as string[];
 
@@ -134,7 +134,7 @@ export default function Assess() {
             <Field label="Co-applicant (parent/guardian) available?"><select className="input" value={p.coApplicant ? "y" : "n"} onChange={(e) => up("coApplicant", e.target.value === "y")}><option value="y">Yes</option><option value="n">No</option></select></Field>
             <Field label="Maximum monthly EMI you're comfortable with (optional)"><div className="flex items-center gap-2"><span className="text-sm text-slate">₹</span><Num value={p.maxEmi} onChange={(v) => up("maxEmi", v)} step={1000} placeholder="e.g. 40000" /></div></Field>
             <Field label="Preferred repayment period (years)"><Num value={p.repaymentYears} onChange={(v) => up("repaymentYears", Math.max(1, v ?? 10))} min={1} max={20} /></Field>
-            <Field label="Expected salary if you stay in India (per year)" hint="Required. We have no verified India salary data, so we use only the figure you enter."><Lakhs value={p.indiaSalary} onChange={(v) => up("indiaSalary", v)} placeholder="e.g. 8" /></Field>
+            <Field label="Expected salary if you stay in India (per year)" hint="Optional. Without it you still get costs, EMI and years to repay; add it to also see payback vs staying in India and the return-home scenarios. We have no verified India salary data, so we use only what you enter."><Lakhs value={p.indiaSalary} onChange={(v) => up("indiaSalary", v)} placeholder="e.g. 8" /></Field>
             <Field label="Your monthly living cost in India" hint="Used for the stay-in-India comparison."><div className="flex items-center gap-2"><span className="text-sm text-slate">₹</span><Num value={p.indiaLiving} onChange={(v) => up("indiaLiving", v ?? 0)} step={1000} /></div></Field>
             <Field label="Lifestyle abroad"><select className="input" value={p.lifestyle} onChange={(e) => up("lifestyle", e.target.value as Profile["lifestyle"])}><option value="budget">Budget (shared room, cook at home)</option><option value="moderate">Moderate</option><option value="comfortable">Comfortable</option></select></Field>
             <p className="rounded-lg bg-forest-soft p-3 text-sm sm:col-span-2">Available without borrowing: <strong>{lakh(funds)}</strong>. With your max loan: <strong>{lakh(funds + p.maxLoan)}</strong>.</p>
@@ -159,7 +159,7 @@ export default function Assess() {
                 ["Courses", p.courses.map((c) => COURSES[c]).join(", ")],
                 ["Countries", p.countries.map((c) => COUNTRY_NAMES[c]).join(", ")],
                 ["Funds / max loan", `${lakh(funds)} / ${lakh(p.maxLoan)}`],
-                ["India salary", lakh(p.indiaSalary)],
+                ["India salary", p.indiaSalary != null ? lakh(p.indiaSalary) : "Not entered"],
                 ["Repayment", `${p.repaymentYears} years${p.maxEmi ? `, max EMI ₹${p.maxEmi.toLocaleString("en-IN")}` : ""}`],
               ].map(([k, v]) => (
                 <div key={k} className="border-b border-line py-1"><dt className="text-xs text-slate">{k}</dt><dd className="font-medium">{v}</dd></div>

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useData } from "@/components/DataProvider";
 import { ScenarioPanel } from "@/components/ScenarioPanel";
 import { WeightsEditor } from "@/components/WeightsEditor";
-import { Badge, Empty, FLAG, FxNotice, PageHead } from "@/components/ui";
+import { Badge, Empty, FLAG, FxNotice, IndiaSalaryNotice, PageHead } from "@/components/ui";
 import { inr, lakh, pct, yrs } from "@/lib/format";
 import { riskBand } from "@/lib/model";
 import { buildCandidates, PICKS, picks, profileLabels, type Candidate, type PickKey } from "@/lib/recommend";
@@ -22,20 +22,13 @@ export default function Results() {
   const labels = profileLabels(profile, median(list.map((c) => c.totalInr).filter((x): x is number => x != null)));
 
   if (!countries.length) return <Empty title="Research data not loaded">No country data files were found.</Empty>;
-  if (profile.indiaSalary == null) {
-    return (
-      <Empty title="Enter your India salary to see your results">
-        Every comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
-        <Link href="/assess" className="link">Start my assessment</Link>
-      </Empty>
-    );
-  }
 
   return (
     <div className="space-y-10">
       <PageHead eyebrow="Your personalised results" title={best.overall ? `Best overall fit: ${best.overall.programme.university}, ${best.overall.country.name}` : "Your results"}>
         <span>Based on your inputs, today&apos;s exchange rates and our sourced data. Change anything and the results update. <Link href="/assess" className="link">Edit my answers</Link></span>
       </PageHead>
+      <IndiaSalaryNotice />
 
       {labels.length > 0 && (
         <section>
@@ -52,7 +45,7 @@ export default function Results() {
           return (
             <button key={k} onClick={() => c && setSel(c.programme.id)} className={`card p-4 text-left ${selected && c && selected.programme.id === c.programme.id ? "ring-2 ring-forest" : "hover:border-forest"}`}>
               <div className="text-xs font-semibold uppercase tracking-wider text-forest">{PICKS[k].title}</div>
-              {c ? <PickBody c={c} /> : <p className="mt-2 text-sm text-slate">Not enough verified data to choose.</p>}
+              {c ? <PickBody c={c} /> : <p className="mt-2 text-sm text-slate">{k === "lowRisk" && profile.indiaSalary === 0 ? "Needs an India salary above 0 (it assumes you earn it after returning)." : profile.indiaSalary == null && (k === "roi" || k === "lowRisk") ? "Needs your India salary." : "Not enough verified data to choose."}</p>}
               <p className="mt-2 text-[11px] text-slate">{PICKS[k].why}</p>
             </button>
           );
@@ -86,8 +79,8 @@ export default function Results() {
                   <td>{c.score == null ? <Badge kind="missing">Can&apos;t score</Badge> : c.score.toFixed(0)}</td>
                   <td>{lakh(c.totalInr)}</td>
                   <td>{c.expected ? inr(c.expected.sim.emi) : "n/a"}</td>
-                  <td>{c.expected ? yrs(c.expected.paybackYears) : "n/a"}</td>
-                  <td>{c.results.returnHome ? (c.results.returnHome.sim.drawn > 0 ? yrs(c.results.returnHome.loanFreeYears) : "No loan") : "n/a"}</td>
+                  <td>{c.expected ? (c.expected.hasIndiaBaseline ? yrs(c.expected.paybackYears) : "needs India salary") : "n/a"}</td>
+                  <td>{c.results.returnHome ? (c.results.returnHome.sim.drawn > 0 ? yrs(c.results.returnHome.loanFreeYears) : "No loan") : profile.indiaSalary == null ? "needs India salary" : profile.indiaSalary === 0 ? "needs salary above 0" : "n/a"}</td>
                   <td>{c.visaRisk}/100</td>
                   <td className="space-x-1">
                     {c.fundingGap > 0 && <Badge kind="unverified">Funding gap {lakh(c.fundingGap)}</Badge>}
@@ -145,7 +138,7 @@ function PickBody({ c }: { c: Candidate }) {
       <div className="num mt-2 grid grid-cols-2 gap-1 text-xs">
         <span>Cost {lakh(c.totalInr)}</span>
         <span>EMI {e ? inr(e.sim.emi) : "n/a"}</span>
-        <span>Payback {e ? yrs(e.paybackYears) : "n/a"}</span>
+        <span>Payback {e ? (e.hasIndiaBaseline ? yrs(e.paybackYears) : "needs India salary") : "n/a"}</span>
         <span>Visa risk {c.visaRisk}</span>
       </div>
       {(c.fundingGap > 0 || c.hardFail) && <div className="mt-2"><Badge kind="unverified">{c.fundingGap > 0 ? "Funding gap" : "Requirement not met"}</Badge></div>}
@@ -156,7 +149,8 @@ function PickBody({ c }: { c: Candidate }) {
 function Why({ c }: { c: Candidate }) {
   const w = c.components;
   const { profile } = useData();
-  const total = Object.values(profile.priorities).reduce((a, b) => a + b, 0) || 1;
+  const useRoi = !!c.expected?.hasIndiaBaseline; // the ROI part only counts when an India salary was entered
+  const total = Object.entries(profile.priorities).reduce((a, [k, v]) => a + (k === "roi" && !useRoi ? 0 : v), 0) || 1;
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       <div className="card p-4">
@@ -166,7 +160,7 @@ function Why({ c }: { c: Candidate }) {
             <thead><tr><th>Component</th><th>Score</th><th>Weight</th><th>Contribution</th></tr></thead>
             <tbody>
               {(Object.keys(w) as (keyof typeof w)[]).map((k) => (
-                <tr key={k}><td className="capitalize">{k === "roi" ? "Financial ROI" : k}</td><td>{w[k].toFixed(0)}</td><td>{pct((profile.priorities[k] / total) * 100)}</td><td>{((w[k] * profile.priorities[k]) / total).toFixed(1)}</td></tr>
+                <tr key={k}><td className="capitalize">{k === "roi" ? "Financial ROI" : k}</td>{k === "roi" && !useRoi ? <td colSpan={3} className="text-slate">Not scored: needs your India salary</td> : <><td>{w[k].toFixed(0)}</td><td>{pct((profile.priorities[k] / total) * 100)}</td><td>{((w[k] * profile.priorities[k]) / total).toFixed(1)}</td></>}</tr>
               ))}
             </tbody>
           </table>

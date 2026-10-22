@@ -55,11 +55,19 @@ export function Money({ amount, currency, rate, small }: { amount: number | null
 /** Shown wherever results depend on the student's India salary and they have not entered it yet. */
 export function IndiaSalaryNotice() {
   const { profile } = useData();
-  if (profile.indiaSalary != null && profile.indiaSalary > 0) return null;
+  const s = profile.indiaSalary;
+  if (s != null && s > 0) return null;
+  if (s === 0) {
+    return (
+      <div className="rounded-xl border border-line bg-card p-3 text-sm text-slate" role="status">
+        <strong>India salary entered as ₹0.</strong> Payback and ROI are measured against earning nothing if you stay. The two return-to-India scenarios assume you earn an India salary after coming back, so they are not shown; enter a salary above 0 to see them.
+      </div>
+    );
+  }
   return (
-    <div className="rounded-xl border border-amber bg-amber-soft p-4 text-sm text-amber" role="status">
-      <strong>Enter your India salary to see paybacks, EMI burden and rankings.</strong> Every comparison is against staying in India, and we use only the salary you enter because we have no verified India salary data.{" "}
-      <Link href="/assess" className="link">Start my assessment</Link> or set it with the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
+    <div className="rounded-xl border border-line bg-card p-3 text-sm text-slate" role="status">
+      <strong>Optional: add your India salary</strong> to see payback and ROI against staying in India and the two return-to-India scenarios. Enter 0 if you would earn nothing (for example a fresher or unpaid family work). We use only the figure you enter, because we have no verified India salary data.{" "}
+      <Link href="/assess" className="link">Start my assessment</Link> or use the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
     </div>
   );
 }

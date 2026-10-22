@@ -220,7 +220,7 @@ describe("only verified and current data is shown", () => {
   it("there is no India salary baseline: the student's own figure is the only one used", () => {
     expect(Object.keys(lenders.india_baseline)).toEqual([]);
     expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: null }, "CS", lenders)).toBeNull(); // no baseline and no example: the page asks for it
-    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 0 }, "CS", lenders)).toBeNull();
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 0 }, "CS", lenders)).toBe(0); // 0 is valid: a fresher or unpaid family work
     expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 1_500_000 }, "CS", lenders)).toBe(1_500_000);
   });
   it("the UK work rule is confirmed, not flagged", () => {

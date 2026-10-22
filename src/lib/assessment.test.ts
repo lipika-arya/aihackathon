@@ -70,14 +70,99 @@ describe("sample assessment across every programme", () => {
   });
 });
 
-describe("no India salary entered", () => {
-  it("nothing is computed and the missing input is named", () => {
-    const list = buildCandidates(countries, { ...student, indiaSalary: null }, A, fx, lenders);
-    for (const c of list) {
-      expect(c.expected).toBeNull();
-      expect(c.missing.join(" ")).toMatch(/India salary/);
-      // what a degree costs does not depend on the India salary, so it is still worked out
-      expect(Number.isFinite(c.totalInr) && c.totalInr! > 0, c.programme.id).toBe(true);
+describe("no India salary entered (optional)", () => {
+  const noSalary = { ...student, indiaSalary: null };
+  const withList = buildCandidates(countries, student, A, fx, lenders);
+  const noList = buildCandidates(countries, noSalary, A, fx, lenders);
+
+  it("still gives costs, loan, EMI, funding gap and years to repay: the three job-abroad scenarios run", () => {
+    for (const c of noList) {
+      expect(Object.keys(c.results).sort(), c.programme.id).toEqual(["conservative", "expected", "optimistic"]);
+      expect(c.missing, "India salary is not a required input").toEqual([]);
+      expect(Number.isFinite(c.totalInr) && c.totalInr! > 0).toBe(true);
+      expect(Number.isFinite(c.expected!.sim.emi)).toBe(true);
     }
+  });
+
+  it("does not compute anything that compares with staying in India", () => {
+    for (const c of noList) for (const r of Object.values(c.results)) {
+      expect(r!.hasIndiaBaseline).toBe(false);
+      expect(r!.paybackYears).toBeNull();
+      expect(r!.roiPct).toBeNull();
+      expect(r!.irrPct).toBeNull();
+    }
+  });
+
+  it("the loan and cost numbers are identical with or without a salary (they never depended on it)", () => {
+    for (let i = 0; i < noList.length; i++) {
+      for (const k of ["optimistic", "expected", "conservative"] as const) {
+        const a = noList[i].results[k]!, b = withList[i].results[k]!;
+        expect(a.totalCostInr, noList[i].programme.id).toBeCloseTo(b.totalCostInr, 4);
+        expect(a.sim.emi).toBeCloseTo(b.sim.emi, 6);
+        expect(a.sim.drawn).toBeCloseTo(b.sim.drawn, 4);
+        expect(a.sim.fundingGap).toBeCloseTo(b.sim.fundingGap, 4);
+        expect(a.loanFreeYears).toBe(b.loanFreeYears);
+        expect(a.netPosition.y10).toBeCloseTo(b.netPosition.y10, 2);
+      }
+    }
+  });
+
+  it("with a salary all five scenarios and the India comparison are back", () => {
+    for (const c of withList) {
+      expect(Object.keys(c.results).sort()).toEqual(["conservative", "expected", "optimistic", "returnHome", "visaEnds"]);
+      for (const r of Object.values(c.results)) expect(r!.hasIndiaBaseline).toBe(true);
+    }
+  });
+
+  it("programmes are still scored and ranked; the ROI part is left out and the others re-weighted", () => {
+    expect(noList.every((c) => c.score != null)).toBe(true);
+    for (const c of noList) expect(c.components!.roi).toBe(0);
+    const best = picks(noList);
+    expect(best.overall).toBeDefined();
+    expect(best.budget).toBeDefined();
+    expect(best.roi, "ROI pick needs the India comparison").toBeUndefined();
+    expect(best.lowRisk, "low-risk pick uses the return-home scenario").toBeUndefined();
+  });
+
+  it("scores sit on the same 0-100 scale without the ROI part", () => {
+    for (const c of noList) { expect(c.score!).toBeGreaterThanOrEqual(0); expect(c.score!).toBeLessThanOrEqual(100); }
+  });
+});
+
+describe("India salary of 0 (fresher or unpaid family work)", () => {
+  const zero = { ...student, indiaSalary: 0 };
+  const zeroList = buildCandidates(countries, zero, A, fx, lenders);
+  const refList = buildCandidates(countries, student, A, fx, lenders);
+
+  it("is accepted as the stay-in-India baseline: payback, NPV and ROI are computed", () => {
+    for (const c of zeroList) {
+      for (const k of ["optimistic", "expected", "conservative"] as const) {
+        const r = c.results[k]!;
+        expect(r.hasIndiaBaseline, c.programme.id).toBe(true);
+        expect(Number.isFinite(r.npv)).toBe(true);
+      }
+    }
+  });
+
+  it("the two return-to-India scenarios need an income after returning, so they are not run", () => {
+    for (const c of zeroList) {
+      expect(c.results.returnHome).toBeUndefined();
+      expect(c.results.visaEnds).toBeUndefined();
+    }
+  });
+
+  it("there is no income to give up, so the degree looks better than against a Rs 10 L salary", () => {
+    for (let i = 0; i < zeroList.length; i++) {
+      expect(zeroList[i].expected!.npv, zeroList[i].programme.id).toBeGreaterThan(refList[i].expected!.npv);
+      // and the loan itself is unchanged
+      expect(zeroList[i].expected!.sim.emi).toBeCloseTo(refList[i].expected!.sim.emi, 6);
+    }
+  });
+
+  it("ROI counts in the score (a baseline exists); the low-risk pick still needs a return-home scenario", () => {
+    for (const c of zeroList) expect(c.components!.roi).toBeGreaterThanOrEqual(0);
+    const best = picks(zeroList);
+    expect(best.roi).toBeDefined();
+    expect(best.lowRisk).toBeUndefined();
   });
 });

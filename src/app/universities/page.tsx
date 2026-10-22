@@ -83,7 +83,7 @@ export default function Universities() {
               <div className="num mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-sm">
                 <span className="text-slate">Total cost</span><span className="text-right font-semibold">{lakh(c.totalInr)}</span>
                 <span className="text-slate">EMI</span><span className="text-right">{c.expected ? `₹${Math.round(c.expected.sim.emi).toLocaleString("en-IN")}` : "n/a"}</span>
-                <span className="text-slate">Payback</span><span className="text-right">{c.expected ? yrs(c.expected.paybackYears) : "n/a"}</span>
+                <span className="text-slate">Payback</span><span className="text-right">{c.expected ? (c.expected.hasIndiaBaseline ? yrs(c.expected.paybackYears) : "needs India salary") : "n/a"}</span>
                 <span className="text-slate">Visa risk</span><span className="text-right">{c.visaRisk}/100</span>
               </div>
               <div className="mt-3 flex flex-wrap gap-1">
