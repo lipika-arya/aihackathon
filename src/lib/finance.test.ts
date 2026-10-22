@@ -62,6 +62,22 @@ describe("simulate", () => {
     expect(r.drawn).toBe(1_000_000);
     expect(r.fundingGap).toBeCloseTo(200_000, 0);
   });
+  it("the processing fee is funded by the loan: loan = costs / (1 - fee%)", () => {
+    const r = simulate(base({ loan: { ...base().loan, processingFeePct: 2 } }));
+    expect(r.processingFee).toBeCloseTo(1_200_000 / 0.98 * 0.02, 4);
+    expect(r.drawn).toBeCloseTo(1_200_000 / 0.98, 4);
+    expect(r.fundingGap).toBe(0);
+  });
+  it("the processing fee counts toward the funding gap when the loan is capped", () => {
+    const r = simulate(base({ loanCap: 1_000_000, loan: { ...base().loan, processingFeePct: 2 } }));
+    expect(r.processingFee).toBeCloseTo(20_000, 6); // 2% of the capped loan
+    expect(r.fundingGap).toBeCloseTo(1_200_000 + 20_000 - 1_000_000, 4);
+  });
+  it("no loan means no fee", () => {
+    const r = simulate(base({ ownFunds: 2_000_000, loan: { ...base().loan, processingFeePct: 2 } }));
+    expect(r.processingFee).toBe(0);
+    expect(r.drawn).toBe(0);
+  });
   it("loan closes at the end of its tenure", () => {
     const r = simulate(base());
     expect(r.loanClosedMonth).toBe(24 + 60 - 1);
