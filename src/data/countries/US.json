@@ -18,7 +18,7 @@
         "fee_year": "Fall 2026",
         "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
       },
-      "mandatory_fees_per_year": 3319.72,
+      "mandatory_fees_per_year": 3519.72,
       "living_cost_per_year": {
         "amount": 25000,
         "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
@@ -32,7 +32,7 @@
       "scholarships": null,
       "programme_url": "https://www.buffalo.edu/grad/programs/computer-science-and-engineering-ms.html",
       "status": "verified",
-      "notes": "Tuition is the Fall 2026 non-resident graduate full-time rate (12 credits) of $13,255 per semester plus $1,659.86 fees; page says rates are SUNY-approved pending administrative action to finalize. Fees per year = 2 x Fall 2026 fees (assumes Spring is equal; not confirmed). Programme page: 30 credits, time-to-degree 1.5 to 2 years, 100% in person, STEM-approved per department page, $100 application fee. Living cost $25,000 is UB's international graduate I-20 minimum living-expense figure (page labels the table academic year 2027-28; health insurance $2,300 is separate). GPA/GRE/English minimums not found on the pages checked."
+      "notes": "Tuition is the Fall 2026 non-resident graduate full-time rate (12 credits) of $13,255 per semester plus $1,659.86 fees; page says rates are SUNY-approved pending administrative action to finalize. Fees per year = 2 x Fall 2026 fees (assumes Spring is equal; not confirmed). Programme page: 30 credits, time-to-degree 1.5 to 2 years, 100% in person, STEM-approved per department page, $100 application fee. Living cost $25,000 is UB's international graduate I-20 minimum living-expense figure (page labels the table academic year 2027-28; health insurance $2,300 is separate). GPA/GRE/English minimums not found on the pages checked. 22 Oct 2026 re-check: fees per year now include UB's USD 100 per semester International Student Fee, which UB's fee page says applies to all matriculated international students (it is not in the page's fee table or total)."
     },
     {
       "id": "cmu-mscs",
@@ -78,7 +78,7 @@
         "fee_year": "Fall 2026",
         "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
       },
-      "mandatory_fees_per_year": 3319.72,
+      "mandatory_fees_per_year": 3519.72,
       "living_cost_per_year": {
         "amount": 25000,
         "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
@@ -92,7 +92,7 @@
       "scholarships": null,
       "programme_url": "https://www.buffalo.edu/grad/programs/engineering-science-data-science-ms.html",
       "status": "verified",
-      "notes": "Same UB non-resident graduate Fall 2026 rate as the CS programme ($13,255/semester at 12+ credits; per-credit $1,105 below full-time). Programme page: 30 credits, time-to-degree 1 to 2 years, 100% in person; the programme FAQ (secondary, not re-opened) cites 1 to 1.5 years, so 18 months is used. Fees/yr assumes Spring equals Fall. Admission minimums not found."
+      "notes": "Same UB non-resident graduate Fall 2026 rate as the CS programme ($13,255/semester at 12+ credits; per-credit $1,105 below full-time). Programme page: 30 credits, time-to-degree 1 to 2 years, 100% in person; the programme FAQ (secondary, not re-opened) cites 1 to 1.5 years, so 18 months is used. Fees/yr assumes Spring equals Fall. Admission minimums not found. 22 Oct 2026 re-check: fees per year now include UB's USD 100 per semester International Student Fee, which UB's fee page says applies to all matriculated international students (it is not in the page's fee table or total)."
     },
     {
       "id": "gatech-ms-analytics",
@@ -139,7 +139,7 @@
         "fee_year": "Fall 2026",
         "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
       },
-      "mandatory_fees_per_year": 3249.72,
+      "mandatory_fees_per_year": 3449.72,
       "living_cost_per_year": {
         "amount": 25000,
         "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
@@ -153,7 +153,7 @@
       "scholarships": null,
       "programme_url": "https://www.buffalo.edu/grad/programs/management-science-stem-mba.html",
       "status": "verified",
-      "notes": "UB non-resident MBA Fall 2026 row: tuition $16,655 + fees $1,624.86 per semester. Programme page: 60 credits, 2 years, 100% in person, $100 application fee. Full-time MBA admits fall only. STEM pathway qualifies for 24-month STEM OPT per UB School of Management news (school source). UB I-20 table lists MBA tuition and fees $33,600 and living $25,000. Admission requirements pages returned 404."
+      "notes": "UB non-resident MBA Fall 2026 row: tuition $16,655 + fees $1,624.86 per semester. Programme page: 60 credits, 2 years, 100% in person, $100 application fee. Full-time MBA admits fall only. STEM pathway qualifies for 24-month STEM OPT per UB School of Management news (school source). UB I-20 table lists MBA tuition and fees $33,600 and living $25,000. Admission requirements pages returned 404. 22 Oct 2026 re-check: fees per year now include UB's USD 100 per semester International Student Fee, which UB's fee page says applies to all matriculated international students (it is not in the page's fee table or total)."
     },
     {
       "id": "wharton-mba",
@@ -241,7 +241,8 @@
         "effective": "2025-09-21",
         "who_affected": "Employers filing new H-1B petitions; USCIS later guidance (Oct 2025, per university/law-firm reports) exempted in-US change of status such as F-1 to H-1B",
         "impact": "Would have made hiring from abroad very costly; F-1/OPT holders changing status inside the US were reported exempt. On 8 June 2026 a federal court (D. Mass.) vacated USCIS implementing guidance and on 24 July 2026 the First Circuit denied a stay; DHS says it will collect if the order is lifted. Uncertainty for employers sponsoring Indian graduates remains.",
-        "source_url": "https://www.uscis.gov/newsroom/alerts/h-1b-faq"
+        "source_url": "https://www.uscis.gov/newsroom/alerts/h-1b-faq",
+        "check": { "level": "partial", "note": "The exemption for changes of status inside the US is attributed to university reports; the USCIS page does not state it." }
       },
       {
         "title": "H-1B wage-weighted selection replaces random lottery",
@@ -268,7 +269,8 @@
         "effective": "2026-09-15",
         "who_affected": "F-1 and J-1 students",
         "impact": "Would require extension-of-stay applications to USCIS for delays, programme changes and some OPT cases, and halve the post-study grace period. A nationwide preliminary injunction (D. Mass., 14 Sep 2026) blocks it; DHS appealed on 30 Sep 2026, so it could return.",
-        "source_url": "https://www.vanderbilt.edu/isss/2026/10/02/dhs-appeals-courts-preliminary-injunction-of-d-s-rule/"
+        "source_url": "https://www.vanderbilt.edu/isss/2026/10/02/dhs-appeals-courts-preliminary-injunction-of-d-s-rule/",
+        "check": { "level": "partial", "note": "The injunction and appeal dates were confirmed; the 60-to-30-day grace period and the announcement date were not found on the pages read." }
       },
       {
         "title": "SEVP guidance narrowing Curricular Practical Training (incl. Day-1 CPT)",
@@ -277,7 +279,8 @@
         "effective": "2026-08-24",
         "who_affected": "F-1 students relying on CPT internships, especially Day-1 CPT programmes",
         "impact": "CPT must be a required part of the curriculum; optional internships often no longer qualify. Fewer paid internships during study, lower earnings while studying and weaker job pipelines. Not affected by the D/S injunction.",
-        "source_url": "https://www.globalimmigrationblog.com/2026/09/federal-court-blocks-dhs-f-1-j-1-fixed-period-admission-rule-curricular-practical-training-restrictions-remain/"
+        "source_url": "https://www.globalimmigrationblog.com/2026/09/federal-court-blocks-dhs-f-1-j-1-fixed-period-admission-rule-curricular-practical-training-restrictions-remain/",
+        "check": { "level": "partial", "note": "Two SEVP broadcasts (12 and 24 Aug 2026) were found, but the source does not state an effective date; 24 Aug may be a second broadcast date." }
       },
       {
         "title": "Expanded online presence (social media) vetting for F, M, J applicants",
@@ -286,7 +289,8 @@
         "effective": "2025-06-26",
         "who_affected": "All F-1 visa applicants (asked to set social media profiles to public)",
         "impact": "Longer processing and 221(g) administrative holds are possible; private profiles can be treated as failing to provide information. Plan visa interviews early to avoid missing intake.",
-        "source_url": "https://oiss.yale.edu/news/department-of-state-announces-enhanced-social-media-vetting-and-resumption-of-visa-interview-scheduling"
+        "source_url": "https://oiss.yale.edu/news/department-of-state-announces-enhanced-social-media-vetting-and-resumption-of-visa-interview-scheduling",
+        "check": { "level": "unverified", "note": "The cited page returned an access error on 22 Oct 2026 and could not be re-checked." }
       },
       {
         "title": "Visa interviews must be in country of nationality or residence",
@@ -342,7 +346,7 @@
       "entry_low": 82460,
       "entry_mid": 105210,
       "entry_high": 135980,
-      "basis": "BLS OEWS national, SOC 15-1252 Software Developers: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015125211/12/13.",
+      "basis": "Only the CS entry_low and entry_mid were re-checked against BLS on 22 Oct 2026 (the data API hit its daily limit); the other BLS values are as originally recorded. BLS OEWS national, SOC 15-1252 Software Developers: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015125211/12/13.",
       "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
       "source_url": "https://www.bls.gov/oes/current/oes151252.htm",
       "period": "May 2025"
@@ -358,7 +362,7 @@
       "entry_low": 67240,
       "entry_mid": 85660,
       "entry_high": 120230,
-      "basis": "BLS OEWS national, SOC 15-2051 Data Scientists: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015205111/12/13.",
+      "basis": "Only the CS entry_low and entry_mid were re-checked against BLS on 22 Oct 2026 (the data API hit its daily limit); the other BLS values are as originally recorded. BLS OEWS national, SOC 15-2051 Data Scientists: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015205111/12/13.",
       "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
       "source_url": "https://www.bls.gov/oes/current/oes152051.htm",
       "period": "May 2025"
@@ -374,7 +378,7 @@
       "entry_low": 60640,
       "entry_mid": 77950,
       "entry_high": 101860,
-      "basis": "Proxy occupation: BLS OEWS national, SOC 13-1111 Management Analysts (not an MBA-specific figure): entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Top-school MBA outcomes are typically much higher; no school employment report was verified. Retrieved via BLS Public API series OEUN000000000000013111111/12/13.",
+      "basis": "Only the CS entry_low and entry_mid were re-checked against BLS on 22 Oct 2026 (the data API hit its daily limit); the other BLS values are as originally recorded. Proxy occupation: BLS OEWS national, SOC 13-1111 Management Analysts (not an MBA-specific figure): entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Top-school MBA outcomes are typically much higher; no school employment report was verified. Retrieved via BLS Public API series OEUN000000000000013111111/12/13.",
       "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
       "source_url": "https://www.bls.gov/oes/current/oes131111.htm",
       "period": "May 2025"

@@ -11,7 +11,7 @@
       "course": "CS",
       "programme_name": "Informatics (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc" },
+      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc" },
       "mandatory_fees_per_year": 194,
       "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
       "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment (grades/documents, possibly interview); no minimum GPA published", "english": "Proof of English required by the application deadline (accepted certificates listed on TUM language-certificates page)", "gre_gmat": null, "work_experience": null },
@@ -49,8 +49,8 @@
       "requirements": { "gpa": "Degree with at least 180 ECTS in statistics or data science (or as major/minor) plus aptitude test (Eignungsverfahren); no minimum GPA published", "english": null, "gre_gmat": null, "work_experience": null },
       "scholarships": null,
       "programme_url": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/statistics-and-data-science-master-hauptfach-18752.html",
-      "status": "verified",
-      "notes": "English-taught, 4 semesters, 120 ECTS, intake winter and summer. LMU states no tuition fees charged since winter 2013/14 (separate fees only for some graduate programmes; none listed for this one). Semester contribution: Studierendenwerk basic fee 97 EUR (summer semester 2026), no compulsory semester-ticket fee since WS 2023/24 (https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/studierendenwerksbeitraege/). Aptitude-test deadlines 15 May (winter) / 15 Nov (summer). Note: LMU's older 'Data Science' M.Sc. had its last intake in WS 2024/25, so it was not used. Living cost null: no LMU-published figure found (page moved); TUM's Munich estimate of 1,300-2,000 EUR/month applies to the same city. English level not stated on programme page."
+      "status": "partial",
+      "notes": "English-taught, 4 semesters, 120 ECTS, intake winter and summer. LMU states no tuition fees charged since winter 2013/14 (separate fees only for some graduate programmes; none listed for this one). Semester contribution: Studierendenwerk basic fee 97 EUR (summer semester 2026), no compulsory semester-ticket fee since WS 2023/24 (https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/studierendenwerksbeitraege/). Aptitude-test deadlines 15 May (winter) / 15 Nov (summer). Note: LMU's older 'Data Science' M.Sc. had its last intake in WS 2024/25, so it was not used. Living cost null: no LMU-published figure found (page moved); TUM's Munich estimate of 1,300-2,000 EUR/month applies to the same city. English level not stated on programme page. 22 Oct 2026 re-check: zero tuition is confirmed, but the 194 EUR a year of mandatory fees is not stated on LMU's pages; it is assumed by analogy with TUM's 97 EUR semester fee."
     },
     {
       "id": "tum-msc-data-engineering-analytics",
@@ -59,7 +59,7 @@
       "course": "DS",
       "programme_name": "Data Engineering and Analytics (M.Sc.)",
       "duration_months": 24,
-      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc" },
+      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "Current TUM page (year not stated; the semester fee shown is for summer 2026)", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc" },
       "mandatory_fees_per_year": 194,
       "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
       "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment; no minimum GPA published", "english": "Proof of English required", "gre_gmat": null, "work_experience": null },
@@ -112,9 +112,9 @@
     "student_visa": {
       "name": "National visa (D visa) for study, section 16b Residence Act",
       "fees": [
-        { "label": "National visa fee, adult (charged in INR; INR 8,300 from 1 Oct 2026, VFS from 30 Sep 2026)", "amount": 75, "currency": "EUR" }
+        { "label": "National visa fee, adult (charged in INR: INR 8,300 from 1 Oct 2026, from 30 Sep 2026 at VFS; the mission warns it can change at short notice with exchange rates)", "amount": 8300, "currency": "INR" }
       ],
-      "source_url": "https://india.diplo.de/in-en/2673212-2673212"
+      "source_url": "https://india.diplo.de/in-en/ueber-uns/kolkata"
     },
     "proof_of_funds": {
       "text": "Blocked account holding currently 11,904 EUR for the first year of studies; no more than 992 EUR can be withdrawn per month. Alternatives: formal obligation letter from a sponsor in Germany, German/EU public scholarship, or education loan. Applications go through the Consular Services Portal; Indian degree holders almost always need an APS certificate.",
@@ -142,7 +142,8 @@
         "effective": "2026-01-01",
         "who_affected": "Graduates and skilled workers applying for an EU Blue Card in 2026",
         "impact": "The reduced 45,934.20 EUR threshold applies to recent graduates (degree within 3 years) and shortage occupations such as IT, so a typical entry CS/DS salary in Germany clears it. Thresholds are indexed to the pension ceiling and rise every year.",
-        "source_url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf"
+        "source_url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf",
+        "check": { "level": "partial", "note": "The salary thresholds were confirmed only through secondary sources; the official Bundesanzeiger PDF could not be read." }
       },
       {
         "title": "TUM raises non-EU tuition from winter semester 2027/28",
@@ -151,7 +152,8 @@
         "effective": null,
         "who_affected": "Non-EU students starting at TUM in winter semester 2027/28 or later",
         "impact": "Master's tuition rises from 4,000/6,000 EUR to 4,600/6,800 EUR per semester. An Indian student starting a 6,000-EUR programme in 2027 could pay about 3,200 EUR more over 4 semesters. Students already enrolled keep their starting rate.",
-        "source_url": "https://www.tum.de/en/studies/fees/tuition"
+        "source_url": "https://www.tum.de/en/studies/fees/tuition",
+        "check": { "level": "partial", "note": "The page does not say which tier (4,600 or 6,800 EUR) a given programme moves to, so the 3,200 EUR estimate is an assumption." }
       },
       {
         "title": "German missions in India set national visa fee at INR 8,300",
@@ -169,7 +171,8 @@
         "effective": null,
         "who_affected": "Skilled migrants hoping for German citizenship after 3 years",
         "impact": "Citizenship now generally needs at least 5 years' residence. Does not affect study, job-search permit or PR timelines, but lengthens the path to an EU passport.",
-        "source_url": "https://www.bundesregierung.de/resource/blob/975954/2388128/f26afadd67ac33455496c4e532b4afcc/89-5-bmi-aenderung-staatsangehoerigeitsrecht-bt-data.pdf?download=1"
+        "source_url": "https://www.bundesregierung.de/resource/blob/975954/2388128/f26afadd67ac33455496c4e532b4afcc/89-5-bmi-aenderung-staatsangehoerigeitsrecht-bt-data.pdf?download=1",
+        "check": { "level": "unverified", "note": "The cited source is a parliamentary speech, not the law; the effective date is not stated and the claim could not be confirmed." }
       },
       {
         "title": "Work-and-Stay-Agentur: single digital platform for skilled-worker immigration",
@@ -196,7 +199,8 @@
         "effective": "2024-06-01",
         "who_affected": "Job seekers from abroad (not graduates of German universities, who use the 18-month permit)",
         "impact": "Points-based 1-year job-search card. A fallback route; German graduates have the stronger 18-month permit.",
-        "source_url": "https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2024/05/chancenkarte.html"
+        "source_url": "https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2024/05/chancenkarte.html",
+        "check": { "level": "unverified", "note": "The cited government page returned an error on 22 Oct 2026 and could not be re-checked." }
       }
     ]
   },
@@ -241,7 +245,7 @@
   },
   "tax": {
     "effective_rate": 0.387,
-    "basis": "ESTIMATE. OECD Taxing Wages 2026: employee net average tax rate (income tax + employee social security contributions) for a single worker without children at the average wage in Germany was 38.7% in 2025. Entry salaries (about 50-65k EUR) sit below the OECD average wage, so the true rate is likely somewhat lower; 38.7% is a conservative figure. Tax class I, no church tax assumed.",
+    "basis": "ESTIMATE, not independently re-verified on 22 Oct 2026 (the OECD PDF could not be read). OECD Taxing Wages 2026: employee net average tax rate (income tax + employee social security contributions) for a single worker without children at the average wage in Germany was 38.7% in 2025. Entry salaries (about 50-65k EUR) sit below the OECD average wage, so the true rate is likely somewhat lower; 38.7% is a conservative figure. Tax class I, no church tax assumed.",
     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/taxing-wages-2026-country-notes_491a0e97/germany_649f0784/ca03c391-en.pdf"
   },
   "checklist": [

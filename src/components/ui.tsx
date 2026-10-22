@@ -54,12 +54,18 @@ export function Money({ amount, currency, rate, small }: { amount: number | null
 export function FxNotice() {
   const { fx } = useData();
   return (
-    <p className="flex flex-wrap items-center gap-2 text-xs text-slate">
-      {fx.live ? <Badge kind="verified">Live rates</Badge> : <Badge kind="stale">Stored rates, not current</Badge>}
-      <span>
-        {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
-      </span>
-    </p>
+    <div className="space-y-1 text-xs text-slate">
+      <p className="flex flex-wrap items-center gap-2">
+        {fx.live ? <Badge kind="verified">Live rates</Badge> : <Badge kind="stale">Stored rates, not current</Badge>}
+        <span>
+          {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
+        </span>
+      </p>
+      <p>
+        These are mid-market reference rates. Banks and money-transfer services usually charge a margin on top (often a percent or two), so
+        what you actually pay in rupees will likely be a little higher. Use the planning-rate slider in the ROI calculator to allow for it.
+      </p>
+    </div>
   );
 }
 

@@ -17,7 +17,7 @@ function Slider({ label, value, min, max, step, unit, onChange, kind = "assumpti
 }
 
 export default function Roi() {
-  const { countries, assumptions: a, setAssumptions, profile, setProfile, fx } = useData();
+  const { countries, assumptions: a, setAssumptions, profile, setProfile, fx, rateBasis } = useData();
   const all = countries.flatMap((c) => c.programmes.map((p) => ({ c, p })));
   const [id, setId] = useState<string>(all[0]?.p.id ?? "");
   const sel = all.find((x) => x.p.id === id) ?? all[0];
@@ -56,6 +56,7 @@ export default function Roi() {
 
           <h2 className="flex items-center gap-2 pt-2 font-bold">Loan <Badge kind="assumption" /></h2>
           <Slider label="Interest rate" value={a.loanRatePct} min={6} max={16} step={0.05} unit="%" onChange={(v) => set({ loanRatePct: v })} />
+          {rateBasis && <p className="hint -mt-3">Default {rateBasis.rate}% = average mid-point of the published ranges of {rateBasis.lenders.length} public-sector banks ({rateBasis.lenders.join(", ")}), as of {rateBasis.asOf}. Private banks and NBFCs are not included because their rates vary or are published only as &ldquo;starting from&rdquo;. Check your own sanction letter.</p>}
           <Slider label="Grace period after course" value={a.graceMonths} min={0} max={12} step={1} unit=" mo" onChange={(v) => set({ graceMonths: v })} />
           <Slider label="Processing fee" value={a.processingFeePct} min={0} max={3} step={0.25} unit="%" onChange={(v) => set({ processingFeePct: v })} />
           <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={a.payInterestDuringMoratorium} onChange={(e) => set({ payInterestDuringMoratorium: e.target.checked })} /> Pay interest during study (instead of adding it to the loan)</label>

@@ -88,7 +88,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
         </>
       )}
       <p className="text-xs text-slate">
-        India comparison uses {usingDefaultIndia ? <><Badge kind="estimate" /> a typical India salary of {lakh(ind)} / yr from our India baseline data</> : <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</>}.
+        India comparison uses {usingDefaultIndia ? <><Badge kind="estimate" /> a typical India salary of {lakh(ind)} / yr from our India baseline data <Badge kind="unverified">Source not re-checked</Badge> (the NIRF figures are from top-ranked institutes and could not be re-verified, so they may be high. Enter your own salary for a reliable comparison)</> : <><Badge kind="input" /> your India salary of {lakh(ind)} / yr</>}.
         {missing.length > 0 && <> Missing: {missing.join("; ")}.</>}
       </p>
     </div>
@@ -132,7 +132,10 @@ export function CostTable({ country: c, programme: p }: { country: CountryData; 
         <thead><tr><th>Item</th><th>Amount</th><th>Type</th><th>Basis</th></tr></thead>
         <tbody>
           <tr><td>Tuition (whole programme)</td><td><Money amount={cb.tuition} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td><Badge kind={p.status === "verified" ? "verified" : p.status === "partial" ? "partial" : "unverified"} /> <Source url={p.tuition?.source_url} /> {p.tuition && `(${p.tuition.period}, ${p.tuition.fee_year})`}</td></tr>
-          <tr><td>Mandatory fees</td><td><Money amount={cb.fees} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{p.mandatory_fees_per_year == null ? <Badge kind="missing">Not found; counted as 0</Badge> : <Badge kind="verified" />}</td></tr>
+          <tr><td>Mandatory fees</td><td><Money amount={cb.fees} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{p.mandatory_fees_per_year == null ? <Badge kind="missing">Not found; counted as 0</Badge> : <Badge kind={p.status === "verified" ? "verified" : p.status === "partial" ? "partial" : "unverified"} />}</td></tr>
+          {c.health_insurance_per_year && cb.health > 0 && (
+            <tr><td>Compulsory health insurance</td><td><Money amount={cb.health} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td><Badge kind="estimate" /> {c.health_insurance_per_year.basis} <Source url={c.health_insurance_per_year.source_url} /></td></tr>
+          )}
           <tr><td>Living ({p.duration_months} months, moderate)</td><td><Money amount={cb.living} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{p.living_cost_per_year ? <><Badge kind="verified">University estimate</Badge> <Source url={p.living_cost_per_year.source_url} /></> : <><Badge kind="estimate" /> {c.living_cost.basis}</>}</td></tr>
           <tr><td>Visa fees</td><td><Money amount={cb.visa} currency={c.currency} rate={cb.rate} /></td><td>One-time</td><td><Source url={c.visa.student_visa.source_url} /></td></tr>
           <tr><td>Flights, tests, applications, 2-month deposit</td><td><Money amount={cb.oneTimeInr} currency="INR" rate={1} /></td><td>One-time</td><td><Badge kind="assumption" /> editable in the ROI calculator</td></tr>

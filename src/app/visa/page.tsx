@@ -89,9 +89,10 @@ export default function Visa() {
             <div className="mt-3 space-y-3">
               {v.recent_changes.map((ch) => (
                 <div key={ch.title} className="border-l-4 border-line pl-3 text-sm">
-                  <div className="flex flex-wrap items-center gap-2"><Badge kind={STATUS[ch.status].kind}>{STATUS[ch.status].label}</Badge><strong>{ch.title}</strong></div>
+                  <div className="flex flex-wrap items-center gap-2"><Badge kind={STATUS[ch.status].kind}>{STATUS[ch.status].label}</Badge><strong>{ch.title}</strong>{ch.check && <Badge kind={ch.check.level === "partial" ? "partial" : "unverified"}>{ch.check.level === "partial" ? "Partly confirmed" : "Not confirmed"}</Badge>}</div>
                   <div className="mt-1 text-xs text-slate">Announced: {ch.announced ?? "not found"} · Takes effect: {ch.effective ?? "not set"} · Affects: {ch.who_affected}</div>
                   <p className="mt-1">{ch.impact}</p>
+                  {ch.check && <p className="mt-1 text-xs text-slate">Verification note: {ch.check.note}</p>}
                   <Source url={ch.source_url} />
                 </div>
               ))}
