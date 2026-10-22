@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { useData } from "./DataProvider";
 import { inr, local } from "@/lib/format";
@@ -51,6 +52,26 @@ export function Money({ amount, currency, rate, small }: { amount: number | null
   );
 }
 
+/** Shown wherever results depend on the student's India salary and they have not entered it yet. */
+export function IndiaSalaryNotice() {
+  const { profile } = useData();
+  const s = profile.indiaSalary;
+  if (s != null && s > 0) return null;
+  if (s === 0) {
+    return (
+      <div className="rounded-xl border border-line bg-card p-3 text-sm text-slate" role="status">
+        <strong>India salary entered as ₹0.</strong> Payback and ROI are measured against earning nothing if you stay. The two return-to-India scenarios assume you earn an India salary after coming back, so they are not shown; enter a salary above 0 to see them.
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-xl border border-line bg-card p-3 text-sm text-slate" role="status">
+      <strong>Optional: add your India salary</strong> to see payback and ROI against staying in India and the two return-to-India scenarios. Enter 0 if you would earn nothing (for example a fresher or unpaid family work). We use only the figure you enter, because we have no verified India salary data.{" "}
+      <Link href="/assess" className="link">Start my assessment</Link> or use the slider in the <Link href="/roi" className="link">ROI calculator</Link>.
+    </div>
+  );
+}
+
 export function FxNotice() {
   const { fx } = useData();
   return (
@@ -58,7 +79,7 @@ export function FxNotice() {
       <p className="flex flex-wrap items-center gap-2">
         {fx.live ? <Badge kind="verified">Live rates</Badge> : <Badge kind="stale">Stored rates, not current</Badge>}
         <span>
-          {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
+          {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 GBP = ₹{fx.inrPer.GBP.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
         </span>
       </p>
       <p>
@@ -98,4 +119,4 @@ export function PageHead({ eyebrow, title, children }: { eyebrow?: string; title
   );
 }
 
-export const FLAG: Record<string, string> = { US: "🇺🇸", DE: "🇩🇪", CA: "🇨🇦", JP: "🇯🇵", AU: "🇦🇺", IN: "🇮🇳" };
+export const FLAG: Record<string, string> = { UK: "🇬🇧", US: "🇺🇸", DE: "🇩🇪", CA: "🇨🇦", JP: "🇯🇵", AU: "🇦🇺", IN: "🇮🇳" };

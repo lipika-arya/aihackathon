@@ -1,6 +1,6 @@
-import { DEFAULT_ASSUMPTIONS, DEFAULT_WEIGHTS, RISK_WEIGHTS, SCENARIOS } from "@/lib/model";
+import { DEFAULT_ASSUMPTIONS, DEFAULT_WEIGHTS, INDIA_JOB_SEARCH_MONTHS, RISK_WEIGHTS, SCENARIOS } from "@/lib/model";
 import { PICKS } from "@/lib/recommend";
-import { loadLenders } from "@/lib/data";
+import { loadIndiaMasters, loadLenders } from "@/lib/data";
 import { defaultLoanRate } from "@/lib/rate";
 
 const H = ({ children }: { children: React.ReactNode }) => <h2 className="mt-10 text-xl font-extrabold">{children}</h2>;
@@ -9,13 +9,15 @@ const F = ({ children }: { children: React.ReactNode }) => <pre className="card 
 export default function Methodology() {
   const a = DEFAULT_ASSUMPTIONS;
   const rate = defaultLoanRate(loadLenders());
+  const india = loadIndiaMasters()?.programmes.length ? true : null;
   return (
     <article className="max-w-3xl text-sm leading-relaxed">
       <p className="text-xs font-semibold uppercase tracking-wider text-forest">Methodology</p>
       <h1 className="mt-1 text-3xl font-extrabold">How AbroadROI calculates everything</h1>
       <p className="mt-2 text-slate">Every number comes from deterministic code you can read on GitHub (src/lib/finance.ts, model.ts, recommend.ts), with unit tests. No AI model calculates or decides anything.</p>
 
-      <H>1. Data labels</H>
+      <H>1. Data standard and labels</H>
+      <p className="mt-2">Only data that was read on an official source and is current is shown. Every programme, fee, rule and rate must be at least partly verified against an official page; items that could not be confirmed at all, were out of date for the intake, or were blocked from checking are left out rather than shown with a caveat. Fee years are those the source states; where a source gives no year we say so. Anything that is only partly confirmed carries a label that says what is missing.</p>
       <ul className="mt-2 list-disc space-y-1 pl-5">
         <li><strong>Verified</strong>: read on an official page (university, government, lender) on the date shown.</li>
         <li><strong>Partly verified</strong>: some fields confirmed, others missing or from a secondary source.</li>
@@ -48,12 +50,14 @@ EMI = P × r × (1+r)^n / ((1+r)^n − 1), r = annual rate / 12, n = repayment m
       <H>5. Income</H>
       <F>{`Abroad take-home per month = gross entry salary × (1 + growth)^years × (1 − effective tax rate) / 12
 Entry salary: low / mid / high from the official source shown on each country (e.g. BLS percentiles, Job Bank, QILT)
-India path: your India salary (or our sourced baseline) × (1 − India tax ${a.indiaTaxPct}%) growing ${a.salaryGrowthIndiaPct}%/yr,
+India path: the India salary you enter, which is optional (we have no verified India salary data and never fill one in) × (1 − India tax ${a.indiaTaxPct}%) growing ${a.salaryGrowthIndiaPct}%/yr,
             minus India living cost growing ${a.livingInflationPct}%/yr`}</F>
 
       <H>6. Scenarios</H>
-      <ul className="mt-2 list-disc space-y-1 pl-5">{Object.values(SCENARIOS).map((s) => <li key={s.label}><strong>{s.label}</strong>: {s.explain}</li>)}</ul>
+      <p className="mt-2">Costs, funding gap, EMI and years to repay do not depend on an India salary. Without one, the three job-abroad scenarios still run, but payback, NPV and ROI against staying in India, and the two scenarios that assume you earn your India salary after returning (work permit ends, return home), are not shown, and the ROI part is left out of the score (the other four parts are re-weighted).</p>
+      <ul className="mt-2 list-disc space-y-1 pl-5">{Object.entries(SCENARIOS).filter(([k]) => k !== "mastersIndia" || india).map(([, s]) => <li key={s.label}><strong>{s.label}</strong>: {s.explain}</li>)}</ul>
       <p className="mt-2">Scenarios are what-ifs. We don&apos;t attach probabilities to them because no reliable data exists to do so.</p>
+      {india && (<p className="mt-2"><strong>Master&apos;s in India.</strong> This scenario costs the same type of course at a named Indian institute: its published tuition and compulsory fees, plus its own hostel-and-food estimate (or your India living cost if it publishes none), with no exchange rate, visa or flight costs. After graduating, income is the institute&apos;s own median placement salary from its placement report, starting {INDIA_JOB_SEARCH_MONTHS} months after graduating (an assumption), taxed at your India tax rate and growing at the India salary growth rate. It uses the same loan simulation and is compared with staying in India and working now, so the forgone salary during the course counts as a cost. Assistantship stipends (for example GATE-linked M.Tech stipends) are shown but not counted, because they depend on eligibility. Placement medians describe the students who were placed, so an individual&apos;s outcome can be lower.</p>)}
 
       <H>7. ROI, NPV, IRR, payback</H>
       <F>{`Personal cash flow (each month) = take-home − living − own money spent on study − interest paid − EMI

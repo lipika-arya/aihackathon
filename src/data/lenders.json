@@ -161,7 +161,7 @@
       "eligibility": null,
       "status": "partial",
       "source_url": "https://www.hdfc.bank.in/education-loan/foreign-education/interest-rates-and-charges",
-      "notes": "HDFC Bank's page states credit is at the sole discretion of Credila Financial Services Ltd (formerly HDFC Credila), so this is effectively a Credila loan distributed by HDFC Bank. Consider using the Credila entry instead. Origination fee here (1.5%) differs from Credila's own page (1.25%)."
+      "notes": "HDFC Bank's page states credit is at the sole discretion of Credila Financial Services Ltd (formerly HDFC Credila), so this is effectively a Credila loan distributed by HDFC Bank."
     },
     {
       "id": "icici-bank-education-abroad",
@@ -216,33 +216,6 @@
       "status": "partial",
       "source_url": "https://www.axis.bank.in/loans/education-loan/interest-rates-charges",
       "notes": "Axis does not publish the spread over repo, so no rate number. Its rate page shows repo 5.25% while SBI/BoB/PNB/Union pages show 5.50% (Axis page may be stale). Max tenure incl. moratorium capped at 20 years. 22 Oct 2026 re-check: the rate page shows repo 5.25%, while other banks' pages show 5.50% from Oct 2026, so this benchmark may be out of date; the product page also shows a different illustrative table."
-    },
-    {
-      "id": "credila",
-      "name": "Credila Financial Services (formerly HDFC Credila)",
-      "type": "nbfc",
-      "product": "Credila Education Loan (Study Abroad)",
-      "url": "https://www.credila.com/education-loan-interest-rates-charges",
-      "currency": "INR",
-      "rate_min": 9.95,
-      "rate_max": null,
-      "rate_text": "Secured education loan from 9.95% p.a. onwards; unsecured rate not published",
-      "fixed_or_floating": "floating",
-      "benchmark": "Credila Benchmark Lending Rate (CBLR) + risk-based spread (value of CBLR not published)",
-      "processing_fee": "1.25% of sanctioned amount + taxes",
-      "max_amount": null,
-      "max_amount_text": "No upper limit with collateral; based on eligibility without collateral",
-      "collateral": "Secured and unsecured loans offered",
-      "co_applicant": null,
-      "margin": null,
-      "moratorium": null,
-      "moratorium_interest": "MITC describes Partial Interest (PMII) loans and loans paying full interest during moratorium",
-      "repayment_years_max": 15,
-      "prepayment": "NIL foreclosure / no prepayment penalty",
-      "eligibility": null,
-      "status": "partial",
-      "source_url": "https://www.credila.com/education-loan-interest-rates-charges",
-      "notes": "Features section says up to 15 years for PG, up to 20 years for UG. CBLR mechanics from https://www.credila.com/pdfs/MITC.pdf. Moratorium length not confirmed on an official page read. 22 Oct 2026 re-check: credila.com blocks automated access, so the rate and fee could not be re-confirmed. Figures are as originally recorded."
     },
     {
       "id": "avanse",
@@ -384,23 +357,5 @@
     "text": "Section 80E: deduction for interest paid on loan for higher education of self or relative; amount = total interest paid (no cap stated); principal not deductible. Available only under the old tax regime (not under new regime u/s 115BAC). Lender name, loan account number, sanction date, loan amount and outstanding balance must be reported in the ITR. The 8-year limit (initial AY + 7 following) is widely cited but could not be confirmed on an official page we could open.",
     "source_url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-0"
   },
-  "india_baseline": {
-    "CS": {
-      "low": 745000,
-      "mid": 1000000,
-      "high": 1400000,
-      "basis": "NOT RE-VERIFIED on 22 Oct 2026: nirfindia.org blocked automated access, so these figures could not be reproduced. NIRF India Rankings 2025, Engineering top-100 institutes, institute-reported median salary of placed UG 4-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 97 institutes with data (range Rs 3.36 lakh to Rs 32 lakh). All B.Tech branches, not CS-only; placed students only at top-ranked institutes, so above the national average.",
-      "source_url": "https://www.nirfindia.org/Rankings/2025/EngineeringRanking.html",
-    "status": "unverified"
-    },
-    "DS": null,
-    "MBA": {
-      "low": 801750,
-      "mid": 1128573,
-      "high": 1787500,
-      "basis": "NOT RE-VERIFIED on 22 Oct 2026: nirfindia.org blocked automated access, so these figures could not be reproduced. NIRF India Rankings 2025, Management top-100 institutes, institute-reported median salary of placed PG 2-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 100 institutes (range Rs 3.25 lakh to Rs 33 lakh; IIM Ahmedabad Rs 31 lakh). Placed students at top-ranked institutes only.",
-      "source_url": "https://www.nirfindia.org/Rankings/2025/ManagementRanking.html",
-    "status": "unverified"
-    }
-  }
+  "india_baseline": {}
 }

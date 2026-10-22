@@ -2,12 +2,13 @@
 import Link from "next/link";
 import { useData } from "@/components/DataProvider";
 import { Badge, FLAG, FxNotice } from "@/components/ui";
-import { lakh } from "@/lib/format";
 import { riskBand, visaRiskScore } from "@/lib/model";
 import { COURSES } from "@/lib/types";
 
 export default function Home() {
-  const { countries, lenders, fx } = useData();
+  const { countries, lenders, fx, india } = useData();
+  const word = (n: number) => ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"][n] ?? String(n);
+  const futures = india?.programmes.length ? 6 : 5;
   const progs = countries.flatMap((c) => c.programmes);
   const verified = progs.filter((p) => p.status === "verified").length;
   return (
@@ -30,13 +31,14 @@ export default function Home() {
         </div>
         <div className="card space-y-3 p-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate">The question nobody models</p>
-          <p className="text-lg font-bold">Same loan. Five possible futures.</p>
+          <p className="text-lg font-bold">Same loan. {word(futures)} possible futures.</p>
           {[
             ["Job abroad fast", "#245c4a"],
             ["Job abroad after 6 months", "#3b82a6"],
             ["Slow job search, low salary", "#b7791f"],
             ["Work permit ends, back to India", "#8a5a9e"],
             ["Return home right after graduating", "#b5473c"],
+            ...(india?.programmes.length ? [["Or do the same master's in India", "#475569"]] : []),
           ].map(([l, col]) => (
             <div key={l} className="flex items-center gap-3 rounded-lg border border-line px-3 py-2 text-sm">
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: col }} />{l}
@@ -47,7 +49,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-extrabold">Five countries, three courses</h2>
+        <h2 className="text-2xl font-extrabold">{word(countries.length)} countries, three courses</h2>
         <p className="mt-1 text-slate">{Object.values(COURSES).join(" · ")}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {countries.map((c) => {
@@ -72,7 +74,7 @@ export default function Home() {
         {[
           ["1", "Tell us about you", "Degree, scores, budget, loan limit and what matters to you. Ranges are fine. Stays in your browser."],
           ["2", "We cost every option", "Tuition, fees, living, visa, flights and loan interest during study, converted to INR at today's rate."],
-          ["3", "We stress-test it", "Five scenarios against your India alternative: payback, NPV, EMI burden, years to debt-free."],
+          ["3", "We stress-test it", "Several what-if futures against your India alternative: payback, NPV, EMI burden, years to debt-free."],
           ["4", "You decide", "Six ranked picks with the reasons, the risks and the gaps. We never guarantee jobs, visas or returns."],
         ].map(([n, t, d]) => (
           <div key={n} className="card p-5">
@@ -98,7 +100,6 @@ export default function Home() {
           <Link href="/methodology" className="link">How the numbers work</Link>
         </p>
         <div className="mt-3"><FxNotice /></div>
-        {lenders?.india_baseline?.CS && <p className="mt-2 text-xs text-slate">Default India salary baseline (CS): {lakh(lenders.india_baseline.CS.mid)} / yr. <Badge kind="unverified">Source not re-checked</Badge> It comes from top-ranked institutes only and could not be re-verified, so treat it as an upper-range estimate and enter your own in the assessment.</p>}
       </section>
     </div>
   );

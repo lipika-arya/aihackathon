@@ -2,19 +2,19 @@
 
 **Abroad or not? See if your loan pays off.**
 
-AbroadROI helps Indian students decide whether a master's abroad (MS in CS, Data Science or MBA in Canada, Germany, the US, Japan or Australia) is worth the money. For each programme, it shows:
+AbroadROI helps Indian students decide whether a master's abroad (MS in CS, Data Science or MBA in Canada, Germany, the US, the UK, Japan or Australia) is worth the money. For each programme, it shows:
 
 - the full cost
 - the education-loan repayment
 - visa policy risk
-- five what-if futures, each compared against staying in India:
+- five what-if futures, each compared against staying in India (using the India salary you enter):
   - job abroad fast
   - job abroad
   - slow job search
   - work permit ends and you come home
   - you come home straight after graduating
 
-Every figure is labelled verified, estimate, assumption or your input, and links to its source. Nothing is calculated by an AI model: all numbers come from tested TypeScript functions.
+Every figure is labelled verified, partly verified, estimate, assumption or your input, and links to its source. Only data that is at least partly verified against an official source and is current is shown (see `docs/DATA_AUDIT.md`). Nothing is calculated by an AI model: all numbers come from tested TypeScript functions.
 
 ## Run it locally
 
@@ -59,7 +59,7 @@ src/
     *.test.ts     vitest
   data/
     countries/{CA,DE,US,JP,AU}.json   programmes, living costs, visa, salary, tax, risk factors
-    lenders.json                      Indian + international education lenders, India salary baseline
+    lenders.json                      Indian + international education lenders
     fx-fallback.json
 docs/PROJECT.md   requirements, architecture, data model, methodology, roadmap
 ```

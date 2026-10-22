@@ -3,7 +3,7 @@ import { DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, runAll, semesterCount, tuitionTot
 import { buildCandidates, picks } from "./recommend";
 import type { CountryData, FxRates, Programme } from "./types";
 
-const fx: FxRates = { inrPer: { INR: 1, USD: 90, EUR: 100, CAD: 65, JPY: 0.6, AUD: 60 }, date: "2026-10-22", source: "test", live: false };
+const fx: FxRates = { inrPer: { INR: 1, USD: 90, EUR: 100, CAD: 65, JPY: 0.6, AUD: 60, GBP: 120 }, date: "2026-10-22", source: "test", live: false };
 
 const prog = (over: Partial<Programme> = {}): Programme => ({
   id: "x", university: "U", city: "C", course: "CS", programme_name: "MS CS", duration_months: 24,

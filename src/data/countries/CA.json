@@ -178,6 +178,70 @@
       "programme_url": "https://www.concordia.ca/jmsb/mba/admissions/requirements.html",
       "status": "partial",
       "notes": "Official Concordia ISO estimate letter (start 11 Jan 2027): first year CAD 33,795.40, full 2-year programme CAD 62,902.75 at the international rate, including student, admin and international health insurance fees. Personal expenses CAD 8,205.66/term x 3 = CAD 24,616.98/year. Requirements from search summaries of JMSB pages, not opened directly. Quebec: CAQ required; Quebec proof-of-funds rules differ. 24 months: spouse eligible for open work permit (16+ month master's)."
+    },
+    {
+      "id": "sfu-msc-bigdata-ds",
+      "university": "Simon Fraser University",
+      "city": "Burnaby (Vancouver area)",
+      "course": "DS",
+      "programme_name": "Professional Master of Science in Big Data (course-based, mandatory paid co-op)",
+      "duration_months": 16,
+      "tuition": {
+        "amount": 13856.16,
+        "period": "semester",
+        "credits_total": null,
+        "semesters": 4,
+        "fee_year": "2026/27 academic year (entry 2026/2027)",
+        "source_url": "https://www.sfu.ca/fas/study/future-graduates/programs/master-big-data.html"
+      },
+      "mandatory_fees_per_year": 2202.63,
+      "mandatory_fees_note": "Tuition is a flat per-term fee with the co-op fee included (SFU calendar). Mandatory fees are separate: SFU's own 2026/27 typical-cost table gives supplementary fees (U-Pass, Student Services, Recreation-Athletics, Student Activity incl. Build SFU Levy) of CAD 453.21 per term for graduates, plus guard.me international medical insurance CAD 281.00 per term = CAD 734.21 x 3 terms/yr = CAD 2,202.63. Optional/opt-out Student Society health and dental plan excluded. Co-op term fees may be a little lower.",
+      "living_cost_per_year": {
+        "amount": 28941,
+        "source_url": "https://www.sfu.ca/students/financial-aid/plan/typical-costs.html"
+      },
+      "requirements": {
+        "gpa": "Bachelor's in computer science or a related field with CGPA at least 3.00/4.33, or at least 3.33/4.33 on the last 60 units",
+        "english": "SFU graduate English proficiency rules apply unless the degree was taught in English in a country SFU lists as English-primary (scores not captured)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "Entrance scholarships of up to CAD 15,000 each, all successful applicants considered (programme page)",
+      "programme_url": "https://www.sfu.ca/fas/study/future-graduates/programs/master-big-data.html",
+      "status": "verified",
+      "notes": "SFU programme page (2026/27): international tuition CAD 13,856.16 per term, CAD 55,424.64 for 4 terms (= the app's 4 x per-term); matches the Spring 2027 calendar fee table (Big Data, entered 2026/2027). Programme page: 4 semesters, '16 - 20 months', paid co-op of one or two terms is mandatory (co-op fee is inside the programme fee). Duration set to 16 months (the minimum; a two-term co-op stretches it to 20 and the term fee is still charged 4 times). Living cost computed by us from SFU's own typical-cost components for a graduate international student per 4-month term: Hamilton Hall residence 4,720 + meal plan 3,727 + textbooks/tech 1,200 = 9,647 x 3 terms = CAD 28,941 (excludes tuition, supplementary fees and insurance, which are counted elsewhere). 16 months qualifies the spouse for an open work permit only at the minimum duration; a longer stay is fine too."
+    },
+    {
+      "id": "schulich-mba",
+      "university": "York University (Schulich School of Business)",
+      "city": "Toronto",
+      "course": "MBA",
+      "programme_name": "Schulich MBA (full-time, 4 terms)",
+      "duration_months": 16,
+      "tuition": {
+        "amount": 31003,
+        "period": "semester",
+        "credits_total": null,
+        "semesters": 4,
+        "fee_year": "Fall 2026 entry (2026-2027 academic year)",
+        "source_url": "https://schulich.yorku.ca/wp-content/uploads/2026/04/FA26-Tuition-Letter_Intl_MBA.pdf"
+      },
+      "mandatory_fees_per_year": 3927,
+      "mandatory_fees_note": "The tuition letter lists additional per-term fees GSA Health Plan CAD 517 and UHIP CAD 792 = CAD 1,309 per term x 3 terms/yr = CAD 3,927. Schulich's fee page says its tuition figures already include supplementary fees. GSA plan can be waived with alternative coverage; UHIP is mandatory for international students.",
+      "living_cost_per_year": {
+        "amount": 35461.5,
+        "source_url": "https://schulich.yorku.ca/wp-content/uploads/2026/04/FA26-Tuition-Letter_Intl_MBA.pdf"
+      },
+      "requirements": {
+        "gpa": "Undergraduate degree with at least a B average in the last two full years",
+        "english": "IELTS Academic 7.0 overall (min 6.5 per band); TOEFL iBT requirement also listed (see page)",
+        "gre_gmat": "GMAT or GRE required (waivers case by case)",
+        "work_experience": "Minimum two years of relevant post-degree full-time work experience"
+      },
+      "scholarships": null,
+      "programme_url": "https://schulich.yorku.ca/programs/mba/",
+      "status": "verified",
+      "notes": "Official Schulich international tuition letter (MBA, Fall 2026 entry, 2026-27): Term 1 CAD 28,003 after a CAD 3,000 confirmation deposit (so 31,003 gross) and Terms 2-4 CAD 31,003 each = CAD 124,012. Schulich's fee page rounds this to CAD 31,005 per term and CAD 124,019 total (a CAD 7 gap); the letter is used. Programme page: full-time 16 to 20 months, average four terms (a term is 12 weeks per the fee page); an 8-12 month accelerated route exists only for Canadian BBA/BCom grads with advanced standing. Duration set to 16 months. Living cost computed by us as the midpoint of the letter's 4-month Toronto estimate (books 750, on-campus rent 4,500-8,000, food 1,500-3,000, personal 1,806-2,179, transit 392-764 = 8,948 to 14,693; midpoint 11,820.50) x 3 terms = CAD 35,461.50 per year; the letter notes actual costs vary. 16 months qualifies the spouse for an open work permit only at the minimum duration."
     }
   ],
   "living_cost": {

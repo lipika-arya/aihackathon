@@ -4,18 +4,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, runAll, tuitionTotalLocal, visaRiskScore } from "./model";
-import type { CountryData, FxRates, LenderData } from "./types";
+import type { CountryData, FxRates } from "./types";
 import fb from "../data/fx-fallback.json";
 
 const dir = path.join(__dirname, "..", "data", "countries");
 const countries: CountryData[] = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
-const lenders: LenderData = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "lenders.json"), "utf8"));
 const fx: FxRates = { inrPer: fb.inrPerUnit as FxRates["inrPer"], date: fb.date, source: "test", live: false };
 
 describe.each(countries.map((c) => [c.country, c] as const))("%s data", (_, c) => {
   it("has the required structure", () => {
     expect(c.programmes.length).toBeGreaterThan(0);
-    expect(["USD", "EUR", "CAD", "JPY", "AUD"]).toContain(c.currency);
+    expect(["USD", "EUR", "CAD", "JPY", "AUD", "GBP"]).toContain(c.currency);
     const s = visaRiskScore(c);
     expect(s).toBeGreaterThanOrEqual(0);
     expect(s).toBeLessThanOrEqual(100);
@@ -27,7 +26,7 @@ describe.each(countries.map((c) => [c.country, c] as const))("%s data", (_, c) =
     }
   });
   it.each(c.programmes.map((p) => [p.id, p] as const))("%s runs through the model", (_, p) => {
-    const india = lenders.india_baseline[p.course]?.mid ?? lenders.india_baseline.CS?.mid ?? null;
+    const india = 1_000_000; // example India salary: the app has no baseline of its own
     const r = runAll({ country: c, programme: p, course: p.course, profile: { ...DEFAULT_PROFILE, maxLoan: 1e8 }, assumptions: DEFAULT_ASSUMPTIONS, fx, indiaSalary: india });
     if (tuitionTotalLocal(p) == null) return; // allowed: shows as "data unavailable"
     for (const s of Object.values(r)) {

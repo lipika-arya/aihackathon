@@ -184,6 +184,98 @@
       "programme_url": "https://mba.wharton.upenn.edu/",
       "status": "verified",
       "notes": "2026-27 budget, identical for Year 1 and Year 2: tuition $87,970, university fees $5,038, total cost $135,441. Living/yr = housing $21,258 + food $9,287 + personal $4,703 + transportation $1,044; excludes health insurance $5,018 and books $1,123. Two-year length inferred from the two-year budget; months not stated on pages checked. Penn SRFS page shows total $135,444 (split fees) - $3 difference."
+    },
+    {
+      "id": "northeastern-ms-cs",
+      "university": "Northeastern University (Khoury College of Computer Sciences)",
+      "city": "Boston, MA",
+      "course": "CS",
+      "programme_name": "MS in Computer Science (Boston)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 1922,
+        "period": "credit",
+        "credits_total": 32,
+        "fee_year": "2026-2027",
+        "source_url": "https://studentfinance.northeastern.edu/billing-payments/tuition-and-fees/"
+      },
+      "mandatory_fees_per_year": 850,
+      "living_cost_per_year": {
+        "amount": 22800,
+        "source_url": "https://studentfinance.northeastern.edu/billing-payments/tuition-and-fees/"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "English test (TOEFL/IELTS) required from international applicants, but waivable with a 4+ year degree from a country where English is an official language; minimum scores not read",
+        "gre_gmat": "GRE requirement currently waived indefinitely (Khoury FAQ); GMAT not accepted in its place",
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.khoury.northeastern.edu/programs/computer-science-ms/",
+      "status": "verified",
+      "notes": "Tuition is the 2026-2027 Khoury graduate rate of $1,922 per credit hour (SFS page does not give start/end dates for the year); x 32 credits = $61,504. Programme page: 32 total semester hours, most programmes completed in 2 years, in person, full-time or part-time, fall and spring starts; Khoury FAQ: 2 years without co-op, 2.5 with co-op (a co-op may add credit hours), full-time students take two 4-credit courses per semester. Fees per year = comprehensive fee $200 per term ($400 annual max) + Health and Counseling Fee $225 assessed annually + the one-time $450 International Student Fee spread over 2 years ($225/yr) = $850; the SFS page does not say the Health and Counseling Fee is optional but also does not call it mandatory. Excluded: Northeastern Student Health Plan $3,049/yr (insurance, separate) and optional parking. Living per year = 2 x (housing $8,100 + food $2,400 + personal $450 + transportation $450 per semester) from the SFS graduate 2026-2027 cost-of-attendance table (not labelled Boston-only). Rate for DS/engineering-delivered courses differs (Engineering $1,977), so the figure holds only for Khoury-delivered courses. STEM designation and GPA/English minimums not found on the pages read."
+    },
+    {
+      "id": "uva-msds-residential",
+      "university": "University of Virginia (School of Data Science)",
+      "city": "Charlottesville, VA",
+      "course": "DS",
+      "programme_name": "MS in Data Science (Residential)",
+      "duration_months": 11,
+      "tuition": {
+        "amount": 18456,
+        "period": "semester",
+        "credits_total": null,
+        "semesters": 3,
+        "fee_year": "2026-27 Academic Year (Fall 2026, Spring 2027, Summer 2027)",
+        "source_url": "https://www.datascience.virginia.edu/degrees/info/tuition-and-fees"
+      },
+      "mandatory_fees_per_year": 6102.55,
+      "living_cost_per_year": {
+        "amount": 40320,
+        "source_url": "https://www.datascience.virginia.edu/degrees/info/tuition-and-fees"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": "Not required; students come from a wide range of disciplines and backgrounds"
+      },
+      "scholarships": null,
+      "programme_url": "https://datascience.virginia.edu/degrees/msds-residential",
+      "status": "verified",
+      "notes": "School of Data Science 2026-27 out-of-state (non-Virginian) estimate: tuition $55,368 = 3 x $18,456 (Fall, Spring, Summer), fees $5,234 (UVA Student Activities $31 x 2, SDS Graduate Activities $20 x 3, Comprehensive Fees $2,268 x 2 + $576 summer) plus the $120 per semester F-1 administrative fee x 3 = $360, total fees $5,594 for the programme; per year = 5,594 / (11/12) = 6,102.55 so the app gives $5,594. Programme page: 11 months, over 33 credit hours, residential in Charlottesville. Living: page lists $36,960 for the whole programme (Fall $13,860, Spring $13,860, Summer $9,240; room, food, travel, misc per UVA SFS); expressed per 12 months as 36,960 / 11 x 12 = $40,320 because the app divides by 12. Tuition page states the standard duration as Fall, Spring, Summer but gives no months or credits; length and credits come from the programme page ('in just 11 months and over 33 credit hours'). STEM designation, test and GPA requirements not found on the pages read."
+    },
+    {
+      "id": "duke-fuqua-daytime-mba",
+      "university": "Duke University, The Fuqua School of Business",
+      "city": "Durham, NC",
+      "course": "MBA",
+      "programme_name": "Daytime MBA (full-time)",
+      "duration_months": 22,
+      "tuition": {
+        "amount": 41850,
+        "period": "semester",
+        "credits_total": null,
+        "semesters": 4,
+        "fee_year": "2026-27 (Class of 2028, starting August 2026); only the first year is published",
+        "source_url": "https://www.fuqua.duke.edu/programs/daytime-mba/tuition-costs"
+      },
+      "mandatory_fees_per_year": 4844,
+      "living_cost_per_year": {
+        "amount": 25290,
+        "source_url": "https://www.fuqua.duke.edu/programs/daytime-mba/tuition-costs"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.fuqua.duke.edu/programs/daytime-mba",
+      "status": "verified",
+      "notes": "Class of 2028 budget: Fuqua Daytime tuition $41,850 Fall + $41,850 Spring = $83,700 for the 2026-27 first year; the Duke Fuqua bulletin says the programme requires four semesters of full-time work (at least 79 graduate credits) and students 'are required to pay four semesters of tuition', so 4 x $41,850 = $167,400. CAVEAT: the second-year rate is not published on any page read; the 2026-27 semester rate is assumed to apply to all four semesters. Programme length 22 months per Fuqua's Program Format page (Quick Facts); programme is STEM designated per programme page. Fees per year = first-year required fees excluding insurance: health $1,048 + MBA Association $575 + graduate activity $40 + recreation $408 + student services $28 + transcript $120 + pre-term $2,625 = $4,844; this treats the one-time items (transcript, pre-term, possibly MBA Association) as recurring, and second-year fees are unpublished, so it likely overstates. Excluded: student medical insurance estimate $4,290 (waivable), books $850, federal loan fees. Living per year = first-year indirect costs for the 9-month period: food $4,428 + housing incl. utilities/phone $14,220 + miscellaneous $4,500 + transportation $2,142 = $25,290 (Duke triennial student survey); the figure covers about 9 months, so it understates a 12-month year. The $4,000 deposit is credited to Fall tuition. GMAT/GRE, English and work-experience requirements not found (admissions page 404)."
     }
   ],
   "living_cost": {
@@ -242,7 +334,10 @@
         "who_affected": "Employers filing new H-1B petitions; USCIS later guidance (Oct 2025, per university/law-firm reports) exempted in-US change of status such as F-1 to H-1B",
         "impact": "Would have made hiring from abroad very costly; F-1/OPT holders changing status inside the US were reported exempt. On 8 June 2026 a federal court (D. Mass.) vacated USCIS implementing guidance and on 24 July 2026 the First Circuit denied a stay; DHS says it will collect if the order is lifted. Uncertainty for employers sponsoring Indian graduates remains.",
         "source_url": "https://www.uscis.gov/newsroom/alerts/h-1b-faq",
-        "check": { "level": "partial", "note": "The exemption for changes of status inside the US is attributed to university reports; the USCIS page does not state it." }
+        "check": {
+          "level": "partial",
+          "note": "The exemption for changes of status inside the US is attributed to university reports; the USCIS page does not state it."
+        }
       },
       {
         "title": "H-1B wage-weighted selection replaces random lottery",
@@ -270,7 +365,10 @@
         "who_affected": "F-1 and J-1 students",
         "impact": "Would require extension-of-stay applications to USCIS for delays, programme changes and some OPT cases, and halve the post-study grace period. A nationwide preliminary injunction (D. Mass., 14 Sep 2026) blocks it; DHS appealed on 30 Sep 2026, so it could return.",
         "source_url": "https://www.vanderbilt.edu/isss/2026/10/02/dhs-appeals-courts-preliminary-injunction-of-d-s-rule/",
-        "check": { "level": "partial", "note": "The injunction and appeal dates were confirmed; the 60-to-30-day grace period and the announcement date were not found on the pages read." }
+        "check": {
+          "level": "partial",
+          "note": "The injunction and appeal dates were confirmed; the 60-to-30-day grace period and the announcement date were not found on the pages read."
+        }
       },
       {
         "title": "SEVP guidance narrowing Curricular Practical Training (incl. Day-1 CPT)",
@@ -280,17 +378,10 @@
         "who_affected": "F-1 students relying on CPT internships, especially Day-1 CPT programmes",
         "impact": "CPT must be a required part of the curriculum; optional internships often no longer qualify. Fewer paid internships during study, lower earnings while studying and weaker job pipelines. Not affected by the D/S injunction.",
         "source_url": "https://www.globalimmigrationblog.com/2026/09/federal-court-blocks-dhs-f-1-j-1-fixed-period-admission-rule-curricular-practical-training-restrictions-remain/",
-        "check": { "level": "partial", "note": "Two SEVP broadcasts (12 and 24 Aug 2026) were found, but the source does not state an effective date; 24 Aug may be a second broadcast date." }
-      },
-      {
-        "title": "Expanded online presence (social media) vetting for F, M, J applicants",
-        "status": "in_effect",
-        "announced": "2025-06-18",
-        "effective": "2025-06-26",
-        "who_affected": "All F-1 visa applicants (asked to set social media profiles to public)",
-        "impact": "Longer processing and 221(g) administrative holds are possible; private profiles can be treated as failing to provide information. Plan visa interviews early to avoid missing intake.",
-        "source_url": "https://oiss.yale.edu/news/department-of-state-announces-enhanced-social-media-vetting-and-resumption-of-visa-interview-scheduling",
-        "check": { "level": "unverified", "note": "The cited page returned an access error on 22 Oct 2026 and could not be re-checked." }
+        "check": {
+          "level": "partial",
+          "note": "Two SEVP broadcasts (12 and 24 Aug 2026) were found, but the source does not state an effective date; 24 Aug may be a second broadcast date."
+        }
       },
       {
         "title": "Visa interviews must be in country of nationality or residence",
@@ -315,7 +406,7 @@
   "risk_factors": {
     "policy_volatility": {
       "score": 85,
-      "evidence": "In under 24 months: social media vetting (Jun 2025), interview-location rule (Sep 2025), $100k H-1B fee (Sep 2025, later court-blocked), weighted H-1B lottery (Feb 2026), D/S final rule (Jul 2026, enjoined), CPT tightening (Aug 2026) and OPT fee NPRM (Oct 2026)."
+      "evidence": "In under 24 months: interview-location rule (Sep 2025), $100k H-1B fee (Sep 2025, later court-blocked), weighted H-1B lottery (Feb 2026), D/S final rule (Jul 2026, enjoined), CPT tightening (Aug 2026) and OPT fee NPRM (Oct 2026)."
     },
     "psw_uncertainty": {
       "score": 75,
@@ -395,7 +486,6 @@
     "Arrange proof of funds covering the school's first-year cost estimate (bank statements, education loan sanction, sponsor letters).",
     "Accept an offer and submit financial documents so the school issues your Form I-20.",
     "Pay the $350 SEVIS I-901 fee online using the SEVIS ID on your I-20 and keep the receipt.",
-    "Set your social media profiles to public, then complete the DS-160 online and keep the confirmation page.",
     "Pay the $185 MRV fee and book biometrics and interview at a US Embassy/Consulate in India (interviews must be in your country of nationality or residence).",
     "Attend the interview with passport, I-20, SEVIS receipt, DS-160, admission letter, funding proof and academic records; expect possible 221(g) processing.",
     "Pay the Visa Integrity Fee if charged at issuance; book travel to arrive within the entry window your I-20 and school allow before the programme start date.",

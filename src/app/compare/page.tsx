@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useData } from "@/components/DataProvider";
-import { Badge, Empty, FLAG, FxNotice, Money, PageHead, Source } from "@/components/ui";
+import { Badge, Empty, FLAG, FxNotice, IndiaSalaryNotice, Money, PageHead, Source } from "@/components/ui";
 import { inr, lakh, pct, yrs } from "@/lib/format";
 import { fxRate, riskBand, runAll, visaRiskScore, costBreakdown, type ScenarioResult } from "@/lib/model";
 import { indiaSalaryFor } from "@/lib/recommend";
@@ -18,7 +18,7 @@ export default function Compare() {
     const progs = c.programmes.filter((p) => p.course === course);
     const ind = indiaSalaryFor(profile, course, lenders);
     const runs = progs.map((p) => ({ p, cb: costBreakdown(c, p, profile, assumptions, fx), r: runAll({ country: c, programme: p, course, profile, assumptions, fx, indiaSalary: ind }) }))
-      .filter((x) => x.cb && x.r.expected);
+      .filter((x) => x.cb); // cost rows need only cost data; the payback and EMI rows need the India salary and say so
     const costs = runs.map((x) => x.cb!.totalInr);
     const typical = mid(runs, (x) => x.cb!.totalInr);
     return { c, progs, runs, typical, costLo: costs.length ? Math.min(...costs) : null, costHi: costs.length ? Math.max(...costs) : null, rate: fxRate(fx, c.currency, assumptions) };
@@ -26,7 +26,12 @@ export default function Compare() {
 
   if (!countries.length) return <Empty title="Research data not loaded" />;
 
-  const R = (f: (r: ScenarioResult) => React.ReactNode, x: (typeof rows)[number], k: "expected" | "returnHome" = "expected") => (x.typical?.r[k] ? f(x.typical.r[k]!) : <Badge kind="missing" />);
+  const R = (f: (r: ScenarioResult) => React.ReactNode, x: (typeof rows)[number], k: "expected" | "returnHome" = "expected", vsIndia = false) => {
+    const r = x.typical?.r[k];
+    if (r && !(vsIndia && !r.hasIndiaBaseline)) return f(r);
+    if (profile.indiaSalary === 0 && k === "returnHome") return <span className="text-xs text-slate">Needs an India salary above 0</span>;
+    return profile.indiaSalary == null ? <span className="text-xs text-slate">Needs your India salary</span> : <Badge kind="missing" />;
+  };
 
   const metrics: [string, (x: (typeof rows)[number]) => React.ReactNode][] = [
     ["Total cost range (our sample)", (x) => (x.costLo == null ? <Badge kind="missing" /> : <span className="num font-semibold">{lakh(x.costLo)} – {lakh(x.costHi)}</span>)],
@@ -36,11 +41,11 @@ export default function Compare() {
     ["Take-home per month (estimate)", (x) => { const b = x.c.salary[course]; const t = x.c.tax.effective_rate; return b?.entry_mid == null || t == null ? <Badge kind="missing" /> : <><Money amount={(b.entry_mid * (1 - t)) / 12} currency={x.c.currency} rate={x.rate} small /><div className="text-[11px] text-slate">after ~{pct(t * 100)} tax + contributions</div></>; }],
     ["EMI (expected)", (x) => R((r) => <span className="num font-semibold">{inr(r.sim.emi)}</span>, x)],
     ["EMI as % of take-home", (x) => R((r) => <span className="num">{r.emiShareOfTakeHome == null ? "n/a" : pct(r.emiShareOfTakeHome * 100)}</span>, x)],
-    ["Payback vs India (expected)", (x) => R((r) => <span className="num font-semibold">{yrs(r.paybackYears)}</span>, x)],
+    ["Payback vs India (expected)", (x) => R((r) => <span className="num font-semibold">{yrs(r.paybackYears)}</span>, x, "expected", true)],
     ["Debt-free if you return home", (x) => R((r) => <span className="num font-semibold text-brick">{r.sim.drawn ? yrs(r.loanFreeYears) : "No loan"}</span>, x, "returnHome")],
     ["Net position after 5 years", (x) => R((r) => <span className={`num ${r.netPosition.y5 < 0 ? "text-brick" : "text-forest"}`}>{lakh(r.netPosition.y5)}</span>, x)],
     ["Net position after 10 years", (x) => R((r) => <span className={`num ${r.netPosition.y10 < 0 ? "text-brick" : "text-forest"}`}>{lakh(r.netPosition.y10)}</span>, x)],
-    ["10-yr ROI vs staying in India", (x) => R((r) => <span className="num">{pct(r.roiPct)}</span>, x)],
+    ["10-yr ROI vs staying in India", (x) => R((r) => <span className="num">{pct(r.roiPct)}</span>, x, "expected", true)],
     ["Visa policy risk score", (x) => { const s = visaRiskScore(x.c); return <Link href={`/visa#${x.c.country}`} className="num font-semibold hover:underline">{s}/100 · {riskBand(s)}</Link>; }],
     ["Post-study work", (x) => <span className="text-xs">{x.c.visa.post_study_work.name}{x.c.visa.post_study_work.months_max ? `, up to ${x.c.visa.post_study_work.months_max} months` : ""}</span>],
     ["Programmes in our data", (x) => <span className="text-xs">{x.progs.length} ({x.progs.filter((p) => p.status === "verified").length} verified)</span>],
@@ -48,10 +53,11 @@ export default function Compare() {
 
   return (
     <div className="space-y-6">
-      <PageHead eyebrow="Country comparison" title="Five countries side by side">
+      <PageHead eyebrow="Country comparison" title={`${["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"][countries.length] ?? countries.length} countries side by side`}>
         Each column uses the middle-cost programme in our sample for that country, your profile, and today&apos;s exchange rate.
         {" "}Tap a country&apos;s programmes in the <Link href="/universities" className="link">University explorer</Link> for the full spread.
       </PageHead>
+      <IndiaSalaryNotice />
       <div className="flex flex-wrap gap-2">
         {(Object.keys(COURSES) as Course[]).map((k) => (
           <button key={k} onClick={() => setCourse(k)} className={`btn ${course === k ? "btn-primary" : "btn-ghost"}`} aria-pressed={course === k}>{COURSES[k]}</button>

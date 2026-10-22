@@ -1,10 +1,10 @@
 "use client";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { CountryData, FxRates, LenderData } from "@/lib/types";
+import type { CountryData, FxRates, IndiaData, LenderData } from "@/lib/types";
 import { DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, type Assumptions, type Profile } from "@/lib/model";
 import { defaultLoanRate, type DefaultRate } from "@/lib/rate";
 
-interface Data { fx: FxRates; countries: CountryData[]; lenders: LenderData | null }
+interface Data { fx: FxRates; countries: CountryData[]; lenders: LenderData | null; india: IndiaData | null }
 interface Ctx extends Data {
   profile: Profile;
   hasProfile: boolean;

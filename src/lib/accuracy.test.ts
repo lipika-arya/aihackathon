@@ -5,6 +5,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { costBreakdown, costIncomplete, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, feesStatus, runScenario, visaFeesInr } from "./model";
 import { defaultLoanRate } from "./rate";
+import { eligibility, indiaSalaryFor } from "./recommend";
 import type { CountryData, FxRates, LenderData } from "./types";
 import fb from "../data/fx-fallback.json";
 
@@ -70,19 +71,15 @@ describe("costs that were missing", () => {
 
 describe("unverified items are marked as such", () => {
   const all = ["US", "DE", "CA", "JP", "AU"].map(country);
-  it("flags the India salary baseline as unverified", () => {
-    for (const band of Object.values(lenders.india_baseline)) if (band) expect(band.status).toBe("unverified");
-  });
   it("downgrades figures that could not be re-checked", () => {
-    expect(prog(country("AU"), "monash-mds-ds").status).toBe("partial");
     expect(prog(country("DE"), "lmu-msc-statistics-data-science").status).toBe("partial");
-    expect(lenders.lenders.find((l) => l.id === "credila")!.status).toBe("partial");
+    expect(prog(country("DE"), "lmu-msc-statistics-data-science").mandatory_fees_per_year).toBeNull(); // the old EUR 194 guess is gone
   });
   it("gives every flagged policy change a level and a note", () => {
     const flagged = all.flatMap((c) => c.visa.recent_changes.filter((ch) => ch.check));
-    expect(flagged.length).toBeGreaterThanOrEqual(15);
+    expect(flagged.length).toBeGreaterThanOrEqual(10);
     for (const ch of flagged) {
-      expect(["partial", "unverified"]).toContain(ch.check!.level);
+      expect(ch.check!.level).toBe("partial"); // "not confirmed" items are removed, not shown
       expect(ch.check!.note.length).toBeGreaterThan(20);
     }
   });
@@ -147,12 +144,112 @@ describe("incomplete cost estimates are flagged", () => {
   });
   it("programmes with no fee figure and no explanation are flagged incomplete", () => {
     const flagged = all.filter(costIncomplete).map((p) => p.id).sort();
-    expect(flagged).toEqual(["esmt-berlin-full-time-mba", "flinders-mit-cs", "mannheim-business-school-full-time-mba", "monash-mds-ds", "uq-mba", "ubc-mds-ds", "unsw-mit-cs"].sort());
+    expect(flagged).toEqual(["esmt-berlin-full-time-mba", "flinders-mit-cs", "lmu-msc-statistics-data-science", "mannheim-business-school-full-time-mba", "uq-mba", "ubc-mds-ds", "unsw-mit-cs"].sort());
   });
   it("a programme with an itemised fee is never flagged", () => {
     for (const p of all.filter((x) => x.mandatory_fees_per_year != null)) expect(feesStatus(p)).toBe("itemised");
   });
   it("every note explains itself", () => {
     for (const p of all.filter((x) => x.mandatory_fees_note)) expect(p.mandatory_fees_note!.length).toBeGreaterThan(30);
+  });
+});
+
+describe("expanded programme set and the UK", () => {
+  const codes = ["US", "DE", "CA", "UK", "JP", "AU"];
+  const all = codes.map(country);
+  const progs = all.flatMap((c) => c.programmes);
+
+  it("programme ids are unique across all countries", () => {
+    const ids = progs.map((p) => p.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+  it("has the six countries, each with all three courses", () => {
+    expect(all.map((c) => c.country)).toEqual(codes);
+    for (const c of all) for (const course of ["CS", "DS", "MBA"] as const) expect(c.programmes.some((p) => p.course === course)).toBe(true);
+  });
+  it("every programme has an official https tuition source and a plausible duration", () => {
+    for (const p of progs) {
+      expect(p.tuition?.source_url).toMatch(/^https:\/\//);
+      expect(p.duration_months).toBeGreaterThanOrEqual(9);
+      expect(p.duration_months).toBeLessThanOrEqual(36);
+    }
+  });
+  it("UK uses GBP with the official student visa fee and the health surcharge", () => {
+    const uk = country("UK");
+    expect(uk.currency).toBe("GBP");
+    expect(uk.visa.student_visa.fees.find((f) => f.amount === 558)).toBeDefined();
+    expect(uk.health_insurance_per_year).toMatchObject({ amount: 776, verified: true });
+    expect(uk.visa.post_study_work.months_max).toBe(18);
+  });
+  it("UK costs include the health surcharge and the part-year visa months in the table maths", () => {
+    const uk = country("UK");
+    const p = prog(uk, "warwick-msc-computer-science");
+    const cb = costBreakdown(uk, p, prof, DEFAULT_ASSUMPTIONS, fx)!;
+    expect(cb.health).toBeCloseTo(776, 6); // 12-month course
+    expect(cb.visa * cb.rate).toBeCloseTo(558 * fx.inrPer.GBP + 388 * fx.inrPer.GBP, 0);
+  });
+  it("every newly added programme is verified", () => {
+    const added = ["northeastern-ms-cs", "uva-msds-residential", "duke-fuqua-daytime-mba", "kit-msc-computer-science", "tuebingen-msc-machine-learning", "frankfurt-school-full-time-mba", "sfu-msc-bigdata-ds", "schulich-mba", "osaka-itsce-information-science-cs", "kyoto-informatics-ist-international-ds", "kyoto-gsm-imba", "uts-mit-cs", "uts-mdsi-ds", "uts-mba", "warwick-msc-computer-science", "southampton-msc-computer-science", "warwick-wbs-full-time-mba", "edinburgh-msc-computer-science", "edinburgh-msc-data-science", "birmingham-msc-data-science", "birmingham-msc-advanced-computer-science", "birmingham-msc-ai-machine-learning", "birmingham-business-school-full-time-mba", "imperial-full-time-mba"];
+    for (const id of added) expect(progs.find((p) => p.id === id)?.status).toBe("verified");
+  });
+  it("every UK programme states what its fee covers (no note, no entry)", () => {
+    for (const p of country("UK").programmes) expect(p.mandatory_fees_note ?? p.mandatory_fees_per_year, p.id).not.toBeUndefined();
+  });
+  it("a partial candidate that could not be fully confirmed was left out", () => {
+    expect(progs.find((p) => p.id === "carleton-mcs-cs")).toBeUndefined();
+  });
+});
+
+describe("only verified and current data is shown", () => {
+  const all = ["US", "DE", "CA", "UK", "JP", "AU"].map(country);
+  const progs = all.flatMap((c) => c.programmes);
+
+  it("nothing is marked unverified: programmes, policy items and lenders are verified or partly verified", () => {
+    for (const p of progs) expect(["verified", "partial"], p.id).toContain(p.status);
+    for (const ch of all.flatMap((c) => c.visa.recent_changes)) expect(ch.check?.level ?? "verified", ch.title).not.toBe("unverified");
+    for (const l of lenders.lenders) expect(["verified", "partial"], l.id).toContain(l.status);
+  });
+  it("no programme carries a stale (2025-26 or earlier) fee year", () => {
+    for (const p of progs) expect(p.tuition!.fee_year, p.id).not.toMatch(/^(20(2[0-4])|2025)\b|2025-26 \(latest/);
+  });
+  it("items that could not be confirmed were removed", () => {
+    const ids = progs.map((p) => p.id);
+    for (const id of ["monash-mds-ds", "jaist-masters-information-science", "hiroshima-informatics-data-science", "iuj-mba", "utokyo-ist-english-program-cs", "carleton-mcs-cs"]) expect(ids).not.toContain(id);
+    expect(lenders.lenders.find((l) => l.id === "credila")).toBeUndefined();
+  });
+  it("there is no India salary baseline: the student's own figure is the only one used", () => {
+    expect(Object.keys(lenders.india_baseline)).toEqual([]);
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: null }, "CS", lenders)).toBeNull(); // no baseline and no example: the page asks for it
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 0 }, "CS", lenders)).toBe(0); // 0 is valid: a fresher or unpaid family work
+    expect(indiaSalaryFor({ ...DEFAULT_PROFILE, indiaSalary: 1_500_000 }, "CS", lenders)).toBe(1_500_000);
+  });
+  it("the UK work rule is confirmed, not flagged", () => {
+    const t = country("UK").visa.work_during_study.text;
+    expect(t).toMatch(/Confirmed by the project team/);
+    expect(t).not.toMatch(/NOT CONFIRMED/i);
+  });
+  it("no text still cites the removed policy items", () => {
+    const blob = JSON.stringify(all);
+    for (const gone of ["social media vetting", "turbo naturalisation", "visa fees raised fivefold", "Chancenkarte"]) expect(blob, gone).not.toContain(gone);
+  });
+});
+
+describe("eligibility reads requirements sensibly", () => {
+  const student = { ...DEFAULT_PROFILE, cgpa: 8.5, ielts: 7, workYears: 1 };
+  const all = ["US", "DE", "CA", "UK", "JP", "AU"].flatMap((c) => country(c).programmes);
+  const work = (id: string) => eligibility(all.find((p) => p.id === id)!, student).find((e) => e.label === "Work experience");
+
+  it("does not fail a student on an optional or alternative route", () => {
+    for (const id of ["uts-mit-cs", "uts-mdsi-ds", "uts-mba", "rmit-mba", "kyoto-gsm-imba"]) expect(work(id)?.status, id).toBe("unknown");
+  });
+  it("still fails a student who lacks a mandatory number of years", () => {
+    for (const id of ["uq-mba", "concordia-jmsb-mba", "esmt-berlin-full-time-mba", "mannheim-business-school-full-time-mba", "frankfurt-school-full-time-mba", "hitotsubashi-ics-mba"]) expect(work(id)?.status, id).toBe("fail");
+  });
+  it("passes a student who has enough experience", () => {
+    expect(eligibility(all.find((p) => p.id === "esmt-berlin-full-time-mba")!, { ...student, workYears: 4 }).find((e) => e.label === "Work experience")?.status).toBe("ok");
+  });
+  it("the only hard failures for this sample student are genuine mandatory requirements", () => {
+    const fails = all.flatMap((p) => eligibility(p, student).filter((e) => e.status === "fail").map((e) => `${p.id}:${e.label}`)).sort();
+    expect(fails).toEqual(["concordia-jmsb-mba:Work experience", "esmt-berlin-full-time-mba:Work experience", "frankfurt-school-full-time-mba:Work experience", "gatech-ms-analytics:English (IELTS)", "hitotsubashi-ics-mba:Work experience", "mannheim-business-school-full-time-mba:Work experience", "uq-mba:Work experience"]);
   });
 });

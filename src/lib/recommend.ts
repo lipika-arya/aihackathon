@@ -23,7 +23,10 @@ export function eligibility(p: Programme, prof: Profile): Eligibility[] {
   out.push({ label: "GRE / GMAT", status: "unknown", detail: gg ?? "Not stated on the official page" });
   const we = p.requirements.work_experience;
   const yrs = we?.match(/(\d+)\s*\+?\s*years?/i);
-  if (yrs) {
+  // Wording like "not required", "unless", "alternative route" or "strongly recommended" means the years are not a hard
+  // entry rule, so show the text and do not fail the student on a number picked out of an optional route.
+  const hedged = !!we && /\b(not (required|mandatory|needed)|unless|alternative|optional|recommended|one route|routes?)\b/i.test(we);
+  if (yrs && !hedged) {
     const need = parseInt(yrs[1]);
     out.push({ label: "Work experience", status: prof.workYears >= need ? "ok" : "fail", detail: `Needs about ${need} years, you have ${prof.workYears}` });
   } else if (we) out.push({ label: "Work experience", status: "unknown", detail: we });
@@ -50,9 +53,12 @@ export interface Candidate {
   score: number | null;
 }
 
-export function indiaSalaryFor(prof: Profile, course: Course, lenders: LenderData | null): number | null {
-  // DS has no official India breakout; fall back to the engineering (CS) baseline
-  return prof.indiaSalary ?? lenders?.india_baseline?.[course]?.mid ?? lenders?.india_baseline?.CS?.mid ?? null;
+// The India salary is always the student's own input. No India salary source could be verified, so there is no baseline
+// and no example: until they enter one this is null and the pages ask for it.
+// (Unused parameters kept so callers did not need to change.)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function indiaSalaryFor(prof: Profile, _course?: Course, _lenders?: LenderData | null): number | null {
+  return prof.indiaSalary != null && prof.indiaSalary >= 0 ? prof.indiaSalary : null; // 0 is valid: a fresher or unpaid family work earns nothing if they stay
 }
 
 const norm = (xs: number[], x: number) => {
@@ -97,24 +103,28 @@ export function buildCandidates(countries: CountryData[], prof: Profile, a: Assu
 function score(list: Candidate[], prof: Profile) {
   const ok = list.filter((c) => c.expected && c.totalInr != null);
   if (!ok.length) return;
+  // The ROI part compares with staying in India, so it only counts when an India salary was entered. Without one it is
+  // left out of the weighted score (the other four parts are re-weighted) instead of being guessed.
+  const useRoi = ok.every((c) => c.expected!.hasIndiaBaseline);
   const roi = ok.map((c) => c.expected!.npv);
   const sal = ok.map((c) => (c.country.salary[c.course]?.entry_mid ?? 0) * fxOf(c));
   const psw = ok.map((c) => c.country.visa.post_study_work.months_max ?? 0);
   const cost = ok.map((c) => c.totalInr!);
   const w = prof.priorities;
-  const wSum = w.roi + w.employment + w.affordability + w.visa + w.fit || 1;
+  const roiW = useRoi ? w.roi : 0;
+  const wSum = roiW + w.employment + w.affordability + w.visa + w.fit || 1;
   for (const c of ok) {
     const fit = c.hardFail ? 0 : c.eligibility.every((e) => e.status !== "unknown") ? 100 : 60;
     const afford = Math.max(0, 100 - norm(cost, c.totalInr!)) * (c.fundingGap > 0 ? 0.3 : 1);
     const comp = {
-      roi: norm(roi, c.expected!.npv),
+      roi: useRoi ? norm(roi, c.expected!.npv) : 0,
       employment: 0.6 * norm(sal, (c.country.salary[c.course]?.entry_mid ?? 0) * fxOf(c)) + 0.4 * norm(psw, c.country.visa.post_study_work.months_max ?? 0),
       affordability: afford,
       visa: 100 - c.visaRisk,
       fit,
     };
     c.components = comp;
-    c.score = (comp.roi * w.roi + comp.employment * w.employment + comp.affordability * w.affordability + comp.visa * w.visa + comp.fit * w.fit) / wSum;
+    c.score = (comp.roi * roiW + comp.employment * w.employment + comp.affordability * w.affordability + comp.visa * w.visa + comp.fit * w.fit) / wSum;
   }
 }
 
@@ -139,9 +149,9 @@ export function picks(list: Candidate[]): Partial<Record<PickKey, Candidate>> {
   return {
     overall: best(pool, (c) => c.score!),
     budget: best(pool, (c) => -(c.totalInr ?? Infinity)),
-    roi: best(pool, (c) => c.expected!.npv),
+    roi: pool.every((c) => c.expected!.hasIndiaBaseline) ? best(pool, (c) => c.expected!.npv) : undefined,
     career: best(pool, (c) => c.components!.employment),
-    lowRisk: best(pool, (c) => c.results.returnHome?.netPosition.y5 ?? -Infinity),
+    lowRisk: pool.every((c) => c.results.returnHome) ? best(pool, (c) => c.results.returnHome!.netPosition.y5) : undefined,
     immigration: best(pool, (c) => -c.visaRisk * 1000 + (c.country.visa.post_study_work.months_max ?? 0)),
   };
 }

@@ -1,9 +1,9 @@
 // Shapes of the research data in src/data. Unknown values are null, never 0.
 
-export type CountryCode = "US" | "DE" | "CA" | "JP" | "AU";
+export type CountryCode = "US" | "DE" | "CA" | "JP" | "AU" | "UK";
 export type Course = "CS" | "DS" | "MBA";
 export type Status = "verified" | "partial" | "unverified";
-export type Currency = "INR" | "USD" | "EUR" | "CAD" | "JPY" | "AUD";
+export type Currency = "INR" | "USD" | "EUR" | "CAD" | "JPY" | "AUD" | "GBP";
 
 export const COURSES: Record<Course, string> = {
   CS: "MS in Computer Science",
@@ -101,7 +101,8 @@ export interface CountryData {
   salary: Partial<Record<Course, SalaryBand | null>>;
   tax: { effective_rate: number | null; basis: string; source_url: string | null };
   // Health cover that is charged on top of tuition and living costs (e.g. Australia's OSHC). Estimate per year.
-  health_insurance_per_year?: { amount: number; basis: string; source_url: string };
+  // verified: true when it is a fixed official charge (e.g. the UK Immigration Health Surcharge), not an estimate.
+  health_insurance_per_year?: { amount: number; basis: string; source_url: string; verified?: boolean };
   checklist: string[];
 }
 
@@ -149,6 +150,34 @@ export interface LenderData {
   lenders: Lender[];
   tax_benefit: Sourced | null;
   india_baseline: Partial<Record<Course, IndiaBand | null>>;
+}
+
+/** A master's programme in India, used for the "do it in India instead" comparison. All money in INR. */
+export interface IndiaProgramme {
+  id: string;
+  institution: string;
+  city: string;
+  course: Course;
+  programme_name: string;
+  duration_months: number;
+  tuition_total_inr: number; // whole programme
+  other_fees_total_inr: number | null; // compulsory institute fees for the whole programme, null if not published
+  fee_year: string;
+  fee_source_url: string;
+  living_per_year_inr: number | null; // institute's own hostel + mess / cost-of-living estimate
+  living_source_url: string | null;
+  stipend_per_month_inr: number | null; // assistantship some students receive; NOT counted in the numbers (needs eligibility such as GATE)
+  stipend_note: string | null;
+  entry_salary: { median_inr: number; year: string; low_inr: number | null; high_inr: number | null; basis: string; source_url: string };
+  requirements: { entrance: string | null; academic: string | null; work_experience: string | null };
+  programme_url: string;
+  status: Status;
+  notes: string;
+}
+
+export interface IndiaData {
+  verified_at: string;
+  programmes: IndiaProgramme[];
 }
 
 export interface FxRates {

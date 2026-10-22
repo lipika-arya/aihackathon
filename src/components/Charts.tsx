@@ -10,6 +10,7 @@ export const SCEN_COLOR: Record<ScenarioKey, string> = {
   conservative: "#b7791f",
   visaEnds: "#8a5a9e",
   returnHome: "#b5473c",
+  mastersIndia: "#475569",
 };
 
 const axis = { fontSize: 11, fill: "#65716b" };

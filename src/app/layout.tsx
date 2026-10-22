@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import { loadCountries, loadFx, loadLenders } from "@/lib/data";
+import { loadCountries, loadFx, loadIndiaMasters, loadLenders } from "@/lib/data";
 import { DataProvider } from "@/components/DataProvider";
 import { Nav } from "@/components/Nav";
 
@@ -10,17 +10,17 @@ const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AbroadROI | Will your study-abroad loan pay off?",
-  description: "Compare the full cost, loan repayment, salary and visa risk of a master's in Canada, Germany, the US, Japan or Australia against staying in India.",
+  description: "Compare the full cost, loan repayment, salary and visa risk of a master's in Canada, Germany, the US, the UK, Japan or Australia against staying in India.",
 };
 
 export const revalidate = 86400;
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const [fx, countries, lenders] = [await loadFx(), loadCountries(), loadLenders()];
+  const [fx, countries, lenders, india] = [await loadFx(), loadCountries(), loadLenders(), loadIndiaMasters()];
   return (
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} antialiased min-h-screen`}>
-        <DataProvider value={{ fx, countries, lenders }}>
+        <DataProvider value={{ fx, countries, lenders, india }}>
           <Nav />
           <main className="mx-auto max-w-6xl px-4 pb-20 pt-6">{children}</main>
           <footer className="border-t border-line py-8 text-center text-xs text-slate">
