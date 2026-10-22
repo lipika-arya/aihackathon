@@ -215,7 +215,7 @@
       "eligibility": "Full-time premier courses abroad (medicine, engineering, management, graduate/PG)",
       "status": "partial",
       "source_url": "https://www.axis.bank.in/loans/education-loan/interest-rates-charges",
-      "notes": "Axis does not publish the spread over repo, so no rate number. Its rate page shows repo 5.25% while SBI/BoB/PNB/Union pages show 5.50% (Axis page may be stale). Max tenure incl. moratorium capped at 20 years."
+      "notes": "Axis does not publish the spread over repo, so no rate number. Its rate page shows repo 5.25% while SBI/BoB/PNB/Union pages show 5.50% (Axis page may be stale). Max tenure incl. moratorium capped at 20 years. 22 Oct 2026 re-check: the rate page shows repo 5.25%, while other banks' pages show 5.50% from Oct 2026, so this benchmark may be out of date; the product page also shows a different illustrative table."
     },
     {
       "id": "credila",
@@ -240,9 +240,9 @@
       "repayment_years_max": 15,
       "prepayment": "NIL foreclosure / no prepayment penalty",
       "eligibility": null,
-      "status": "verified",
+      "status": "partial",
       "source_url": "https://www.credila.com/education-loan-interest-rates-charges",
-      "notes": "Features section says up to 15 years for PG, up to 20 years for UG. CBLR mechanics from https://www.credila.com/pdfs/MITC.pdf. Moratorium length not confirmed on an official page read."
+      "notes": "Features section says up to 15 years for PG, up to 20 years for UG. CBLR mechanics from https://www.credila.com/pdfs/MITC.pdf. Moratorium length not confirmed on an official page read. 22 Oct 2026 re-check: credila.com blocks automated access, so the rate and fee could not be re-confirmed. Figures are as originally recorded."
     },
     {
       "id": "avanse",
@@ -264,12 +264,12 @@
       "margin": "No margin; 100% finance",
       "moratorium": "Holiday period of up to 6 months after course completion or 3 months after employment, whichever is earlier",
       "moratorium_interest": "Optional interest payments during course",
-      "repayment_years_max": 17,
+      "repayment_years_max": 15,
       "prepayment": null,
       "eligibility": "Australia, Canada, France, Germany, NZ, Singapore, UK, USA, UAE and others; pre-admission loans only for Master's STEM in USA",
       "status": "verified",
       "source_url": "https://www.avanse.com/education-loan/interest-rate",
-      "notes": "Interest is simple interest with monthly rest. Rate page inconsistent on fixed vs floating (says both). Base rate date is Dec 2024 and may be stale. Terms from https://www.avanse.com/education-loan/study-loan-abroad/faq and https://www.avanse.com/schedule-of-charges."
+      "notes": "Interest is simple interest with monthly rest. Rate page inconsistent on fixed vs floating (says both). Base rate date is Dec 2024 and may be stale. Terms from https://www.avanse.com/education-loan/study-loan-abroad/faq and https://www.avanse.com/schedule-of-charges. 22 Oct 2026 re-check: the interest-rate page says up to 15 years while the FAQ says 17, so the lower figure is recorded. The rate page says both fixed and floating are offered, and floating in its Base Lending Rate section."
     },
     {
       "id": "auxilo",
@@ -389,16 +389,18 @@
       "low": 745000,
       "mid": 1000000,
       "high": 1400000,
-      "basis": "NIRF India Rankings 2025, Engineering top-100 institutes, institute-reported median salary of placed UG 4-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 97 institutes with data (range Rs 3.36 lakh to Rs 32 lakh). All B.Tech branches, not CS-only; placed students only at top-ranked institutes, so above the national average.",
-      "source_url": "https://www.nirfindia.org/Rankings/2025/EngineeringRanking.html"
+      "basis": "NOT RE-VERIFIED on 22 Oct 2026: nirfindia.org blocked automated access, so these figures could not be reproduced. NIRF India Rankings 2025, Engineering top-100 institutes, institute-reported median salary of placed UG 4-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 97 institutes with data (range Rs 3.36 lakh to Rs 32 lakh). All B.Tech branches, not CS-only; placed students only at top-ranked institutes, so above the national average.",
+      "source_url": "https://www.nirfindia.org/Rankings/2025/EngineeringRanking.html",
+    "status": "unverified"
     },
     "DS": null,
     "MBA": {
       "low": 801750,
       "mid": 1128573,
       "high": 1787500,
-      "basis": "NIRF India Rankings 2025, Management top-100 institutes, institute-reported median salary of placed PG 2-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 100 institutes (range Rs 3.25 lakh to Rs 33 lakh; IIM Ahmedabad Rs 31 lakh). Placed students at top-ranked institutes only.",
-      "source_url": "https://www.nirfindia.org/Rankings/2025/ManagementRanking.html"
+      "basis": "NOT RE-VERIFIED on 22 Oct 2026: nirfindia.org blocked automated access, so these figures could not be reproduced. NIRF India Rankings 2025, Management top-100 institutes, institute-reported median salary of placed PG 2-year graduates (graduating 2023-24). low = 25th percentile, mid = median, high = 75th percentile across 100 institutes (range Rs 3.25 lakh to Rs 33 lakh; IIM Ahmedabad Rs 31 lakh). Placed students at top-ranked institutes only.",
+      "source_url": "https://www.nirfindia.org/Rankings/2025/ManagementRanking.html",
+    "status": "unverified"
     }
   }
 }

@@ -69,6 +69,8 @@ export interface PolicyChange {
   who_affected: string;
   impact: string;
   source_url: string;
+  // Set when the claim could not be fully confirmed on an official page at the last check.
+  check?: { level: "partial" | "unverified"; note: string };
 }
 
 export interface CountryData {
@@ -95,6 +97,8 @@ export interface CountryData {
   risk_factors: Record<RiskKey, RiskFactor>;
   salary: Partial<Record<Course, SalaryBand | null>>;
   tax: { effective_rate: number | null; basis: string; source_url: string | null };
+  // Health cover that is charged on top of tuition and living costs (e.g. Australia's OSHC). Estimate per year.
+  health_insurance_per_year?: { amount: number; basis: string; source_url: string };
   checklist: string[];
 }
 
@@ -134,6 +138,7 @@ export interface IndiaBand {
   high: number;
   basis: string;
   source_url: string;
+  status?: Status; // "unverified" when the figures could not be re-checked against the source
 }
 
 export interface LenderData {

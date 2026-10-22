@@ -1,7 +1,8 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { CountryData, FxRates, LenderData } from "@/lib/types";
 import { DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, type Assumptions, type Profile } from "@/lib/model";
+import { defaultLoanRate, type DefaultRate } from "@/lib/rate";
 
 interface Data { fx: FxRates; countries: CountryData[]; lenders: LenderData | null }
 interface Ctx extends Data {
@@ -10,6 +11,7 @@ interface Ctx extends Data {
   setProfile: (p: Profile) => void;
   assumptions: Assumptions;
   setAssumptions: (a: Assumptions) => void;
+  rateBasis: DefaultRate | null; // where the default loan rate comes from
 }
 
 const C = createContext<Ctx | null>(null);
@@ -24,26 +26,21 @@ export function DataProvider({ value, children }: { value: Data; children: React
   const [profile, setP] = useState<Profile>(DEFAULT_PROFILE);
   const [hasProfile, setHas] = useState(false);
   const [assumptions, setA] = useState<Assumptions>(DEFAULT_ASSUMPTIONS);
+  const rateBasis = useMemo(() => defaultLoanRate(value.lenders), [value.lenders]);
 
   useEffect(() => {
     const p = read<Profile>("abroadroi.profile");
     if (p) { setP({ ...DEFAULT_PROFILE, ...p }); setHas(true); }
-    const a = read<Assumptions>("abroadroi.assumptions");
+    // v2: settings saved before the default loan rate was corrected are ignored rather than carried over.
+    const a = read<Assumptions>("abroadroi.assumptions.v2");
     if (a) setA({ ...DEFAULT_ASSUMPTIONS, ...a });
-    else {
-      // default loan rate = midpoint of verified INR lender ranges, if any
-      const ls = value.lenders?.lenders.filter((l) => l.currency === "INR" && l.status !== "unverified" && l.rate_min != null) ?? [];
-      if (ls.length) {
-        const mid = ls.reduce((s, l) => s + (l.rate_min! + (l.rate_max ?? l.rate_min!)) / 2, 0) / ls.length;
-        setA((x) => ({ ...x, loanRatePct: Math.round(mid * 100) / 100 }));
-      }
-    }
-  }, [value.lenders]);
+    else if (rateBasis) setA((x) => ({ ...x, loanRatePct: rateBasis.rate }));
+  }, [rateBasis]);
 
   const setProfile = (p: Profile) => { setP(p); setHas(true); write("abroadroi.profile", p); };
-  const setAssumptions = (a: Assumptions) => { setA(a); write("abroadroi.assumptions", a); };
+  const setAssumptions = (a: Assumptions) => { setA(a); write("abroadroi.assumptions.v2", a); };
 
-  return <C.Provider value={{ ...value, profile, hasProfile, setProfile, assumptions, setAssumptions }}>{children}</C.Provider>;
+  return <C.Provider value={{ ...value, profile, hasProfile, setProfile, assumptions, setAssumptions, rateBasis }}>{children}</C.Provider>;
 }
 
 export function useData() {

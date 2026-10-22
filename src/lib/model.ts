@@ -174,6 +174,7 @@ export interface CostBreakdown {
   rate: number;
   tuition: number; // local
   fees: number;
+  health: number; // compulsory health cover charged on top of living costs, local currency
   living: number;
   visa: number;
   oneTimeInr: number; // flights, tests, applications, deposit
@@ -188,12 +189,13 @@ export function costBreakdown(c: CountryData, p: Programme, prof: Profile, a: As
   const rate = fxRate(fx, c.currency, a);
   const years = p.duration_months / 12;
   const fees = (p.mandatory_fees_per_year ?? 0) * years;
+  const health = (c.health_insurance_per_year?.amount ?? 0) * years;
   const living = livM * p.duration_months;
   const visa = visaFeesInr(c, fx, a) / rate;
   const deposit = livM * 2 * rate;
   const oneTimeInr = a.flightsInr + a.testsAndApplicationsInr + deposit;
-  const totalLocal = tuition + fees + living + visa;
-  return { currency: c.currency, rate, tuition, fees, living, visa, oneTimeInr, totalLocal, totalInr: totalLocal * rate + oneTimeInr };
+  const totalLocal = tuition + fees + health + living + visa;
+  return { currency: c.currency, rate, tuition, fees, health, living, visa, oneTimeInr, totalLocal, totalInr: totalLocal * rate + oneTimeInr };
 }
 
 export interface ScenarioResult {
@@ -246,7 +248,8 @@ export function runScenario(inp: ModelInput, key: ScenarioKey): ScenarioResult |
     const m = Math.floor((s * D) / semesters); // semester starts spread across the programme
     costs[m] += (tuitionTotal / semesters) * (m >= 12 ? 1 + tuitionRise / 100 : 1) * rateAt(m);
   }
-  for (let y = 0; y < Math.ceil(D / 12); y++) costs[y * 12] += (p.mandatory_fees_per_year ?? 0) * Math.min(1, (D - y * 12) / 12) * rateAt(y * 12);
+  const yearlyExtras = (p.mandatory_fees_per_year ?? 0) + (c.health_insurance_per_year?.amount ?? 0);
+  for (let y = 0; y < Math.ceil(D / 12); y++) costs[y * 12] += yearlyExtras * Math.min(1, (D - y * 12) / 12) * rateAt(y * 12);
   for (let m = 0; m < D; m++) costs[m] += livM * rateAt(m);
   costs[0] += visaFeesInr(c, fx, a) + a.flightsInr + a.testsAndApplicationsInr + livM * 2 * rate0;
   const totalCostInr = costs.reduce((x, y) => x + y, 0);

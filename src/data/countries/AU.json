@@ -82,8 +82,8 @@
       },
       "scholarships": "Monash advertises over 360 scholarship types; specific awards not checked",
       "programme_url": "https://www.monash.edu/study/courses/find-a-course/data-science-c6004",
-      "status": "verified",
-      "notes": "Go8. International fee for 2027 is AUD 57,540 per 48 credit points (one standard full-time year). 96-point (2-year) track would be about AUD 115,080 at 2027 rates, more if fees rise in year 2. Cognate graduates may finish in 1.5 years (72 points)."
+      "status": "partial",
+      "notes": "Go8. International fee for 2027 is AUD 57,540 per 48 credit points (one standard full-time year). 96-point (2-year) track would be about AUD 115,080 at 2027 rates, more if fees rise in year 2. Cognate graduates may finish in 1.5 years (72 points). Could not be re-checked on 22 Oct 2026: the Monash site blocks automated access. Figures are as originally recorded, not re-confirmed."
     },
     {
       "id": "rmit-mds-ds",
@@ -150,10 +150,10 @@
       "programme_name": "Master of Business Administration (MC199)",
       "duration_months": 24,
       "tuition": {
-        "amount": 52800,
-        "period": "year",
+        "amount": 107520,
+        "period": "total",
         "credits_total": null,
-        "fee_year": "2027",
+        "fee_year": "2027 plan total",
         "source_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-business-administration-mc199"
       },
       "mandatory_fees_per_year": 386,
@@ -169,8 +169,8 @@
       },
       "scholarships": "Page mentions an Alumni postgraduate bursary (for RMIT alumni)",
       "programme_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-business-administration-mc199",
-      "status": "verified",
-      "notes": "Lower-cost, non-Go8 option. International card: AU$52,800 (2027 annual), full-time 2 years or 1.5 years accelerated (AU$40,320 is the domestic rate). The page also states a total indicative tuition fee for 2027 commencement of AU$107,520 (2-year plan MC199P15) and AU$80,160 (1.5-year plan); the page markup did not clearly label these totals as international, though they are consistent with the international annual rate. SSAF AU$386 is the 2027 maximum."
+      "status": "partial",
+      "notes": "Lower-cost, non-Go8 option. International card: AU$52,800 (2027 annual), full-time 2 years or 1.5 years accelerated (AU$40,320 is the domestic rate). The page also states a total indicative tuition fee for 2027 commencement of AU$107,520 (2-year plan MC199P15) and AU$80,160 (1.5-year plan); the page markup did not clearly label these totals as international, though they are consistent with the international annual rate. SSAF AU$386 is the 2027 maximum. 22 Oct 2026 re-check: tuition is now the page's own indicative 2-year total of AU$107,520, because 2 x AU$52,800 = AU$105,600 does not match it (likely fee indexation in year two). The page does not label the total as international and does not explain the gap, so this stays 'partial'."
     }
   ],
   "living_cost": {
@@ -269,7 +269,8 @@
         "effective": null,
         "who_affected": "Would have capped enrolments by provider",
         "impact": "The Senate did not pass the caps; the bill lapsed on 28 March 2025 and the caps part was left out of the later ELA Bill. The government uses Ministerial Directions and planning levels instead, so caps still exist in practice.",
-        "source_url": "https://www.education.gov.au/download/20377/australian-government-response-senate-education-and-employment-legislation-committee-report/44792/document/docx"
+        "source_url": "https://www.education.gov.au/download/20377/australian-government-response-senate-education-and-employment-legislation-committee-report/44792/document/docx",
+        "check": { "level": "unverified", "note": "The cited government document did not respond on 22 Oct 2026, so the claim could not be re-checked." }
       },
       {
         "title": "Temporary Graduate visa realigned: age limit cut to 35, Post-Study Work stream renamed Post-Higher Education Work",
@@ -349,6 +350,11 @@
     "effective_rate": 0.175,
     "basis": "ESTIMATE for a single Australian resident for tax purposes on about AUD 65,200 in 2026-27. Brackets: 0% to 18,200; 15% to 45,000; 30% to 135,000 (AUD 4,020 plus 30c per $1 over 45,000). Income tax = 10,080, plus 2% Medicare levy = 1,304, total 11,384 = 17.5%. Ignores the Low Income Tax Offset (about AUD 20 at this income) and the Medicare levy surcharge. At AUD 120,000 the same method gives about 24%. The 2026-27 15% bottom rate (down from 16%) is law per ATO/Budget material. ato.gov.au blocked automated access, so the table was read from SuperGuide (secondary, updated 1 July 2026; its 2025-26 table matches ATO 2025-26 rates). Medicare levy 2% is standard; not read on an ATO page.",
     "source_url": "https://www.superguide.com.au/boost-your-superannuation/income-tax-rates"
+  },
+  "health_insurance_per_year": {
+    "amount": 670,
+    "basis": "Overseas Student Health Cover (OSHC), single student: midpoint of the AU$590-750 a year range on RMIT's cost page (2026); Medibank lists from AU$719. Varies by insurer. It is not included in living costs.",
+    "source_url": "https://www.rmit.edu.au/study-with-us/international-students/study/cost-of-studying-in-australia"
   },
   "checklist": [
     "Check your course is CRICOS-registered and not at capacity for international intakes (planning-level allocations)",

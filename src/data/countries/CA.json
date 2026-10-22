@@ -42,7 +42,7 @@
         "amount": 40473.4,
         "period": "total",
         "credits_total": 45,
-        "fee_year": "2026-27 rates (Winter 2027 start)",
+        "fee_year": "Flat current-rate estimate for a Winter 2027 start (the source letter states no academic year)",
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-ENCS-MEng-CB-45.pdf"
       },
       "mandatory_fees_per_year": null,
@@ -156,7 +156,7 @@
         "amount": 62902.75,
         "period": "total",
         "credits_total": 45,
-        "fee_year": "2026-27 rates (Winter 2027 start)",
+        "fee_year": "Flat current-rate estimate for a Winter 2027 start (the source letter states no academic year)",
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-JMSB-MBA-CB-45.pdf"
       },
       "mandatory_fees_per_year": null,
@@ -280,7 +280,8 @@
         "effective": "2026-06-18",
         "who_affected": "Current and future study permit holders",
         "impact": "No work during any leave from studies; changing institution needs a new study permit; repeated leaves can be judged non-compliance. Raises the cost of taking a break. Secondary source (ICEF Monitor) summarising IRCC operational guidance.",
-        "source_url": "https://monitor.icef.com/2026/07/canadian-immigration-officials-have-made-several-updates-to-compliance-guidance-for-study-permits-and-post-graduate-work-permits/"
+        "source_url": "https://monitor.icef.com/2026/07/canadian-immigration-officials-have-made-several-updates-to-compliance-guidance-for-study-permits-and-post-graduate-work-permits/",
+        "check": { "level": "partial", "note": "Based on secondary news coverage (ICEF Monitor); not read on an official page." }
       },
       {
         "title": "PGWP field-of-study list frozen for 2026",
@@ -289,7 +290,8 @@
         "effective": "2026-01-15",
         "who_affected": "College / non-degree programmes (master's graduates exempt)",
         "impact": "No direct impact on master's students. Secondary source (CIC News); review of the list may bring changes for 2027.",
-        "source_url": "https://www.cicnews.com/2026/01/ircc-freezes-list-of-pgwp-eligible-fields-of-study-for-2026-0167305.html"
+        "source_url": "https://www.cicnews.com/2026/01/ircc-freezes-list-of-pgwp-eligible-fields-of-study-for-2026-0167305.html",
+        "check": { "level": "partial", "note": "Based on secondary news coverage (CIC News); not read on an official page." }
       }
     ]
   },
