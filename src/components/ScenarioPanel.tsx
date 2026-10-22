@@ -4,7 +4,7 @@ import { useData } from "./DataProvider";
 import { Badge, Empty, Money, Source, Stat } from "./ui";
 import { IncomeChart, IncrementalChart, LoanChart, SCEN_COLOR } from "./Charts";
 import { inr, lakh, pct, yrs } from "@/lib/format";
-import { costBreakdown, missingInputs, runAll, SCENARIOS, type Lifestyle, type ScenarioKey } from "@/lib/model";
+import { costBreakdown, costIncomplete, feesStatus, missingInputs, runAll, SCENARIOS, type Lifestyle, type ScenarioKey } from "@/lib/model";
 import { indiaSalaryFor } from "@/lib/recommend";
 import type { CountryData, Programme } from "@/lib/types";
 
@@ -53,7 +53,13 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
       </div>
       <p className="text-xs text-slate"><Badge kind="assumption" /> {SCENARIOS[r.key].explain} Scenarios are what-if calculations, not forecasts or probabilities. &quot;Debt-free&quot; assumes you prepay with everything left after living costs (check your lender&apos;s prepayment terms); on the bank&apos;s schedule the loan ends {r.scheduledYears.toFixed(1)} years after graduating.</p>
 
-      {todayCost && <FundingBridge r={r} todayTotal={todayCost.totalInr} ownFunds={profile.familyFunds + profile.savings + profile.scholarship} maxLoan={profile.maxLoan} />}
+      {costIncomplete(p) && (
+        <div className="rounded-xl border border-amber bg-amber-soft p-4 text-sm text-amber">
+          <strong>Cost estimate incomplete.</strong> We could not find this programme&apos;s mandatory fees, so they are counted as ₹0. The real total, the funding gap and the EMI are likely higher. Confirm the fees with the university before relying on these figures.
+        </div>
+      )}
+
+      {todayCost && <FundingBridge incomplete={costIncomplete(p)} r={r} todayTotal={todayCost.totalInr} ownFunds={profile.familyFunds + profile.savings + profile.scholarship} maxLoan={profile.maxLoan} />}
 
       {r.sim.fundingGap > 0 && (
         <div className="rounded-xl border border-brick bg-brick-soft p-4 text-sm text-brick">
@@ -99,7 +105,7 @@ export function ScenarioPanel({ country: c, programme: p, compact }: { country: 
 }
 
 /** Ties the cost table (today's prices) to the funding gap (this scenario), so the page shows one consistent set of numbers. */
-function FundingBridge({ r, todayTotal, ownFunds, maxLoan }: { r: NonNullable<ReturnType<typeof runAll>[ScenarioKey]>; todayTotal: number; ownFunds: number; maxLoan: number }) {
+function FundingBridge({ incomplete, r, todayTotal, ownFunds, maxLoan }: { incomplete: boolean; r: NonNullable<ReturnType<typeof runAll>[ScenarioKey]>; todayTotal: number; ownFunds: number; maxLoan: number }) {
   const drift = r.totalCostInr - todayTotal;
   const need = r.totalCostInr + r.sim.processingFee;
   const ownUsed = need - r.sim.drawn - r.sim.fundingGap;
@@ -111,7 +117,7 @@ function FundingBridge({ r, todayTotal, ownFunds, maxLoan }: { r: NonNullable<Re
       <h3 className="font-bold">How the funding gap is worked out ({SCENARIOS[r.key].label} scenario)</h3>
       <table className="data mt-2">
         <tbody>
-          <Row label="Base programme cost (today's prices and exchange rate, as in the cost table below)" value={todayTotal} />
+          <Row label={`Base programme cost (today's prices and exchange rate, as in the cost table below)${incomplete ? ", incomplete: mandatory fees not found" : ""}`} value={todayTotal} />
           <tr><td>+ Adjustment: tuition rise and INR drift this scenario assumes</td><td className="num text-right">{drift < 0 ? "−" : ""}{inr(Math.abs(drift))}</td></tr>
           <Row label="+ Adjustment: loan processing fee (charged on the loan)" value={r.sim.processingFee} />
           <Row label="= Total funding requirement" value={need} strong />
@@ -162,14 +168,14 @@ export function CostTable({ country: c, programme: p }: { country: CountryData; 
         <thead><tr><th>Item</th><th>Amount</th><th>Type</th><th>Basis</th></tr></thead>
         <tbody>
           <tr><td>Tuition (whole programme)</td><td><Money amount={cb.tuition} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td><Badge kind={p.status === "verified" ? "verified" : p.status === "partial" ? "partial" : "unverified"} /> <Source url={p.tuition?.source_url} /> {p.tuition && `(${p.tuition.period}, ${p.tuition.fee_year})`}</td></tr>
-          <tr><td>Mandatory fees</td><td><Money amount={cb.fees} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{p.mandatory_fees_per_year == null ? <Badge kind="missing">Not found; counted as 0</Badge> : <Badge kind={p.status === "verified" ? "verified" : p.status === "partial" ? "partial" : "unverified"} />}</td></tr>
+          <tr><td>Mandatory fees</td><td><Money amount={cb.fees} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{feesStatus(p) === "not_found" ? <><Badge kind="missing">Not found; counted as 0</Badge> The real cost is likely higher.</> : feesStatus(p) === "included" ? <><Badge kind="partial">Included in the tuition total</Badge> {p.mandatory_fees_note}</> : <Badge kind={p.status === "verified" ? "verified" : p.status === "partial" ? "partial" : "unverified"} />}</td></tr>
           {c.health_insurance_per_year && cb.health > 0 && (
             <tr><td>Compulsory health insurance</td><td><Money amount={cb.health} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td><Badge kind="estimate" /> {c.health_insurance_per_year.basis} <Source url={c.health_insurance_per_year.source_url} /></td></tr>
           )}
           <tr><td>Living ({p.duration_months} months, moderate)</td><td><Money amount={cb.living} currency={c.currency} rate={cb.rate} /></td><td>Recurring</td><td>{p.living_cost_per_year ? <><Badge kind="verified">University estimate</Badge> <Source url={p.living_cost_per_year.source_url} /></> : <><Badge kind="estimate" /> {c.living_cost.basis}</>}</td></tr>
           <tr><td>Visa fees</td><td><Money amount={cb.visa} currency={c.currency} rate={cb.rate} /></td><td>One-time</td><td><Source url={c.visa.student_visa.source_url} /></td></tr>
           <tr><td>Flights, tests, applications, 2-month deposit</td><td><Money amount={cb.oneTimeInr} currency="INR" rate={1} /></td><td>One-time</td><td><Badge kind="assumption" /> editable in the ROI calculator</td></tr>
-          <tr className="font-bold"><td>Estimated total</td><td><Money amount={cb.totalLocal + cb.oneTimeInr / cb.rate} currency={c.currency} rate={cb.rate} /></td><td /><td><Badge kind="calculated" /></td></tr>
+          <tr className="font-bold"><td>Estimated total</td><td><Money amount={cb.totalLocal + cb.oneTimeInr / cb.rate} currency={c.currency} rate={cb.rate} /></td><td /><td><Badge kind="calculated" />{costIncomplete(p) && <> <Badge kind="unverified">Incomplete</Badge> Mandatory fees were not found and are counted as 0, so treat this as a minimum.</>}</td></tr>
         </tbody>
       </table>
       <div className="mt-3 grid gap-2 text-sm sm:grid-cols-3">

@@ -73,7 +73,7 @@ export default function Roi() {
           <Slider label="Horizon" value={a.horizonYears} min={5} max={15} step={1} unit=" yrs" onChange={(v) => set({ horizonYears: v })} />
           <Slider label="Flights + relocation" value={a.flightsInr / 1000} min={0} max={300} step={5} unit="k ₹" onChange={(v) => set({ flightsInr: v * 1000 })} />
           <Slider label="Tests + applications" value={a.testsAndApplicationsInr / 1000} min={0} max={200} step={5} unit="k ₹" onChange={(v) => set({ testsAndApplicationsInr: v * 1000 })} />
-          <button className="btn btn-ghost w-full" onClick={() => setAssumptions({ ...DEFAULT_ASSUMPTIONS, loanRatePct: a.loanRatePct })}>Reset assumptions</button>
+          <button className="btn btn-ghost w-full" onClick={() => setAssumptions({ ...DEFAULT_ASSUMPTIONS, loanRatePct: rateBasis?.rate ?? DEFAULT_ASSUMPTIONS.loanRatePct })}>Reset assumptions</button>
         </aside>
         <div className="min-w-0 space-y-4">
           <h2 className="text-xl font-extrabold">{sel.p.university}: {sel.p.programme_name}</h2>

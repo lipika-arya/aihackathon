@@ -17,8 +17,12 @@ Every money figure that feeds the calculator was re-opened against its cited sou
 | 15 policy claims confirmed only partly or not at all | Each shows a verification note on the Visa tracker |
 | Monash, LMU fees, Credila could not be re-confirmed | Downgraded to partial |
 | Mandatory-fees badge always said "Verified" | Now follows the programme's status |
+| Default interest rate showed 11% in the first (server-rendered) HTML, then 9.9% after the page loaded; the Loans calculator started at 10.5%; the methodology page did not state the default | One default (9.9%, derived from the lender data) is used from the first render, by the ROI and Loans calculators and the Reset button; the methodology page states it and where it comes from; a test keeps the stored fallback in step with the derived value |
+| "Mandatory fees: not found, counted as 0" was shown for programmes whose total already includes fees (e.g. Toronto) as well as for programmes whose fees really are missing | Three states: itemised figure, "Included in the tuition total" (with the source's wording), or "Not found". Programmes in the last state show an "Incomplete" badge on the total, a warning banner, and a "Cost incomplete" flag in the lists |
 
 ## Still open
+- **Mandatory fees not found (cost shown as incomplete):** UNSW, Flinders, Monash, UQ (Australian student services fee), UBC (student fees, health plan), ESMT Berlin and Mannheim. Find the fees on each university page and add them, or add a `mandatory_fees_note` if the total already includes them.
+- **Toronto:** the source's CAD 90,050 includes the CAD 2,200 mandatory fee but does not itemise other fees or mention health insurance.
 - **India salary baseline (NIRF):** the site blocks automated access. Verify by hand.
 - **Credila, Monash:** sites block automated access.
 - **US health insurance:** Buffalo's living-cost figure excludes health insurance (about USD 2,300 a year per UB's page). Not added; check whether other US programmes include it.

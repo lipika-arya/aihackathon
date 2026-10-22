@@ -84,6 +84,7 @@ export default function Results() {
                   <td>{c.visaRisk}/100</td>
                   <td className="space-x-1">
                     {c.fundingGap > 0 && <Badge kind="unverified">Funding gap {lakh(c.fundingGap)}</Badge>}
+                    {c.costIncomplete && <Badge kind="missing">Cost incomplete</Badge>}
                     {c.hardFail && <Badge kind="unverified">Requirement not met</Badge>}
                     {c.programme.status !== "verified" && <Badge kind={c.programme.status === "partial" ? "partial" : "unverified"} />}
                     {c.missing.length > 0 && <Badge kind="missing">{c.missing.length} missing</Badge>}

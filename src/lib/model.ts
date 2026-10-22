@@ -89,7 +89,7 @@ export interface Assumptions {
 
 export const DEFAULT_ASSUMPTIONS: Assumptions = {
   horizonYears: 10,
-  loanRatePct: 11,
+  loanRatePct: 9.9, // fallback only: the app derives the live default from the lender data (see rate.ts); a test keeps the two in step
   graceMonths: 6,
   payInterestDuringMoratorium: false,
   processingFeePct: 1,
@@ -336,6 +336,17 @@ export function runAll(inp: ModelInput): Partial<Record<ScenarioKey, ScenarioRes
   }
   return out;
 }
+
+export type FeesStatus = "itemised" | "included" | "not_found";
+
+/** Where a programme's mandatory fees come from: a figure, already inside the tuition total, or not found. */
+export function feesStatus(p: Programme): FeesStatus {
+  if (p.mandatory_fees_per_year != null) return "itemised";
+  return p.mandatory_fees_note ? "included" : "not_found";
+}
+
+/** True when mandatory fees were not found, so they are counted as 0 and the total is likely too low. */
+export const costIncomplete = (p: Programme) => feesStatus(p) === "not_found";
 
 /** What's missing for a full calculation, in plain words. */
 export function missingInputs(c: CountryData, p: Programme, course: Course, indiaSalary: number | null): string[] {

@@ -19,6 +19,7 @@
         "source_url": "https://mscac.utoronto.ca/apply/"
       },
       "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "The source's CAD 90,050 is 'tuition and fees' for the whole programme and includes a CAD 2,200 mandatory pre-program fee. It does not itemise other fees or mention health insurance.",
       "living_cost_per_year": null,
       "requirements": {
         "gpa": "At least B+ (U of T 77-79%) in final year of undergraduate degree",
@@ -46,6 +47,7 @@
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-ENCS-MEng-CB-45.pdf"
       },
       "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Concordia's estimate letter total includes student fees, admin fees and international health insurance.",
       "living_cost_per_year": {
         "amount": 24616.98,
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-ENCS-MEng-CB-45.pdf"
@@ -103,6 +105,7 @@
         "source_url": "https://www.torontomu.ca/current-students/tuition-fees/graduate.html"
       },
       "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "TMU's published figure includes tuition, ancillary and programme fees, health/dental and UHIP.",
       "living_cost_per_year": null,
       "requirements": {
         "gpa": "Minimum 3.00/4.33 (B) in last two years of a four-year bachelor's",
@@ -160,6 +163,7 @@
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-JMSB-MBA-CB-45.pdf"
       },
       "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Concordia's estimate letter total includes student fees, admin fees and international health insurance.",
       "living_cost_per_year": {
         "amount": 24616.98,
         "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-JMSB-MBA-CB-45.pdf"

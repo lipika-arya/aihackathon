@@ -36,8 +36,8 @@ function runLoan(c: Calc) {
 }
 
 export default function Loans() {
-  const { lenders, profile } = useData();
-  const [c, setC] = useState<Calc>({ loan: profile.maxLoan || 3_000_000, rate: 10.5, studyMonths: 24, disbursements: 4, grace: 6, payInterest: false, tenure: profile.repaymentYears, salary: 1_200_000, growth: 6, tax: 10, living: 30_000, fee: DEFAULT_ASSUMPTIONS.processingFeePct });
+  const { lenders, profile, rateBasis } = useData();
+  const [c, setC] = useState<Calc>({ loan: profile.maxLoan || 3_000_000, rate: rateBasis?.rate ?? DEFAULT_ASSUMPTIONS.loanRatePct, studyMonths: 24, disbursements: 4, grace: 6, payInterest: false, tenure: profile.repaymentYears, salary: 1_200_000, growth: 6, tax: 10, living: 30_000, fee: DEFAULT_ASSUMPTIONS.processingFeePct });
   const set = (p: Partial<Calc>) => setC({ ...c, ...p });
   const r = useMemo(() => runLoan(c), [c]);
   const variants = useMemo(() => [

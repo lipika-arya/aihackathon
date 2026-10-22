@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { costBreakdown, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, runScenario, visaFeesInr } from "./model";
+import { costBreakdown, costIncomplete, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, feesStatus, runScenario, visaFeesInr } from "./model";
 import { defaultLoanRate } from "./rate";
 import type { CountryData, FxRates, LenderData } from "./types";
 import fb from "../data/fx-fallback.json";
@@ -127,5 +127,32 @@ describe("one consistent set of totals", () => {
     expect(drift).toBeLessThan(120_000);
     // the old inconsistency: gap vs (table total - funds) differed by exactly the drift plus the fee
     expect(r.sim.fundingGap - (cb.totalInr - profile.familyFunds - profile.maxLoan)).toBeCloseTo(drift + r.sim.processingFee, 0);
+  });
+});
+
+describe("one default interest rate everywhere", () => {
+  it("the fallback constant matches the rate derived from the lender data", () => {
+    // If lender data changes the derived rate, update DEFAULT_ASSUMPTIONS.loanRatePct to match so every page agrees.
+    expect(DEFAULT_ASSUMPTIONS.loanRatePct).toBeCloseTo(defaultLoanRate(lenders)!.rate, 1);
+  });
+});
+
+describe("incomplete cost estimates are flagged", () => {
+  const all = ["US", "DE", "CA", "JP", "AU"].flatMap((c) => country(c).programmes);
+  it("Toronto's fees are inside the source's total, so it is not flagged as missing fees", () => {
+    const p = prog(country("CA"), "utoronto-mscac-cs");
+    expect(feesStatus(p)).toBe("included");
+    expect(p.mandatory_fees_note).toMatch(/2,200/);
+    expect(costIncomplete(p)).toBe(false);
+  });
+  it("programmes with no fee figure and no explanation are flagged incomplete", () => {
+    const flagged = all.filter(costIncomplete).map((p) => p.id).sort();
+    expect(flagged).toEqual(["esmt-berlin-full-time-mba", "flinders-mit-cs", "mannheim-business-school-full-time-mba", "monash-mds-ds", "uq-mba", "ubc-mds-ds", "unsw-mit-cs"].sort());
+  });
+  it("a programme with an itemised fee is never flagged", () => {
+    for (const p of all.filter((x) => x.mandatory_fees_per_year != null)) expect(feesStatus(p)).toBe("itemised");
+  });
+  it("every note explains itself", () => {
+    for (const p of all.filter((x) => x.mandatory_fees_note)) expect(p.mandatory_fees_note!.length).toBeGreaterThan(30);
   });
 });

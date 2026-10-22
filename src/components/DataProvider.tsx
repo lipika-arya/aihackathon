@@ -25,8 +25,10 @@ const write = (k: string, v: unknown) => { try { localStorage.setItem(k, JSON.st
 export function DataProvider({ value, children }: { value: Data; children: React.ReactNode }) {
   const [profile, setP] = useState<Profile>(DEFAULT_PROFILE);
   const [hasProfile, setHas] = useState(false);
-  const [assumptions, setA] = useState<Assumptions>(DEFAULT_ASSUMPTIONS);
   const rateBasis = useMemo(() => defaultLoanRate(value.lenders), [value.lenders]);
+  // Start from the derived default so the very first render (and the server-rendered HTML) already shows it,
+  // not a stale constant that is swapped after hydration.
+  const [assumptions, setA] = useState<Assumptions>(() => ({ ...DEFAULT_ASSUMPTIONS, loanRatePct: rateBasis?.rate ?? DEFAULT_ASSUMPTIONS.loanRatePct }));
 
   useEffect(() => {
     const p = read<Profile>("abroadroi.profile");

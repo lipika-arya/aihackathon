@@ -89,6 +89,7 @@ export default function Universities() {
                 {tier && <span className="rounded-full bg-ivory px-2 py-0.5 text-[11px] font-semibold">{tier}</span>}
                 {c.programme.scholarships && <span className="rounded-full bg-ivory px-2 py-0.5 text-[11px] font-semibold">Scholarships</span>}
                 {c.fundingGap > 0 && <Badge kind="unverified">Funding gap</Badge>}
+                {c.costIncomplete && <Badge kind="missing">Cost incomplete</Badge>}
                 {c.missing.length > 0 && <Badge kind="missing">{c.missing.length} missing</Badge>}
               </div>
             </Link>
