@@ -48,7 +48,7 @@ export default function Compare() {
 
   return (
     <div className="space-y-6">
-      <PageHead eyebrow="Country comparison" title="Five countries side by side">
+      <PageHead eyebrow="Country comparison" title={`${["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"][countries.length] ?? countries.length} countries side by side`}>
         Each column uses the middle-cost programme in our sample for that country, your profile, and today&apos;s exchange rate.
         {" "}Tap a country&apos;s programmes in the <Link href="/universities" className="link">University explorer</Link> for the full spread.
       </PageHead>

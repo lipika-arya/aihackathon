@@ -9,7 +9,7 @@ import { COURSES, type CountryCode, type Course } from "@/lib/types";
 import { lakh } from "@/lib/format";
 
 const STEPS = ["Background", "Course & career", "Finances", "Priorities", "Review"];
-const COUNTRY_NAMES: Record<CountryCode, string> = { CA: "Canada", DE: "Germany", US: "United States", JP: "Japan", AU: "Australia" };
+const COUNTRY_NAMES: Record<CountryCode, string> = { CA: "Canada", DE: "Germany", US: "United States", UK: "United Kingdom", JP: "Japan", AU: "Australia" };
 const GOALS = ["Software engineering", "Data analytics", "Data science", "Data engineering", "Artificial intelligence", "Product management", "Consulting", "Finance", "Business leadership", "Entrepreneurship"];
 
 function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {

@@ -1,6 +1,6 @@
 // Turns research data + a student profile + assumptions into scenario results.
 import { cumulative, economicRoi, irr, npv, paybackIndex, simulate, toYears, type SimResult } from "./finance";
-import type { CountryCode, CountryData, Course, FxRates, Programme, RiskKey } from "./types";
+import type { CountryCode, CountryData, Course, FxRates, IndiaProgramme, Programme, RiskKey } from "./types";
 
 export type Lifestyle = "budget" | "moderate" | "comfortable";
 
@@ -51,7 +51,7 @@ export const DEFAULT_PROFILE: Profile = {
   workYears: 0,
   courses: ["CS"],
   goal: "Software engineering",
-  countries: ["US", "DE", "CA", "JP", "AU"],
+  countries: ["US", "DE", "CA", "UK", "JP", "AU"],
   familyFunds: 1_000_000,
   savings: 0,
   scholarship: 0,
@@ -105,7 +105,9 @@ export const DEFAULT_ASSUMPTIONS: Assumptions = {
   fxOverride: {},
 };
 
-export type ScenarioKey = "optimistic" | "expected" | "conservative" | "visaEnds" | "returnHome";
+export type AbroadKey = "optimistic" | "expected" | "conservative" | "visaEnds" | "returnHome";
+export type ScenarioKey = AbroadKey | "mastersIndia";
+export const ABROAD_KEYS: AbroadKey[] = ["optimistic", "expected", "conservative", "visaEnds", "returnHome"];
 
 export const SCENARIOS: Record<ScenarioKey, { label: string; short: string; explain: string }> = {
   optimistic: { label: "Optimistic", short: "Job abroad fast", explain: "Job abroad 3 months after graduating at the high end of entry salaries. INR stays flat. No tuition increase." },
@@ -113,6 +115,7 @@ export const SCENARIOS: Record<ScenarioKey, { label: string; short: string; expl
   conservative: { label: "Conservative", short: "Slow job search", explain: "Job abroad 12 months after graduating at the low end of entry salaries. INR weakens 2 points faster. Tuition rises 5% in year two." },
   visaEnds: { label: "Work permit ends", short: "Visa lost, back to India", explain: "Expected job abroad, but you return to India when the post-study work permit ends (no sponsorship or PR). Then you earn your India salary." },
   returnHome: { label: "Return home", short: "Back to India", explain: "You return to India right after graduating and repay the loan on your India salary." },
+  mastersIndia: { label: "Master's in India", short: "Same course, in India", explain: "You do the same type of master's at an Indian institute instead: its published fees and hostel costs, no exchange-rate risk, and its own median placement salary, with a job starting 3 months after graduating. Compared with staying in India and working now. Assistantship stipends are not counted." },
 };
 
 export const RISK_WEIGHTS: Record<RiskKey, { weight: number; label: string }> = {
@@ -226,7 +229,7 @@ export interface ModelInput {
   indiaSalary: number | null; // gross INR/year
 }
 
-export function runScenario(inp: ModelInput, key: ScenarioKey): ScenarioResult | null {
+export function runScenario(inp: ModelInput, key: AbroadKey): ScenarioResult | null {
   const { country: c, programme: p, profile: prof, assumptions: a, fx } = inp;
   const band = c.salary[inp.course];
   const livM = livingMonthLocal(c, p, prof.lifestyle);
@@ -252,7 +255,6 @@ export function runScenario(inp: ModelInput, key: ScenarioKey): ScenarioResult |
   for (let y = 0; y < Math.ceil(D / 12); y++) costs[y * 12] += yearlyExtras * Math.min(1, (D - y * 12) / 12) * rateAt(y * 12);
   for (let m = 0; m < D; m++) costs[m] += livM * rateAt(m);
   costs[0] += visaFeesInr(c, fx, a) + a.flightsInr + a.testsAndApplicationsInr + livM * 2 * rate0;
-  const totalCostInr = costs.reduce((x, y) => x + y, 0);
 
   const salary = key === "optimistic" ? band.entry_high ?? band.entry_mid : key === "conservative" ? band.entry_low ?? band.entry_mid : band.entry_mid;
   const search = key === "optimistic" ? 3 : key === "conservative" ? 12 : 6;
@@ -271,14 +273,33 @@ export function runScenario(inp: ModelInput, key: ScenarioKey): ScenarioResult |
     return ((gross * (1 - tax)) / 12) * rateAt(m);
   };
   const livAt = (m: number) => (m < D ? 0 : m >= homeFrom ? indiaLiv(m) : postLivM * (1 + a.livingInflationPct / 100) ** Math.floor((m - D) / 12) * rateAt(m));
+  return finishScenario({ key, a, prof, D, H, costs, incAt, livAt, baseIncAt: indiaNet, baseLivAt: indiaLiv });
+}
+
+interface Plan {
+  key: ScenarioKey;
+  a: Assumptions;
+  prof: Profile;
+  D: number; // study months
+  H: number; // horizon months
+  costs: number[]; // study-period costs per month, INR (own funds / loan / gap are decided in simulate)
+  incAt: (m: number) => number; // net income on this path, INR per month
+  livAt: (m: number) => number; // living cost after study on this path
+  baseIncAt: (m: number) => number; // stay-in-India path
+  baseLivAt: (m: number) => number;
+}
+
+/** Shared by every scenario: month-by-month loan simulation, payoff, payback, NPV/IRR and yearly tables. */
+function finishScenario(plan: Plan): ScenarioResult {
+  const { key, a, prof, D, H, costs, incAt, livAt } = plan;
   const income: number[] = [], living: number[] = [], bInc: number[] = [], bLiv: number[] = [];
   for (let m = 0; m < H; m++) {
-    bInc.push(indiaNet(m));
-    bLiv.push(indiaLiv(m));
+    bInc.push(plan.baseIncAt(m));
+    bLiv.push(plan.baseLivAt(m));
     income.push(incAt(m));
     living.push(livAt(m));
   }
-
+  const totalCostInr = costs.reduce((x, y) => x + y, 0);
   const sim = simulate({
     horizonMonths: H, studyMonths: D, studyCosts: costs,
     ownFunds: prof.familyFunds + prof.savings + prof.scholarship,
@@ -328,13 +349,51 @@ export function runScenario(inp: ModelInput, key: ScenarioKey): ScenarioResult |
   };
 }
 
+
 export function runAll(inp: ModelInput): Partial<Record<ScenarioKey, ScenarioResult>> {
   const out: Partial<Record<ScenarioKey, ScenarioResult>> = {};
-  for (const k of Object.keys(SCENARIOS) as ScenarioKey[]) {
+  for (const k of ABROAD_KEYS) {
     const r = runScenario(inp, k);
     if (r) out[k] = r;
   }
   return out;
+}
+
+export interface IndiaMastersInput {
+  programme: IndiaProgramme;
+  profile: Profile;
+  assumptions: Assumptions;
+  indiaSalary: number | null; // what you would earn in India without the master's (gross INR per year)
+}
+
+/** Months between graduating from an Indian programme and the first salary (assumption, stated on the page). */
+export const INDIA_JOB_SEARCH_MONTHS = 3;
+
+/** The "do the same master's in India" scenario, run through the same loan and ROI engine as the abroad ones. */
+export function runIndiaMasters(inp: IndiaMastersInput): ScenarioResult | null {
+  const { programme: p, profile: prof, assumptions: a } = inp;
+  const D = p.duration_months;
+  const H = a.horizonYears * 12;
+  if (inp.indiaSalary == null || !(p.tuition_total_inr >= 0) || H <= D + INDIA_JOB_SEARCH_MONTHS) return null; // zero tuition is real (e.g. ISI); a missing or invalid fee is not
+
+  // fees are paid at each semester start; hostel and mess monthly (the institute's own estimate, else your own India living cost)
+  const semesters = Math.max(1, Math.round(D / 6));
+  const fees = p.tuition_total_inr + (p.other_fees_total_inr ?? 0);
+  const livM = p.living_per_year_inr != null ? p.living_per_year_inr / 12 : prof.indiaLiving;
+  const costs = Array(D).fill(0);
+  for (let s = 0; s < semesters; s++) costs[Math.floor((s * D) / semesters)] += fees / semesters;
+  for (let m = 0; m < D; m++) costs[m] += livM * (1 + a.livingInflationPct / 100) ** Math.floor(m / 12);
+
+  const net = (gross: number, years: number) => (gross * (1 + a.salaryGrowthIndiaPct / 100) ** years * (1 - a.indiaTaxPct / 100)) / 12;
+  const indiaLiv = (m: number) => prof.indiaLiving * (1 + a.livingInflationPct / 100) ** Math.floor(m / 12);
+  const jobStart = D + INDIA_JOB_SEARCH_MONTHS;
+  return finishScenario({
+    key: "mastersIndia", a, prof, D, H, costs,
+    incAt: (m) => (m < jobStart ? 0 : net(p.entry_salary.median_inr, Math.floor((m - jobStart) / 12))),
+    livAt: (m) => (m < D ? 0 : indiaLiv(m)),
+    baseIncAt: (m) => net(inp.indiaSalary!, Math.floor(m / 12)),
+    baseLivAt: indiaLiv,
+  });
 }
 
 export type FeesStatus = "itemised" | "included" | "not_found";

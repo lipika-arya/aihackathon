@@ -156,3 +156,46 @@ describe("incomplete cost estimates are flagged", () => {
     for (const p of all.filter((x) => x.mandatory_fees_note)) expect(p.mandatory_fees_note!.length).toBeGreaterThan(30);
   });
 });
+
+describe("expanded programme set and the UK", () => {
+  const codes = ["US", "DE", "CA", "UK", "JP", "AU"];
+  const all = codes.map(country);
+  const progs = all.flatMap((c) => c.programmes);
+
+  it("programme ids are unique across all countries", () => {
+    const ids = progs.map((p) => p.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+  it("has the six countries, each with all three courses", () => {
+    expect(all.map((c) => c.country)).toEqual(codes);
+    for (const c of all) for (const course of ["CS", "DS", "MBA"] as const) expect(c.programmes.some((p) => p.course === course)).toBe(true);
+  });
+  it("every programme has an official https tuition source and a plausible duration", () => {
+    for (const p of progs) {
+      expect(p.tuition?.source_url).toMatch(/^https:\/\//);
+      expect(p.duration_months).toBeGreaterThanOrEqual(9);
+      expect(p.duration_months).toBeLessThanOrEqual(36);
+    }
+  });
+  it("UK uses GBP with the official student visa fee and the health surcharge", () => {
+    const uk = country("UK");
+    expect(uk.currency).toBe("GBP");
+    expect(uk.visa.student_visa.fees.find((f) => f.amount === 558)).toBeDefined();
+    expect(uk.health_insurance_per_year).toMatchObject({ amount: 776, verified: true });
+    expect(uk.visa.post_study_work.months_max).toBe(18);
+  });
+  it("UK costs include the health surcharge and the part-year visa months in the table maths", () => {
+    const uk = country("UK");
+    const p = prog(uk, "warwick-msc-computer-science");
+    const cb = costBreakdown(uk, p, prof, DEFAULT_ASSUMPTIONS, fx)!;
+    expect(cb.health).toBeCloseTo(776, 6); // 12-month course
+    expect(cb.visa * cb.rate).toBeCloseTo(558 * fx.inrPer.GBP + 388 * fx.inrPer.GBP, 0);
+  });
+  it("every newly added programme is verified", () => {
+    const added = ["northeastern-ms-cs", "uva-msds-residential", "duke-fuqua-daytime-mba", "kit-msc-computer-science", "tuebingen-msc-machine-learning", "frankfurt-school-full-time-mba", "sfu-msc-bigdata-ds", "schulich-mba", "osaka-itsce-information-science-cs", "kyoto-informatics-ist-international-ds", "kyoto-gsm-imba", "uts-mit-cs", "uts-mdsi-ds", "uts-mba", "warwick-msc-computer-science", "southampton-msc-computer-science", "warwick-wbs-full-time-mba"];
+    for (const id of added) expect(progs.find((p) => p.id === id)?.status).toBe("verified");
+  });
+  it("a partial candidate that could not be fully confirmed was left out", () => {
+    expect(progs.find((p) => p.id === "carleton-mcs-cs")).toBeUndefined();
+  });
+});

@@ -1,0 +1,386 @@
+{
+  "country": "UK",
+  "name": "United Kingdom",
+  "currency": "GBP",
+  "verified_at": "2026-10-22",
+  "programmes": [
+    {
+      "id": "warwick-msc-computer-science",
+      "university": "University of Warwick",
+      "city": "Coventry",
+      "course": "CS",
+      "programme_name": "Computer Science (MSc), full-time 1 year",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 39330,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027-28 (course start 27 September 2027)",
+        "source_url": "https://warwick.ac.uk/services/finance/studentfinance/fees/postgraduatefees/"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Warwick states 'Academic fees cover the cost of tuition, examinations and assessment and some student amenities'; its Additional course costs section lists only field trips/travel abroad for some courses and module-specific costs in the Module Catalogue.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "First Class Honours or a high 2:1 in Computer Science, Mathematics, Statistics, Physics or another relevant quantitative degree",
+        "english": "Band A: IELTS 6.5 overall with no component below 6.0",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://warwick.ac.uk/study/postgraduate/courses/msc-computer-science/",
+      "status": "verified",
+      "notes": "Warwick's postgraduate taught fee table (course code P-G5PD, Full Time, Overseas) shows GBP 35,340 for 2025-26, 37,460 for 2026-27 and 39,330 for 2027-28; the 2027-28 column is used because the course page shows a 27 September 2027 start and 1 year full-time duration. (The course page header also says '2026 Entry'; the dates and the fee table are what was used.) Living cost null: Warwick's living-costs page gives no amounts. No explicit 'no other compulsory fees' sentence, but the fee statement and costs section list none."
+    },
+    {
+      "id": "southampton-msc-computer-science",
+      "university": "University of Southampton",
+      "city": "Southampton",
+      "course": "CS",
+      "programme_name": "Computer Science (MSc), 1 year",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 36800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027 entry (September 2027); page states fees 'for a year's study' with no separate academic-year label",
+        "source_url": "https://www.southampton.ac.uk/courses/computer-science-masters-msc"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Page states 'Your tuition fee covers the full cost of tuition and any exams'; only extra costs mentioned are for retake and professional exams.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "2:1 in computer science, computer engineering, software engineering, media technology, e-business or IT, with 2:1-level grades in two programming modules (incl. object-oriented), one advanced maths module and one data structures/algorithms module",
+        "english": "IELTS 6.5 overall, at least 6.0 in each of reading, writing, speaking, listening",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "Dean of Faculty of Engineering and Physical Sciences Global Talent Award: up to 5 scholarships of GBP 10,000 for eligible international students (page); 10% alumni discount",
+      "programme_url": "https://www.southampton.ac.uk/courses/computer-science-masters-msc",
+      "status": "verified",
+      "notes": "EU and international fee GBP 36,800 for a year's study (1 year, September 2027 start). International full-time students pay a GBP 2,000 deposit toward tuition. Fee stays the same each year from the start of study. Living cost null: Southampton's student living-costs page gives an undated weekly table (e.g. private rent GBP 115, food GBP 50) but no annual estimate for international students, so none was derived. Southampton also has a Delhi campus version (not used)."
+    },
+    {
+      "id": "warwick-wbs-full-time-mba",
+      "university": "University of Warwick (Warwick Business School)",
+      "city": "Coventry",
+      "course": "MBA",
+      "programme_name": "Full-time MBA (12-month format)",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 62500,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "September 2027 start, 12-month format (Warwick fee table: 2027-28)",
+        "source_url": "https://www.wbs.ac.uk/courses/mba/full-time-mba/"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "WBS states 'Your tuition fee covers registration, teaching, and examinations'; accommodation, study materials and travel are not included; no other mandatory fees are listed.",
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": "GMAT, GRE or the Warwick Test required",
+        "work_experience": "Three years' professional work experience"
+      },
+      "scholarships": "Range of WBS MBA scholarships, bursaries, loans and employer funding (amounts not read)",
+      "programme_url": "https://www.wbs.ac.uk/courses/mba/full-time-mba/",
+      "status": "verified",
+      "notes": "GBP 62,500 for the 12-month format (GBP 63,750 for the 16-month formats with internship or partner-school exchange), same for Home and International, start September 2027. Same GBP 62,500 appears for 2027-28 in Warwick's postgraduate fee table (P-N1P2, Full Time, ALL; GBP 57,500 for 2025-26, 59,500 for 2026-27). Living cost null: Warwick's living-costs page gives no amounts. English requirement is on a separate page not read."
+    },
+    {
+      "id": "edinburgh-msc-computer-science",
+      "university": "University of Edinburgh",
+      "city": "Edinburgh",
+      "course": "CS",
+      "programme_name": "Computer Science (MSc), full-time 1 year",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 47680,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027/8 (September 2027 entry)",
+        "source_url": "https://study.ed.ac.uk/programmes/postgraduate-taught-campus-fees?programme_code=PTMSCCMPSI1F&year=2027"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Edinburgh's postgraduate taught fee covers matriculation (registration), tuition and/or supervision, one examination sitting, graduation in the final year, membership of the University unions and library access (registryservices.ed.ac.uk fee-rates page, read 22 Oct 2026); no compulsory additional charges are listed.",
+      "living_cost_per_year": {
+        "amount": 18504,
+        "source_url": "https://study.ed.ac.uk/programmes/postgraduate-taught/110-computer-science"
+      },
+      "requirements": {
+        "gpa": "UK 2:1 or international equivalent in informatics, AI, cognitive science, computer science, econometrics, electrical engineering, linguistics, mathematics, philosophy, physics or psychology; competitive entry",
+        "english": "IELTS Academic 7.0 overall with at least 6.5 in three components and 6.0 in the remaining one (other tests and English-taught degrees also accepted)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://study.ed.ac.uk/programmes/postgraduate-taught/110-computer-science",
+      "status": "verified",
+      "notes": "International/EU fee GBP 47,680 per year for 2027/8 (full-time, 1 year, start September 2027), so whole-programme tuition 47,680. Fee page says the annual figure 'does not include any additional costs related to your degree' and points to the programme page; the programme page's Costs section lists only accommodation and living costs, there is no application fee, and the GBP 1,500 deposit counts towards tuition. No compulsory extra fee is listed, but there is no explicit 'no other fees' sentence. Living cost = Edinburgh's own average estimate of GBP 18,504 a year (GBP 1,542 a month) for 2026-2027. 10% discount for Edinburgh graduates. Round 1 deadline 31 March, round 2 31 May. Entry also needs a completed programming course and 60 SCQF / 30 ECTS credits of maths. 22 Oct 2026 re-check: the fee-coverage statement above was confirmed on Edinburgh's central fee-rates page (https://registryservices.ed.ac.uk/tuition-fees/policy/postgraduate-taught/rates). The programme page says the fee 'does not include any additional costs related to your degree' (set by each school and listed on the programme page)."
+    },
+    {
+      "id": "edinburgh-msc-data-science",
+      "university": "University of Edinburgh",
+      "city": "Edinburgh",
+      "course": "DS",
+      "programme_name": "Data Science (MSc), full-time 1 year",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 47680,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027/8 (September 2027 entry)",
+        "source_url": "https://study.ed.ac.uk/programmes/postgraduate-taught-campus-fees?programme_code=PTMSCDATSC1F&year=2027"
+      },
+      "mandatory_fees_per_year": null,
+      "mandatory_fees_note": "Edinburgh's postgraduate taught fee covers matriculation (registration), tuition and/or supervision, one examination sitting, graduation in the final year, membership of the University unions and library access (registryservices.ed.ac.uk fee-rates page, read 22 Oct 2026); no compulsory additional charges are listed.",
+      "living_cost_per_year": {
+        "amount": 18504,
+        "source_url": "https://study.ed.ac.uk/programmes/postgraduate-taught/902-data-science"
+      },
+      "requirements": {
+        "gpa": "UK 2:1 or international equivalent in informatics, AI, cognitive science, computer science, econometrics, electrical engineering, linguistics, mathematics, philosophy, physics, psychology or another quantitative discipline; competitive entry",
+        "english": "IELTS Academic 7.0 overall with at least 6.5 in three components and 6.0 in the remaining one (other tests and English-taught degrees also accepted)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://study.ed.ac.uk/programmes/postgraduate-taught/902-data-science",
+      "status": "verified",
+      "notes": "International/EU fee GBP 47,680 per year for 2027/8 (full-time, 1 year, start September 2027), so whole-programme tuition 47,680. Fee page says the annual figure 'does not include any additional costs related to your degree' and points to the programme page; the programme page's Costs section lists only accommodation and living costs, there is no application fee, and the GBP 1,500 deposit counts towards tuition. No compulsory extra fee is listed, but there is no explicit 'no other fees' sentence. Living cost = Edinburgh's own average estimate of GBP 18,504 a year (GBP 1,542 a month) for 2026-2027. 10% discount for Edinburgh graduates. Round 1 deadline 31 March, round 2 31 May. Entry needs a UK 2:1 or international equivalent in a quantitative subject, introductory programming experience and 60 SCQF / 30 ECTS credits of maths. 22 Oct 2026 re-check: the fee-coverage statement above was confirmed on Edinburgh's central fee-rates page (https://registryservices.ed.ac.uk/tuition-fees/policy/postgraduate-taught/rates). The programme page says the fee 'does not include any additional costs related to your degree' (set by each school and listed on the programme page)."
+    }
+  ],
+  "living_cost": {
+    "budget_month": 1203,
+    "moderate_month": 1542,
+    "comfortable_month": 1893,
+    "basis": "Budget = official Student visa maintenance requirement outside London: GBP 1,203/month from 30 Nov 2026 (HC 584 raises it from the current GBP 1,171; 2027 applicants will fall under the new figure; the rate is reviewed yearly). London is GBP 1,570/month from 30 Nov 2026 (currently 1,529). Moderate (ESTIMATE) = University of Edinburgh single postgraduate estimate for 2026-27: GBP 1,542/month, GBP 18,504/year (accommodation and utilities 978, food and shopping 248, leisure 246, bus 58, phone 12; calculated March 2026). Comfortable (ESTIMATE) = Imperial College London 'Likely costs for living in London, 2026': GBP 1,821 (college-run accommodation) to 1,893 (private sector) per month; the upper figure is used. Imperial's own 25th-75th percentile range for 9 months is GBP 11,372-19,286. UCL, Manchester and LSE pages could not be read (403/503 errors), so no figure from them is used. Tuition, visa fees and the health surcharge are not included.",
+    "source_url": "https://www.gov.uk/student-visa/money"
+  },
+  "visa": {
+    "student_visa": {
+      "name": "Student visa (Student route, points-based)",
+      "fees": [
+        {
+          "label": "Student visa application from outside the UK (main applicant; fee from 8 April 2026, unchanged in the 8 October 2026 table). The Confirmation of Acceptance for Studies (GBP 55) is paid by the sponsor. The fee table lists no separate biometric enrolment fee; visa-application-centre service charges in India are not on the official fee table.",
+          "amount": 558,
+          "currency": "GBP"
+        },
+        {
+          "label": "Immigration Health Surcharge for the extra 4 months of visa after the course ends (the visa runs 4 months past a course of 12 months or more; a part-year of 6 months or less is charged at half the yearly rate, so half of GBP 776). The full-course years are counted separately as health insurance.",
+          "amount": 388,
+          "currency": "GBP"
+        }
+      ],
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-october-2026"
+    },
+    "proof_of_funds": {
+      "text": "Funds for living costs for up to 9 months: GBP 1,171/month (GBP 10,539) outside London or GBP 1,529/month (GBP 13,761) for London courses until 29 Nov 2026; from 30 Nov 2026 GBP 1,203 (GBP 10,827) outside London and GBP 1,570 (GBP 14,130) in London (HC 584). A master's of 9 months or longer counts the full 9 months. On top of that you must cover one academic year of course fees (up to 9 months) as stated on the CAS. Money must be held for 28 consecutive days, with the 28-day period ending within 31 days of the application date. Dependants: extra funds are required per family member, but a taught master's no longer qualifies for dependants (see work text and recent changes).",
+      "source_url": "https://www.gov.uk/student-visa/money"
+    },
+    "work_during_study": {
+      "text": "Home Office caseworker guidance: full-time degree-level students at a sponsor with a track record of compliance may work up to 20 hours a week in term time and full time in vacations; part-time courses carry no work right. Paid and voluntary work together count toward the cap. No self-employment, no professional sport/coaching and no public funds (gov.uk student visa pages). A taught master's does not allow dependants (courses starting on or after 1 Jan 2024; only research-based higher degrees or doctorates do). NOT CONFIRMED on 22 Oct 2026: the 20-hour figure comes from a summary of Home Office guidance, not from a gov.uk page we could read in full. Check it before relying on it.",
+      "source_url": "https://www.gov.uk/government/publications/student-route-caseworker-guidance/student-and-child-student"
+    },
+    "post_study_work": {
+      "name": "Graduate visa (Graduate route)",
+      "months_max": 18,
+      "text": "A student starting a master's in 2026-27 or 2027 will graduate in 2027-28 and apply after 1 January 2027, so the shorter leave applies: 18 months for applications made on or after 1 Jan 2027 (24 months only for applications made on or before 31 Dec 2026; PhDs keep 3 years). Apply from inside the UK while holding a Student visa, after the university reports your course as completed. Fee GBP 937; health surcharge GBP 1,035 per year, so about GBP 1,552.50 for 18 months by the official part-year rule (the gov.uk cost page prints GBP 1,152.50 for 18 months, which does not match its own rule). No sponsor needed; most jobs and self-employment allowed; cannot be extended, only switched (e.g. to Skilled Worker).",
+      "source_url": "https://www.gov.uk/graduate-visa"
+    },
+    "pr_pathway": {
+      "text": "Main route: Skilled Worker visa, then settlement. Skilled Worker salary rules: general threshold GBP 41,700 or the occupation going rate, whichever is higher; recent graduates, people under 26 and those who held a Student or Graduate visa in the last 2 years can use GBP 33,400 and 70% of the going rate, for up to 4 years total stay. English for new Skilled Worker grants is B2 (from 8 Jan 2026). The gov.uk Skilled Worker page still says 5 years to settle, but the government proposes a 10-year baseline qualifying period (consultation closed 12 Feb 2026, outcome not published as of 22 Oct 2026) applying to people not yet settled; Graduate-route time does not count toward the 5-year routes; B2 English will be required for settlement applications from 26 Mar 2027. Skilled Worker visa fee (from outside the UK, 3 years or less) GBP 819, in the UK GBP 943.",
+      "source_url": "https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less"
+    },
+    "recent_changes": [
+      {
+        "title": "Graduate route cut from 2 years to 18 months (PhD stays 3 years)",
+        "status": "announced",
+        "announced": "2025-10-14",
+        "effective": "2027-01-01",
+        "who_affected": "Graduate visa applications made on or after 1 Jan 2027, so all students starting in 2026-27 or 2027 who are not on a doctorate",
+        "impact": "Halves the time from 24 to 18 months to find a Skilled Worker job and sponsor; the home office modelled about 12,000 fewer student visa applications a year. For this country's master's students the 18-month figure is the planning case.",
+        "source_url": "https://www.gov.uk/graduate-visa"
+      },
+      {
+        "title": "Student maintenance funds rise to GBP 1,570 (London) and GBP 1,203 (outside London) per month",
+        "status": "announced",
+        "announced": "2026-09-03",
+        "effective": "2026-11-30",
+        "who_affected": "Student visa applications decided under the rules from 30 Nov 2026, including all 2027 entrants",
+        "impact": "Up 41 (London) and 32 (elsewhere) per month, so 9 months of funds goes to GBP 14,130 or GBP 10,827 plus first-year course fees; the family must arrange slightly more cash or loan before applying. Accommodation offset maximum also rises.",
+        "source_url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-584-3-september-2026/statement-of-changes-to-the-immigration-rules-hc-584-3-september-2026-accessible",
+        "check": {
+          "level": "partial",
+          "note": "The amounts come from the HC 584 text (ST 12.3 and 12.4: 1529 to 1570, 1171 to 1203); the page does not label which figure is London, which is inferred from the current GBP 1,529 London rate on gov.uk."
+        }
+      },
+      {
+        "title": "International student levy of GBP 925 per student per year on English universities",
+        "status": "announced",
+        "announced": "2025-11-26",
+        "effective": "2028-08-01",
+        "who_affected": "English higher education providers, from academic year 2028-29 (first 220 students per provider exempt); not charged to students directly",
+        "impact": "Falls after a 2026-27/2027 master's cohort finishes, so no direct cost for them, but universities may raise fees for later years. Draft Finance Bill clause published 13 Jul 2026; not yet law.",
+        "source_url": "https://www.gov.uk/government/publications/introducing-an-international-student-levy-on-higher-education-providers",
+        "check": {
+          "level": "partial",
+          "note": "The 220-student allowance and inflation uprating come from secondary reporting of the policy; the gov.uk page read gives rate, start date, who pays and draft status. Passing the cost on to students is not addressed."
+        }
+      },
+      {
+        "title": "Dependants barred for taught postgraduate students",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2024-01-01",
+        "who_affected": "Students on taught master's courses starting on or after 1 Jan 2024 (research degrees and doctorates still allowed)",
+        "impact": "No partner or children can accompany a taught-master's student, which removes a second income and family-visa cost but also the option of bringing family.",
+        "source_url": "https://www.gov.uk/student-visa/family-members"
+      },
+      {
+        "title": "Stricter sponsor compliance thresholds (BCA) for universities",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-06-01",
+        "who_affected": "Universities applying for or keeping a student sponsor licence; students at weaker institutions",
+        "impact": "Refusal rate must be under 5% (was 10%), enrolment at least 95% (was 90%), completion 85% rising to 90% from 1 Jun 2027. Universities with many refusals may lose recruitment ability, so pick well-established providers. Indian refusal rates matter for institutions with large Indian intakes.",
+        "source_url": "https://www.gov.uk/government/publications/student-sponsor-guidance/student-sponsor-compliance-accessible"
+      },
+      {
+        "title": "Student visa fee raised from GBP 524 to GBP 558; Graduate visa fee from GBP 880 to GBP 937",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-04-08",
+        "who_affected": "All Student visa applicants from outside the UK and Graduate visa applicants",
+        "impact": "Adds GBP 34 to the student visa and GBP 57 to the Graduate visa versus 2025. The 8 Oct 2026 table shows no change; April 2027 changes are possible.",
+        "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026"
+      },
+      {
+        "title": "English requirement for new Skilled Worker grants raised to B2; B2 for settlement from 26 March 2027",
+        "status": "in_effect",
+        "announced": "2025-10-14",
+        "effective": "2026-01-08",
+        "who_affected": "People switching from Graduate to Skilled Worker (initial grants), and Skilled Worker applicants for settlement from 26 Mar 2027",
+        "impact": "Graduates of English-taught UK degrees can usually meet B2 easily; the later settlement requirement is higher than before (B1).",
+        "source_url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025/explanatory-memorandum-to-the-statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025-accessible"
+      },
+      {
+        "title": "Earned settlement: 10-year baseline qualifying period proposed",
+        "status": "proposed",
+        "announced": "2025-11-20",
+        "effective": null,
+        "who_affected": "Skilled Worker and other route holders who have not yet received indefinite leave to remain, including future Graduate-to-Skilled-Worker switchers",
+        "impact": "Could double the wait for permanent residence from 5 to 10 years, with reductions for high earners (5 years off above GBP 50,270 for 3 years, 7 years off above GBP 125,140). Low-skilled roles could face 15 years. Graduate-route time would not count toward the 5-year routes.",
+        "source_url": "https://www.gov.uk/government/consultations/earned-settlement",
+        "check": {
+          "level": "partial",
+          "note": "The official consultation page (closed 12 Feb 2026) says the outcome is not yet published as of 22 Oct 2026; a law-firm note (secondary) says policy is due before end-2026. Final rules and transitional arrangements are unknown."
+        }
+      },
+      {
+        "title": "Skilled Worker salary thresholds: GBP 41,700 general, GBP 33,400 for new entrants",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2025-07-22",
+        "who_affected": "Graduates switching to Skilled Worker; sponsors",
+        "impact": "A typical graduate salary may fall below GBP 41,700 but can still qualify under the new-entrant route (GBP 33,400 and 70% of the going rate) for up to 4 years in total, including time on the Graduate visa.",
+        "source_url": "https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less",
+        "check": {
+          "level": "partial",
+          "note": "Figures read on the gov.uk Skilled Worker pages; the 22 July 2025 effective date comes from a search summary of HC 997 and the Home Office impact assessment, not from a page opened in full."
+        }
+      }
+    ]
+  },
+  "risk_factors": {
+    "policy_volatility": {
+      "score": 75,
+      "evidence": "In the last 24 months the UK ended dependants for taught master's (Jan 2024), raised fees (Apr 2026), tightened sponsor compliance (Jun 2026), announced the Graduate route cut (effective Jan 2027), an international student levy (Aug 2028), an annual maintenance uplift (30 Nov 2026) and consulted on doubling the settlement qualifying period. Nearly every route element has been changed or proposed for change."
+    },
+    "psw_uncertainty": {
+      "score": 65,
+      "evidence": "Graduate visa shrinks to 18 months for applications from 1 Jan 2027 and cannot be extended. Conversion needs a sponsored Skilled Worker job at GBP 41,700 (or GBP 33,400 and 70% of the going rate for new entrants, 4-year cap) while entry pay for 22-29 year olds in science/tech professions is a median of about GBP 40,016 (ASHE 2026 provisional). Settlement timing may move from 5 to 10 years (proposal, outcome unpublished)."
+    },
+    "work_restrictions": {
+      "score": 40,
+      "evidence": "Up to 20 hours a week in term time and full time in vacations for degree-level study (caseworker guidance), no self-employment; no work right for part-time courses; no dependants on taught master's. The Graduate visa is fully open (most jobs and self-employment)."
+    },
+    "funds_burden": {
+      "score": 50,
+      "evidence": "Must show GBP 10,827 (outside London) to GBP 14,130 (London) from 30 Nov 2026 for 9 months, held 28 consecutive days, plus one academic year of course fees (up to 9 months) per the CAS, plus visa GBP 558 and health surcharge (GBP 776 per year, about GBP 1,164 for a 16-month visa). Large but somewhat shorter and more predictable than a blocked account."
+    },
+    "recent_adverse": {
+      "score": 70,
+      "evidence": "Last 12 months: Graduate cut to 18 months laid in Oct 2025, GBP 34 fee rise in Apr 2026, tougher sponsor thresholds Jun 2026, maintenance rises again from 30 Nov 2026, levy draft law Jul 2026, Skilled Worker B2 English and the open settlement consultation. No loosening for students."
+    }
+  },
+  "salary": {
+    "CS": {
+      "roles": [
+        "Software developer / programmer",
+        "Software engineer",
+        "IT business analyst",
+        "Cyber security / cloud engineer"
+      ],
+      "entry_low": 32649,
+      "entry_mid": 40016,
+      "entry_high": 51089,
+      "basis": "ONS ASHE 2026 (provisional, April 2026 reference, published 22 Oct 2026), Table 20.7a 'Age group by occupation (2-digit SOC 2020): Annual pay - Gross', sheet Full-Time, UK, age 22-29, SOC 21 'Science, research, engineering and technology professionals' (includes IT professionals but also engineers and scientists; 274k jobs). Low = 25th percentile 32,649; mid = median 40,016; high = 75th percentile 51,089. No 4-digit SOC split by age exists. Caveat: 22-29s include first-degree entrants and non-London jobs, so a UK master's graduate in London may earn more. Cross-check, all ages, full-time, Table 14.7a SOC 2134 Programmers and software development professionals: 25th 43,509, median 59,863, 75th 82,149.",
+      "source_name": "ONS Annual Survey of Hours and Earnings 2026 provisional, Table 20.7a",
+      "source_url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/agegroupbyoccupation2digitsocashetable20",
+      "period": "Annual gross, GBP, full-time employees, April 2026 (provisional)"
+    },
+    "DS": {
+      "roles": [
+        "Data scientist",
+        "Machine learning engineer",
+        "Data analyst",
+        "Data engineer"
+      ],
+      "entry_low": 32649,
+      "entry_mid": 40016,
+      "entry_high": 51089,
+      "basis": "ONS ASHE 2026 (provisional), Table 20.7a, Full-Time, UK, age 22-29, SOC 21 (same row as CS, because ASHE has no data-science occupation and no 4-digit split by age; data scientists may be coded in SOC 24, whose 22-29 figures are 30,733 / 39,179 / 51,846 at 25th / median / 75th, nearly identical). Low = 25th percentile, mid = median, high = 75th. Cross-check, all ages, full-time, Table 14.7a SOC 2433 Actuaries, economists and statisticians: 25th 45,004, median 60,263, 75th 81,467 (unclear whether data scientists are coded here; not confirmed from the ONS SOC coding index). Same caveats as CS.",
+      "source_name": "ONS Annual Survey of Hours and Earnings 2026 provisional, Table 20.7a",
+      "source_url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/agegroupbyoccupation2digitsocashetable20",
+      "period": "Annual gross, GBP, full-time employees, April 2026 (provisional)"
+    },
+    "MBA": {
+      "roles": [
+        "Management consultant",
+        "Business analyst",
+        "Product / strategy manager",
+        "Operations or finance manager"
+      ],
+      "entry_low": 40456,
+      "entry_mid": 52295,
+      "entry_high": 65596,
+      "basis": "ONS ASHE 2026 (provisional), Table 20.7a, Full-Time, UK, age 30-39 (MBA entrants typically have 3+ years' experience, so 22-29 would understate), SOC 24 'Business, media and public service professionals' (includes management consultants, marketers and media; 578k jobs). Low = 25th percentile 40,456; mid = median 52,295; high = 75th percentile 65,596. For age 22-29 the same row is 30,733 / 39,179 / 51,846. ASHE does not identify MBA holders and top-school MBA pay (consulting, finance) is well above these figures; no official MBA outcomes source was read. Cross-check, all ages, Table 14.7a SOC 2431 Management consultants and business analysts: 25th 42,734, median 56,203, 75th 74,277.",
+      "source_name": "ONS Annual Survey of Hours and Earnings 2026 provisional, Table 20.7a",
+      "source_url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/agegroupbyoccupation2digitsocashetable20",
+      "period": "Annual gross, GBP, full-time employees, April 2026 (provisional)"
+    }
+  },
+  "tax": {
+    "effective_rate": 0.192,
+    "basis": "ESTIMATE, computed by us for a single employee in England, Wales or Northern Ireland on the CS entry_mid salary of GBP 40,016, tax year 2026-27, from HMRC/gov.uk rates: Personal Allowance GBP 12,570 and 20% basic rate to GBP 50,270; employee Class 1 National Insurance (category A) 8% between GBP 12,570 and GBP 50,270 (2% above). Taxable pay 40,016 - 12,570 = 27,446. Income tax 20% x 27,446 = 5,489; NI 8% x 27,446 = 2,196; total 7,685 / 40,016 = 19.2%. Excludes Scottish bands, pension auto-enrolment, student loan repayments, and the Immigration Health Surcharge (already paid in the visa). Rate on the DS entry_mid is the same; on the MBA mid (52,295) it is about 21%.",
+    "source_url": "https://www.gov.uk/income-tax-rates"
+  },
+  "health_insurance_per_year": {
+    "amount": 776,
+    "basis": "Immigration Health Surcharge, student rate (students and their dependants, GBP 776 per year; adult rate GBP 1,035). Paid up front with the visa application; a visa longer than one year is charged the yearly cost plus half the yearly cost if the extra is 18 months or less in total, so a typical 16-month visa for a 12-month master's costs about GBP 1,164. Gives NHS access. Fixed official charge, not an estimate.",
+    "source_url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+    "verified": true
+  },
+  "checklist": [
+    "Get an offer from a licensed student sponsor and wait for your Confirmation of Acceptance for Studies (CAS); you cannot apply for the visa without it, and you can apply up to 6 months before the course starts.",
+    "Check with your university whether your course needs an ATAS certificate (mainly some postgraduate subjects for non-UK/non-exempt nationals such as Indians); it is free but takes at least 30 working days, so apply early.",
+    "Prove English at CEFR B2: a Secure English Language Test (SELT), an Ecctis-confirmed English-taught degree, or an assessment by your university.",
+    "Arrange funds: living costs for 9 months (GBP 10,539 outside London / 13,761 London now; GBP 10,827 / 14,130 from 30 Nov 2026) plus the first-year course fee on your CAS, held in your or your parents' account for 28 consecutive days ending within 31 days of applying.",
+    "Take a tuberculosis (TB) test at an approved clinic in India (India is on the UKVI list; the certificate is valid for 6 months from the x-ray) and include the certificate with your application.",
+    "Apply online, pay the GBP 558 visa fee and the Immigration Health Surcharge (GBP 776 per year, about GBP 1,164 for 16 months), then give biometrics and upload documents at the visa application centre.",
+    "During study work no more than 20 hours a week in term (check your visa conditions), no self-employment, and note that dependants cannot join you on a taught master's.",
+    "After graduating apply for the Graduate visa (GBP 937 plus health surcharge) from inside the UK before your Student visa expires; for applications from 1 Jan 2027 it lasts 18 months, so start job hunting early."
+  ]
+}

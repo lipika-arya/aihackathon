@@ -15,7 +15,7 @@ const fx: FxRates = { inrPer: fb.inrPerUnit as FxRates["inrPer"], date: fb.date,
 describe.each(countries.map((c) => [c.country, c] as const))("%s data", (_, c) => {
   it("has the required structure", () => {
     expect(c.programmes.length).toBeGreaterThan(0);
-    expect(["USD", "EUR", "CAD", "JPY", "AUD"]).toContain(c.currency);
+    expect(["USD", "EUR", "CAD", "JPY", "AUD", "GBP"]).toContain(c.currency);
     const s = visaRiskScore(c);
     expect(s).toBeGreaterThanOrEqual(0);
     expect(s).toBeLessThanOrEqual(100);

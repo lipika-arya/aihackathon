@@ -99,6 +99,95 @@
       "programme_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/",
       "status": "verified",
       "notes": "Duration stated as 12-15 months (12 used). Fee 49,500 EUR; early-bird discount 3,000 EUR if applying by 30 Nov 2026. Application fee 150 EUR. Integrated German courses included; alumni stress German is needed for jobs in Germany; 2,000 EUR bonus for German B1+. Language of instruction not explicitly stated on page (English proficiency required). Living cost not published on pages checked."
+    },
+    {
+      "id": "kit-msc-computer-science",
+      "university": "Karlsruhe Institute of Technology (KIT)",
+      "city": "Karlsruhe",
+      "course": "CS",
+      "programme_name": "Computer Science (M.Sc.)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 1500,
+        "period": "semester",
+        "credits_total": 120,
+        "semesters": 4,
+        "fee_year": "Page states 'from winter semester 2017/2018' with no later year; same page carries a winter 2026/27 notice, so it is current",
+        "source_url": "https://www.intl.kit.edu/istudies/12606.php"
+      },
+      "mandatory_fees_per_year": 368,
+      "living_cost_per_year": {
+        "amount": 9600,
+        "source_url": "https://www.studienstart.kit.edu/english/financing-part-time-job.php"
+      },
+      "requirements": {
+        "gpa": "Bachelor's (min. 3 years / 180 ECTS) in Computer Science or essentially the same content; selection by ranking list (100 places a year) on final grade plus credits in theoretical/practical CS, computer engineering and maths; no minimum GPA published; aptitude interview if credit minimums are not met",
+        "english": "CEFR B2: TOEFL iBT 90, IELTS 6.5 (no section below 5.5), TOEIC, Cambridge C1 Advanced, or a degree taught solely in English",
+        "gre_gmat": "GRE required unless the degree is from an EHEA university: Verbal 151, Quantitative 164, Analytical Writing 4 (Indian degrees need it)",
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.sle.kit.edu/english/vorstudium/master-computer-science.php",
+      "status": "verified",
+      "notes": "English-taught, 4 semesters, 120 ECTS, limited capacity (100 places), intake winter and summer; deadlines 15 June (winter) and 15 January (summer). Baden-Wuerttemberg charges non-EU students 1,500 EUR per semester in consecutive master's programmes (6,000 EUR for 4 semesters); exemptions exist (e.g. cooperation programmes, completed German degree, living conditions in Germany) but none apply by default to a new Indian applicant. Semester fees 92 EUR Studierendenwerk + 80 EUR administration + 12 EUR student union = 184 EUR per semester, 368 EUR a year (https://www.studienstart.kit.edu/english/financing-part-time-job.php and https://www.sle.kit.edu/english/imstudium/703.php; both give the amounts without a semester label; the studienstart page was last changed 2026-07-06). The semester fee does not include a Deutschlandsemesterticket: the KIT student union reports the KVV base ticket agreement ended with winter 2026/27. Living cost = lower bound of KIT's own 800-900 EUR per month estimate x12; KIT says that estimate includes the semester fees, so it overlaps with the 368 EUR fee line by about 31 EUR a month. The admission rules on the programme page are marked 'subject to approval'."
+    },
+    {
+      "id": "tuebingen-msc-machine-learning",
+      "university": "University of Tuebingen",
+      "city": "Tuebingen",
+      "course": "DS",
+      "programme_name": "Machine Learning (M.Sc.)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 1500,
+        "period": "semester",
+        "credits_total": null,
+        "semesters": 4,
+        "fee_year": "Page states 1,500 euros per semester with no year; semester fees on the same site are for winter 2026/27",
+        "source_url": "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/tuition-fees-for-international-students/"
+      },
+      "mandatory_fees_per_year": 389.6,
+      "living_cost_per_year": {
+        "amount": 11364,
+        "source_url": "https://uni-tuebingen.de/en/international/study-in-tuebingen/degree-seeking-students/application-and-admission-of-international-students/costs-and-funding/"
+      },
+      "requirements": {
+        "gpa": "Bachelor's in computer science, mathematics, physics or a related natural science with a grade of at least 2.0 (German scale); at least 27 ECTS in mathematics and 18 ECTS in computer science (6 in algorithms and data structures)",
+        "english": "TOEFL iBT 100, IELTS 7.0, Cambridge CAE 180, or German Abitur with 6-7 years of English",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/machine-learning-master/",
+      "status": "verified",
+      "notes": "English-taught, regular duration 4 semesters, winter-semester start only, deadline 30 April for non-EU applicants; admission not restricted but a formal application is required. Non-EU tuition 1,500 EUR per semester (6,000 EUR for 4 semesters) for consecutive master's programmes; the tuition page lists exemptions, none automatic for a new Indian applicant. Semester fees winter 2026/27 (as of 23 Apr 2026): 107.80 Studierendenwerk (includes the solidarity charge for the naldo semester ticket) + 80.00 administration + 7.00 student union = 194.80 EUR per semester, x2 = 389.60 EUR a year (https://uni-tuebingen.de/en/study/organizing-your-studies/fees/semester-and-administration-fees/). The student union fee was 10 EUR in summer 2026, so the figure shifts slightly each semester. Living cost = the university's costs page figure of 947 EUR per month (BAfoeG allowance: 467 living incl. transport + 346 rent + 134 other incl. health insurance) x12; the page says tuition is not included. Programme page does not state ECTS, so credits_total is null (not needed for per-semester billing)."
+    },
+    {
+      "id": "frankfurt-school-full-time-mba",
+      "university": "Frankfurt School of Finance & Management (private)",
+      "city": "Frankfurt",
+      "course": "MBA",
+      "programme_name": "Frankfurt Full-time MBA",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 42000,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "September 2027 intake",
+        "source_url": "https://www.frankfurt-school.de/en/study/mba-emba/full-time-mba"
+      },
+      "mandatory_fees_per_year": 600,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "First academic degree (Bachelor or equivalent); no minimum GPA published",
+        "english": "Page lists 'TOEFL iBT 4.5, IELTS 7.0, or equivalent' (TOEFL figure looks like the new 1-6 scale); waivers available",
+        "gre_gmat": "GMAT or GRE preferred, not mandatory; Frankfurt School Admission Test is an alternative; waivers for some profiles",
+        "work_experience": "At least 3 years post-graduate professional experience"
+      },
+      "scholarships": "Diversity, Women in Business, Entrepreneurship & Leadership, Sector-Specific, High-Performing & Outstanding Candidates, Latin America Excellence; merit- and need-based, applied for within the main application",
+      "programme_url": "https://www.frankfurt-school.de/en/study/mba-emba/full-time-mba",
+      "status": "verified",
+      "notes": "Taught in English, 12 months full-time, start 1 September 2027; rolling admissions, non-EU deadline 31 May 2027. Tuition 42,000 EUR for the 2027 intake (page marks the figure with an unexplained asterisk). Mandatory 600 EUR enrolment fee, one-time, counted as 600 EUR for the 12-month programme. Early-bird discounts off tuition: 6,000 EUR if applying by 30 Nov 2026, 4,000 EUR by 28 Feb 2027, 2,500 EUR by 31 May 2027 (not applied in the figure). Living cost not stated on the programme page, so null."
     }
   ],
   "living_cost": {

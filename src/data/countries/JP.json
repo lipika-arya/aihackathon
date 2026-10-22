@@ -99,6 +99,93 @@
       "programme_url": "https://www.iuj.ac.jp/gsim/mba/",
       "status": "partial",
       "notes": "Private university. The IUJ cost page lists an admission fee of 300,000 JPY one-time, tuition of 3,200,000 JPY per academic year for two-year programmes and 3,900,000 JPY for one-year programmes. The page does not say 'MBA', but IUJ's April 2022 tuition notice and the JPSS listing tie the 3.2M figure to the 2-year MBA. mandatory_fees_per_year = 300,000 / 2 = 150,000, i.e. the admission fee annualised. Living cost = dormitory upper bound 468,000 + meals 360,000 per year from the cost page; this excludes utilities, insurance, phone and travel, so treat it as a floor. Duration: IUJ's FAQ describes the main MBA as two years (21 months, 6 terms); all coursework is in English. The fee page shows no academic year. 22 Oct 2026 re-check: the 21-month duration and the MBA label are not stated on the cost page; duration is unconfirmed."
+    },
+    {
+      "id": "osaka-itsce-information-science-cs",
+      "university": "The University of Osaka (formerly Osaka University)",
+      "city": "Suita, Osaka",
+      "course": "CS",
+      "programme_name": "Master's course, Information Technology Special Course in English (ITSCE), Graduate School of Information Science and Technology",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 535800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "April 2027 entry; the guide (dated August 2026) says the amounts are valid as of April 2026 and the 2027 fees will be confirmed before enrolment",
+        "source_url": "https://www.ist.osaka-u.ac.jp/files/examinees/admission/2027/16_a_EN2027.pdf"
+      },
+      "mandatory_fees_per_year": 141000,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": null,
+        "english": "TOEIC, TOEFL or IELTS score certificate dated October 2024 or later must be submitted; no minimum score stated in the guide; may be waived for native speakers or graduates of all-English institutions after consulting the supervisor",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "Tuition Waiver System for Honor International Students: privately funded international students judged extremely outstanding in this entrance exam become candidates; MEXT scholars are exempt from admission fee and tuition",
+      "programme_url": "https://www.ist.osaka-u.ac.jp/files/examinees/admission/2027/16_a_EN2027.pdf",
+      "status": "verified",
+      "notes": "Source: official application guide for April 2027 entry to the ITSCE (December selection), Graduate School of Information Science and Technology. It states the course is conducted in English, the master's stage lasts 2 years (followed by a 3-year doctoral stage, 'strongly recommended' in sequence), admission fee 282,000 JPY and annual tuition 535,800 JPY paid in two instalments of 267,900. The guide says these fees are valid as of April 2026 and the 2027 fees will be confirmed before the admission procedure; if tuition changes during enrolment, the revised amount applies. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. No other compulsory fee is listed in the guide. Application fee is not in the figures above. Examination period for this selection: 24 Nov to 5 Dec 2026; results 18 Dec 2026. Applicants must first get approval from an expected supervisor. The graduate school reorganises its departments on 1 Apr 2027. Living cost left null: the University of Osaka's own estimate of 100,000 to 120,000 JPY per month (https://www.osaka-u.ac.jp/en/international/inbound/exchange_program/finance) is written for exchange students, so it is not used. Not checked: whether Osaka plans higher tuition for international students from AY2027 (the guide states only the 535,800 figure)."
+    },
+    {
+      "id": "kyoto-informatics-ist-international-ds",
+      "university": "Kyoto University",
+      "city": "Kyoto",
+      "course": "DS",
+      "programme_name": "Master's Program, Intelligence Science and Technology Course (International Program), Graduate School of Informatics",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 535800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "April 2027 admission (guide for the August 2026 entrance examination; amount marked tentative)",
+        "source_url": "https://www.i.kyoto-u.ac.jp/assets/pdf/admission/application/master-2027-4-en.pdf"
+      },
+      "mandatory_fees_per_year": 141000,
+      "living_cost_per_year": {
+        "amount": 1032000,
+        "source_url": "https://www.gsm.kyoto-u.ac.jp/en/admissions/study-abroad/"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "Official TOEFL or TOEIC score report (taken within 2 years before the deadline) replaces the written English exam; no minimum stated in the guide",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "MEXT scholarship students are exempt from admission fee and tuition (per the guide); no other scholarship stated in the guide",
+      "programme_url": "https://www.i.kyoto-u.ac.jp/en/admission",
+      "status": "verified",
+      "notes": "Classified DS because the Intelligence Science and Technology course covers AI and machine learning (research groups include Machine Learning, Data Mining, Computer Vision, Language Processing, Computational Intelligence); it is not a course titled 'Data Science' (Kyoto's separate Data Science course has no International Program in the guide, so English teaching is not confirmed for it). Source: official 'April 2027 Admission, Guidelines for Admission to the Master's Program' (entrance exam August 2026). It states the International Program in the Intelligence Science and Technology, Social Informatics and Communications and Computer Engineering courses gives lectures and research in English sufficient to complete the master's; the master's program is the first two years of the doctoral program; admission fee 282,000 JPY (tentative) and annual tuition 535,800 JPY (tentative); amounts revised at or after enrolment will apply. mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised. The university-wide fee page (https://www.kyoto-u.ac.jp/en/current/how-to/tuition/tuition-and-fees) shows the same 535,800 and 282,000 but no year. Living cost = 86,000 JPY per month x 12 = 1,032,000; the 86,000 is on the GSM 'Study in Kyoto' page as the Kyoto-Osaka average for international students excluding academic fees, citing JASSO 2018-19, so it is dated and is a Kyoto-wide figure, not specific to this programme. The August 2026 exam for April 2027 entry has already passed (22 Oct 2026); the next chance would be the August 2027 exam for April 2028 entry, whose fees are not yet published. Applicants must also get approval from a supervisor and pass AAO pre-screening if they graduated outside Japan (as stated in search-result summaries of Kyoto guidance; not re-read on the page)."
+    },
+    {
+      "id": "kyoto-gsm-imba",
+      "university": "Kyoto University (Graduate School of Management)",
+      "city": "Kyoto",
+      "course": "MBA",
+      "programme_name": "International MBA (i-MBA), Professional Degree Course, Graduate School of Management",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 535800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "April 2027 enrolment (2027 Academic Year admission guidelines; amount marked tentative)",
+        "source_url": "https://www.gsm.kyoto-u.ac.jp/en/wp-content/uploads/AY2027_Admission-Guidelines_2027.pdf"
+      },
+      "mandatory_fees_per_year": 141000,
+      "living_cost_per_year": {
+        "amount": 1032000,
+        "source_url": "https://www.gsm.kyoto-u.ac.jp/en/admissions/study-abroad/"
+      },
+      "requirements": {
+        "gpa": "Bachelor's degree or equivalent (16 years of schooling, eligibility checked by Kyoto University's Admission Assistance Office for degrees from abroad)",
+        "english": "TOEFL iBT 90+ or IELTS Academic 7.0+ (minimum required; scores within 2 years)",
+        "gre_gmat": "Optional but strongly recommended: GMAT 550+ or GRE 310+ (Verbal + Quantitative); a missing score is assessed as 0 points",
+        "work_experience": "Not mandatory; at least 2 years strongly recommended"
+      },
+      "scholarships": "Designated institution of the Asian Development Bank-Japan Scholarship Program (ADB-JSP; apply with the admission application); MEXT scholarship students are not charged admission fee or tuition",
+      "programme_url": "https://www.gsm.kyoto-u.ac.jp/en/admissions/guidelines/international/",
+      "status": "verified",
+      "notes": "Taught only in English (the 2027 guidelines: 'International MBA is a program offered only in English'). Duration and size: the GSM i-MBA page (https://www.gsm.kyoto-u.ac.jp/en/education/mba/international-mba-programs/) says students take two years and need 42 credits; intake capacity 20, enrolment 1 April 2027. Fees from the 2027 guidelines: admission fee 282,000 JPY (tentative); tuition 267,900 JPY for the first semester, annual 535,800 (tentative); revised amounts apply if changed. The i-MBA Q&A (https://www.gsm.kyoto-u.ac.jp/en/wp-content/uploads/iMBA_QA_2027.pdf, updated 2026/5/1) says the MBA tuition is the same for all students and points to Kyoto University's fee page (535,800 per year, 282,000 admission fee, no year stated). mandatory_fees_per_year = 282,000 / 2 years = 141,000, i.e. the admission fee annualised; the guidelines list no other compulsory fee (application fee 30,000 JPY is not included; that figure comes from the Kyoto fee page, not the i-MBA guidelines). Living cost = 86,000 JPY per month x 12 = 1,032,000, the GSM page's Kyoto-Osaka average for international students excluding academic fees (JASSO 2018-19, so dated). The 2027 application window (17-28 Aug 2026) has closed; a later intake would use newer guidelines. Kyoto GSM also runs Japanese-taught MBA tracks (not modelled) and the Kyoto-Cornell dual degree."
     }
   ],
   "living_cost": {

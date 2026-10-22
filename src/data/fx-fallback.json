@@ -2,5 +2,13 @@
   "note": "Last good rates, used only when the live API is unreachable. Fetched from api.frankfurter.dev (ECB reference rates).",
   "date": "2026-10-21",
   "source": "European Central Bank reference rates via Frankfurter (stored copy)",
-  "inrPerUnit": { "INR": 1, "USD": 94.43, "EUR": 106.16, "CAD": 67.25, "JPY": 0.5984, "AUD": 66.45 }
+  "inrPerUnit": {
+    "INR": 1,
+    "USD": 94.43,
+    "EUR": 106.16,
+    "CAD": 67.25,
+    "JPY": 0.5984,
+    "AUD": 66.45,
+    "GBP": 126.61
+  }
 }

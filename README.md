@@ -2,12 +2,12 @@
 
 **Abroad or not? See if your loan pays off.**
 
-AbroadROI helps Indian students decide whether a master's abroad (MS in CS, Data Science or MBA in Canada, Germany, the US, Japan or Australia) is worth the money. For each programme, it shows:
+AbroadROI helps Indian students decide whether a master's abroad (MS in CS, Data Science or MBA in Canada, Germany, the US, the UK, Japan or Australia) is worth the money. For each programme, it shows:
 
 - the full cost
 - the education-loan repayment
 - visa policy risk
-- five what-if futures, each compared against staying in India:
+- five what-if futures abroad, plus a sixth: doing the same type of master's in India (selectable Indian institutes, with their own fees and placement medians). Each is compared against staying in India:
   - job abroad fast
   - job abroad
   - slow job search

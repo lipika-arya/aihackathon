@@ -1,4 +1,4 @@
-import { DEFAULT_ASSUMPTIONS, DEFAULT_WEIGHTS, RISK_WEIGHTS, SCENARIOS } from "@/lib/model";
+import { DEFAULT_ASSUMPTIONS, DEFAULT_WEIGHTS, INDIA_JOB_SEARCH_MONTHS, RISK_WEIGHTS, SCENARIOS } from "@/lib/model";
 import { PICKS } from "@/lib/recommend";
 import { loadLenders } from "@/lib/data";
 import { defaultLoanRate } from "@/lib/rate";
@@ -54,6 +54,7 @@ India path: your India salary (or our sourced baseline) × (1 − India tax ${a.
       <H>6. Scenarios</H>
       <ul className="mt-2 list-disc space-y-1 pl-5">{Object.values(SCENARIOS).map((s) => <li key={s.label}><strong>{s.label}</strong>: {s.explain}</li>)}</ul>
       <p className="mt-2">Scenarios are what-ifs. We don&apos;t attach probabilities to them because no reliable data exists to do so.</p>
+      <p className="mt-2"><strong>Master&apos;s in India.</strong> This scenario costs the same type of course at a named Indian institute: its published tuition and compulsory fees, plus its own hostel-and-food estimate (or your India living cost if it publishes none), with no exchange rate, visa or flight costs. After graduating, income is the institute&apos;s own median placement salary from its placement report, starting {INDIA_JOB_SEARCH_MONTHS} months after graduating (an assumption), taxed at your India tax rate and growing at the India salary growth rate. It uses the same loan simulation and is compared with staying in India and working now, so the forgone salary during the course counts as a cost. Assistantship stipends (for example GATE-linked M.Tech stipends) are shown but not counted, because they depend on eligibility. Placement medians describe the students who were placed, so an individual&apos;s outcome can be lower.</p>
 
       <H>7. ROI, NPV, IRR, payback</H>
       <F>{`Personal cash flow (each month) = take-home − living − own money spent on study − interest paid − EMI

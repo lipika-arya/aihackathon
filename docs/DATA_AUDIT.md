@@ -32,3 +32,31 @@ Every money figure that feeds the calculator was re-opened against its cited sou
 - **Avanse tenure:** its rate page says 15 years, its FAQ says 17. Recorded as 15.
 - **Axis Bank:** the benchmark and maximum-amount figures look inconsistent across its pages.
 - **Exchange rate margin** is only a note; no margin is applied to the numbers.
+
+## Added 22 Oct 2026: UK, more programmes, and the "Master's in India" scenario
+
+Every added figure was read from an official page by a research agent, then a sample was re-checked independently (UK visa fee, health surcharge and Warwick fees on gov.uk and warwick.ac.uk; KIT, Northeastern, SFU, UTS (international view), Osaka and Schulich on their own documents). No sampled figure disagreed with its source.
+
+**Added (all "verified")**
+- UK (new country, GBP): Warwick MSc CS, Southampton MSc CS, Edinburgh MSc CS and MSc Data Science, Warwick MBA. Country data: student visa fee GBP 558, health surcharge GBP 776 a year plus a half-year for the 4 months after the course, Graduate route cut to 18 months, ONS salaries, tax, living cost.
+- US: Northeastern MS CS, UVA MS Data Science, Duke Fuqua MBA. Germany: KIT MSc CS, Tuebingen MSc Machine Learning, Frankfurt School MBA. Canada: SFU Big Data, Schulich MBA. Japan: Osaka ITSCE, Kyoto IST (an AI course filed under DS), Kyoto i-MBA. Australia: UTS MIT, UTS Data Science and Innovation, UTS MBA.
+
+**Left out because they could not be fully verified:** Carleton MCS (billing-hour definition and UHIP unconfirmed), UCL, Glasgow and Cambridge Judge (no official statement of what the fee covers, or the site blocked reading), LBS (2027 fee not published), Imperial, Manchester, Oxford Saïd, Cranfield, Rotman, Waterloo and many others (blocked pages, dynamic fee tables, or no stated year).
+
+**Master's in India scenario:** six programmes from official fee and placement pages. Only IIT Bombay SJMSOM (MBA) is fully verified; the rest are labelled "partly verified" in the app:
+- IIIT Bangalore M.Tech CSE: the placement table's column order could not be proven.
+- IIM Bangalore PGP: the median covers PGP and PGPBA together.
+- FMS Delhi: no official hostel and food figure.
+- IIM Calcutta PGDBA: a diploma, with a 2024 median.
+- ISI M.Stat: a statistics degree, with a 2022-23 median and no published living cost.
+
+Programmes with no published placement median (IIT Bombay M.Tech CSE, ISI M.Tech CS, IIIT-B AI and DS) were left out rather than given a borrowed number.
+
+**Known limits of the new data**
+- UK MBA salary is a proxy (ONS business and public-service professionals aged 30-39); it understates top-school MBA outcomes, so UK MBA ROI will look weak.
+- UK DS salary reuses the CS row (ASHE has no data-science occupation).
+- The UK 20-hours-a-week work rule is not confirmed on a gov.uk page we could read in full; it is flagged in the app.
+- Duke Fuqua and other US MBAs publish only first-year tuition; the first-year semester rate is assumed for all semesters (as for Wharton).
+- Canada has no new CS programme; Japan's DS slot is an AI course.
+- Australia's three new programmes are all UTS, the only candidate whose fees could be read.
+- India placement medians describe students who were placed, and the stipend some IIT/ISI students receive is shown but not counted.

@@ -58,7 +58,7 @@ export function FxNotice() {
       <p className="flex flex-wrap items-center gap-2">
         {fx.live ? <Badge kind="verified">Live rates</Badge> : <Badge kind="stale">Stored rates, not current</Badge>}
         <span>
-          {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
+          {fx.source}, dated {fx.date}. 1 USD = ₹{fx.inrPer.USD.toFixed(2)} · 1 EUR = ₹{fx.inrPer.EUR.toFixed(2)} · 1 CAD = ₹{fx.inrPer.CAD.toFixed(2)} · 1 GBP = ₹{fx.inrPer.GBP.toFixed(2)} · 1 AUD = ₹{fx.inrPer.AUD.toFixed(2)} · 1 JPY = ₹{fx.inrPer.JPY.toFixed(4)}
         </span>
       </p>
       <p>
@@ -98,4 +98,4 @@ export function PageHead({ eyebrow, title, children }: { eyebrow?: string; title
   );
 }
 
-export const FLAG: Record<string, string> = { US: "🇺🇸", DE: "🇩🇪", CA: "🇨🇦", JP: "🇯🇵", AU: "🇦🇺", IN: "🇮🇳" };
+export const FLAG: Record<string, string> = { UK: "🇬🇧", US: "🇺🇸", DE: "🇩🇪", CA: "🇨🇦", JP: "🇯🇵", AU: "🇦🇺", IN: "🇮🇳" };

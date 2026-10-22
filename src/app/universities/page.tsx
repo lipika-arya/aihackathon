@@ -14,7 +14,7 @@ export default function Universities() {
   const { countries, profile, assumptions, fx, lenders } = useData();
   // explorer shows every course and country, priced for this student
   const all = useMemo(
-    () => buildCandidates(countries, { ...profile, courses: ["CS", "DS", "MBA"], countries: ["CA", "DE", "US", "JP", "AU"] }, assumptions, fx, lenders),
+    () => buildCandidates(countries, { ...profile, courses: ["CS", "DS", "MBA"], countries: ["CA", "DE", "US", "UK", "JP", "AU"] }, assumptions, fx, lenders),
     [countries, profile, assumptions, fx, lenders],
   );
   const [q, setQ] = useState("");
