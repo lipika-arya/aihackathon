@@ -23,7 +23,10 @@ export function eligibility(p: Programme, prof: Profile): Eligibility[] {
   out.push({ label: "GRE / GMAT", status: "unknown", detail: gg ?? "Not stated on the official page" });
   const we = p.requirements.work_experience;
   const yrs = we?.match(/(\d+)\s*\+?\s*years?/i);
-  if (yrs) {
+  // Wording like "not required", "unless", "alternative route" or "strongly recommended" means the years are not a hard
+  // entry rule, so show the text and do not fail the student on a number picked out of an optional route.
+  const hedged = !!we && /\b(not (required|mandatory|needed)|unless|alternative|optional|recommended|one route|routes?)\b/i.test(we);
+  if (yrs && !hedged) {
     const need = parseInt(yrs[1]);
     out.push({ label: "Work experience", status: prof.workYears >= need ? "ok" : "fail", detail: `Needs about ${need} years, you have ${prof.workYears}` });
   } else if (we) out.push({ label: "Work experience", status: "unknown", detail: we });

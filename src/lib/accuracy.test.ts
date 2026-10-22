@@ -5,7 +5,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { costBreakdown, costIncomplete, DEFAULT_ASSUMPTIONS, DEFAULT_PROFILE, feesStatus, runScenario, visaFeesInr } from "./model";
 import { defaultLoanRate } from "./rate";
-import { indiaSalaryFor } from "./recommend";
+import { eligibility, indiaSalaryFor } from "./recommend";
 import type { CountryData, FxRates, LenderData } from "./types";
 import fb from "../data/fx-fallback.json";
 
@@ -231,5 +231,25 @@ describe("only verified and current data is shown", () => {
   it("no text still cites the removed policy items", () => {
     const blob = JSON.stringify(all);
     for (const gone of ["social media vetting", "turbo naturalisation", "visa fees raised fivefold", "Chancenkarte"]) expect(blob, gone).not.toContain(gone);
+  });
+});
+
+describe("eligibility reads requirements sensibly", () => {
+  const student = { ...DEFAULT_PROFILE, cgpa: 8.5, ielts: 7, workYears: 1 };
+  const all = ["US", "DE", "CA", "UK", "JP", "AU"].flatMap((c) => country(c).programmes);
+  const work = (id: string) => eligibility(all.find((p) => p.id === id)!, student).find((e) => e.label === "Work experience");
+
+  it("does not fail a student on an optional or alternative route", () => {
+    for (const id of ["uts-mit-cs", "uts-mdsi-ds", "uts-mba", "rmit-mba", "kyoto-gsm-imba"]) expect(work(id)?.status, id).toBe("unknown");
+  });
+  it("still fails a student who lacks a mandatory number of years", () => {
+    for (const id of ["uq-mba", "concordia-jmsb-mba", "esmt-berlin-full-time-mba", "mannheim-business-school-full-time-mba", "frankfurt-school-full-time-mba", "hitotsubashi-ics-mba"]) expect(work(id)?.status, id).toBe("fail");
+  });
+  it("passes a student who has enough experience", () => {
+    expect(eligibility(all.find((p) => p.id === "esmt-berlin-full-time-mba")!, { ...student, workYears: 4 }).find((e) => e.label === "Work experience")?.status).toBe("ok");
+  });
+  it("the only hard failures for this sample student are genuine mandatory requirements", () => {
+    const fails = all.flatMap((p) => eligibility(p, student).filter((e) => e.status === "fail").map((e) => `${p.id}:${e.label}`)).sort();
+    expect(fails).toEqual(["concordia-jmsb-mba:Work experience", "esmt-berlin-full-time-mba:Work experience", "frankfurt-school-full-time-mba:Work experience", "gatech-ms-analytics:English (IELTS)", "hitotsubashi-ics-mba:Work experience", "mannheim-business-school-full-time-mba:Work experience", "uq-mba:Work experience"]);
   });
 });

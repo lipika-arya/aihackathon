@@ -55,3 +55,11 @@ Also left out because they could not be fully verified: Carleton MCS, UCL, Glasg
 - **Tax rates** (DE 38.7%, US 21%, CA 25%, UK 19.2%) are our own estimates from official bands; the Germany OECD figure could not be read.
 - **Exchange rates** are mid-market; no bank margin is applied to the numbers.
 - **Master's in India scenario:** re-enable by adding `src/data/india-masters.json` with fully verified fee and placement data (schema: `IndiaProgramme` in `src/lib/types.ts`).
+
+## Pre-merge verification (22 Oct 2026)
+
+- Unit and regression tests, including a sample assessment (B.Tech CS, CGPA 8.5, IELTS 7, 1 year of work, Rs 10 L funds, Rs 40 L loan, Rs 10 L India salary) run through every programme: costs finite, cost table equals the optimistic scenario, funding gap = total + loan fee - own funds - loan, EMI equals the standard formula on the principal, and the loan fee equals the stated percentage.
+- The same assessment through the real wizard in a browser: the India salary is required, pages ask for it until it is entered, the ranking covers all six countries, and no console errors appear across the main pages.
+- A crawl of every route on a clean production build (10 pages plus every programme page): no errors, no NaN, no placeholder text.
+- Eight programme totals recomputed independently in Python from the raw data: all matched the app to the displayed precision.
+- Eligibility check fixed so optional or alternative routes ("not required", "unless", "alternative route") are shown as information, not as a failure; genuine mandatory requirements still fail.
