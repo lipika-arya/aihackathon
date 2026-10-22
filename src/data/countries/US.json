@@ -1,0 +1,400 @@
+{
+  "country": "US",
+  "name": "United States",
+  "currency": "USD",
+  "verified_at": "2026-10-22",
+  "programmes": [
+    {
+      "id": "ub-ms-cse",
+      "university": "University at Buffalo (SUNY)",
+      "city": "Buffalo, NY",
+      "course": "CS",
+      "programme_name": "MS in Computer Science and Engineering",
+      "duration_months": 18,
+      "tuition": {
+        "amount": 13255,
+        "period": "semester",
+        "credits_total": 30,
+        "fee_year": "Fall 2026",
+        "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
+      },
+      "mandatory_fees_per_year": 3319.72,
+      "living_cost_per_year": {
+        "amount": 25000,
+        "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.buffalo.edu/grad/programs/computer-science-and-engineering-ms.html",
+      "status": "verified",
+      "notes": "Tuition is the Fall 2026 non-resident graduate full-time rate (12 credits) of $13,255 per semester plus $1,659.86 fees; page says rates are SUNY-approved pending administrative action to finalize. Fees per year = 2 x Fall 2026 fees (assumes Spring is equal; not confirmed). Programme page: 30 credits, time-to-degree 1.5 to 2 years, 100% in person, STEM-approved per department page, $100 application fee. Living cost $25,000 is UB's international graduate I-20 minimum living-expense figure (page labels the table academic year 2027-28; health insurance $2,300 is separate). GPA/GRE/English minimums not found on the pages checked."
+    },
+    {
+      "id": "cmu-mscs",
+      "university": "Carnegie Mellon University",
+      "city": "Pittsburgh, PA",
+      "course": "CS",
+      "programme_name": "Master of Science in Computer Science (MSCS)",
+      "duration_months": 16,
+      "tuition": {
+        "amount": 31100,
+        "period": "semester",
+        "credits_total": null,
+        "fee_year": "2026-27",
+        "source_url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html"
+      },
+      "mandatory_fees_per_year": 1040,
+      "living_cost_per_year": {
+        "amount": 29270,
+        "source_url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "TOEFL (preferred), IELTS or Duolingo required for F-1 applicants who are not native English speakers; no waivers",
+        "gre_gmat": "GRE strongly recommended (not strictly required)",
+        "work_experience": null
+      },
+      "scholarships": "Programme page: scholarships and financial assistance are not offered by the MSCS program at this time.",
+      "programme_url": "https://www.csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+      "status": "verified",
+      "notes": "Tuition is the 2026-27 SCS Master's rate of $31,100 per semester; SFS notes actual rate may vary by department. Programme page: most students finish in three semesters (one more if switching fields), 96-108 qualifying units; duration_months 16 assumes Fall-Spring-Fall. Fees/yr = 2 x (activities $124 + technology $245 + transportation $151); excludes loan fees. Living/yr = 2 x (housing $7,376 + food $4,332 + personal $2,049 + travel $878); excludes books ($1,106/sem) and health insurance ($3,352, fall)."
+    },
+    {
+      "id": "ub-ms-es-data-science",
+      "university": "University at Buffalo (SUNY)",
+      "city": "Buffalo, NY",
+      "course": "DS",
+      "programme_name": "MS in Engineering Science (Data Science)",
+      "duration_months": 18,
+      "tuition": {
+        "amount": 13255,
+        "period": "semester",
+        "credits_total": 30,
+        "fee_year": "Fall 2026",
+        "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
+      },
+      "mandatory_fees_per_year": 3319.72,
+      "living_cost_per_year": {
+        "amount": 25000,
+        "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.buffalo.edu/grad/programs/engineering-science-data-science-ms.html",
+      "status": "verified",
+      "notes": "Same UB non-resident graduate Fall 2026 rate as the CS programme ($13,255/semester at 12+ credits; per-credit $1,105 below full-time). Programme page: 30 credits, time-to-degree 1 to 2 years, 100% in person; the programme FAQ (secondary, not re-opened) cites 1 to 1.5 years, so 18 months is used. Fees/yr assumes Spring equals Fall. Admission minimums not found."
+    },
+    {
+      "id": "gatech-ms-analytics",
+      "university": "Georgia Institute of Technology",
+      "city": "Atlanta, GA",
+      "course": "DS",
+      "programme_name": "Master of Science in Analytics (on-campus)",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 22999,
+        "period": "semester",
+        "credits_total": 36,
+        "fee_year": "Fall 2026",
+        "source_url": "https://bursar.gatech.edu/student/tuition/fa26/fa26_msanlt.pdf",
+        "semesters": 3
+      },
+      "mandatory_fees_per_year": 2274,
+      "living_cost_per_year": {
+        "amount": 20106,
+        "source_url": "https://isss.oie.gatech.edu/graduate-estimated-cost-attendance-and-funding"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "TOEFL total 5 (min section 4) or IELTS 7.5 (R/L/S 6.5, W 5.5); exemptions e.g. English-medium degree",
+        "gre_gmat": "GRE or GMAT required; no waivers (expired scores accepted)",
+        "work_experience": "No minimum stated; work experience considered"
+      },
+      "scholarships": null,
+      "programme_url": "https://www.analytics.gatech.edu/",
+      "status": "verified",
+      "notes": "Bursar Fall 2026 MS Analytics sheet: out-of-country tuition $22,999/semester at 12+ hours plus $758 mandatory institute fees per semester. Programme designed for one year (fall, spring, summer), 36 credits, so 3 semesters; fees/yr = 3 x $758. A $100/term international student fee was seen only in a search snippet, not added. Living $20,106 is GT OIE graduate I-20 estimate for one academic year (9 months); misc $3,107 separate. CONFLICT: OIE Tier 4 table shows tuition and fees $22,144/semester, lower than Bursar $22,999 + $758; Bursar used. STEM designation not stated on the page checked. [AbroadROI review: billed as 3 semesters (fall, spring, summer) over 12 months.]"
+    },
+    {
+      "id": "ub-stem-mba",
+      "university": "University at Buffalo (SUNY) School of Management",
+      "city": "Buffalo, NY",
+      "course": "MBA",
+      "programme_name": "Full-time MBA (Management Science STEM MBA pathway)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 16655,
+        "period": "semester",
+        "credits_total": 60,
+        "fee_year": "Fall 2026",
+        "source_url": "https://www.buffalo.edu/studentaccounts/tuition-and-fees/fall.non-resident-full-time.html"
+      },
+      "mandatory_fees_per_year": 3249.72,
+      "living_cost_per_year": {
+        "amount": 25000,
+        "source_url": "https://www.buffalo.edu/grad/explore/funding/cost.html"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.buffalo.edu/grad/programs/management-science-stem-mba.html",
+      "status": "verified",
+      "notes": "UB non-resident MBA Fall 2026 row: tuition $16,655 + fees $1,624.86 per semester. Programme page: 60 credits, 2 years, 100% in person, $100 application fee. Full-time MBA admits fall only. STEM pathway qualifies for 24-month STEM OPT per UB School of Management news (school source). UB I-20 table lists MBA tuition and fees $33,600 and living $25,000. Admission requirements pages returned 404."
+    },
+    {
+      "id": "wharton-mba",
+      "university": "University of Pennsylvania, The Wharton School",
+      "city": "Philadelphia, PA",
+      "course": "MBA",
+      "programme_name": "Full-time MBA",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 87970,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2026-27",
+        "source_url": "https://mba.wharton.upenn.edu/financing-mba/tuition/"
+      },
+      "mandatory_fees_per_year": 5038,
+      "living_cost_per_year": {
+        "amount": 36292,
+        "source_url": "https://mba.wharton.upenn.edu/financing-mba/tuition/"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": "TOEFL iBT, PTE, IELTS or Duolingo required if prior study was not in English-medium institution",
+        "gre_gmat": "GMAT or GRE required",
+        "work_experience": "No minimum or maximum years required"
+      },
+      "scholarships": "Fellowships exist (page notes they may reduce sponsorship); school encourages external scholarships. No international-specific scholarship stated.",
+      "programme_url": "https://mba.wharton.upenn.edu/",
+      "status": "verified",
+      "notes": "2026-27 budget, identical for Year 1 and Year 2: tuition $87,970, university fees $5,038, total cost $135,441. Living/yr = housing $21,258 + food $9,287 + personal $4,703 + transportation $1,044; excludes health insurance $5,018 and books $1,123. Two-year length inferred from the two-year budget; months not stated on pages checked. Penn SRFS page shows total $135,444 (split fees) - $3 difference."
+    }
+  ],
+  "living_cost": {
+    "budget_month": 2200,
+    "moderate_month": 3000,
+    "comfortable_month": 4000,
+    "basis": "ESTIMATE derived from university cost-of-attendance living figures (housing, food, personal, local transport; excludes health insurance and books): Georgia Tech $20,106 per 9-month academic year (~$2,234/mo, Atlanta); UB $25,000 I-20 living figure (~$2,780/mo if 9 months, Buffalo); CMU $29,270 per two semesters (~$3,250/mo, Pittsburgh); Wharton $36,292 per year (~$4,030/mo over 9 months, Philadelphia). High-cost metros (NYC, Bay Area) will exceed the comfortable figure.",
+    "source_url": null
+  },
+  "visa": {
+    "student_visa": {
+      "name": "F-1 Student Visa",
+      "fees": [
+        {
+          "label": "MRV visa application fee (non-refundable)",
+          "amount": 185,
+          "currency": "USD"
+        },
+        {
+          "label": "SEVIS I-901 fee (F-1)",
+          "amount": 350,
+          "currency": "USD"
+        },
+        {
+          "label": "Visa Integrity Fee (at issuance, being rolled out; refundable conditions unclear)",
+          "amount": 250,
+          "currency": "USD"
+        }
+      ],
+      "source_url": "https://www.ice.gov/sevis/i901"
+    },
+    "proof_of_funds": {
+      "text": "Before issuing the Form I-20 the school must see evidence that the student can pay tuition, books, living expenses and travel for the length of the programme or one academic year, whichever is shorter (e.g. family bank statements, sponsor documents, scholarship/aid letters, employer salary letter). Schools set their own document rules. The figure is the school's I-20 estimate, e.g. UB $56,400, Georgia Tech MS Analytics $67,501, Wharton $135,441. Carry the evidence to the visa interview and port of entry.",
+      "source_url": "https://studyinthestates.dhs.gov/students/prepare/financial-ability"
+    },
+    "work_during_study": {
+      "text": "On-campus work: max 20 hours/week while school is in session (full-time during breaks). Off-campus work only through CPT (must be an integral part of the curriculum, authorised by the DSO) or pre-completion OPT (after one academic year; counts against the 12-month OPT allowance). SEVP broadcasts of 12 and 24 Aug 2026 tightened what counts as 'integral', so optional internships and many Day-1 CPT setups may no longer qualify.",
+      "source_url": "https://studyinthestates.dhs.gov/students/work/working-in-the-united-states"
+    },
+    "post_study_work": {
+      "name": "Optional Practical Training (OPT) + STEM OPT extension",
+      "months_max": 36,
+      "text": "Up to 12 months of OPT per degree level (pre- and/or post-completion). Graduates of DHS-designated STEM degrees can add a 24-month STEM OPT extension (E-Verify employer required), up to 36 months total. Non-STEM degrees (e.g. a non-STEM MBA) get 12 months only. A Oct 2026 proposed rule would add $70,000 (initial OPT) and $30,000 (second year) fees per student; it is not in effect. Staying longer normally needs an employer-sponsored H-1B, now selected by a wage-weighted lottery.",
+      "source_url": "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students"
+    },
+    "pr_pathway": {
+      "text": "No direct student-to-PR route. Usual path: F-1 -> OPT/STEM OPT -> employer-sponsored H-1B (annual cap of 65,000 + 20,000 US master's, now wage-weighted selection) -> employer PERM labour certification -> EB-2 (advanced degree) or EB-3 green card. Indian applicants face per-country backlogs: October 2026 Visa Bulletin final action dates for India were EB-2 1 Nov 2013 and EB-3 1 Jan 2014 (per Business Today report; official bulletin page not reachable), i.e. waits of a decade or more.",
+      "source_url": "https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-second-preference-eb-2"
+    },
+    "recent_changes": [
+      {
+        "title": "$100,000 payment on new H-1B petitions (Presidential Proclamation)",
+        "status": "blocked",
+        "announced": "2025-09-19",
+        "effective": "2025-09-21",
+        "who_affected": "Employers filing new H-1B petitions; USCIS later guidance (Oct 2025, per university/law-firm reports) exempted in-US change of status such as F-1 to H-1B",
+        "impact": "Would have made hiring from abroad very costly; F-1/OPT holders changing status inside the US were reported exempt. On 8 June 2026 a federal court (D. Mass.) vacated USCIS implementing guidance and on 24 July 2026 the First Circuit denied a stay; DHS says it will collect if the order is lifted. Uncertainty for employers sponsoring Indian graduates remains.",
+        "source_url": "https://www.uscis.gov/newsroom/alerts/h-1b-faq"
+      },
+      {
+        "title": "H-1B wage-weighted selection replaces random lottery",
+        "status": "in_effect",
+        "announced": "2025-12-29",
+        "effective": "2026-02-27",
+        "who_affected": "All cap-subject H-1B registrants from FY2027 season (March 2026), including OPT/STEM OPT graduates",
+        "impact": "Higher wage levels get more lottery entries (reported 1 entry for Level I up to 4 for Level IV). Fresh graduates offered entry-level (Level I) wages have lower odds, making long-term US stay and salary payback less certain unless the job pays above entry level.",
+        "source_url": "https://www.govinfo.gov/content/pkg/FR-2025-12-29/html/2025-23853.htm"
+      },
+      {
+        "title": "Proposed OPT fees: $70,000 initial OPT, $30,000 second year (STEM OPT)",
+        "status": "proposed",
+        "announced": "2026-10-08",
+        "effective": null,
+        "who_affected": "All F-1 students seeking OPT/STEM OPT (fee per student; rule targets schools, which may pass costs to students or employers per reports)",
+        "impact": "If finalised, OPT could become unaffordable or unavailable for many Indian students, removing the main way to earn US salaries after graduating and wrecking ROI. Comments due 9 Nov 2026; current OPT rules unchanged until a final rule.",
+        "source_url": "https://studyinthestates.dhs.gov/2026/10/dhs-publishes-proposed-rule-establishing-fees-for-optional-practical-training"
+      },
+      {
+        "title": "End of 'duration of status' (fixed admission period, max 4 years; grace period 60 to 30 days)",
+        "status": "blocked",
+        "announced": "2026-07-17",
+        "effective": "2026-09-15",
+        "who_affected": "F-1 and J-1 students",
+        "impact": "Would require extension-of-stay applications to USCIS for delays, programme changes and some OPT cases, and halve the post-study grace period. A nationwide preliminary injunction (D. Mass., 14 Sep 2026) blocks it; DHS appealed on 30 Sep 2026, so it could return.",
+        "source_url": "https://www.vanderbilt.edu/isss/2026/10/02/dhs-appeals-courts-preliminary-injunction-of-d-s-rule/"
+      },
+      {
+        "title": "SEVP guidance narrowing Curricular Practical Training (incl. Day-1 CPT)",
+        "status": "in_effect",
+        "announced": "2026-08-12",
+        "effective": "2026-08-24",
+        "who_affected": "F-1 students relying on CPT internships, especially Day-1 CPT programmes",
+        "impact": "CPT must be a required part of the curriculum; optional internships often no longer qualify. Fewer paid internships during study, lower earnings while studying and weaker job pipelines. Not affected by the D/S injunction.",
+        "source_url": "https://www.globalimmigrationblog.com/2026/09/federal-court-blocks-dhs-f-1-j-1-fixed-period-admission-rule-curricular-practical-training-restrictions-remain/"
+      },
+      {
+        "title": "Expanded online presence (social media) vetting for F, M, J applicants",
+        "status": "in_effect",
+        "announced": "2025-06-18",
+        "effective": "2025-06-26",
+        "who_affected": "All F-1 visa applicants (asked to set social media profiles to public)",
+        "impact": "Longer processing and 221(g) administrative holds are possible; private profiles can be treated as failing to provide information. Plan visa interviews early to avoid missing intake.",
+        "source_url": "https://oiss.yale.edu/news/department-of-state-announces-enhanced-social-media-vetting-and-resumption-of-visa-interview-scheduling"
+      },
+      {
+        "title": "Visa interviews must be in country of nationality or residence",
+        "status": "in_effect",
+        "announced": "2025-09-06",
+        "effective": "2025-09-06",
+        "who_affected": "Nonimmigrant visa applicants including F-1",
+        "impact": "Indian students must interview at US posts in India (no third-country appointments to beat wait times); fees paid elsewhere are not refunded.",
+        "source_url": "https://visaservices.duke.edu/news/visa-interviews-must-take-place-your-country-nationality-or-residence/"
+      },
+      {
+        "title": "$250 Visa Integrity Fee (One Big Beautiful Bill Act)",
+        "status": "announced",
+        "announced": null,
+        "effective": null,
+        "who_affected": "Nearly all nonimmigrant visa applicants including F-1",
+        "impact": "Adds $250 at visa issuance (refund conditions unclear). Boston University reported in May 2026 that some posts had begun charging it; collection at Indian posts not confirmed.",
+        "source_url": "https://www.bu.edu/isso/2026/05/19/visa-integrity-fee/"
+      }
+    ]
+  },
+  "risk_factors": {
+    "policy_volatility": {
+      "score": 85,
+      "evidence": "In under 24 months: social media vetting (Jun 2025), interview-location rule (Sep 2025), $100k H-1B fee (Sep 2025, later court-blocked), weighted H-1B lottery (Feb 2026), D/S final rule (Jul 2026, enjoined), CPT tightening (Aug 2026) and OPT fee NPRM (Oct 2026)."
+    },
+    "psw_uncertainty": {
+      "score": 75,
+      "evidence": "OPT (12 months, +24 for STEM) still exists, but a proposed $70k/$30k per-student OPT fee threatens it, and staying beyond OPT depends on employer sponsorship and a wage-weighted H-1B lottery that disfavours entry-level wages."
+    },
+    "work_restrictions": {
+      "score": 60,
+      "evidence": "On-campus work capped at 20 h/week in term; off-campus only via CPT (narrowed Aug 2026) or OPT. Post-OPT work needs an employer-sponsored H-1B; STEM OPT requires an E-Verify employer."
+    },
+    "funds_burden": {
+      "score": 60,
+      "evidence": "Must document a full year of school-estimated cost before the I-20 (e.g. UB $56,400; Wharton $135,441), which for Indian families is a large liquid sum, though the requirement covers only one year rather than the whole programme."
+    },
+    "recent_adverse": {
+      "score": 80,
+      "evidence": "Last 12 months: wage-weighted H-1B selection in effect, CPT guidance tightened, OPT fee proposal published, D/S rule finalised (currently enjoined) and Visa Integrity Fee rollout, all negative for new Indian students' payback."
+    }
+  },
+  "salary": {
+    "CS": {
+      "roles": [
+        "Software Developer",
+        "Software Engineer",
+        "Backend Engineer",
+        "Full-Stack Developer",
+        "Machine Learning Engineer"
+      ],
+      "entry_low": 82460,
+      "entry_mid": 105210,
+      "entry_high": 135980,
+      "basis": "BLS OEWS national, SOC 15-1252 Software Developers: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015125211/12/13.",
+      "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
+      "source_url": "https://www.bls.gov/oes/current/oes151252.htm",
+      "period": "May 2025"
+    },
+    "DS": {
+      "roles": [
+        "Data Scientist",
+        "Data Analyst",
+        "Machine Learning Analyst",
+        "Analytics Engineer",
+        "Business Intelligence Analyst"
+      ],
+      "entry_low": 67240,
+      "entry_mid": 85660,
+      "entry_high": 120230,
+      "basis": "BLS OEWS national, SOC 15-2051 Data Scientists: entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Retrieved via BLS Public API series OEUN000000000000015205111/12/13.",
+      "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
+      "source_url": "https://www.bls.gov/oes/current/oes152051.htm",
+      "period": "May 2025"
+    },
+    "MBA": {
+      "roles": [
+        "Management Analyst / Consultant",
+        "Business Analyst",
+        "Strategy Associate",
+        "Product Manager (associate)",
+        "Operations Analyst"
+      ],
+      "entry_low": 60640,
+      "entry_mid": 77950,
+      "entry_high": 101860,
+      "basis": "Proxy occupation: BLS OEWS national, SOC 13-1111 Management Analysts (not an MBA-specific figure): entry_low = 10th percentile, entry_mid = 25th percentile, entry_high = median annual wage. Top-school MBA outcomes are typically much higher; no school employment report was verified. Retrieved via BLS Public API series OEUN000000000000013111111/12/13.",
+      "source_name": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
+      "source_url": "https://www.bls.gov/oes/current/oes131111.htm",
+      "period": "May 2025"
+    }
+  },
+  "tax": {
+    "effective_rate": 0.21,
+    "basis": "ESTIMATE computed for a single filer at $105,210 (CS entry_mid) using IRS tax year 2026 brackets (10/12/22% up to $105,700) and $16,100 standard deduction: federal income tax ~$14,316 (13.6%) plus employee FICA 7.65% (Social Security 6.2% + Medicare 1.45%, per IRS Topic 751) = ~21.3%. Excludes state/local income tax (0% in e.g. Texas/Washington, several % in New York/California/Georgia). While on OPT as a nonresident alien (first 5 calendar years), F-1 students are exempt from FICA per IRS, so the rate is ~14% during OPT; FICA applies after moving to H-1B/resident status. At $82,460 the federal+FICA rate is ~18.9%.",
+    "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
+  },
+  "checklist": [
+    "Shortlist SEVP-certified universities; check if the degree is STEM-designated (gives 24 extra months of OPT).",
+    "Take the required tests (GRE/GMAT if required; TOEFL, IELTS or Duolingo) and apply before deadlines.",
+    "Arrange proof of funds covering the school's first-year cost estimate (bank statements, education loan sanction, sponsor letters).",
+    "Accept an offer and submit financial documents so the school issues your Form I-20.",
+    "Pay the $350 SEVIS I-901 fee online using the SEVIS ID on your I-20 and keep the receipt.",
+    "Set your social media profiles to public, then complete the DS-160 online and keep the confirmation page.",
+    "Pay the $185 MRV fee and book biometrics and interview at a US Embassy/Consulate in India (interviews must be in your country of nationality or residence).",
+    "Attend the interview with passport, I-20, SEVIS receipt, DS-160, admission letter, funding proof and academic records; expect possible 221(g) processing.",
+    "Pay the Visa Integrity Fee if charged at issuance; book travel to arrive within the entry window your I-20 and school allow before the programme start date.",
+    "After arrival, check in with your international office; work on-campus only up to 20 h/week; ask the DSO before any CPT; plan OPT filing in your final term."
+  ]
+}

@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Editorial Finance tokens (from the master working document) */
+:root {
+  --ink: #17231f;
+  --forest: #245c4a;
+  --forest-soft: #e6efe9;
+  --ivory: #f7f5ef;
+  --card: #ffffff;
+  --slate: #65716b;
+  --line: #e2e5df;
+  --amber: #b7791f;
+  --amber-soft: #fbf1e1;
+  --brick: #b5473c;
+  --brick-soft: #f8e7e4;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-ivory: var(--ivory);
+  --color-card: var(--card);
+  --color-slate: var(--slate);
+  --color-line: var(--line);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-brick: var(--brick);
+  --color-brick-soft: var(--brick-soft);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.num { font-variant-numeric: tabular-nums; }
+h1, h2, h3 { font-family: var(--font-manrope), var(--font-inter), sans-serif; letter-spacing: -0.01em; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 10px; padding: .625rem 1rem; font-weight: 600; font-size: .9rem; transition: background .15s; }
+.btn-primary { background: var(--forest); color: #fff; }
+.btn-primary:hover { background: #1c4a3b; }
+.btn-ghost { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.btn-ghost:hover { background: var(--forest-soft); }
+.input { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: .55rem .75rem; background: #fff; font-size: .9rem; }
+.input:focus { outline: 2px solid var(--forest); outline-offset: 1px; }
+.label { display: block; font-size: .8rem; font-weight: 600; margin-bottom: .3rem; }
+.hint { font-size: .75rem; color: var(--slate); margin-top: .25rem; }
+a.link { color: var(--forest); text-decoration: underline; text-underline-offset: 2px; }
+table.data { width: 100%; font-size: .85rem; border-collapse: collapse; }
+table.data th { text-align: left; font-weight: 600; color: var(--slate); font-size: .75rem; text-transform: uppercase; letter-spacing: .03em; padding: .6rem .75rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.data td { padding: .6rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }

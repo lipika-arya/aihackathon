@@ -1,0 +1,365 @@
+{
+  "country": "AU",
+  "name": "Australia",
+  "currency": "AUD",
+  "verified_at": "2026-10-22",
+  "programmes": [
+    {
+      "id": "unsw-mit-cs",
+      "university": "UNSW Sydney",
+      "city": "Sydney",
+      "course": "CS",
+      "programme_name": "Master of Information Technology (program 8543)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 130500,
+        "period": "total",
+        "credits_total": 96,
+        "fee_year": "2026",
+        "source_url": "https://www.unsw.edu.au/study/postgraduate/master-of-information-technology?studentType=International"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Bachelor degree (AQF Level 7 equivalent) with minimum 65% weighted average. Cognate background enters the standard 2-year program; non-cognate (3-year bachelor in any discipline, 65%) enters via the Graduate Certificate in IT pathway, same 2-year / 96 UoC total",
+        "english": "UNSW English language requirements apply (exact band not captured from the page)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.unsw.edu.au/study/postgraduate/master-of-information-technology",
+      "status": "verified",
+      "notes": "Page shows a 2026 indicative international first-year fee of AUD 63,000 and an indicative full fee to complete the degree of AUD 130,500 (page markup labels these fee-international/internationalAnnual; domestic full fee is AUD 45,000 / 92,500). Fees are indicative and reviewed annually; 2027 figures were not yet shown. UNSW moves to a new academic calendar from 2028, which may change duration for some intakes. The page also warns that some programs are at capacity for 2026 intakes and closed to new overseas student commencements."
+    },
+    {
+      "id": "flinders-mit-cs",
+      "university": "Flinders University",
+      "city": "Adelaide",
+      "course": "CS",
+      "programme_name": "Master of Information Technology (CRICOS 038636F)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 42900,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2026",
+        "source_url": "https://www.flinders.edu.au/study/courses/postgraduate-information-technology"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Bachelor degree or equivalent qualification, or the Flinders Graduate Diploma in Information Technology (no minimum GPA stated on page)",
+        "english": null,
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.flinders.edu.au/study/courses/postgraduate-information-technology",
+      "status": "verified",
+      "notes": "Lower-cost, non-Go8 option. The CRICOS (international) listing shows annual fees 2026: AUD 42,900, duration 2 years, City campus, March/July starts. (The AUD 34,700 figure on the same page is the domestic full-fee rate.) Total course fee not published; 2 x 42,900 = about AUD 85,800 before annual increases. English requirement not shown on this page."
+    },
+    {
+      "id": "monash-mds-ds",
+      "university": "Monash University",
+      "city": "Melbourne (Clayton)",
+      "course": "DS",
+      "programme_name": "Master of Data Science (C6004)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 57540,
+        "period": "year",
+        "credits_total": 96,
+        "fee_year": "2027",
+        "source_url": "https://www.monash.edu/study/courses/find-a-course/data-science-c6004?international=true"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Entry level 1 (2 years, 96 points): bachelor degree in any discipline with at least a credit (60%) average. Entry level 2 (1.5 years, 72 points): cognate IT/business/engineering/science degree with IT major (Python, databases, algorithms, maths) and at least 60% average",
+        "english": "Level A: IELTS Academic 6.5 overall (L/R/W/S 6.0), or PTE Academic 58 overall (communicative skills 50)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "Monash advertises over 360 scholarship types; specific awards not checked",
+      "programme_url": "https://www.monash.edu/study/courses/find-a-course/data-science-c6004",
+      "status": "verified",
+      "notes": "Go8. International fee for 2027 is AUD 57,540 per 48 credit points (one standard full-time year). 96-point (2-year) track would be about AUD 115,080 at 2027 rates, more if fees rise in year 2. Cognate graduates may finish in 1.5 years (72 points)."
+    },
+    {
+      "id": "rmit-mds-ds",
+      "university": "RMIT University",
+      "city": "Melbourne",
+      "course": "DS",
+      "programme_name": "Master of Data Science (MC267)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 47040,
+        "period": "year",
+        "credits_total": 192,
+        "fee_year": "2027",
+        "source_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-data-science-mc267"
+      },
+      "mandatory_fees_per_year": 386,
+      "living_cost_per_year": {
+        "amount": 30000,
+        "source_url": "https://www.rmit.edu.au/study-with-us/international-students/study/cost-of-studying-in-australia"
+      },
+      "requirements": {
+        "gpa": "Bachelor's degree (or equivalent) in computer science, data science, AI, software engineering, IT or a related quantitative field (incl. statistics) with GPA of at least 2.0 out of 4.0",
+        "english": "IELTS Academic 6.5 overall (no band below 6.0); TOEFL iBT 79; PTE Academic 58 (no communicative band below 50)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-data-science-mc267",
+      "status": "verified",
+      "notes": "Lower-cost, non-Go8 (ATN) option. International card shows Fees: AU$47,040 (2027 annual), full-time 2 years, Melbourne City (AU$38,400 is the domestic rate). credits_total 192 assumes 2 x 96 credit points per standard year as stated on the page. SSAF AU$386 is the 2027 maximum. Living cost: RMIT publishes AU$30,000-45,000 per year for Melbourne (2026 estimate); the low end is recorded here."
+    },
+    {
+      "id": "uq-mba",
+      "university": "The University of Queensland",
+      "city": "Brisbane",
+      "course": "MBA",
+      "programme_name": "Master of Business Administration (program 5770)",
+      "duration_months": 18,
+      "tuition": {
+        "amount": 69112,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027",
+        "source_url": "https://study.uq.edu.au/study-options/programs/master-business-administration-5770?year=2027"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Bachelor's degree in any discipline with GPA 4.5 on UQ 7-point scale (or UQ Graduate Certificate in Business Administration with GPA 4)",
+        "english": "IELTS overall 6.5 (each band 6); TOEFL iBT 87 (L19 R19 W21 S19); PTE Academic 64 (60 in all sub-bands)",
+        "gre_gmat": "International applicants must have GMAT minimum 550",
+        "work_experience": "4 years full-time equivalent relevant work experience, typically post-graduation, including 2 years in a supervisory/management role"
+      },
+      "scholarships": null,
+      "programme_url": "https://study.uq.edu.au/study-options/programs/master-business-administration-5770",
+      "status": "verified",
+      "notes": "Go8. AUD 69,112 is the 2027 approximate yearly cost of full-time international tuition (16 units); AUD 64,224 is the domestic figure. Duration 1.5 years, Brisbane City; total for 1.5 years would be roughly AUD 103,700 at 2027 rates (derived, not published). High entry bar (GMAT + 4 years experience)."
+    },
+    {
+      "id": "rmit-mba",
+      "university": "RMIT University",
+      "city": "Melbourne",
+      "course": "MBA",
+      "programme_name": "Master of Business Administration (MC199)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 52800,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2027",
+        "source_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-business-administration-mc199"
+      },
+      "mandatory_fees_per_year": 386,
+      "living_cost_per_year": {
+        "amount": 30000,
+        "source_url": "https://www.rmit.edu.au/study-with-us/international-students/study/cost-of-studying-in-australia"
+      },
+      "requirements": {
+        "gpa": "2-year plan: bachelor's degree in any discipline with GPA at least 1.0 out of 4.0 (or GMAT 550). 1.5-year plan (advanced standing): business/related bachelor's with GPA 1.0/4.0 or GMAT 550, or any bachelor's plus 2 years relevant work experience",
+        "english": "IELTS Academic 6.5 overall (no band below 6.0); TOEFL iBT 79; PTE Academic 58",
+        "gre_gmat": "Optional: GMAT 550 is an alternative entry route",
+        "work_experience": "Not required for the 2-year plan; 2 years relevant experience is one route to the 1.5-year plan"
+      },
+      "scholarships": "Page mentions an Alumni postgraduate bursary (for RMIT alumni)",
+      "programme_url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-business-administration-mc199",
+      "status": "verified",
+      "notes": "Lower-cost, non-Go8 option. International card: AU$52,800 (2027 annual), full-time 2 years or 1.5 years accelerated (AU$40,320 is the domestic rate). The page also states a total indicative tuition fee for 2027 commencement of AU$107,520 (2-year plan MC199P15) and AU$80,160 (1.5-year plan); the page markup did not clearly label these totals as international, though they are consistent with the international annual rate. SSAF AU$386 is the 2027 maximum."
+    }
+  ],
+  "living_cost": {
+    "budget_month": 2476,
+    "moderate_month": 3125,
+    "comfortable_month": 3750,
+    "basis": "budget = Home Affairs Student visa financial-capacity living-cost figure of AUD 29,710 for 12 months for a student, divided by 12 (official minimum, not a realistic city budget). moderate = ESTIMATE: midpoint of RMIT's published 2026 Melbourne living-expense range AUD 30,000-45,000 per year (37,500 / 12). comfortable = ESTIMATE: top of that RMIT range (45,000 / 12). Sydney is typically dearer; no official 2026 Sydney figure found.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+  },
+  "visa": {
+    "student_visa": {
+      "name": "Student visa (subclass 500)",
+      "fees": [
+        { "label": "Main applicant visa application charge (from 1 July 2026; was AUD 2,000)", "amount": 2500, "currency": "AUD" },
+        { "label": "Temporary Graduate visa (subclass 485) application charge, from 1 July 2026 (was AUD 4,600)", "amount": 5750, "currency": "AUD" }
+      ],
+      "source_url": "https://www.studyaustralia.gov.au/en/Agent-Hub/agent-news-index/student-visa-application-charge-increase"
+    },
+    "proof_of_funds": {
+      "text": "Show enough money for 12 months: living costs AUD 29,710 for the student (partner AUD 10,394, child AUD 4,449, now only for exempt categories), plus first 12 months of course fees (less amounts already paid), plus travel of AUD 2,000 if applying from outside Australia (India). Alternative: evidence that parents or partner earned at least AUD 87,856 personal annual income in the 12 months before applying (combined income of both parents can count), shown via official government documents such as tax assessments. Example: Monash MDS year 1 = 57,540 + 29,710 + 2,000 = about AUD 89,250. Genuine Student requirement: answer GS questions in the online application (150-word limit each) showing study is the primary reason for the visa. English: approved test taken within 2 years; online/at-home tests (e.g. IELTS Online, TOEFL Home Edition) are not accepted.",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+    },
+    "work_during_study": {
+      "text": "Up to 48 hours a fortnight while the course is in session (rules for course breaks not captured from the page; check your visa grant conditions). No work before the course starts. Master's by research and doctoral students have no work limit; master's by coursework students are subject to the 48-hour cap.",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+    },
+    "post_study_work": {
+      "name": "Temporary Graduate visa (subclass 485), Post-Higher Education Work stream",
+      "months_max": 36,
+      "text": "Open work rights; you find your own job. Default stays: Bachelor 2 years, Masters (coursework and extended) 2 years, Masters (research) 3 years, Doctoral 3 years. For Indian nationals under the Australia-India ECTA (AI-ECTA): Masters (coursework, extended and research) 3 years, PhD 4 years, Bachelor 2 years (3 with first-class honours in STEM incl. ICT). Must be aged 35 or under when applying (exceptions for masters by research/PhD, HK/BNO up to 50), have held a Student visa in the last 6 months, and have a CRICOS degree awarded in the last 6 months. English for tests on/after 7 Aug 2025: e.g. IELTS Academic 6.5 overall, PTE Academic 55. Cannot be extended; a second Post-Higher Education Work stream may be available in limited cases. Application charge AUD 5,750 from 1 July 2026.",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485/post-higher-education-work"
+    },
+    "pr_pathway": {
+      "text": "Points-tested Skilled Independent visa (subclass 189): occupation on the relevant skilled occupation list, suitable skills assessment, Expression of Interest in SkillSelect, aged under 45 at invitation, at least 65 points (invitations may require more), invitation-only. Employer route: Skills in Demand visa (subclass 482) Core Skills stream needs a sponsoring employer, an occupation on the Core Skills Occupation List, salary at least the market rate and not less than the Core Skills Income Threshold, and at least 1 year relevant work experience; this can later lead to employer-sponsored permanent residence (subclass 186 details not verified in this pass). State-nominated (190) and regional (491) routes also exist (not verified here).",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189/points-tested"
+    },
+    "recent_changes": [
+      {
+        "title": "Student visa application charge raised from AUD 2,000 to AUD 2,500",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-07-01",
+        "who_affected": "All Student visa primary applicants except ASEAN, Pacific Island/Timor-Leste passport holders and independent ELICOS/non-award students",
+        "impact": "Indian applicants pay AUD 2,500 per application, about 25% more. Small next to tuition, but it is the latest of several rises.",
+        "source_url": "https://www.studyaustralia.gov.au/en/Agent-Hub/agent-news-index/student-visa-application-charge-increase"
+      },
+      {
+        "title": "Temporary Graduate (485) application charge raised from AUD 4,600 to AUD 5,750",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-07-01",
+        "who_affected": "All 485 applicants except the Pacific Island/Timor-Leste concession",
+        "impact": "Adds about AUD 1,150 to the cost of staying on to work after graduation.",
+        "source_url": "https://www.studyaustralia.gov.au/en/Agent-Hub/agent-news-index/student-visa-application-charge-increase"
+      },
+      {
+        "title": "Most Student visa applicants can no longer include family members; no subsequent entrants",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-10-02",
+        "who_affected": "Student visa applications lodged on or after 2 October 2026, unless in an exemption category (reported exemptions include PhD students, government-scholarship holders, ASEAN/Pacific nationals)",
+        "impact": "A typical Indian master's student cannot bring a spouse or child, and family cannot join later. A partner cannot earn alongside the student, which hurts household ROI for married applicants.",
+        "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+      },
+      {
+        "title": "Most Student visa holders can no longer apply for a further Student visa onshore",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-10-02",
+        "who_affected": "Current Student visa holders (and most temporary visa holders) wanting another Student visa, unless they meet an exemption",
+        "impact": "Changing or extending courses in Australia now usually means applying from outside the country. Less flexibility if you fail units or want to switch courses.",
+        "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+      },
+      {
+        "title": "Ministerial Direction 115 sets offshore Student visa processing priority (replaced MD111)",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2025-11-14",
+        "who_affected": "Offshore Student visa applicants; priority depends on the provider's progress against its allocation",
+        "impact": "If your university is near its allocation, your visa may be processed more slowly. Applying early and to providers with room matters. MD111 applied from 19 Dec 2024 to applications lodged before 14 Nov 2025.",
+        "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+      },
+      {
+        "title": "National Planning Level for 2027 held at 295,000 new overseas student commencements",
+        "status": "announced",
+        "announced": "2026-07-03",
+        "effective": null,
+        "who_affected": "New overseas students commencing in 2027; enforced through provider allocations and Ministerial Direction visa prioritisation",
+        "impact": "A soft cap stays in place for 2027. Popular courses can fill up or close to new international students (UNSW already flags some 2026 programs at capacity).",
+        "source_url": "https://thepienews.com/australia-maintains-2027-international-student-planning-level-at-295000/"
+      },
+      {
+        "title": "Legislated international student enrolment caps (ESOS Amendment (Quality and Integrity) Bill 2024)",
+        "status": "blocked",
+        "announced": null,
+        "effective": null,
+        "who_affected": "Would have capped enrolments by provider",
+        "impact": "The Senate did not pass the caps; the bill lapsed on 28 March 2025 and the caps part was left out of the later ELA Bill. The government uses Ministerial Directions and planning levels instead, so caps still exist in practice.",
+        "source_url": "https://www.education.gov.au/download/20377/australian-government-response-senate-education-and-employment-legislation-committee-report/44792/document/docx"
+      },
+      {
+        "title": "Temporary Graduate visa realigned: age limit cut to 35, Post-Study Work stream renamed Post-Higher Education Work",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2024-07-01",
+        "who_affected": "485 applicants",
+        "impact": "Applicants over 35 (coursework master's) cannot get a 485. Default coursework-master's stay is 2 years, but Indian nationals keep 3 years under AI-ECTA.",
+        "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485/changes"
+      },
+      {
+        "title": "New English test score tables for tests taken on or after 7 August 2025",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2025-08-07",
+        "who_affected": "Student and 485 applicants using English tests taken from 7 Aug 2025",
+        "impact": "Check the current score table before booking a test. At-home/online tests are not accepted.",
+        "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+      }
+    ]
+  },
+  "risk_factors": {
+    "policy_volatility": {
+      "score": 85,
+      "evidence": "In 24 months: MD111 (Dec 2024) then MD115 (Nov 2025) processing caps, planning levels, new English score tables (Aug 2025), two fee rises to AUD 2,500 (Jul 2026), and a ban on dependants and onshore re-applications (Oct 2026)."
+    },
+    "psw_uncertainty": {
+      "score": 30,
+      "evidence": "The 485 is an open work visa with set lengths, and Indian master's graduates get 3 years under AI-ECTA. Risks: the age-35 cap, the AUD 5,750 fee, and 2024 cuts showing the rules can change."
+    },
+    "work_restrictions": {
+      "score": 30,
+      "evidence": "48 hours a fortnight during term for coursework students. Unrestricted work on the 485. PR needs points (65+, invitation-only) or employer sponsorship."
+    },
+    "funds_burden": {
+      "score": 45,
+      "evidence": "Must show AUD 29,710 living costs, first-year tuition and AUD 2,000 travel (about AUD 75k-100k for these programmes), or parental income of at least AUD 87,856. Largely matches real first-year costs."
+    },
+    "recent_adverse": {
+      "score": 70,
+      "evidence": "Last 12 months: Student and 485 fees up 25% (Jul 2026), family members barred for most students and no onshore re-applications (Oct 2026), 2027 cap held at 295,000."
+    }
+  },
+  "salary": {
+    "CS": {
+      "roles": ["Software engineer", "Cybersecurity engineer", "Network engineer", "IT project manager", "Information systems analyst", "IT security consultant"],
+      "entry_low": 65000,
+      "entry_mid": 65200,
+      "entry_high": 120000,
+      "basis": "QILT Graduate Outcomes Survey 2025, postgraduate coursework, Computing and information systems, median annual full-time salary. mid = INTERNATIONAL graduates total 2025 (AUD 65,200; 2024 was 70,000). low = lowest international gender-cell median 2025 (female, 65,000). high = DOMESTIC postgraduate coursework graduates 2025 median (AUD 120,000), which includes many already-experienced workers, so treat it as an upside ceiling, not an entry figure. For an Indian graduate the international median is the realistic entry figure.",
+      "source_name": "QILT Graduate Outcomes Survey 2025 (International and National report tables)",
+      "source_url": "https://www.qilt.edu.au/docs/default-source/default-document-library/gos_2025_international_report_tables.zip?sfvrsn=5e0b873_1",
+      "period": "annual gross, AUD, GOS 2025 short-term graduate outcomes"
+    },
+    "DS": {
+      "roles": ["Data analyst", "Data scientist", "Data engineer", "Machine learning engineer", "Business intelligence analyst"],
+      "entry_low": 65000,
+      "entry_mid": 65200,
+      "entry_high": 120000,
+      "basis": "QILT has no separate data science study area; data science is mapped here to Computing and information systems (same figures as CS). For reference, Science and mathematics international PGC 2025 median = AUD 64,400. mid = international median 2025; low = lowest international gender-cell 2025; high = domestic PGC median 2025 (upside ceiling, includes experienced workers).",
+      "source_name": "QILT Graduate Outcomes Survey 2025 (International and National report tables)",
+      "source_url": "https://www.qilt.edu.au/docs/default-source/default-document-library/gos_2025_international_report_tables.zip?sfvrsn=5e0b873_1",
+      "period": "annual gross, AUD, GOS 2025 short-term graduate outcomes"
+    },
+    "MBA": {
+      "roles": ["Business analyst", "Management consultant", "Project/program manager", "Operations manager", "Product manager", "Marketing manager"],
+      "entry_low": 65400,
+      "entry_mid": 66000,
+      "entry_high": 140000,
+      "basis": "QILT GOS 2025, postgraduate coursework, narrow area Business management (within Business and management). mid = international graduates 2025 median (AUD 66,000; broad Business and management = 65,000). low = lowest international gender-cell 2025 (female, 65,400). high = domestic PGC Business management median 2025 (AUD 140,000), which reflects mostly experienced domestic MBA graduates, so it is an upside ceiling.",
+      "source_name": "QILT Graduate Outcomes Survey 2025 (International and National report tables)",
+      "source_url": "https://www.qilt.edu.au/docs/default-source/default-document-library/gos_2025_international_report_tables.zip?sfvrsn=5e0b873_1",
+      "period": "annual gross, AUD, GOS 2025 short-term graduate outcomes"
+    }
+  },
+  "tax": {
+    "effective_rate": 0.175,
+    "basis": "ESTIMATE for a single Australian resident for tax purposes on about AUD 65,200 in 2026-27. Brackets: 0% to 18,200; 15% to 45,000; 30% to 135,000 (AUD 4,020 plus 30c per $1 over 45,000). Income tax = 10,080, plus 2% Medicare levy = 1,304, total 11,384 = 17.5%. Ignores the Low Income Tax Offset (about AUD 20 at this income) and the Medicare levy surcharge. At AUD 120,000 the same method gives about 24%. The 2026-27 15% bottom rate (down from 16%) is law per ATO/Budget material. ato.gov.au blocked automated access, so the table was read from SuperGuide (secondary, updated 1 July 2026; its 2025-26 table matches ATO 2025-26 rates). Medicare levy 2% is standard; not read on an ATO page.",
+    "source_url": "https://www.superguide.com.au/boost-your-superannuation/income-tax-rates"
+  },
+  "checklist": [
+    "Check your course is CRICOS-registered and not at capacity for international intakes (planning-level allocations)",
+    "Apply to the university; accept the offer, pay the deposit and get your Confirmation of Enrolment (CoE)",
+    "Buy Overseas Student Health Cover (OSHC) for the whole visa period",
+    "Take an approved in-person English test (no at-home tests) within 2 years of lodging",
+    "Prepare financial evidence: AUD 29,710 living + year-1 tuition + AUD 2,000 travel, or parental income of at least AUD 87,856",
+    "Draft Genuine Student answers (150 words each) on why this course, provider and Australia",
+    "Create an ImmiAccount and lodge the subclass 500 application from India; pay AUD 2,500",
+    "Book biometrics at a VFS centre when asked, and complete the health exam with a panel physician",
+    "After grant, check visa conditions in VEVO (48 hours per fortnight work limit; no family members unless exempt)",
+    "Plan your 485 early: apply within 6 months of completion, aged 35 or under, with a new English test and the AUD 5,750 fee"
+  ]
+}

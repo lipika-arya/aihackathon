@@ -1,0 +1,382 @@
+{
+  "country": "CA",
+  "name": "Canada",
+  "currency": "CAD",
+  "verified_at": "2026-10-22",
+  "programmes": [
+    {
+      "id": "utoronto-mscac-cs",
+      "university": "University of Toronto",
+      "city": "Toronto",
+      "course": "CS",
+      "programme_name": "Master of Science in Applied Computing (MScAC), Computer Science concentration",
+      "duration_months": 16,
+      "tuition": {
+        "amount": 90050,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "Sept 2026 intake",
+        "source_url": "https://mscac.utoronto.ca/apply/"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "At least B+ (U of T 77-79%) in final year of undergraduate degree",
+        "english": "School of Graduate Studies (SGS) English test minimums; no higher programme minimum",
+        "gre_gmat": "GRE not mandatory, but applicants from outside Canada are assumed to submit scores (admitted averages ~158+ Verbal, ~168+ Quant)",
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://mscac.utoronto.ca/apply/",
+      "status": "verified",
+      "notes": "CAD 90,050 is the official estimated total tuition and fees for the whole 16-month programme for international students starting Sept 2026, including a CAD 2,200 mandatory pre-program fee (so mandatory fees are inside the total, hence null). Includes an 8-month paid applied-research internship (programme page). Fall 2027 fee not yet published; U of T 2026-27 tuition report says MScAC fees rise 7.5% per year. 16 months qualifies the spouse for an open work permit (16-month master's rule)."
+    },
+    {
+      "id": "concordia-mapcompsc-cs",
+      "university": "Concordia University",
+      "city": "Montreal",
+      "course": "CS",
+      "programme_name": "Master of Applied Computer Science (course-based, 45 credits)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 40473.4,
+        "period": "total",
+        "credits_total": 45,
+        "fee_year": "2026-27 rates (Winter 2027 start)",
+        "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-ENCS-MEng-CB-45.pdf"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": {
+        "amount": 24616.98,
+        "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-ENCS-MEng-CB-45.pdf"
+      },
+      "requirements": {
+        "gpa": "University-wide master's minimum 3.00/4.30 or high standing; admission competitive (graduate calendar, secondary summary)",
+        "english": "IELTS 6.5 minimum (Gina Cody School graduate page, via search summary; programme may require higher)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.concordia.ca/academics/graduate/computer-science-mcompsci-applied.html",
+      "status": "partial",
+      "notes": "Official Concordia International Students Office estimate letter (start 11 Jan 2027): first year CAD 21,833.08, full 2-year programme CAD 40,473.40, at the international rate; tuition and fees include student fees, admin fees and international health insurance (so mandatory fees are inside the total). Personal expenses CAD 8,205.66 per term x 3 terms = CAD 24,616.98/year. Programme page URL found via search but not opened; GPA/IELTS from search summaries. Quebec: needs a CAQ in addition to the study permit; Quebec proof-of-funds rules differ from the IRCC figure."
+    },
+    {
+      "id": "ubc-mds-ds",
+      "university": "University of British Columbia",
+      "city": "Vancouver",
+      "course": "DS",
+      "programme_name": "Master of Data Science (MDS Vancouver)",
+      "duration_months": 10,
+      "tuition": {
+        "amount": 59767.92,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "Current published rate (page undated; applications open for Sept 2027)",
+        "source_url": "https://masterdatascience.ubc.ca/admissions/tuition-and-financial-aid"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Minimum B+ (76% at UBC) average in third- and fourth-year courses and in prerequisite courses",
+        "english": "Proof of English proficiency required if last degree not from an English-speaking university",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": "MDS International Scholarship up to CAD 25,000 (automatic consideration); other targeted awards up to full tuition",
+      "programme_url": "https://masterdatascience.ubc.ca/admissions/tuition-and-financial-aid",
+      "status": "verified",
+      "notes": "Official MDS page: international tuition CAD 59,767.92 for the 10-month programme, paid in 3 equal instalments (Sept/Jan/May); CAD 3,000 non-refundable deposit credited to tuition. UBC student fees (incl. U-Pass), AMS/GSS health plan and i-Med fee are extra but amounts not listed (null). Page does not name the academic year. 10 months: spouse NOT eligible for open work permit (needs master's of 16+ months); PGWP still up to 3 years for a master's of 8+ months."
+    },
+    {
+      "id": "tmu-msc-dsa-ds",
+      "university": "Toronto Metropolitan University",
+      "city": "Toronto",
+      "course": "DS",
+      "programme_name": "MSc Data Science and Analytics (MRP option)",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 29006.15,
+        "period": "year",
+        "credits_total": null,
+        "fee_year": "2026-27 (Fall 2026 / Winter 2027 / Spring 2027)",
+        "source_url": "https://www.torontomu.ca/current-students/tuition-fees/graduate.html"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": {
+        "gpa": "Minimum 3.00/4.33 (B) in last two years of a four-year bachelor's",
+        "english": "English language proficiency requirement (scores not captured)",
+        "gre_gmat": null,
+        "work_experience": null
+      },
+      "scholarships": null,
+      "programme_url": "https://www.torontomu.ca/graduate/programs/datascience/",
+      "status": "partial",
+      "notes": "TMU graduate fee page (International Fee Rates, MSc) lists 'Data Science and Analytics' at CAD 29,006.15 for 2026-27, including tuition, ancillary, program fees, health/dental and UHIP. The page does not label it per year or per programme; for the 1-year MRP option these coincide, so treated as one year. Duration (one year full-time MRP, 3 terms) and requirements from TMU pages via search summary; programme page not opened (one URL variant returned 404). 12 months: spouse NOT eligible for open work permit."
+    },
+    {
+      "id": "ivey-mba",
+      "university": "Western University (Ivey Business School)",
+      "city": "London, Ontario",
+      "course": "MBA",
+      "programme_name": "Ivey MBA (12-month full-time)",
+      "duration_months": 12,
+      "tuition": {
+        "amount": 136310,
+        "period": "total",
+        "credits_total": null,
+        "fee_year": "January 2027 intake",
+        "source_url": "https://www.ivey.uwo.ca/mba/finance/"
+      },
+      "mandatory_fees_per_year": 5820,
+      "living_cost_per_year": {
+        "amount": 30876,
+        "source_url": "https://www.ivey.uwo.ca/mba/finance/"
+      },
+      "requirements": {
+        "gpa": null,
+        "english": null,
+        "gre_gmat": "GMAT/GRE may be required; pre-assessment and GMAT exemption route available",
+        "work_experience": null
+      },
+      "scholarships": "Scholarships, awards and loans exist (page links to them); amounts not stated",
+      "programme_url": "https://www.ivey.uwo.ca/mba/",
+      "status": "verified",
+      "notes": "Official finance page (estimates): international tuition CAD 136,310 for 2027; CAD 5,000 deposit credited to first term. Mandatory fees = Western student org/ancillary CAD 2,300 + course materials CAD 2,700 + UHIP CAD 820 = CAD 5,820 (optional USC health and dental CAD 1,200 excluded). Programme moves to a January start from 4 Jan 2027 (deadline 2 Nov 2026). Living cost computed by us as 12 x Ivey monthly estimates (1-bed rent 1,450 + utilities 100 + food 500 + phone 80 + misc 425 + insurance 18 = 2,573/month); a room in a student house (700) would cut this to ~CAD 21,700/yr. Ivey notes the living figures were based on a March 2026 start. 12 months: spouse NOT eligible for open work permit."
+    },
+    {
+      "id": "concordia-jmsb-mba",
+      "university": "Concordia University (John Molson School of Business)",
+      "city": "Montreal",
+      "course": "MBA",
+      "programme_name": "MBA (course-based, 45 credits)",
+      "duration_months": 24,
+      "tuition": {
+        "amount": 62902.75,
+        "period": "total",
+        "credits_total": 45,
+        "fee_year": "2026-27 rates (Winter 2027 start)",
+        "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-JMSB-MBA-CB-45.pdf"
+      },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": {
+        "amount": 24616.98,
+        "source_url": "https://www.concordia.ca/content/dam/concordia/offices/advocacy/iso/letters/winter/Winter-JMSB-MBA-CB-45.pdf"
+      },
+      "requirements": {
+        "gpa": "Minimum B (or equivalent) (JMSB admissions, via search summary)",
+        "english": "English proficiency results required",
+        "gre_gmat": "GMAT 49th percentile or higher; equivalent GRE may be accepted; waiver possible for Canadian-educated applicants",
+        "work_experience": "At least 2 years full-time post-bachelor's experience (internships/co-ops/part-time do not count)"
+      },
+      "scholarships": null,
+      "programme_url": "https://www.concordia.ca/jmsb/mba/admissions/requirements.html",
+      "status": "partial",
+      "notes": "Official Concordia ISO estimate letter (start 11 Jan 2027): first year CAD 33,795.40, full 2-year programme CAD 62,902.75 at the international rate, including student, admin and international health insurance fees. Personal expenses CAD 8,205.66/term x 3 = CAD 24,616.98/year. Requirements from search summaries of JMSB pages, not opened directly. Quebec: CAQ required; Quebec proof-of-funds rules differ. 24 months: spouse eligible for open work permit (16+ month master's)."
+    }
+  ],
+  "living_cost": {
+    "budget_month": 1954,
+    "moderate_month": 2051,
+    "comfortable_month": 2573,
+    "basis": "Budget = IRCC minimum proof of funds for a single student outside Quebec, CAD 23,448/year (applications on/after 1 Sept 2026) / 12. Moderate (estimate) = Concordia ISO personal-expense estimate CAD 8,205.66/term x 3 terms / 12 (Montreal; off-campus housing, books, local transport, misc). Comfortable (estimate) = Ivey MBA monthly estimates with a one-bedroom apartment (London ON: rent 1,450 + utilities 100 + food 500 + phone 80 + misc 425 + insurance 18). Toronto and Vancouver rents are typically higher than these; no official Toronto/Vancouver figure was captured.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
+  },
+  "visa": {
+    "student_visa": {
+      "name": "Study permit (IRCC)",
+      "fees": [
+        {
+          "label": "Study permit application (incl. extensions)",
+          "amount": 150,
+          "currency": "CAD"
+        },
+        {
+          "label": "Biometrics (per person)",
+          "amount": 85,
+          "currency": "CAD"
+        }
+      ],
+      "source_url": "https://ircc.canada.ca/english/information/fees/fees.asp"
+    },
+    "proof_of_funds": {
+      "text": "Single student outside Quebec must show CAD 23,448 per year for living costs, on top of first-year tuition and transport, for applications submitted on or after 1 September 2026. Quebec programmes follow Quebec's own amounts (CAQ). A GIC is an accepted form of proof in the regular stream.",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
+    },
+    "work_during_study": {
+      "text": "Off-campus work up to 24 hours per week during academic sessions; unlimited hours during scheduled breaks (summer/winter holidays, reading week). If the programme has no scheduled breaks, the 24-hour limit still applies. IRCC June 2026 guidance: no on- or off-campus work during any leave from studies.",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html"
+    },
+    "post_study_work": {
+      "name": "Post-Graduation Work Permit (PGWP), open work permit",
+      "months_max": 36,
+      "text": "Master's graduates can get a 3-year PGWP even if the master's was under 2 years, provided the programme is at least 8 months at a PGWP-eligible DLI with full-time status. No field-of-study requirement for bachelor's/master's/doctoral graduates. Language requirement: CLB 7 (English) or NCLC 7 (French) in all 4 skills for university graduates. Apply within 180 days of completion. Permit cannot exceed passport validity. Work permit fee CAD 155 + open work permit holder fee CAD 100 (IRCC fee list).",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html"
+    },
+    "pr_pathway": {
+      "text": "Express Entry, Canadian Experience Class: at least 1 year (1,560 hours, 30 h/week) of paid skilled work in Canada (TEER 0-3) in the 3 years before applying, plus an approved language test meeting minimums in all 4 abilities. Work done while a full-time student, including co-op terms, does not count, so the PGWP years are what build CEC eligibility. Selection is by competitive Express Entry draws (CRS cut-offs not captured here).",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/canadian-experience-class.html"
+    },
+    "recent_changes": [
+      {
+        "title": "2026 study permit cap: up to 408,000 permits (155,000 new arrivals), 7% below 2025",
+        "status": "in_effect",
+        "announced": "2025-11-25",
+        "effective": "2026-01-01",
+        "who_affected": "All new study permit applicants subject to the cap (PAL/TAL cohort: up to 180,000 permits, 309,670 application spaces; Ontario 104,780)",
+        "impact": "Fewer seats overall and province-controlled allocations; Ontario says it prioritises labour-market-aligned (e.g. STEM) programmes. Master's students at public universities are exempt from the PAL/TAL (see next item), so direct impact on a master's applicant is limited.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
+      },
+      {
+        "title": "Master's and doctoral students at public DLIs no longer need a PAL/TAL",
+        "status": "in_effect",
+        "announced": "2025-11-25",
+        "effective": "2026-01-01",
+        "who_affected": "Students in degree-granting master's or doctoral programmes at public DLIs starting 1 Jan 2026",
+        "impact": "Positive: removes the provincial attestation step and cap competition for master's at public universities (all six programmes here). Private-institution master's still need a PAL/TAL. Quebec still needs a CAQ.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html"
+      },
+      {
+        "title": "Proof-of-funds living-cost amount raised to CAD 23,448/year",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-09-01",
+        "who_affected": "Study permit applicants outside Quebec applying on or after 1 Sept 2026",
+        "impact": "More cash must be shown upfront (on top of first-year tuition), raising the loan/GIC amount an Indian family must arrange.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
+      },
+      {
+        "title": "Spousal open work permits limited (master's must be 16+ months)",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2025-01-21",
+        "who_affected": "Spouses/partners of international students",
+        "impact": "Spouse can only get an open work permit if the student is in a master's of 16 months or longer, a doctorate, or a listed professional degree. 10-12 month master's (UBC MDS, TMU, Ivey) give no spousal work rights, so a couple loses a second income.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/help-your-spouse-common-law-partner-work-canada.html"
+      },
+      {
+        "title": "PGWP language requirement (CLB 7 for university grads) and field-of-study rules",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2024-11-01",
+        "who_affected": "PGWP applicants applying on or after 1 Nov 2024; field-of-study rule does not apply to master's graduates",
+        "impact": "Master's graduates must prove CLB 7 in all four skills to get the PGWP; field-of-study restriction does not apply to them. Keep a valid language test at graduation.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html"
+      },
+      {
+        "title": "Student Direct Stream (SDS) ended",
+        "status": "in_effect",
+        "announced": "2024-11-08",
+        "effective": "2024-11-08",
+        "who_affected": "Applicants from India and other SDS countries",
+        "impact": "No fast-track stream for Indian students; all apply via the regular study permit stream (GICs still accepted as proof of funds). Expect standard processing times.",
+        "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/end-student-direct-stream-nigeria-student-express.html"
+      },
+      {
+        "title": "Study permit compliance guidance tightened (leave, transfers, completion date)",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-06-18",
+        "who_affected": "Current and future study permit holders",
+        "impact": "No work during any leave from studies; changing institution needs a new study permit; repeated leaves can be judged non-compliance. Raises the cost of taking a break. Secondary source (ICEF Monitor) summarising IRCC operational guidance.",
+        "source_url": "https://monitor.icef.com/2026/07/canadian-immigration-officials-have-made-several-updates-to-compliance-guidance-for-study-permits-and-post-graduate-work-permits/"
+      },
+      {
+        "title": "PGWP field-of-study list frozen for 2026",
+        "status": "in_effect",
+        "announced": "2026-01-15",
+        "effective": "2026-01-15",
+        "who_affected": "College / non-degree programmes (master's graduates exempt)",
+        "impact": "No direct impact on master's students. Secondary source (CIC News); review of the list may bring changes for 2027.",
+        "source_url": "https://www.cicnews.com/2026/01/ircc-freezes-list-of-pgwp-eligible-fields-of-study-for-2026-0167305.html"
+      }
+    ]
+  },
+  "risk_factors": {
+    "policy_volatility": {
+      "score": 80,
+      "evidence": "Since late 2024 Canada ended SDS, added PGWP language/field rules, restricted spousal work permits, cut the study permit cap again for 2026 (7% below 2025, 16% below 2024), raised proof of funds, and tightened compliance guidance in June 2026."
+    },
+    "psw_uncertainty": {
+      "score": 30,
+      "evidence": "Master's graduates get an open PGWP of up to 3 years with no field-of-study restriction (IRCC), but must meet CLB 7, and the government is actively shrinking the temporary resident population."
+    },
+    "work_restrictions": {
+      "score": 35,
+      "evidence": "24 hours/week off-campus during term, unlimited in scheduled breaks; PGWP is fully open. Student-period and co-op work do not count toward CEC, and no work is allowed during leave."
+    },
+    "funds_burden": {
+      "score": 40,
+      "evidence": "Must show CAD 23,448/year living funds plus first-year tuition (e.g. ~CAD 45,000 for Concordia MACS year 1, ~CAD 160,000 for Ivey) before the visa."
+    },
+    "recent_adverse": {
+      "score": 45,
+      "evidence": "Last 12 months: lower 2026 cap, higher proof-of-funds from Sept 2026, stricter compliance rules; offset by the 2026 PAL/TAL exemption for master's at public universities."
+    }
+  },
+  "salary": {
+    "CS": {
+      "roles": [
+        "Software developer / programmer",
+        "Software engineer",
+        "Full-stack / backend developer",
+        "Mobile or web application developer"
+      ],
+      "entry_low": 63003,
+      "entry_mid": 81505,
+      "entry_high": 100006,
+      "basis": "Job Bank NOC 21232 (Software developers and programmers), Ontario hourly wages low 30.29 / median 48.08 / high 77.40 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. Job Bank 'low' approximates entry level; the median and high cover all experience levels, so entry_mid/high overstate a new grad's pay. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "source_name": "Job Bank (Government of Canada)",
+      "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/22531/ON",
+      "period": "annual gross, CAD"
+    },
+    "DS": {
+      "roles": [
+        "Data scientist",
+        "Machine learning engineer",
+        "Data analytics specialist",
+        "Data miner"
+      ],
+      "entry_low": 65000,
+      "entry_mid": 82098,
+      "entry_high": 99195,
+      "basis": "Job Bank NOC 21211 (Data scientists), Ontario hourly wages low 31.25 / median 47.69 / high 71.79 (updated 19 Nov 2025) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "source_name": "Job Bank (Government of Canada)",
+      "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/227147/ON",
+      "period": "annual gross, CAD"
+    },
+    "MBA": {
+      "roles": [
+        "Management consultant",
+        "Business consultant",
+        "Strategy / operations consultant",
+        "Business analyst (consulting)"
+      ],
+      "entry_low": 58178,
+      "entry_mid": 75827,
+      "entry_high": 93475,
+      "basis": "Job Bank NOC 11201 (Professional occupations in business management consulting), used as the MBA proxy; Ontario hourly wages low 27.97 / median 44.94 / high 74.36 (updated 19 Nov 2025, 2023-24 reference) x 2080 hours. 'Low' approximates entry level; median/high span all experience levels. [AbroadROI review: Job Bank median covers all experience levels, so for a new graduate we use low = Job Bank low, mid = halfway between low and median (approx. 25th percentile, an estimate), high = Job Bank median. This matches how US figures use BLS 10th/25th/50th percentiles.]",
+      "source_name": "Job Bank (Government of Canada)",
+      "source_url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/296/ON",
+      "period": "annual gross, CAD"
+    }
+  },
+  "tax": {
+    "effective_rate": 0.25,
+    "basis": "Estimate, computed by us for a single Ontario employee at CAD ~100,000 using official 2026 CRA rates: federal brackets (14% to 58,523; 20.5% to 117,045...), Ontario brackets (5.05% to 53,891; 9.15% to 107,785...), CPP 5.95% on 3,500-74,600, EI 1.63% to 68,900. Federal BPA 16,452 and Ontario BPA 12,989 are from secondary sources; CPP2 (4% on 74,600-85,000) from secondary sources. Result: ~21% at CAD 63,000, ~24% at 80,000, ~25% at 100,000. Excludes Ontario Health Premium and Ontario surtax (roughly +1 percentage point) and the Canada employment amount.",
+    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"
+  },
+  "checklist": [
+    "Choose a master's at a public DLI that is PGWP-eligible; check whether it is 16+ months if your spouse needs to work.",
+    "Get the admission letter; master's at public DLIs need no PAL/TAL from 1 Jan 2026 (private institutions still do).",
+    "For Quebec (e.g. Concordia), apply for the CAQ first; it is needed before the study permit.",
+    "Arrange proof of funds: first-year tuition plus CAD 23,448 living costs (outside Quebec), e.g. a GIC plus education loan sanction and bank statements.",
+    "Take IELTS/PTE/CELPIP now and aim for CLB 7 in all four skills, which you will also need for the PGWP.",
+    "Apply online for the regular study permit (SDS ended Nov 2024); fee CAD 150.",
+    "Give biometrics at a visa application centre after receiving the instruction letter (CAD 85).",
+    "Do the immigration medical exam with an IRCC panel physician if IRCC asks for one.",
+    "On arrival, keep full-time status, work at most 24 h/week off-campus in term, and never work during leave.",
+    "Within 180 days of finishing, apply for the PGWP (up to 3 years); then build 1 year of skilled work for Express Entry CEC."
+  ]
+}

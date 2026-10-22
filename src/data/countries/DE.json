@@ -1,0 +1,259 @@
+{
+  "country": "DE",
+  "name": "Germany",
+  "currency": "EUR",
+  "verified_at": "2026-10-22",
+  "programmes": [
+    {
+      "id": "tum-msc-informatics",
+      "university": "Technical University of Munich (TUM)",
+      "city": "Munich",
+      "course": "CS",
+      "programme_name": "Informatics (M.Sc.)",
+      "duration_months": 24,
+      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc" },
+      "mandatory_fees_per_year": 194,
+      "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
+      "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment (grades/documents, possibly interview); no minimum GPA published", "english": "Proof of English required by the application deadline (accepted certificates listed on TUM language-certificates page)", "gre_gmat": null, "work_experience": null },
+      "scholarships": "TUM tuition waiver scholarships for outstanding performance or financial need; TUM one-time grant of 500-1,800 EUR per semester for international students (not automatic)",
+      "programme_url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc",
+      "status": "verified",
+      "notes": "Non-EU tuition 6,000 EUR/semester (24,000 EUR for 4 semesters). Usually taught in English. Semester fee 97 EUR (Studierendenwerk basic fee, Munich, summer semester 2026) x2. TUM says non-EU tuition will increase for winter semester 2027/28 to 4,600 or 6,800 EUR per semester for master's (tier not stated); students already enrolled keep their starting rate (https://www.tum.de/en/studies/fees/tuition). Living cost = lower bound of TUM's 1,300-2,000 EUR/month Munich estimate x12. Application windows: winter 1 Feb-31 May, summer 1 Oct-30 Nov."
+    },
+    {
+      "id": "saarland-msc-computer-science",
+      "university": "Saarland University",
+      "city": "Saarbruecken",
+      "course": "CS",
+      "programme_name": "Computer Science (M.Sc.)",
+      "duration_months": 24,
+      "tuition": { "amount": 0, "period": "total", "credits_total": null, "fee_year": "2026-27", "source_url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html" },
+      "mandatory_fees_per_year": 824.6,
+      "living_cost_per_year": { "amount": 9600, "source_url": "https://www.uni-saarland.de/en/global/guidance/information/costs.html" },
+      "requirements": { "gpa": "Bachelor's in informatics/CS or related field and proof of sufficient academic merit; no minimum GPA published", "english": "C1 level; Medium of Instruction certificates not accepted", "gre_gmat": null, "work_experience": null },
+      "scholarships": null,
+      "programme_url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html",
+      "status": "verified",
+      "notes": "Programme page lists tuition 'Not applicable'; university cost page states no tuition for consecutive master's. English-taught, 4 semesters. Semester fee 412.30 EUR for winter 2026/27 (includes nationwide Deutschlandsemesterticket 226.80 EUR) x2 (https://www.uni-saarland.de/en/study/organisation/fees/semester-fee.html). Living cost: university says 'around 800 EUR per month' additional living expenses in Saarbruecken, x12. Also needs motivation letter and two academic references."
+    },
+    {
+      "id": "lmu-msc-statistics-data-science",
+      "university": "LMU Munich (Ludwig-Maximilians-Universitaet Muenchen)",
+      "city": "Munich",
+      "course": "DS",
+      "programme_name": "Statistics and Data Science (M.Sc.)",
+      "duration_months": 24,
+      "tuition": { "amount": 0, "period": "total", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.lmu.de/en/workspace-for-students/abc-study-guide/fees-and-tuition-fees/index.html" },
+      "mandatory_fees_per_year": 194,
+      "living_cost_per_year": null,
+      "requirements": { "gpa": "Degree with at least 180 ECTS in statistics or data science (or as major/minor) plus aptitude test (Eignungsverfahren); no minimum GPA published", "english": null, "gre_gmat": null, "work_experience": null },
+      "scholarships": null,
+      "programme_url": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/statistics-and-data-science-master-hauptfach-18752.html",
+      "status": "verified",
+      "notes": "English-taught, 4 semesters, 120 ECTS, intake winter and summer. LMU states no tuition fees charged since winter 2013/14 (separate fees only for some graduate programmes; none listed for this one). Semester contribution: Studierendenwerk basic fee 97 EUR (summer semester 2026), no compulsory semester-ticket fee since WS 2023/24 (https://www.lmu.de/de/workspace-fuer-studierende/1x1-des-studiums/studierendenwerksbeitraege/). Aptitude-test deadlines 15 May (winter) / 15 Nov (summer). Note: LMU's older 'Data Science' M.Sc. had its last intake in WS 2024/25, so it was not used. Living cost null: no LMU-published figure found (page moved); TUM's Munich estimate of 1,300-2,000 EUR/month applies to the same city. English level not stated on programme page."
+    },
+    {
+      "id": "tum-msc-data-engineering-analytics",
+      "university": "Technical University of Munich (TUM)",
+      "city": "Munich",
+      "course": "DS",
+      "programme_name": "Data Engineering and Analytics (M.Sc.)",
+      "duration_months": 24,
+      "tuition": { "amount": 6000, "period": "semester", "credits_total": 120, "fee_year": "2026-27", "source_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc" },
+      "mandatory_fees_per_year": 194,
+      "living_cost_per_year": { "amount": 15600, "source_url": "https://www.tum.de/en/studies/fees" },
+      "requirements": { "gpa": "Recognised undergraduate degree plus TUM aptitude assessment; no minimum GPA published", "english": "Proof of English required", "gre_gmat": null, "work_experience": null },
+      "scholarships": "TUM tuition waiver scholarships; TUM one-time grant of 500-1,800 EUR per semester for international students",
+      "programme_url": "https://www.tum.de/en/studies/degree-programs/detail/data-engineering-and-analytics-master-of-science-msc",
+      "status": "verified",
+      "notes": "Non-EU tuition 6,000 EUR/semester (24,000 EUR total). Usually English, some courses may be German. Student fees 97 EUR/semester. Same WS 2027/28 tuition increase applies (4,600 or 6,800 EUR/semester for new master's entrants). Living cost = lower bound of TUM Munich estimate x12."
+    },
+    {
+      "id": "esmt-berlin-full-time-mba",
+      "university": "ESMT Berlin (private)",
+      "city": "Berlin",
+      "course": "MBA",
+      "programme_name": "Full-time MBA",
+      "duration_months": 15,
+      "tuition": { "amount": 50000, "period": "total", "credits_total": null, "fee_year": "January 2027 intake", "source_url": "https://esmt.berlin/mba-programs/full-time-mba" },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": { "amount": 10968, "source_url": "https://esmt.berlin/mba-programs/full-time-mba/faq" },
+      "requirements": { "gpa": "Bachelor's of at least 3 years (180 ECTS); no minimum GPA published", "english": "TOEFL 5.0 (2026 scoring, 5.0 each section), IELTS 7, or PTE 64; waivers for English-taught degree or 12+ months work in English", "gre_gmat": "One of GMAT, GRE, GMAC Executive Assessment or ESMT BAT required; 'strong score', no published minimum", "work_experience": "At least 3 years post-graduate professional experience by programme start" },
+      "scholarships": "Academic excellence awards, gender pay gap scholarship for women, Rainbow scholarship, regional scholarships (details on ESMT scholarships page)",
+      "programme_url": "https://esmt.berlin/mba-programs/full-time-mba",
+      "status": "verified",
+      "notes": "Taught in English, January start. Tuition 50,000 EUR for Jan 2027 intake, 51,000 EUR for Jan 2028 intake; paid in three instalments incl. 6,500 EUR non-refundable deposit. Application fee 100 EUR. Living cost computed by us from ESMT's itemised monthly lower-bound estimates (public health insurance 139 + private room 400 + food 200 + transport 65 + phone 35 + leisure 75 = 914 EUR) x12; ESMT gives no total. ESMT reports average total starting compensation of '100k' for classes 2023-2025 (currency not stated)."
+    },
+    {
+      "id": "mannheim-business-school-full-time-mba",
+      "university": "Mannheim Business School (University of Mannheim)",
+      "city": "Mannheim",
+      "course": "MBA",
+      "programme_name": "Mannheim Full-Time MBA",
+      "duration_months": 12,
+      "tuition": { "amount": 49500, "period": "total", "credits_total": null, "fee_year": "September 2027 intake", "source_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/" },
+      "mandatory_fees_per_year": null,
+      "living_cost_per_year": null,
+      "requirements": { "gpa": "Recognised bachelor's in any discipline; successful candidates typically have a minimum B+ average", "english": "IELTS Academic 7 or TOEFL (page lists minimum 4.5, presumably new 1-6 scale) or equivalent", "gre_gmat": "GMAT or GRE; recommended minimum GMAT Focus 565 or GRE equivalent", "work_experience": "At least 3 years post-graduate work experience" },
+      "scholarships": "Seven merit categories up to 6,000 EUR each; need-based Distinguished Talent Scholarship up to 9,500 EUR; limited, rolling",
+      "programme_url": "https://www.mannheim-business-school.com/en/mba-master-and-courses/mba-programs/mannheim-full-time-mba/",
+      "status": "verified",
+      "notes": "Duration stated as 12-15 months (12 used). Fee 49,500 EUR; early-bird discount 3,000 EUR if applying by 30 Nov 2026. Application fee 150 EUR. Integrated German courses included; alumni stress German is needed for jobs in Germany; 2,000 EUR bonus for German B1+. Language of instruction not explicitly stated on page (English proficiency required). Living cost not published on pages checked."
+    }
+  ],
+  "living_cost": {
+    "budget_month": 992,
+    "moderate_month": 1300,
+    "comfortable_month": 2000,
+    "basis": "Budget = official blocked-account monthly release (992 EUR, 11,904 EUR/year) set by the Federal Foreign Office. Moderate and comfortable are ESTIMATES taken from TUM's published Munich single-person range of approx. 1,300-2,000 EUR/month (Munich is Germany's most expensive student city; Saarland University quotes about 800 EUR/month for Saarbruecken).",
+    "source_url": "https://india.diplo.de/in-en/service/2756350-2756350"
+  },
+  "visa": {
+    "student_visa": {
+      "name": "National visa (D visa) for study, section 16b Residence Act",
+      "fees": [
+        { "label": "National visa fee, adult (charged in INR; INR 8,300 from 1 Oct 2026, VFS from 30 Sep 2026)", "amount": 75, "currency": "EUR" }
+      ],
+      "source_url": "https://india.diplo.de/in-en/2673212-2673212"
+    },
+    "proof_of_funds": {
+      "text": "Blocked account holding currently 11,904 EUR for the first year of studies; no more than 992 EUR can be withdrawn per month. Alternatives: formal obligation letter from a sponsor in Germany, German/EU public scholarship, or education loan. Applications go through the Consular Services Portal; Indian degree holders almost always need an APS certificate.",
+      "source_url": "https://india.diplo.de/in-en/service/2756350-2756350"
+    },
+    "work_during_study": {
+      "text": "Up to 140 working days per year (working-day account). A day of up to 4 hours can count as a half day; in lecture periods weeks of up to 20 hours count as 2.5 days. Student assistant jobs (studentische Nebentaetigkeiten) at the university do not count toward the limit. No self-employment.",
+      "source_url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+    },
+    "post_study_work": {
+      "name": "Residence permit for job seeking after graduation (section 20 Residence Act)",
+      "months_max": 18,
+      "text": "After successfully completing studies in Germany, graduates can get a residence permit for up to 18 months to look for a job matching their qualification, provided livelihood is secured. BAMF: any form of work may be taken up during this time. No employer sponsor needed.",
+      "source_url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Bildung/Studium/studium-node.html"
+    },
+    "pr_pathway": {
+      "text": "Settlement permit (permanent residence): German university graduates after 2 years on a skilled-worker/Blue Card residence title with a current job, 24 months of pension contributions and sufficient German. EU Blue Card holders after 27 months (21 months with sufficient German, B1). Other skilled workers: 3 years and 36 months contributions. 2026 Blue Card minimum salary: 50,700 EUR, or 45,934.20 EUR for shortage occupations and graduates within 3 years of degree (section 18g(2)).",
+      "source_url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/Niederlassen/niederlassen-node.html"
+    },
+    "recent_changes": [
+      {
+        "title": "EU Blue Card minimum salaries for 2026: 50,700 EUR standard, 45,934.20 EUR reduced",
+        "status": "in_effect",
+        "announced": "2025-12-02",
+        "effective": "2026-01-01",
+        "who_affected": "Graduates and skilled workers applying for an EU Blue Card in 2026",
+        "impact": "The reduced 45,934.20 EUR threshold applies to recent graduates (degree within 3 years) and shortage occupations such as IT, so a typical entry CS/DS salary in Germany clears it. Thresholds are indexed to the pension ceiling and rise every year.",
+        "source_url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf"
+      },
+      {
+        "title": "TUM raises non-EU tuition from winter semester 2027/28",
+        "status": "announced",
+        "announced": null,
+        "effective": null,
+        "who_affected": "Non-EU students starting at TUM in winter semester 2027/28 or later",
+        "impact": "Master's tuition rises from 4,000/6,000 EUR to 4,600/6,800 EUR per semester. An Indian student starting a 6,000-EUR programme in 2027 could pay about 3,200 EUR more over 4 semesters. Students already enrolled keep their starting rate.",
+        "source_url": "https://www.tum.de/en/studies/fees/tuition"
+      },
+      {
+        "title": "German missions in India set national visa fee at INR 8,300",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2026-10-01",
+        "who_affected": "All adult national (D) visa applicants in India",
+        "impact": "Fee fixed in rupees (about 75 EUR); VFS applies it from 30 Sep 2026. Negligible ROI effect; VFS adds its own service fee.",
+        "source_url": "https://india.diplo.de/in-en/ueber-uns/kolkata"
+      },
+      {
+        "title": "Abolition of 3-year fast-track ('turbo') naturalisation",
+        "status": "in_effect",
+        "announced": "2025-10-08",
+        "effective": null,
+        "who_affected": "Skilled migrants hoping for German citizenship after 3 years",
+        "impact": "Citizenship now generally needs at least 5 years' residence. Does not affect study, job-search permit or PR timelines, but lengthens the path to an EU passport.",
+        "source_url": "https://www.bundesregierung.de/resource/blob/975954/2388128/f26afadd67ac33455496c4e532b4afcc/89-5-bmi-aenderung-staatsangehoerigeitsrecht-bt-data.pdf?download=1"
+      },
+      {
+        "title": "Work-and-Stay-Agentur: single digital platform for skilled-worker immigration",
+        "status": "announced",
+        "announced": "2025-11-05",
+        "effective": null,
+        "who_affected": "Foreign skilled workers and trainees; students not explicitly mentioned",
+        "impact": "Cabinet adopted key points only; no launch date. Could speed up visa and recognition processing later, but no effect yet.",
+        "source_url": "https://www.bundesregierung.de/breg-de/aktuelles/kabinett-work-and-stay-agentur-2391978"
+      },
+      {
+        "title": "Skilled Immigration Act stage 2: more flexible student employment rules",
+        "status": "in_effect",
+        "announced": "2024-02-29",
+        "effective": "2024-03-01",
+        "who_affected": "Non-EU students and graduates",
+        "impact": "Students may hold side jobs under more flexible rules; current law allows 140 working days per year. Helps cover part of living costs during study.",
+        "source_url": "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2024/zweite-stufe-fachkraefteeinwanderungsgesetz-tritt-in-kraft.html"
+      },
+      {
+        "title": "Opportunity Card (Chancenkarte) introduced (Skilled Immigration Act stage 3)",
+        "status": "in_effect",
+        "announced": null,
+        "effective": "2024-06-01",
+        "who_affected": "Job seekers from abroad (not graduates of German universities, who use the 18-month permit)",
+        "impact": "Points-based 1-year job-search card. A fallback route; German graduates have the stronger 18-month permit.",
+        "source_url": "https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2024/05/chancenkarte.html"
+      }
+    ]
+  },
+  "risk_factors": {
+    "policy_volatility": { "score": 30, "evidence": "Core student-visa rules (blocked account 11,904 EUR, 140-day work rule, 18-month job-search permit) have been stable since 2024; changes in the last 24 months were mostly liberalising (Skilled Immigration Act 2024) plus the 2025 abolition of 3-year naturalisation and routine annual Blue Card indexation." },
+    "psw_uncertainty": { "score": 20, "evidence": "Statutory 18-month job-search permit after graduation with no sponsor and any work allowed; a reduced Blue Card threshold (45,934.20 EUR in 2026) for recent graduates makes conversion to work status predictable." },
+    "work_restrictions": { "score": 30, "evidence": "140 full days per year during study (student assistant jobs exempt), unrestricted work during the 18-month job search. Many non-tech and business jobs still expect German, which limits practical options." },
+    "funds_burden": { "score": 45, "evidence": "11,904 EUR (about one year of living costs) must be locked up front in a blocked account before the visa; at public universities this is the largest upfront cost, though it is released monthly for living expenses." },
+    "recent_adverse": { "score": 20, "evidence": "In the last 12 months: no adverse change to student visa or post-study rules; negatives are institutional (TUM tuition rise from WS 2027/28) and citizenship (5-year minimum after turbo naturalisation was abolished)." }
+  },
+  "salary": {
+    "CS": {
+      "roles": ["Software Developer", "Backend/Full-stack Engineer", "IT Systems Analyst", "Cloud/DevOps Engineer"],
+      "entry_low": 49884,
+      "entry_mid": 60408,
+      "entry_high": 75612,
+      "basis": "Entgeltatlas (Bundesagentur fuer Arbeit), KldB 43414 Software development, level Experte, Germany, full-time gross monthly x12. Low = median for under-25s (4,157 EUR); mid = lower quartile all ages (5,034 EUR); high = median all ages (6,301 EUR, all experience levels, so above true entry). Read via entgeltatlas-online.de (third-party mirror of BA data) because the official Entgeltatlas app/API could not be loaded.",
+      "source_name": "Entgeltatlas der Bundesagentur fuer Arbeit (via entgeltatlas-online.de)",
+      "source_url": "https://entgeltatlas-online.de/beruf/berufe-in-der-softwareentwicklung-43414",
+      "period": "Reference year 2025"
+    },
+    "DS": {
+      "roles": ["Data Scientist", "Data Engineer", "Machine Learning Engineer", "Data/BI Analyst"],
+      "entry_low": 49884,
+      "entry_mid": 64956,
+      "entry_high": 80424,
+      "basis": "Entgeltatlas has no separate data-science occupation. Mid/high use KldB 43104 Informatics (Experte): lower quartile 5,413 EUR and median 6,702 EUR per month x12 (all experience). Under-25 value for 43104 is suppressed, so low reuses the software-development under-25 median (4,157 EUR x12). Read via entgeltatlas-online.de mirror.",
+      "source_name": "Entgeltatlas der Bundesagentur fuer Arbeit (via entgeltatlas-online.de)",
+      "source_url": "https://entgeltatlas-online.de/beruf/berufe-in-der-informatik-ohne-spezialisierung-43104",
+      "period": "Reference year 2025"
+    },
+    "MBA": {
+      "roles": ["Management Consultant", "Product Manager", "Business Development Manager", "Strategy/Finance Manager"],
+      "entry_low": 50520,
+      "entry_mid": 63636,
+      "entry_high": 83604,
+      "basis": "Entgeltatlas KldB 71324 Management consulting (Experte), full-time gross monthly x12: low = under-25 median 4,210 EUR; mid = lower quartile 5,303 EUR; high = median 6,967 EUR (all experience). MBA intakes require 3+ years' experience, so post-MBA pay is likely nearer mid/high; ESMT reports average total starting compensation of '100k' (currency unstated) for classes 2023-2025.",
+      "source_name": "Entgeltatlas der Bundesagentur fuer Arbeit (via entgeltatlas-online.de)",
+      "source_url": "https://entgeltatlas-online.de/beruf/berufe-in-der-unternehmensberatung-71324",
+      "period": "Reference year 2025"
+    }
+  },
+  "tax": {
+    "effective_rate": 0.387,
+    "basis": "ESTIMATE. OECD Taxing Wages 2026: employee net average tax rate (income tax + employee social security contributions) for a single worker without children at the average wage in Germany was 38.7% in 2025. Entry salaries (about 50-65k EUR) sit below the OECD average wage, so the true rate is likely somewhat lower; 38.7% is a conservative figure. Tax class I, no church tax assumed.",
+    "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/taxing-wages-2026-country-notes_491a0e97/germany_649f0784/ca03c391-en.pdf"
+  },
+  "checklist": [
+    "Shortlist English-taught programmes and check intake deadlines (often 31 May / 15 May for winter intake).",
+    "Apply for the APS certificate early: Indian degree holders almost always need it for the visa and many universities.",
+    "Get IELTS/TOEFL (C1 often required; some universities reject medium-of-instruction letters); GMAT/GRE only for MBAs.",
+    "Apply directly or via uni-assist as each programme specifies; prepare SOP, CV, transcripts and references.",
+    "After admission, open a blocked account and deposit 11,904 EUR (992 EUR/month release).",
+    "Buy health insurance valid from your arrival date (statutory or private, as accepted by the mission).",
+    "Submit the national (D) student visa application via the Consular Services Portal and book the VFS appointment; fee INR 8,300.",
+    "On arrival: register your address (Anmeldung), enrol, pay the semester fee and open a German bank account.",
+    "Apply to the local Auslaenderbehoerde for the residence permit before the entry visa expires.",
+    "Start learning German (B1 helps for jobs and shortens Blue Card PR from 27 to 21 months); plan the 18-month job-search permit before your permit expires."
+  ]
+}
